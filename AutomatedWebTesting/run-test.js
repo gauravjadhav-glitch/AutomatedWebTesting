@@ -15,6 +15,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 const advanced = require('./tests/advanced-tests');
 const fourK = require('./tests/4k-tests');
+const enhanced = require('./tests/enhanced-tests');
 const learning = require('./learning-engine');
 
 // ===== Parse URLs and Mode from CLI =====
@@ -254,6 +255,9 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
     site1LoggedIn: authResult1.loggedIn,
     site2LoggedIn: authResult2?.loggedIn || false,
   };
+
+  // Build priority execution order — skip dependent tests if login failed
+  const priorityManager = enhanced.buildPriorityOrder([], authResult1);
 
   // ============================================================
   // PHASE 1: DISCOVERY — Deep crawl both sites (now authenticated)
@@ -875,7 +879,9 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
 
   // ── TIER 2: SESSION PERSISTENCE ──
   const sessionTests = testsByType['session'] || [];
-  if (sessionTests.length > 0 && canRun('Session', 2, sessionTests)) {
+  if (sessionTests.length > 0 && priorityManager.shouldSkip('session')) {
+    skipPhase('Session', sessionTests, priorityManager.getSkipReason('session'));
+  } else if (sessionTests.length > 0 && canRun('Session', 2, sessionTests)) {
     executedPhases.push('session');
     startPhase('Session');
     console.log(`\n  Running session persistence tests...`);
@@ -892,7 +898,9 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
 
   // ── TIER 2: PAYMENT METHODS ──
   const paymentTests = testsByType['payment'] || [];
-  if (paymentTests.length > 0 && canRun('Payment', 2, paymentTests)) {
+  if (paymentTests.length > 0 && priorityManager.shouldSkip('payment')) {
+    skipPhase('Payment', paymentTests, priorityManager.getSkipReason('payment'));
+  } else if (paymentTests.length > 0 && canRun('Payment', 2, paymentTests)) {
     executedPhases.push('payment');
     startPhase('Payment');
     console.log(`\n  Running payment method tests...`);
@@ -909,7 +917,9 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
 
   // ── TIER 2: ORDER LIFECYCLE ──
   const orderTests = testsByType['order_lifecycle'] || [];
-  if (orderTests.length > 0 && canRun('Order Lifecycle', 2, orderTests)) {
+  if (orderTests.length > 0 && priorityManager.shouldSkip('order_lifecycle')) {
+    skipPhase('Order Lifecycle', orderTests, priorityManager.getSkipReason('order_lifecycle'));
+  } else if (orderTests.length > 0 && canRun('Order Lifecycle', 2, orderTests)) {
     executedPhases.push('order_lifecycle');
     startPhase('Order Lifecycle');
     console.log(`\n  Running order lifecycle tests...`);
@@ -926,7 +936,9 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
 
   // ── TIER 2: PRICING VALIDATION ──
   const pricingTests = testsByType['pricing'] || [];
-  if (pricingTests.length > 0 && canRun('Pricing', 2, pricingTests)) {
+  if (pricingTests.length > 0 && priorityManager.shouldSkip('pricing')) {
+    skipPhase('Pricing', pricingTests, priorityManager.getSkipReason('pricing'));
+  } else if (pricingTests.length > 0 && canRun('Pricing', 2, pricingTests)) {
     executedPhases.push('pricing');
     startPhase('Pricing');
     console.log(`\n  Running pricing validation tests...`);
@@ -955,6 +967,83 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
       progress(test.name);
     }
     endPhase('Race Conditions');
+    console.log('');
+  }
+
+  // ── TIER 1: CORE WEB VITALS (LCP, CLS, FCP, TTFB) ──
+  if (canRun('Core Web Vitals', 1, [])) {
+    executedPhases.push('core_web_vitals');
+    startPhase('Core Web Vitals');
+    console.log(`\n  Running Core Web Vitals tests...`);
+    const cwvPages = (discovery1.pages || []).filter(p => p.status === 200).slice(0, 5).map(p => p.path);
+    for (const [siteUrl, label] of siteList()) {
+      await enhanced.runCoreWebVitals(browser, siteUrl, label, cwvPages, bugs, pageData, screenshots);
+    }
+    endPhase('Core Web Vitals');
+    console.log('');
+  }
+
+  // ── TIER 2: DEEP ACCESSIBILITY (axe-core WCAG 2.1) ──
+  if (canRun('Accessibility Deep', 2, [])) {
+    executedPhases.push('accessibility_deep');
+    startPhase('Accessibility Deep');
+    console.log(`\n  Running deep accessibility (axe-core) tests...`);
+    const a11yPages = ['/', '/products', '/cart', '/auth/login', '/contact-us'].filter(p =>
+      discovery1.pages.some(pg => pg.path === p && pg.status === 200)
+    );
+    for (const [siteUrl, label] of siteList()) {
+      await enhanced.runAxeAccessibility(browser, siteUrl, label, a11yPages, bugs, pageData, screenshots);
+    }
+    endPhase('Accessibility Deep');
+    console.log('');
+  }
+
+  // ── TIER 2: API RESPONSE VALIDATION ──
+  if (canRun('API Validation', 2, [])) {
+    executedPhases.push('api_validation');
+    startPhase('API Validation');
+    console.log(`\n  Running API response validation...`);
+    const apiPages = (discovery1.pages || []).filter(p => p.status === 200).slice(0, 5).map(p => p.path);
+    for (const [siteUrl, label] of siteList()) {
+      await enhanced.runAPIValidation(browser, siteUrl, label, apiPages, bugs, pageData, screenshots);
+    }
+    endPhase('API Validation');
+    console.log('');
+  }
+
+  // ── TIER 2: LOCALE / MULTI-LANGUAGE ──
+  if (canRun('Locale/i18n', 2, [])) {
+    executedPhases.push('locale');
+    startPhase('Locale/i18n');
+    console.log(`\n  Running locale/multi-language tests...`);
+    for (const [siteUrl, label] of siteList()) {
+      await enhanced.runLocaleTest(browser, siteUrl, label, bugs, pageData, screenshots);
+    }
+    endPhase('Locale/i18n');
+    console.log('');
+  }
+
+  // ── TIER 2: CART PERSISTENCE ACROSS VIEWPORTS ──
+  if (canRun('Cart Persistence', 2, [])) {
+    executedPhases.push('cart_persistence');
+    startPhase('Cart Persistence');
+    console.log(`\n  Running cart persistence (mobile → desktop) tests...`);
+    for (const [siteUrl, label, disc] of siteDiscList(discovery1, discovery2)) {
+      await enhanced.runCartPersistenceTest(browser, siteUrl, label, disc, bugs, pageData, screenshots);
+    }
+    endPhase('Cart Persistence');
+    console.log('');
+  }
+
+  // ── TIER 2: INPUT VALIDATION & SECURITY ──
+  if (canRun('Input Security', 2, [])) {
+    executedPhases.push('input_security');
+    startPhase('Input Security');
+    console.log(`\n  Running input validation & security tests (XSS, SQLi, invalid inputs)...`);
+    for (const [siteUrl, label] of siteList()) {
+      await enhanced.runInputSecurityTest(browser, siteUrl, label, bugs, pageData, screenshots);
+    }
+    endPhase('Input Security');
     console.log('');
   }
 
@@ -1414,6 +1503,9 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
     discovery1, discovery2, startTime, endTime, counts,
   });
   log(`  [BRAIN] Knowledge saved. Run #${runSummary.runNumber} stored.\n`);
+
+  // Generate enhanced report data (health score, hotspots, distribution)
+  const enhancedReportData = enhanced.generateEnhancedReportData(uniqueBugs, pageData);
 
   // Group bugs by category for the report
   const bugsByCategory = {};
@@ -2005,6 +2097,9 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
     ...(hasRedirect ? [{ id: 'redirections', label: 'Redirections' }] : []),
     ...(hasPerf ? [{ id: 'performance', label: 'Performance' }] : []),
     ...(hasA11y ? [{ id: 'accessibility', label: 'Accessibility' }] : []),
+    { id: 'analytics', label: 'Analytics' },
+    ...(pageData[`${SINGLE_MODE ? 'site1' : 'site2'}_core_web_vitals`] ? [{ id: 'core-web-vitals', label: 'Web Vitals' }] : []),
+    ...(pageData[`${SINGLE_MODE ? 'site1' : 'site2'}_api_validation`] ? [{ id: 'api-validation', label: 'API Validation' }] : []),
     { id: 'all-bugs', label: 'Bug Report' },
     { id: 'bug-categories', label: 'By Category' },
   ];
@@ -2239,9 +2334,70 @@ ${a11yHtml.includes('No accessibility data') ? '' : `<!-- ACCESSIBILITY -->
   <div class="sec-b">${a11yHtml}</div>
 </div>`}
 
+<!-- ANALYTICS DASHBOARD -->
+<div id="analytics" class="sec">
+  <div class="sec-h"><h2>Analytics Dashboard</h2><span class="badge bg-info">Health Score: ${enhancedReportData.healthScore}/100</span></div>
+  <div class="sec-b">${enhanced.generateEnhancedReportHTML(enhancedReportData, counts)}</div>
+</div>
+
+<!-- CORE WEB VITALS -->
+${(() => {
+  const cwvData = pageData[`${SINGLE_MODE ? 'site1' : 'site2'}_core_web_vitals`];
+  if (!cwvData || cwvData.length === 0) return '';
+  let cwvHtml = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;">';
+  for (const v of cwvData.filter(v => !v.error)) {
+    const lcpColor = !v.lcp ? '#6b7280' : v.lcp <= 2500 ? '#22c55e' : v.lcp <= 4000 ? '#f59e0b' : '#ef4444';
+    const clsColor = v.cls <= 0.1 ? '#22c55e' : v.cls <= 0.25 ? '#f59e0b' : '#ef4444';
+    const fcpColor = !v.fcp ? '#6b7280' : v.fcp <= 1800 ? '#22c55e' : v.fcp <= 3000 ? '#f59e0b' : '#ef4444';
+    const ttfbColor = !v.ttfb ? '#6b7280' : v.ttfb <= 200 ? '#22c55e' : v.ttfb <= 800 ? '#f59e0b' : '#ef4444';
+    cwvHtml += '<div style="background:var(--bg3);border-radius:10px;padding:16px;border:1px solid var(--border);">';
+    cwvHtml += '<div style="font-weight:700;margin-bottom:12px;font-size:13px;">' + v.page + '</div>';
+    cwvHtml += '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">';
+    cwvHtml += '<div style="text-align:center;padding:8px;background:var(--bg5);border-radius:6px;"><div style="font-size:18px;font-weight:800;color:' + lcpColor + ';">' + (v.lcp || '-') + '</div><div style="font-size:9px;color:var(--text3);">LCP ms</div></div>';
+    cwvHtml += '<div style="text-align:center;padding:8px;background:var(--bg5);border-radius:6px;"><div style="font-size:18px;font-weight:800;color:' + clsColor + ';">' + v.cls + '</div><div style="font-size:9px;color:var(--text3);">CLS</div></div>';
+    cwvHtml += '<div style="text-align:center;padding:8px;background:var(--bg5);border-radius:6px;"><div style="font-size:18px;font-weight:800;color:' + fcpColor + ';">' + (v.fcp || '-') + '</div><div style="font-size:9px;color:var(--text3);">FCP ms</div></div>';
+    cwvHtml += '<div style="text-align:center;padding:8px;background:var(--bg5);border-radius:6px;"><div style="font-size:18px;font-weight:800;color:' + ttfbColor + ';">' + (v.ttfb || '-') + '</div><div style="font-size:9px;color:var(--text3);">TTFB ms</div></div>';
+    cwvHtml += '</div>';
+    cwvHtml += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;">';
+    cwvHtml += '<div style="text-align:center;padding:6px;background:var(--bg5);border-radius:6px;font-size:11px;"><span style="color:#67e8f9;">' + v.domSize + '</span><div style="color:var(--text3);font-size:9px;">DOM</div></div>';
+    cwvHtml += '<div style="text-align:center;padding:6px;background:var(--bg5);border-radius:6px;font-size:11px;"><span style="color:#67e8f9;">' + v.totalResources + '</span><div style="color:var(--text3);font-size:9px;">Resources</div></div>';
+    cwvHtml += '<div style="text-align:center;padding:6px;background:var(--bg5);border-radius:6px;font-size:11px;"><span style="color:#67e8f9;">' + v.totalSize + 'KB</span><div style="color:var(--text3);font-size:9px;">Size</div></div>';
+    cwvHtml += '</div></div>';
+  }
+  cwvHtml += '</div>';
+  return '<div id="core-web-vitals" class="sec"><div class="sec-h"><h2>Core Web Vitals</h2><span class="badge bg-info">LCP / CLS / FCP / TTFB</span></div><div class="sec-b">' + cwvHtml + '</div></div>';
+})()}
+
+<!-- API VALIDATION -->
+${(() => {
+  const apiData = pageData[`${SINGLE_MODE ? 'site1' : 'site2'}_api_validation`];
+  if (!apiData || apiData.totalCalls === 0) return '';
+  let apiHtml = '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;">';
+  apiHtml += '<div class="stat-item"><div class="val" style="color:#67e8f9">' + apiData.totalCalls + '</div><div class="lbl">API Calls</div></div>';
+  apiHtml += '<div class="stat-item"><div class="val" style="color:' + (apiData.errors > 0 ? '#ef4444' : '#22c55e') + '">' + apiData.errors + '</div><div class="lbl">Errors</div></div>';
+  apiHtml += '<div class="stat-item"><div class="val" style="color:' + (apiData.slow > 0 ? '#f59e0b' : '#22c55e') + '">' + apiData.slow + '</div><div class="lbl">Slow (>3s)</div></div>';
+  apiHtml += '<div class="stat-item"><div class="val" style="color:' + (apiData.malformed > 0 ? '#ef4444' : '#22c55e') + '">' + apiData.malformed + '</div><div class="lbl">Bad JSON</div></div>';
+  apiHtml += '</div>';
+  if (apiData.calls && apiData.calls.length > 0) {
+    apiHtml += '<table><thead><tr><th>Method</th><th>URL</th><th>Status</th><th>Time</th><th>Page</th></tr></thead><tbody>';
+    for (const c of apiData.calls.slice(0, 15)) {
+      const statusClass = c.status >= 500 ? 'bg-fail' : c.status >= 400 ? 'bg-warn' : 'bg-pass';
+      apiHtml += '<tr><td><span class="badge bg-info">' + c.method + '</span></td><td style="font-size:11px;word-break:break-all;max-width:300px;">' + c.url + '</td><td><span class="badge ' + statusClass + '">' + c.status + '</span></td><td>' + (c.responseTime ? c.responseTime + 'ms' : '-') + '</td><td style="font-size:11px;">' + c.page + '</td></tr>';
+    }
+    apiHtml += '</tbody></table>';
+  }
+  return '<div id="api-validation" class="sec"><div class="sec-h"><h2>API Response Validation</h2><span class="badge bg-info">' + apiData.totalCalls + ' calls</span></div><div class="sec-b">' + apiHtml + '</div></div>';
+})()}
+
 <!-- ALL BUGS -->
 <div id="all-bugs" class="sec">
-  <div class="sec-h"><h2>Bug Report (${counts.total} Issues Found)</h2></div>
+  <div class="sec-h"><h2>Bug Report (${counts.total} Issues Found)</h2>
+    <div style="display:flex;gap:6px;">
+      <button onclick="sortBugs('severity')" class="filter-btn" style="font-size:10px;">Sort: Severity</button>
+      <button onclick="sortBugs('category')" class="filter-btn" style="font-size:10px;">Sort: Category</button>
+      <button onclick="exportCSV()" class="filter-btn" style="font-size:10px;">Export CSV</button>
+    </div>
+  </div>
   <div class="sec-b">
     <div class="filters">
       <button class="filter-btn active" onclick="filterSeverity('all')">All (${counts.total})</button>
@@ -2249,6 +2405,11 @@ ${a11yHtml.includes('No accessibility data') ? '' : `<!-- ACCESSIBILITY -->
       <button class="filter-btn" onclick="filterSeverity('High')">High (${counts.high})</button>
       <button class="filter-btn" onclick="filterSeverity('Medium')">Medium (${counts.medium})</button>
       <button class="filter-btn" onclick="filterSeverity('Low')">Low (${counts.low})</button>
+    </div>
+    <div class="filters" style="margin-top:0;">
+      <span style="font-size:10px;color:var(--text3);margin-right:4px;">Category:</span>
+      <button class="filter-btn cat-filter-btn active" onclick="filterByCategory('all')" style="font-size:10px;">All</button>
+      ${Object.keys(bugsByCategory).map(cat => `<button class="filter-btn cat-filter-btn" onclick="filterByCategory('${cat}')" style="font-size:10px;">${cat} (${bugsByCategory[cat].length})</button>`).join('')}
     </div>
     ${bugCards}
   </div>
@@ -2275,6 +2436,7 @@ ${a11yHtml.includes('No accessibility data') ? '' : `<!-- ACCESSIBILITY -->
 function toggleTheme(){document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark'}
 function filterSeverity(sev){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));(window.event||{}).target&&window.event.target.classList.add('active');document.querySelectorAll('#all-bugs .bug-card').forEach(c=>{if(sev==='all'){c.classList.remove('hidden');return}c.classList.toggle('hidden',c.dataset.severity!==sev)})}
 function filterBugs(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('#all-bugs .bug-card').forEach(c=>{c.classList.toggle('hidden',q&&!c.textContent.toLowerCase().includes(q))})}
+${enhanced.getEnhancedFilterJS()}
 /* Collapsible sections — click header to toggle */
 document.querySelectorAll('.sec-h').forEach(h=>{h.addEventListener('click',()=>{const body=h.nextElementSibling;if(body&&body.classList.contains('sec-b')){body.style.display=body.style.display==='none'?'block':'none';h.querySelector('.collapse-icon')&&(h.querySelector('.collapse-icon').textContent=body.style.display==='none'?'+':'-')}})});
 /* Image zoom */
@@ -2373,6 +2535,11 @@ document.querySelectorAll('[id]').forEach(s=>{if(s.classList.contains('sec')||s.
     },
     bugsByCategory,
     bugsByTestType,
+    analytics: {
+      healthScore: enhancedReportData.healthScore,
+      hotspots: enhancedReportData.hotspots,
+      byTestType: enhancedReportData.byTestType,
+    },
     phaseTimings: Object.fromEntries(Object.entries(phaseTimings).filter(([, v]) => v.end).map(([k, v]) => [k, v.duration + 's'])),
     bugs: uniqueBugs,
     discovery: { site1: pageData.discovery1, site2: pageData.discovery2 },

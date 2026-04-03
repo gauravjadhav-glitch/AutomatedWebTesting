@@ -314,6 +314,65 @@ node run-test.js <url> --mode=deep       # 60 min, exhaustive testing
 | Rapid qty change | 3 rapid + clicks → no server error |
 | Multi-tab cart | Cart loads in separate browser session |
 
+### Core Web Vitals (NEW)
+| Test | What It Checks | Threshold |
+|------|---------------|-----------|
+| LCP (Largest Contentful Paint) | Main content render time | Good: <2500ms, Poor: >4000ms |
+| CLS (Cumulative Layout Shift) | Visual stability during load | Good: <0.1, Poor: >0.25 |
+| FCP (First Contentful Paint) | First visible content render | Good: <1800ms, Poor: >3000ms |
+| TTFB (Time to First Byte) | Server response speed | Good: <200ms, Poor: >800ms |
+| DOM Size | Number of DOM elements | Warning: >3000, Critical: >5000 |
+
+### Deep Accessibility (NEW — axe-core)
+| Test | What It Checks |
+|------|---------------|
+| axe-core WCAG 2.1 scan | Full WCAG 2.1 AA compliance check |
+| Missing ARIA labels | Interactive elements without labels |
+| Missing form labels | Input fields without associated labels |
+| Heading hierarchy | Correct h1→h2→h3 order |
+| Skip navigation | Skip-to-content link present |
+| Missing lang attribute | <html> has lang="en" or appropriate locale |
+
+### API Response Validation (NEW)
+| Test | What It Checks |
+|------|---------------|
+| 5xx Server Errors | API endpoints returning server errors |
+| 4xx Client Errors | Broken/deprecated API URLs |
+| Slow APIs (>3s) | API responses taking too long |
+| Malformed JSON | Invalid JSON responses from APIs |
+
+### Multi-Language / Locale (NEW)
+| Test | What It Checks |
+|------|---------------|
+| Language Switcher | Detects and tests language dropdown |
+| Content Changes | Switching language actually changes content |
+| hreflang Tags | SEO alternate language links present |
+| HTML lang Attribute | <html> has correct lang attribute |
+
+### Cart Persistence Across Viewports (NEW)
+| Test | What It Checks |
+|------|---------------|
+| Mobile Add to Cart | Add item on iPhone (393x852) |
+| Desktop Cart Check | Same session on desktop (1440x900) shows items |
+| Cookie/Storage Transfer | Session cookies persist across viewport changes |
+
+### Input Validation & Security (NEW)
+| Test | What It Checks |
+|------|---------------|
+| Search XSS | `<script>alert('xss')</script>` reflected in DOM |
+| Search SQL Injection | `' OR 1=1 --` triggers database error message |
+| Phone Validation | Non-numeric input rejected in phone fields |
+| Address XSS | Unsanitized HTML in address form fields |
+
+### Test Priority Execution (NEW)
+| Priority | Test Types | Behavior |
+|----------|-----------|----------|
+| Critical | Login, Checkout, Payment | Run first always |
+| High | E-Commerce, Search, PDP | Run after critical |
+| Standard | Sanity, Perf, A11y, Forms | Run if budget allows |
+| Low | Visual, Comparison, Exploratory | Run last |
+| Dependency | Session, Order, Payment, Pricing | Skip if login fails |
+
 ---
 
 ## 8. Interaction Tests
@@ -376,7 +435,7 @@ node run-test.js <url> --mode=deep       # 60 min, exhaustive testing
 | **Low** | Cosmetic, minimal impact | Missing alt text, minor CSS issues |
 
 ### Bug Categories
-`Routing` · `E-Commerce` · `CSS/Theme` · `Auth` · `Forms` · `UI Alignment` · `Visual Diff` · `Regression` · `Performance` · `SEO/Meta` · `Responsive` · `Navigation` · `Footer` · `Accessibility` · `Content` · `Search` · `User Journey` · `Interaction` · `API` · `Payment` · `Session` · `Image Quality` · `4K Responsive` · `UI Functionality`
+`Routing` · `E-Commerce` · `CSS/Theme` · `Auth` · `Forms` · `UI Alignment` · `Visual Diff` · `Regression` · `Performance` · `SEO/Meta` · `Responsive` · `Navigation` · `Footer` · `Accessibility` · `Content` · `Search` · `User Journey` · `Interaction` · `API` · `Payment` · `Session` · `Image Quality` · `4K Responsive` · `UI Functionality` · `Security` · `i18n/Locale` · `Form Validation`
 
 ### Bug Report Format
 ```
@@ -395,7 +454,7 @@ Fix         → Recommended action
 
 ---
 
-## 12. Reference Test Flows (45 Scenarios)
+## 12. Reference Test Flows (51 Scenarios)
 
 ### Scenario → Test Module Mapping
 
@@ -446,6 +505,12 @@ Fix         → Recommended action
 | 43 | **Pricing Validation** | `runPricingValidationTest` |
 | 44 | **Race Conditions** | `runRaceConditionTest` |
 | 45 | **Coupon Validation** | `runCouponPromoTest` |
+| 46 | **Core Web Vitals** | `enhanced.runCoreWebVitals` |
+| 47 | **Deep Accessibility (axe)** | `enhanced.runAxeAccessibility` |
+| 48 | **API Response Validation** | `enhanced.runAPIValidation` |
+| 49 | **Multi-Language / Locale** | `enhanced.runLocaleTest` |
+| 50 | **Cart Persistence (Viewport)** | `enhanced.runCartPersistenceTest` |
+| 51 | **Input Security (XSS/SQLi)** | `enhanced.runInputSecurityTest` |
 
 ### Expected Texts & Assertions Reference
 
@@ -464,6 +529,11 @@ Fix         → Recommended action
 | Payment COD | "Cash on Delivery" option visible |
 | Order History | Order cards or "no orders" empty state |
 | Price Match | Item total = displayed cart total |
+| Core Web Vitals | LCP < 2500ms, CLS < 0.1, FCP < 1800ms, TTFB < 200ms |
+| API Validation | All API responses return 2xx, respond < 3s, valid JSON |
+| Accessibility | 0 critical/serious axe-core violations |
+| Cart Persistence | Items persist from mobile to desktop viewport |
+| Input Security | No XSS reflection, no SQL error messages exposed |
 
 ---
 
@@ -493,6 +563,11 @@ Fix         → Recommended action
 8. **Budget-aware** — stop gracefully, don't crash mid-test
 9. **Learn from history** — prioritize areas that had bugs before
 10. **Self-healing** — try multiple selectors before failing
+11. **Measure Web Vitals** — capture LCP, CLS, FCP, TTFB on every page
+12. **Validate APIs** — intercept XHR/fetch, flag 4xx/5xx, slow (>3s), bad JSON
+13. **Test inputs** — XSS, SQL injection, invalid formats in search/forms
+14. **Priority execution** — login/checkout first, skip dependents if login fails
+15. **Cross-viewport** — verify cart/session persists between mobile and desktop
 
 ---
 
