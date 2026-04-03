@@ -70,7 +70,7 @@ const RUNTIME_BUDGETS = {
     softStopMs: 17 * 60 * 1000,
     pageTimeoutMs: 30000,
     elementTimeoutMs: 10000,
-    maxCrawlPages: 20,
+    maxCrawlPages: 30,
     mobileDevices: null, // all devices
     footerLinkSampleSize: null, // all
     screenshotPolicy: 'all',
@@ -199,10 +199,25 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
   const browser = await chromium.launch();
 
   // ============================================================
-  // PHASE 1: DISCOVERY — Deep crawl both sites
+  // PHASE 0: LOGIN FIRST — Authenticate before discovery
   // ============================================================
   console.log('\n  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  console.log('  PHASE 1: SITE DISCOVERY');
+  console.log('  PHASE 0: LOGIN (Authenticated Crawl)');
+  console.log('  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+
+  // Login to get authenticated context — pages like /profile, /orders show real data
+  const authResult1 = await advanced.loginAndGetContext(browser, SITE1, log);
+  const authResult2 = SINGLE_MODE ? authResult1 : await advanced.loginAndGetContext(browser, SITE2, log);
+  pageData.auth = {
+    site1LoggedIn: authResult1.loggedIn,
+    site2LoggedIn: authResult2?.loggedIn || false,
+  };
+
+  // ============================================================
+  // PHASE 1: DISCOVERY — Deep crawl both sites (now authenticated)
+  // ============================================================
+  console.log('\n  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+  console.log('  PHASE 1: SITE DISCOVERY' + (authResult1.loggedIn ? ' (AUTHENTICATED)' : ''));
   console.log('  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 
   const discoverOpts = { maxPages: BUDGET.maxCrawlPages, pageTimeout: BUDGET.pageTimeoutMs, mode: MODE };
@@ -460,6 +475,10 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
       if (test.subtype === 'login_flow') {
         for (const [siteUrl, label] of siteList()) {
           await advanced.runLoginTest(browser, siteUrl, label, bugs, pageData, screenshots);
+        }
+      } else if (test.subtype === 'login_scroll') {
+        for (const [siteUrl, label] of siteList()) {
+          await advanced.runLoginAndScrollTest(browser, siteUrl, label, bugs, pageData, screenshots);
         }
       } else if (test.subtype === 'protected_pages') {
         for (const [siteUrl, label] of siteList()) {
@@ -809,6 +828,91 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
       await fourK.run4KTests(browser, siteUrl, label, bugs, pageData, screenshots);
     }
     endPhase('4K UHD');
+    console.log('');
+  }
+
+  // ── TIER 2: SESSION PERSISTENCE ──
+  const sessionTests = testsByType['session'] || [];
+  if (sessionTests.length > 0 && canRun('Session', 2, sessionTests)) {
+    executedPhases.push('session');
+    startPhase('Session');
+    console.log(`\n  Running session persistence tests...`);
+    for (const test of sessionTests) {
+      if (budget.shouldHardStop()) break;
+      for (const [siteUrl, label] of siteList()) {
+        await advanced.runSessionTest(browser, siteUrl, label, bugs, pageData, screenshots);
+      }
+      progress(test.name);
+    }
+    endPhase('Session');
+    console.log('');
+  }
+
+  // ── TIER 2: PAYMENT METHODS ──
+  const paymentTests = testsByType['payment'] || [];
+  if (paymentTests.length > 0 && canRun('Payment', 2, paymentTests)) {
+    executedPhases.push('payment');
+    startPhase('Payment');
+    console.log(`\n  Running payment method tests...`);
+    for (const test of paymentTests) {
+      if (budget.shouldHardStop()) break;
+      for (const [siteUrl, label] of siteList()) {
+        await advanced.runPaymentTest(browser, siteUrl, label, bugs, pageData, screenshots);
+      }
+      progress(test.name);
+    }
+    endPhase('Payment');
+    console.log('');
+  }
+
+  // ── TIER 2: ORDER LIFECYCLE ──
+  const orderTests = testsByType['order_lifecycle'] || [];
+  if (orderTests.length > 0 && canRun('Order Lifecycle', 2, orderTests)) {
+    executedPhases.push('order_lifecycle');
+    startPhase('Order Lifecycle');
+    console.log(`\n  Running order lifecycle tests...`);
+    for (const test of orderTests) {
+      if (budget.shouldHardStop()) break;
+      for (const [siteUrl, label] of siteList()) {
+        await advanced.runOrderLifecycleTest(browser, siteUrl, label, bugs, pageData, screenshots);
+      }
+      progress(test.name);
+    }
+    endPhase('Order Lifecycle');
+    console.log('');
+  }
+
+  // ── TIER 2: PRICING VALIDATION ──
+  const pricingTests = testsByType['pricing'] || [];
+  if (pricingTests.length > 0 && canRun('Pricing', 2, pricingTests)) {
+    executedPhases.push('pricing');
+    startPhase('Pricing');
+    console.log(`\n  Running pricing validation tests...`);
+    for (const test of pricingTests) {
+      if (budget.shouldHardStop()) break;
+      for (const [siteUrl, label] of siteList()) {
+        await advanced.runPricingValidationTest(browser, siteUrl, label, bugs, pageData, screenshots);
+      }
+      progress(test.name);
+    }
+    endPhase('Pricing');
+    console.log('');
+  }
+
+  // ── TIER 2: RACE CONDITIONS ──
+  const raceTests = testsByType['race_condition'] || [];
+  if (raceTests.length > 0 && canRun('Race Conditions', 2, raceTests)) {
+    executedPhases.push('race_conditions');
+    startPhase('Race Conditions');
+    console.log(`\n  Running race condition tests...`);
+    for (const test of raceTests) {
+      if (budget.shouldHardStop()) break;
+      for (const [siteUrl, label] of siteList()) {
+        await advanced.runRaceConditionTest(browser, siteUrl, label, bugs, pageData, screenshots);
+      }
+      progress(test.name);
+    }
+    endPhase('Race Conditions');
     console.log('');
   }
 

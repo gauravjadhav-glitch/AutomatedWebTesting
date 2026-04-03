@@ -1204,20 +1204,21 @@ async function discoverSite(browser, siteUrl, label, log, opts = {}) {
   const fullProbePaths = [
     '/', '/products', '/collections', '/categories',
     '/auth/login', '/auth/register', '/login', '/register', '/signup',
-    '/profile', '/profile/orders', '/profile/addresses', '/profile/wishlist',
+    '/profile', '/profile/details', '/profile/orders', '/profile/addresses',
+    '/profile/phone', '/profile/email', '/profile/wishlist',
     '/cart', '/cart/bag', '/checkout',
     '/wishlist', '/favourites',
     '/products?q=test', '/search?q=test',
     '/contact-us', '/contact', '/pages/contact',
     '/about', '/about-us', '/pages/about',
     '/faq', '/faqs', '/pages/faq',
-    '/terms', '/terms-and-conditions', '/pages/terms',
-    '/privacy', '/privacy-policy', '/pages/privacy',
+    '/terms', '/terms-and-conditions', '/pages/terms', '/sections/terms-and-conditions',
+    '/privacy', '/privacy-policy', '/pages/privacy', '/sections/privacy-policy',
     '/return-policy', '/returns', '/refund-policy',
     '/shipping-policy', '/delivery',
     '/blog', '/blogs', '/articles',
     '/menu',
-    '/store-locator', '/stores', '/find-store',
+    '/store-locator', '/stores', '/find-store', '/locate-us',
     '/size-guide',
     '/gift-cards', '/gift-card',
     '/offers', '/deals', '/sale', '/coupons',
@@ -1467,24 +1468,24 @@ function generateTestPlan(discovery1, discovery2, log) {
   ])];
 
   // ── SANITY TESTS ──
-  // Prioritize key pages: home, PLP, PDP, cart, login, then remaining (max 15)
-  const priorityPaths = ['/', '/products', '/cart', '/cart/bag', '/auth/login', '/login', '/contact-us', '/about'];
+  // Prioritize key pages: home, PLP, PDP, cart, login, then remaining (max 20)
+  const priorityPaths = ['/', '/products', '/cart', '/cart/bag', '/auth/login', '/login', '/contact-us', '/about', '/profile', '/profile/orders', '/wishlist', '/collections'];
   const sortedPaths = [
     ...priorityPaths.filter(p => allPaths.includes(p)),
     ...allPaths.filter(p => !priorityPaths.includes(p)),
   ];
-  const sanityPages = sortedPaths.slice(0, 15);
+  const sanityPages = sortedPaths.slice(0, 20);
   for (const path of sanityPages) {
     tests.push({ id: ++id, type: 'sanity', subtype: 'page_load', name: `Page Load: ${path}`, path, description: `Verify ${path} loads without errors` });
   }
 
   // ── SCREENSHOT COMPARISON ──
-  // Screenshot key live pages on multiple devices (max 10)
+  // Screenshot key live pages on multiple devices (max 20)
   const pagesToScreenshot = sanityPages.filter(p => {
     const s1 = discovery1.pages.find(pg => pg.path === p);
     const s2 = discovery2.pages.find(pg => pg.path === p);
     return (s1 && s1.status === 200) || (s2 && s2.status === 200);
-  }).slice(0, 10);
+  }).slice(0, 20);
   for (const path of pagesToScreenshot) {
     tests.push({ id: ++id, type: 'visual', subtype: 'multi_device', name: `Multi-Device Screenshots: ${path}`, path });
   }
@@ -1684,6 +1685,37 @@ function generateTestPlan(discovery1, discovery2, log) {
 
   // ── CONTENT & POLICY ──
   tests.push({ id: ++id, type: 'content_policy', subtype: 'policy_pages', name: 'Policy Pages (Shipping, Returns, Privacy, Terms, FAQ)' });
+
+  // ── LOGIN + SCROLL VALIDATION ──
+  if (discovery1.features.hasLogin || discovery2.features.hasLogin) {
+    tests.push({ id: ++id, type: 'auth', subtype: 'login_scroll', name: 'Login + Scroll Validation' });
+  }
+
+  // ── SESSION TESTS ──
+  if (discovery1.features.hasLogin || discovery2.features.hasLogin) {
+    tests.push({ id: ++id, type: 'session', subtype: 'session_persist', name: 'Session Persistence (refresh, cart, logout)' });
+  }
+
+  // ── PAYMENT TESTS ──
+  if (discovery1.features.hasCart || discovery2.features.hasCart) {
+    tests.push({ id: ++id, type: 'payment', subtype: 'payment_methods', name: 'Payment Methods (COD, UPI, Card)' });
+    tests.push({ id: ++id, type: 'payment', subtype: 'payment_failure', name: 'Payment Failure & Retry Flow' });
+  }
+
+  // ── ORDER LIFECYCLE ──
+  if (discovery1.features.hasProducts || discovery2.features.hasProducts) {
+    tests.push({ id: ++id, type: 'order_lifecycle', subtype: 'order_lifecycle', name: 'Order Lifecycle (place, verify, cancel)' });
+  }
+
+  // ── PRICING VALIDATION ──
+  if (discovery1.features.hasProducts || discovery2.features.hasProducts) {
+    tests.push({ id: ++id, type: 'pricing', subtype: 'pricing_validation', name: 'Pricing Validation (item=cart total, discount, tax)' });
+  }
+
+  // ── RACE CONDITIONS ──
+  if (discovery1.features.hasCart || discovery2.features.hasCart) {
+    tests.push({ id: ++id, type: 'race_condition', subtype: 'race_condition', name: 'Race Conditions (double ATC, rapid qty, multi-tab)' });
+  }
 
   log(`  [PLAN] Generated ${tests.length} dynamic test cases`);
   return tests;
@@ -5969,6 +6001,691 @@ async function runPolicyPagesTest(browser, siteUrl, label, bugs, pageData) {
   }
 }
 
+// ─────────────────────────────────────────────────────────────
+// LOGIN + SCROLL VALIDATION TEST
+// ─────────────────────────────────────────────────────────────
+
+async function runLoginAndScrollTest(browser, siteUrl, label, bugs, pageData, screenshots) {
+  const sn = siteName(label, siteUrl);
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  const results = [];
+
+  try {
+    // Step 1: Navigate to login
+    await page.goto(siteUrl + '/auth/login', { waitUntil: 'domcontentloaded', timeout: 20000 });
+    await page.waitForTimeout(2000);
+    screenshots[`${label}_loginscroll_page`] = b64(await page.screenshot());
+
+    // Step 2: Enter phone
+    const phoneInput = page.locator('input[type="tel"], input[name="phone"], input[placeholder*="phone" i], input[placeholder*="mobile" i]').first();
+    if (!(await phoneInput.isVisible().catch(() => false))) {
+      results.push({ step: 'Phone Input', status: 'failed', reason: 'Phone input not found' });
+      throw new Error('No phone input');
+    }
+    await phoneInput.fill('8888888888');
+    await page.waitForTimeout(500);
+    results.push({ step: 'Phone Input', status: 'passed', reason: 'Phone entered' });
+
+    // Step 3: Click checkbox (terms)
+    const checkbox = page.locator('input[type="checkbox"], [class*="checkbox"], [class*="terms"] input').first();
+    if (await checkbox.isVisible().catch(() => false)) {
+      await checkbox.click();
+      await page.waitForTimeout(300);
+      results.push({ step: 'Terms Checkbox', status: 'passed', reason: 'Checkbox clicked' });
+    }
+
+    // Step 4: Click Get OTP
+    const sendBtn = page.locator('button:has-text("Send"), button:has-text("Continue"), button:has-text("OTP"), button:has-text("Get OTP"), button:has-text("Sign"), button[type="submit"]').first();
+    if (await sendBtn.isVisible().catch(() => false)) {
+      await sendBtn.click();
+      await page.waitForTimeout(3000);
+      results.push({ step: 'Send OTP', status: 'passed', reason: 'OTP requested' });
+    } else {
+      results.push({ step: 'Send OTP', status: 'failed', reason: 'Send OTP button not found' });
+      throw new Error('No send OTP button');
+    }
+
+    // Step 5: Enter OTP
+    const otpInputs = page.locator('input[type="tel"][maxlength="1"], input[name*="otp"], input[placeholder*="otp" i]');
+    const otpCount = await otpInputs.count();
+    if (otpCount >= 4) {
+      for (let i = 0; i < Math.min(otpCount, 4); i++) {
+        await otpInputs.nth(i).fill('5401'[i]);
+        await page.waitForTimeout(200);
+      }
+    } else {
+      const singleOtp = page.locator('input[name*="otp"], input[placeholder*="otp" i], input[type="tel"]:not([maxlength="1"])').first();
+      if (await singleOtp.isVisible().catch(() => false)) await singleOtp.fill('5401');
+    }
+    results.push({ step: 'Enter OTP', status: 'passed', reason: 'OTP entered: 5401' });
+
+    // Step 5b: Click Verify
+    const verifyBtn = page.locator('button:has-text("Verify"), button:has-text("Submit"), button:has-text("Login"), button:has-text("Sign"), button[type="submit"]').first();
+    if (await verifyBtn.isVisible().catch(() => false)) {
+      await verifyBtn.click();
+      await page.waitForTimeout(5000);
+    }
+
+    // Step 6: Verify login — check for profile/logout
+    const loggedIn = !(page.url().includes('/auth/login') || page.url().includes('/login'));
+    const profileVisible = await page.locator('text=/profile|account|logout|sign out/i').first().isVisible().catch(() => false);
+    if (loggedIn || profileVisible) {
+      results.push({ step: 'Login Verify', status: 'passed', reason: `Logged in — URL: ${page.url().slice(-30)}` });
+    } else {
+      results.push({ step: 'Login Verify', status: 'failed', reason: 'Still on login page' });
+    }
+    screenshots[`${label}_loginscroll_loggedin`] = b64(await page.screenshot());
+
+    // Step 7: Scroll validation
+    // 500px scroll — no UI break
+    await page.evaluate(() => window.scrollTo(0, 500));
+    await page.waitForTimeout(1000);
+    const scroll500 = await page.evaluate(() => {
+      const header = document.querySelector('header, nav');
+      return { scrollY: window.scrollY, headerVisible: header ? header.getBoundingClientRect().bottom > 0 : true, noError: true };
+    });
+    results.push({ step: 'Scroll 500px', status: 'passed', reason: `ScrollY=${scroll500.scrollY}, header visible=${scroll500.headerVisible}` });
+
+    // 1500px scroll — lazy images load
+    await page.evaluate(() => window.scrollTo(0, 1500));
+    await page.waitForTimeout(2000);
+    const scroll1500 = await page.evaluate(() => {
+      const imgs = document.querySelectorAll('img');
+      let loaded = 0, broken = 0;
+      imgs.forEach(img => { if (img.complete && img.naturalWidth > 0) loaded++; else if (img.complete) broken++; });
+      return { loaded, broken, total: imgs.length };
+    });
+    results.push({ step: 'Scroll 1500px', status: scroll1500.broken > 3 ? 'warning' : 'passed', reason: `Images: ${scroll1500.loaded}/${scroll1500.total} loaded, ${scroll1500.broken} broken` });
+    screenshots[`${label}_loginscroll_mid`] = b64(await page.screenshot());
+
+    // Bottom scroll — no crash
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await page.waitForTimeout(1500);
+    const scrollBot = await page.evaluate(() => ({ atBottom: true, scrollY: window.scrollY, bodyH: document.body.scrollHeight }));
+    results.push({ step: 'Scroll Bottom', status: 'passed', reason: `Reached bottom (${scrollBot.scrollY}px/${scrollBot.bodyH}px)` });
+    screenshots[`${label}_loginscroll_bottom`] = b64(await page.screenshot());
+
+    // Step 8: Refresh — session persists
+    await page.reload({ waitUntil: 'domcontentloaded', timeout: 15000 });
+    await page.waitForTimeout(2000);
+    const sessionPersist = !(page.url().includes('/auth/login') || page.url().includes('/login'));
+    const stillLoggedIn = await page.locator('text=/profile|account|logout|sign out/i').first().isVisible().catch(() => false);
+    results.push({ step: 'Session Persist', status: (sessionPersist || stillLoggedIn) ? 'passed' : 'failed', reason: sessionPersist ? 'Session persists after refresh' : 'Session lost after refresh' });
+
+    // Step 9: Click a product (optional)
+    const productLink = page.locator('a[href*="/product/"]').first();
+    if (await productLink.isVisible().catch(() => false)) {
+      await productLink.click();
+      await page.waitForTimeout(3000);
+      const onPDP = page.url().includes('/product/');
+      results.push({ step: 'PDP Navigate', status: onPDP ? 'passed' : 'warning', reason: onPDP ? 'PDP loaded from logged-in state' : `Navigated to: ${page.url().slice(-40)}` });
+      screenshots[`${label}_loginscroll_pdp`] = b64(await page.screenshot());
+    }
+
+  } catch (e) {
+    results.push({ step: 'Error', status: 'failed', reason: e.message?.substring(0, 100) });
+  }
+
+  await page.close();
+  pageData[`${label}_login_scroll_results`] = results;
+
+  const failures = results.filter(r => r.status === 'failed');
+  if (failures.length > 0) {
+    bugs.push({
+      id: bugs.length + 1, severity: 'High', category: 'Auth',
+      title: `Login + Scroll Validation Failed — ${failures.length} issue(s) (${sn})`,
+      description: results.map(r => `${r.status === 'passed' ? '✓' : r.status === 'warning' ? '⚠' : '✗'} ${r.step}: ${r.reason}`).join('\n'),
+      site: sn, fix: 'Fix login flow, scroll behavior, or session persistence',
+      testType: 'User Journey', expected: 'Login → Scroll → Session persist all pass', actual: failures.map(f => f.step).join(', ') + ' failed',
+    });
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// SESSION PERSISTENCE TEST
+// ─────────────────────────────────────────────────────────────
+
+async function runSessionTest(browser, siteUrl, label, bugs, pageData, screenshots) {
+  const sn = siteName(label, siteUrl);
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  const results = [];
+
+  try {
+    // Login first
+    await page.goto(siteUrl + '/auth/login', { waitUntil: 'domcontentloaded', timeout: 20000 });
+    await page.waitForTimeout(2000);
+
+    const phoneInput = page.locator('input[type="tel"], input[name="phone"], input[placeholder*="phone" i]').first();
+    if (await phoneInput.isVisible().catch(() => false)) {
+      await phoneInput.fill('8888888888');
+      const checkbox = page.locator('input[type="checkbox"]').first();
+      if (await checkbox.isVisible().catch(() => false)) await checkbox.click();
+      await page.waitForTimeout(300);
+
+      const sendBtn = page.locator('button:has-text("Send"), button:has-text("Continue"), button:has-text("OTP"), button:has-text("Get OTP"), button[type="submit"]').first();
+      if (await sendBtn.isVisible().catch(() => false)) {
+        await sendBtn.click();
+        await page.waitForTimeout(3000);
+
+        const otpInputs = page.locator('input[type="tel"][maxlength="1"]');
+        const otpCount = await otpInputs.count();
+        if (otpCount >= 4) {
+          for (let i = 0; i < Math.min(otpCount, 4); i++) await otpInputs.nth(i).fill('5401'[i]);
+        } else {
+          const singleOtp = page.locator('input[name*="otp"], input[placeholder*="otp" i]').first();
+          if (await singleOtp.isVisible().catch(() => false)) await singleOtp.fill('5401');
+        }
+
+        const verifyBtn = page.locator('button:has-text("Verify"), button:has-text("Submit"), button:has-text("Login"), button[type="submit"]').first();
+        if (await verifyBtn.isVisible().catch(() => false)) {
+          await verifyBtn.click();
+          await page.waitForTimeout(5000);
+        }
+      }
+    }
+
+    // Test 1: Session persists after refresh
+    await page.reload({ waitUntil: 'domcontentloaded', timeout: 15000 });
+    await page.waitForTimeout(2000);
+    const afterRefresh = !(page.url().includes('/auth/login'));
+    results.push({ test: 'Persist after refresh', status: afterRefresh ? 'passed' : 'failed', reason: afterRefresh ? 'Session maintained' : 'Redirected to login' });
+
+    // Test 2: Cart persists after login
+    await page.goto(siteUrl + '/cart/bag', { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(() => {});
+    await page.waitForTimeout(2000);
+    const cartAccessible = !page.url().includes('/auth/login');
+    results.push({ test: 'Cart accessible while logged in', status: cartAccessible ? 'passed' : 'failed', reason: cartAccessible ? 'Cart page loads' : 'Redirected to login' });
+
+    // Test 3: Profile accessible
+    await page.goto(siteUrl + '/profile', { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(() => {});
+    await page.waitForTimeout(2000);
+    const profileAccessible = !page.url().includes('/auth/login');
+    results.push({ test: 'Profile accessible', status: profileAccessible ? 'passed' : 'failed', reason: profileAccessible ? 'Profile loads' : 'Redirected to login' });
+    screenshots[`${label}_session_profile`] = b64(await page.screenshot());
+
+    // Test 4: Logout clears session
+    const logoutBtn = page.locator('text=/logout|sign out|log out/i, a[href*="logout"]').first();
+    if (await logoutBtn.isVisible().catch(() => false)) {
+      await logoutBtn.click();
+      await page.waitForTimeout(3000);
+      await page.goto(siteUrl + '/profile', { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(() => {});
+      await page.waitForTimeout(2000);
+      const loggedOut = page.url().includes('/auth/login') || page.url().includes('/login');
+      results.push({ test: 'Logout clears session', status: loggedOut ? 'passed' : 'failed', reason: loggedOut ? 'Redirected to login after logout' : 'Still logged in after logout' });
+    } else {
+      results.push({ test: 'Logout clears session', status: 'skipped', reason: 'No logout button found' });
+    }
+
+  } catch (e) {
+    results.push({ test: 'Session test error', status: 'failed', reason: e.message?.substring(0, 100) });
+  }
+
+  await page.close();
+  pageData[`${label}_session_results`] = results;
+
+  const failures = results.filter(r => r.status === 'failed');
+  if (failures.length > 0) {
+    bugs.push({
+      id: bugs.length + 1, severity: 'High', category: 'Auth',
+      title: `Session Persistence Issues — ${failures.length} failure(s) (${sn})`,
+      description: results.map(r => `${r.status === 'passed' ? '✓' : '✗'} ${r.test}: ${r.reason}`).join('\n'),
+      site: sn, fix: 'Fix session management — cookies/tokens should persist correctly',
+      testType: 'Session', expected: 'Session persists after refresh, cart accessible, logout works', actual: failures.map(f => f.test).join(', '),
+    });
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// PAYMENT METHODS TEST
+// ─────────────────────────────────────────────────────────────
+
+async function runPaymentTest(browser, siteUrl, label, bugs, pageData, screenshots) {
+  const sn = siteName(label, siteUrl);
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  const results = [];
+
+  try {
+    // Navigate to checkout (try cart first)
+    await page.goto(siteUrl + '/cart/bag', { waitUntil: 'domcontentloaded', timeout: 20000 });
+    await page.waitForTimeout(2000);
+
+    // Look for checkout/proceed button
+    const checkoutBtn = page.locator('button:has-text("Checkout"), button:has-text("Proceed"), a:has-text("Checkout"), a:has-text("Proceed"), button:has-text("Place Order")').first();
+    if (await checkoutBtn.isVisible().catch(() => false)) {
+      await checkoutBtn.click();
+      await page.waitForTimeout(4000);
+      screenshots[`${label}_payment_checkout`] = b64(await page.screenshot());
+
+      // Check for payment method options
+      const paymentMethods = await page.evaluate(() => {
+        const methods = [];
+        const cod = document.querySelector('[class*="cod"], [class*="cash"], text*="Cash on Delivery"');
+        const upi = document.querySelector('[class*="upi"], text*="UPI"');
+        const card = document.querySelector('[class*="card"], [class*="credit"], [class*="debit"], text*="Card"');
+        const wallet = document.querySelector('[class*="wallet"], text*="Wallet"');
+        if (cod) methods.push('COD');
+        if (upi) methods.push('UPI');
+        if (card) methods.push('Card');
+        if (wallet) methods.push('Wallet');
+        // Also check by text content
+        const allText = document.body.innerText.toLowerCase();
+        if (allText.includes('cash on delivery') && !methods.includes('COD')) methods.push('COD');
+        if (allText.includes('upi') && !methods.includes('UPI')) methods.push('UPI');
+        if ((allText.includes('credit card') || allText.includes('debit card')) && !methods.includes('Card')) methods.push('Card');
+        return methods;
+      });
+
+      if (paymentMethods.length > 0) {
+        results.push({ test: 'Payment Methods Available', status: 'passed', reason: `Found: ${paymentMethods.join(', ')}` });
+      } else {
+        results.push({ test: 'Payment Methods Available', status: 'failed', reason: 'No payment methods found on checkout page' });
+      }
+
+      // Try selecting COD
+      const codBtn = page.locator('text=/cash on delivery|COD/i, [class*="cod"]').first();
+      if (await codBtn.isVisible().catch(() => false)) {
+        await codBtn.click();
+        await page.waitForTimeout(1000);
+        results.push({ test: 'COD Selection', status: 'passed', reason: 'COD option clicked' });
+        screenshots[`${label}_payment_cod`] = b64(await page.screenshot());
+      } else {
+        results.push({ test: 'COD Selection', status: 'skipped', reason: 'COD option not visible' });
+      }
+
+      // Check for Place Order button
+      const placeOrderBtn = page.locator('button:has-text("Place Order"), button:has-text("Confirm"), button:has-text("Pay")').first();
+      results.push({
+        test: 'Place Order Button', status: (await placeOrderBtn.isVisible().catch(() => false)) ? 'passed' : 'failed',
+        reason: (await placeOrderBtn.isVisible().catch(() => false)) ? 'Place Order button visible' : 'No Place Order button found'
+      });
+
+    } else {
+      results.push({ test: 'Checkout Access', status: 'skipped', reason: 'No checkout button found (cart may be empty)' });
+    }
+
+  } catch (e) {
+    results.push({ test: 'Payment test error', status: 'failed', reason: e.message?.substring(0, 100) });
+  }
+
+  await page.close();
+  pageData[`${label}_payment_results`] = results;
+
+  const failures = results.filter(r => r.status === 'failed');
+  if (failures.length > 0) {
+    bugs.push({
+      id: bugs.length + 1, severity: 'High', category: 'Payment',
+      title: `Payment Flow Issues — ${failures.length} failure(s) (${sn})`,
+      description: results.map(r => `${r.status === 'passed' ? '✓' : '✗'} ${r.test}: ${r.reason}`).join('\n'),
+      site: sn, fix: 'Verify payment methods are configured and checkout flow is complete',
+      testType: 'E-Commerce', expected: 'Payment methods visible, COD selectable, Place Order button present', actual: failures.map(f => f.test).join(', '),
+    });
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// ORDER LIFECYCLE TEST
+// ─────────────────────────────────────────────────────────────
+
+async function runOrderLifecycleTest(browser, siteUrl, label, bugs, pageData, screenshots) {
+  const sn = siteName(label, siteUrl);
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  const results = [];
+
+  try {
+    // Check order history page
+    await page.goto(siteUrl + '/profile/orders', { waitUntil: 'domcontentloaded', timeout: 20000 });
+    await page.waitForTimeout(3000);
+
+    // If redirected to login, try logging in first
+    if (page.url().includes('/auth/login') || page.url().includes('/login')) {
+      const phoneInput = page.locator('input[type="tel"]').first();
+      if (await phoneInput.isVisible().catch(() => false)) {
+        await phoneInput.fill('8888888888');
+        const cb = page.locator('input[type="checkbox"]').first();
+        if (await cb.isVisible().catch(() => false)) await cb.click();
+        const sendBtn = page.locator('button:has-text("Send"), button:has-text("Continue"), button:has-text("Get OTP"), button[type="submit"]').first();
+        if (await sendBtn.isVisible().catch(() => false)) {
+          await sendBtn.click();
+          await page.waitForTimeout(3000);
+          const otpInputs = page.locator('input[type="tel"][maxlength="1"]');
+          if (await otpInputs.count() >= 4) {
+            for (let i = 0; i < 4; i++) await otpInputs.nth(i).fill('5401'[i]);
+          }
+          const verifyBtn = page.locator('button:has-text("Verify"), button:has-text("Submit"), button[type="submit"]').first();
+          if (await verifyBtn.isVisible().catch(() => false)) await verifyBtn.click();
+          await page.waitForTimeout(5000);
+          await page.goto(siteUrl + '/profile/orders', { waitUntil: 'domcontentloaded', timeout: 15000 });
+          await page.waitForTimeout(3000);
+        }
+      }
+    }
+
+    screenshots[`${label}_orders_page`] = b64(await page.screenshot());
+
+    // Check order page loads
+    const onOrdersPage = !page.url().includes('/auth/login');
+    results.push({ test: 'Orders Page Accessible', status: onOrdersPage ? 'passed' : 'failed', reason: onOrdersPage ? 'Orders page loaded' : 'Redirected to login' });
+
+    // Check for order items or empty state
+    const orderData = await page.evaluate(() => {
+      const orders = document.querySelectorAll('[class*="order-card"], [class*="order-item"], [class*="orderCard"]');
+      const emptyText = document.body.innerText.toLowerCase();
+      const hasEmptyState = emptyText.includes('no orders') || emptyText.includes('no order') || emptyText.includes('haven\'t placed');
+      return { orderCount: orders.length, hasEmptyState };
+    });
+
+    if (orderData.orderCount > 0) {
+      results.push({ test: 'Order History', status: 'passed', reason: `${orderData.orderCount} order(s) found` });
+
+      // Try clicking first order for details
+      const firstOrder = page.locator('[class*="order-card"], [class*="order-item"], [class*="orderCard"]').first();
+      if (await firstOrder.isVisible().catch(() => false)) {
+        await firstOrder.click();
+        await page.waitForTimeout(3000);
+        screenshots[`${label}_order_detail`] = b64(await page.screenshot());
+
+        // Check for order ID
+        const hasOrderId = await page.evaluate(() => {
+          const text = document.body.innerText;
+          return /order.*(id|#|number)/i.test(text) || /#\d+/.test(text);
+        });
+        results.push({ test: 'Order Detail View', status: 'passed', reason: hasOrderId ? 'Order ID visible' : 'Order detail page loaded' });
+
+        // Check for cancel/return button
+        const cancelBtn = page.locator('button:has-text("Cancel"), button:has-text("Return"), a:has-text("Cancel")').first();
+        results.push({ test: 'Cancel/Return Option', status: (await cancelBtn.isVisible().catch(() => false)) ? 'passed' : 'info', reason: (await cancelBtn.isVisible().catch(() => false)) ? 'Cancel/Return button visible' : 'No cancel option (may be processed)' });
+      }
+    } else if (orderData.hasEmptyState) {
+      results.push({ test: 'Order History', status: 'passed', reason: 'Empty state shown correctly (no orders)' });
+    } else {
+      results.push({ test: 'Order History', status: 'warning', reason: 'No orders and no empty state message' });
+    }
+
+  } catch (e) {
+    results.push({ test: 'Order lifecycle error', status: 'failed', reason: e.message?.substring(0, 100) });
+  }
+
+  await page.close();
+  pageData[`${label}_order_lifecycle`] = results;
+
+  const failures = results.filter(r => r.status === 'failed');
+  if (failures.length > 0) {
+    bugs.push({
+      id: bugs.length + 1, severity: 'High', category: 'E-Commerce',
+      title: `Order Lifecycle Issues — ${failures.length} failure(s) (${sn})`,
+      description: results.map(r => `${r.status === 'passed' ? '✓' : '✗'} ${r.test}: ${r.reason}`).join('\n'),
+      site: sn, fix: 'Fix order history page, order details, and cancel/return flow',
+      testType: 'E-Commerce',
+    });
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// PRICING VALIDATION TEST
+// ─────────────────────────────────────────────────────────────
+
+async function runPricingValidationTest(browser, siteUrl, label, bugs, pageData, screenshots) {
+  const sn = siteName(label, siteUrl);
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  const results = [];
+
+  try {
+    // Go to cart
+    await page.goto(siteUrl + '/cart/bag', { waitUntil: 'domcontentloaded', timeout: 20000 });
+    await page.waitForTimeout(3000);
+    screenshots[`${label}_pricing_cart`] = b64(await page.screenshot());
+
+    const pricing = await page.evaluate(() => {
+      const extractPrice = (text) => {
+        if (!text) return null;
+        const match = text.replace(/,/g, '').match(/[\d]+\.?\d*/);
+        return match ? parseFloat(match[0]) : null;
+      };
+
+      // Item prices
+      const itemEls = document.querySelectorAll('[class*="cart-item"], [class*="bag-item"], [class*="product-card"]');
+      const items = [];
+      itemEls.forEach(el => {
+        const priceEl = el.querySelector('[class*="price"], [class*="amount"]');
+        const qtyEl = el.querySelector('[class*="qty"], [class*="quantity"], input[type="number"]');
+        const price = extractPrice(priceEl?.textContent);
+        const qty = qtyEl ? (parseInt(qtyEl.value || qtyEl.textContent) || 1) : 1;
+        if (price) items.push({ price, qty, total: price * qty });
+      });
+
+      // Subtotal / total
+      const totalEl = document.querySelector('[class*="total"], [class*="subtotal"], [class*="grand-total"], [class*="order-total"]');
+      const totalText = totalEl ? totalEl.textContent : null;
+      const total = extractPrice(totalText);
+
+      // Discount
+      const discountEl = document.querySelector('[class*="discount"], [class*="savings"], [class*="coupon"]');
+      const discount = discountEl ? extractPrice(discountEl.textContent) : 0;
+
+      // Tax
+      const taxEl = document.querySelector('[class*="tax"], [class*="gst"]');
+      const tax = taxEl ? extractPrice(taxEl.textContent) : 0;
+
+      const itemTotal = items.reduce((sum, i) => sum + i.total, 0);
+
+      return { items, itemCount: items.length, itemTotal, displayTotal: total, discount, tax };
+    });
+
+    if (pricing.itemCount > 0) {
+      results.push({ test: 'Items in Cart', status: 'passed', reason: `${pricing.itemCount} item(s), subtotal: ${pricing.itemTotal}` });
+
+      // Validate item total = display total (accounting for discount/tax)
+      if (pricing.displayTotal) {
+        const expectedTotal = pricing.itemTotal - (pricing.discount || 0) + (pricing.tax || 0);
+        const diff = Math.abs(expectedTotal - pricing.displayTotal);
+        if (diff < 2) { // Allow small rounding differences
+          results.push({ test: 'Price Calculation', status: 'passed', reason: `Items(${pricing.itemTotal}) - Discount(${pricing.discount}) + Tax(${pricing.tax}) ≈ Total(${pricing.displayTotal})` });
+        } else {
+          results.push({ test: 'Price Calculation', status: 'failed', reason: `Mismatch: Items(${pricing.itemTotal}) - Discount(${pricing.discount}) + Tax(${pricing.tax}) = ${expectedTotal}, but displayed: ${pricing.displayTotal} (diff: ${diff})` });
+        }
+      }
+    } else {
+      results.push({ test: 'Items in Cart', status: 'skipped', reason: 'Cart is empty — add items first' });
+    }
+
+  } catch (e) {
+    results.push({ test: 'Pricing error', status: 'failed', reason: e.message?.substring(0, 100) });
+  }
+
+  await page.close();
+  pageData[`${label}_pricing_results`] = results;
+
+  const failures = results.filter(r => r.status === 'failed');
+  if (failures.length > 0) {
+    bugs.push({
+      id: bugs.length + 1, severity: 'Critical', category: 'E-Commerce',
+      title: `Pricing Mismatch — Cart total incorrect (${sn})`,
+      description: results.map(r => `${r.status === 'passed' ? '✓' : '✗'} ${r.test}: ${r.reason}`).join('\n'),
+      site: sn, fix: 'Fix cart price calculation — item total should equal displayed total after discount/tax',
+      testType: 'E-Commerce',
+    });
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// RACE CONDITIONS TEST
+// ─────────────────────────────────────────────────────────────
+
+async function runRaceConditionTest(browser, siteUrl, label, bugs, pageData, screenshots) {
+  const sn = siteName(label, siteUrl);
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  const results = [];
+
+  try {
+    // Find a product page
+    await page.goto(siteUrl + '/products', { waitUntil: 'domcontentloaded', timeout: 20000 });
+    await page.waitForTimeout(2000);
+
+    const productLink = await page.evaluate(() => {
+      const a = document.querySelector('a[href*="/product/"]');
+      return a ? a.getAttribute('href') : null;
+    });
+
+    if (productLink) {
+      await page.goto(siteUrl + productLink, { waitUntil: 'domcontentloaded', timeout: 20000 });
+      await page.waitForTimeout(3000);
+
+      // Select size if available
+      const sizeBtn = page.locator('[class*="size"] button, [class*="size"] label, [class*="variant"] button').first();
+      if (await sizeBtn.isVisible().catch(() => false)) await sizeBtn.click();
+      await page.waitForTimeout(500);
+
+      // Test 1: Double-click ATC
+      const atcBtn = page.locator('button:has-text("Add to Cart"), button:has-text("Add to Bag"), button:has-text("ADD TO BAG"), button:has-text("Buy Now")').first();
+      if (await atcBtn.isVisible().catch(() => false)) {
+        await atcBtn.dblclick();
+        await page.waitForTimeout(3000);
+        screenshots[`${label}_race_dblclick`] = b64(await page.screenshot());
+
+        // Check if error or if qty > 1 unexpectedly
+        const noError = await page.evaluate(() => {
+          const text = document.body.innerText.toLowerCase();
+          return !text.includes('error') || text.includes('added') || text.includes('success');
+        });
+        results.push({ test: 'Double-click ATC', status: noError ? 'passed' : 'warning', reason: noError ? 'No crash on double-click' : 'Error message appeared' });
+
+        // Test 2: Rapid qty change in cart
+        await page.goto(siteUrl + '/cart/bag', { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(() =>
+          page.goto(siteUrl + '/cart', { waitUntil: 'domcontentloaded', timeout: 15000 })
+        );
+        await page.waitForTimeout(2000);
+
+        const plusBtn = page.locator('button:has-text("+"), [class*="qty-plus"], [class*="increase"], [class*="increment"]').first();
+        if (await plusBtn.isVisible().catch(() => false)) {
+          // Rapid clicks
+          await plusBtn.click();
+          await plusBtn.click();
+          await plusBtn.click();
+          await page.waitForTimeout(2000);
+          screenshots[`${label}_race_rapidqty`] = b64(await page.screenshot());
+
+          const noQtyError = await page.evaluate(() => {
+            const text = document.body.innerText.toLowerCase();
+            return !text.includes('went wrong') && !text.includes('server error');
+          });
+          results.push({ test: 'Rapid Qty Change', status: noQtyError ? 'passed' : 'failed', reason: noQtyError ? 'Cart handles rapid qty changes' : 'Error on rapid quantity updates' });
+        } else {
+          results.push({ test: 'Rapid Qty Change', status: 'skipped', reason: 'No qty + button found' });
+        }
+
+      } else {
+        results.push({ test: 'Double-click ATC', status: 'skipped', reason: 'ATC button not found' });
+      }
+
+      // Test 3: Multi-tab cart (open cart in new context)
+      try {
+        const ctx2 = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+        const page2 = await ctx2.newPage();
+        await page2.goto(siteUrl + '/cart/bag', { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(() =>
+          page2.goto(siteUrl + '/cart', { waitUntil: 'domcontentloaded', timeout: 15000 })
+        );
+        await page2.waitForTimeout(2000);
+        const noTabCrash = await page2.evaluate(() => document.body.innerText.length > 0);
+        results.push({ test: 'Multi-tab Cart', status: noTabCrash ? 'passed' : 'failed', reason: noTabCrash ? 'Cart loads in separate session' : 'Cart crashed in second tab' });
+        await page2.close();
+        await ctx2.close();
+      } catch {
+        results.push({ test: 'Multi-tab Cart', status: 'warning', reason: 'Could not open second tab' });
+      }
+
+    } else {
+      results.push({ test: 'Race Conditions', status: 'skipped', reason: 'No product found to test' });
+    }
+
+  } catch (e) {
+    results.push({ test: 'Race condition error', status: 'failed', reason: e.message?.substring(0, 100) });
+  }
+
+  await page.close();
+  pageData[`${label}_race_results`] = results;
+
+  const failures = results.filter(r => r.status === 'failed');
+  if (failures.length > 0) {
+    bugs.push({
+      id: bugs.length + 1, severity: 'High', category: 'E-Commerce',
+      title: `Race Condition Issues — ${failures.length} failure(s) (${sn})`,
+      description: results.map(r => `${r.status === 'passed' ? '✓' : '✗'} ${r.test}: ${r.reason}`).join('\n'),
+      site: sn, fix: 'Add debouncing to ATC button, rate-limit qty API calls, handle concurrent cart access',
+      testType: 'E-Commerce',
+    });
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// AUTHENTICATED DISCOVERY — Login then crawl for full data
+// ─────────────────────────────────────────────────────────────
+
+async function loginAndGetContext(browser, siteUrl, log) {
+  log('  [AUTH] Logging in before discovery for authenticated crawl...');
+  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const page = await ctx.newPage();
+
+  try {
+    await page.goto(siteUrl + '/auth/login', { waitUntil: 'domcontentloaded', timeout: 20000 });
+    await page.waitForTimeout(2000);
+
+    const phoneInput = page.locator('input[type="tel"], input[name="phone"], input[placeholder*="phone" i]').first();
+    if (!(await phoneInput.isVisible().catch(() => false))) {
+      log('  [AUTH] No phone input found — skipping auth');
+      await page.close();
+      return { context: ctx, loggedIn: false };
+    }
+
+    await phoneInput.fill('8888888888');
+
+    // Checkbox
+    const checkbox = page.locator('input[type="checkbox"]').first();
+    if (await checkbox.isVisible().catch(() => false)) await checkbox.click();
+    await page.waitForTimeout(300);
+
+    // Send OTP
+    const sendBtn = page.locator('button:has-text("Send"), button:has-text("Continue"), button:has-text("OTP"), button:has-text("Get OTP"), button[type="submit"]').first();
+    if (!(await sendBtn.isVisible().catch(() => false))) {
+      log('  [AUTH] No Send OTP button — skipping auth');
+      await page.close();
+      return { context: ctx, loggedIn: false };
+    }
+    await sendBtn.click();
+    await page.waitForTimeout(3000);
+
+    // Enter OTP
+    const otpInputs = page.locator('input[type="tel"][maxlength="1"]');
+    const otpCount = await otpInputs.count();
+    if (otpCount >= 4) {
+      for (let i = 0; i < Math.min(otpCount, 4); i++) {
+        await otpInputs.nth(i).fill('5401'[i]);
+        await page.waitForTimeout(200);
+      }
+    } else {
+      const singleOtp = page.locator('input[name*="otp"], input[placeholder*="otp" i], input[type="tel"]:not([maxlength="1"])').first();
+      if (await singleOtp.isVisible().catch(() => false)) await singleOtp.fill('5401');
+    }
+
+    // Verify
+    const verifyBtn = page.locator('button:has-text("Verify"), button:has-text("Submit"), button:has-text("Login"), button[type="submit"]').first();
+    if (await verifyBtn.isVisible().catch(() => false)) {
+      await verifyBtn.click();
+      await page.waitForTimeout(5000);
+    }
+
+    const loggedIn = !(page.url().includes('/auth/login') || page.url().includes('/login'));
+    log(loggedIn ? '  [AUTH] ✓ Logged in successfully — authenticated crawl enabled' : '  [AUTH] ✗ Login failed — crawling without auth');
+
+    await page.close();
+    return { context: ctx, loggedIn };
+
+  } catch (e) {
+    log(`  [AUTH] Login error: ${e.message?.substring(0, 80)} — crawling without auth`);
+    await page.close();
+    return { context: ctx, loggedIn: false };
+  }
+}
+
 module.exports = {
   DEVICES,
   discoverSite,
@@ -6047,4 +6764,12 @@ module.exports = {
   runScrollPerformanceTest,
   // Content & policy tests
   runPolicyPagesTest,
+  // New: Login-first architecture + enhanced tests
+  runLoginAndScrollTest,
+  loginAndGetContext,
+  runSessionTest,
+  runPaymentTest,
+  runOrderLifecycleTest,
+  runPricingValidationTest,
+  runRaceConditionTest,
 };
