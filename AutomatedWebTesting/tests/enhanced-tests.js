@@ -475,28 +475,32 @@ async function runAPIValidation(browser, siteUrl, label, pagePaths, bugs, pageDa
 
         if (isAPI && !isStatic) {
           const status = response.status();
-          const timing = await response.request().timing().catch(() => null);
+          let responseTime = null;
+          try {
+            const timing = response.request().timing();
+            if (timing && timing.responseEnd) responseTime = Math.round(timing.responseEnd);
+          } catch {}
           const entry = {
             url: url.substring(0, 200),
             status,
             method: response.request().method(),
-            responseTime: timing ? Math.round(timing.responseEnd) : null,
+            responseTime,
             page: pagePath,
             isError: status >= 400,
-            isSlow: timing && timing.responseEnd > 3000,
+            isSlow: responseTime && responseTime > 3000,
           };
 
           // Try to check response body for malformed JSON (only for JSON APIs)
-          const contentType = response.headers()['content-type'] || '';
-          if (contentType.includes('json') && status < 400) {
-            try {
+          try {
+            const contentType = response.headers()['content-type'] || '';
+            if (contentType.includes('json') && status < 400) {
               const body = await response.text();
               JSON.parse(body);
               entry.validJSON = true;
-            } catch {
-              entry.validJSON = false;
-              entry.malformedJSON = true;
             }
+          } catch {
+            entry.validJSON = false;
+            entry.malformedJSON = true;
           }
 
           apiCalls.push(entry);
