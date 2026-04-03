@@ -1842,40 +1842,51 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
       h += `<div class="lb" style="padding:12px 16px;">
         <span style="font-size:13px;font-weight:700;">Page: ${displayPath}</span>
         <div style="font-size:10px;color:var(--text3);margin-top:4px;">
-          <span style="color:#22c55e;">PROD:</span> <a href="${site1Url}" target="_blank" style="color:#22c55e;text-decoration:underline;">${site1Url}</a>
+          ${SINGLE_MODE
+            ? `<a href="${site1Url}" target="_blank" style="color:#22c55e;text-decoration:underline;">${site1Url}</a>`
+            : `<span style="color:#22c55e;">PROD:</span> <a href="${site1Url}" target="_blank" style="color:#22c55e;text-decoration:underline;">${site1Url}</a>
           &nbsp;&nbsp;|&nbsp;&nbsp;
-          <span style="color:#3b82f6;">UAT:</span> <a href="${site2Url}" target="_blank" style="color:#3b82f6;text-decoration:underline;">${site2Url}</a>
+          <span style="color:#3b82f6;">UAT:</span> <a href="${site2Url}" target="_blank" style="color:#3b82f6;text-decoration:underline;">${site2Url}</a>`}
         </div>
       </div>`;
 
-      // Full page side-by-side (Desktop default)
+      // Full page side-by-side (Desktop default) — single column in single-URL mode
       if (hasSite1Page || hasSite2Page) {
         h += `<div style="padding:6px 12px;background:var(--bg5);font-size:10px;color:var(--text3);border-top:1px solid var(--border);font-weight:700;">Desktop — 1440x900</div>`;
-        h += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--border);">`;
-        // Production
-        h += `<div style="border-right:1px solid var(--border);">`;
-        h += `<div style="padding:6px 12px;background:var(--bg4);text-align:center;font-size:11px;font-weight:700;color:#22c55e;border-bottom:1px solid var(--border);">PRODUCTION — ${SITE1_NAME}</div>`;
-        h += hasSite1Page ? imgTag(site1PageKey) : `<div style="padding:60px 20px;text-align:center;color:#6b7280;background:#111827;font-size:12px;">Screenshot not captured</div>`;
-        h += `</div>`;
-        // UAT
-        h += `<div>`;
-        h += `<div style="padding:6px 12px;background:var(--bg4);text-align:center;font-size:11px;font-weight:700;color:#3b82f6;border-bottom:1px solid var(--border);">UAT — ${SITE2_NAME}</div>`;
-        h += hasSite2Page ? imgTag(site2PageKey) : `<div style="padding:60px 20px;text-align:center;color:#6b7280;background:#111827;font-size:12px;">Screenshot not captured</div>`;
-        // UAT bugs
-        const uatBugs = (bugsByScreenshot[site2PageKey] || []);
-        if (uatBugs.length > 0) {
-          const errorList = uatBugs.map(b => {
+        if (SINGLE_MODE) {
+          // Single URL mode — show one full-width screenshot
+          h += `<div style="border-top:1px solid var(--border);">`;
+          h += `<div style="padding:6px 12px;background:var(--bg4);text-align:center;font-size:11px;font-weight:700;color:#22c55e;border-bottom:1px solid var(--border);">${SITE1_NAME}</div>`;
+          h += hasSite1Page ? imgTag(site1PageKey) : `<div style="padding:60px 20px;text-align:center;color:#6b7280;background:#111827;font-size:12px;">Screenshot not captured</div>`;
+        } else {
+          // Two-URL mode — side-by-side comparison
+          h += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--border);">`;
+          // Production
+          h += `<div style="border-right:1px solid var(--border);">`;
+          h += `<div style="padding:6px 12px;background:var(--bg4);text-align:center;font-size:11px;font-weight:700;color:#22c55e;border-bottom:1px solid var(--border);">PRODUCTION — ${SITE1_NAME}</div>`;
+          h += hasSite1Page ? imgTag(site1PageKey) : `<div style="padding:60px 20px;text-align:center;color:#6b7280;background:#111827;font-size:12px;">Screenshot not captured</div>`;
+          h += `</div>`;
+          // UAT
+          h += `<div>`;
+          h += `<div style="padding:6px 12px;background:var(--bg4);text-align:center;font-size:11px;font-weight:700;color:#3b82f6;border-bottom:1px solid var(--border);">UAT — ${SITE2_NAME}</div>`;
+          h += hasSite2Page ? imgTag(site2PageKey) : `<div style="padding:60px 20px;text-align:center;color:#6b7280;background:#111827;font-size:12px;">Screenshot not captured</div>`;
+        }
+        // Bugs for this screenshot
+        const bugKey = SINGLE_MODE ? site1PageKey : site2PageKey;
+        const pageBugs = (bugsByScreenshot[bugKey] || []);
+        if (pageBugs.length > 0) {
+          const errorList = pageBugs.map(b => {
             const sevColor = b.severity === 'Critical' ? '#ef4444' : b.severity === 'High' ? '#f59e0b' : b.severity === 'Medium' ? '#3b82f6' : '#22c55e';
             return `<div style="padding:6px 8px;margin-bottom:4px;background:var(--bg5);border-radius:4px;border-left:3px solid ${sevColor};font-size:11px;">
               <span style="color:${sevColor};font-weight:700;">${b.severity}</span> ${b.title}
             </div>`;
           }).join('');
           h += `<div style="padding:10px;background:var(--bg4);border-top:1px solid var(--border);">
-            <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">UAT Issues (${uatBugs.length}):</div>
+            <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">Issues (${pageBugs.length}):</div>
             ${errorList}
           </div>`;
         }
-        h += `</div></div>`;
+        h += SINGLE_MODE ? `</div>` : `</div></div>`;
 
         // Visual diff comparison text for Desktop
         const diffData = (pageData._diffResults || {})[site1PageKey];
@@ -1915,33 +1926,58 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
         const viewport = (s2Entry || s1Entry).viewport;
 
         h += `<div style="padding:6px 12px;background:var(--bg5);font-size:10px;color:var(--text3);border-top:1px solid var(--border);font-weight:700;">${deviceName} — ${viewport}</div>`;
-        h += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--border);">`;
-        // Production
-        h += `<div style="border-right:1px solid var(--border);">`;
-        h += `<div style="padding:6px 12px;background:var(--bg4);text-align:center;font-size:11px;font-weight:700;color:#22c55e;border-bottom:1px solid var(--border);">PRODUCTION</div>`;
-        h += s1Entry ? imgTag(s1Entry.key) : `<div style="padding:60px 20px;text-align:center;color:#6b7280;background:#111827;font-size:12px;">Not captured</div>`;
-        h += `</div>`;
-        // UAT
-        h += `<div>`;
-        h += `<div style="padding:6px 12px;background:var(--bg4);text-align:center;font-size:11px;font-weight:700;color:#3b82f6;border-bottom:1px solid var(--border);">UAT</div>`;
-        h += s2Entry ? imgTag(s2Entry.key) : `<div style="padding:60px 20px;text-align:center;color:#6b7280;background:#111827;font-size:12px;">Not captured</div>`;
-        // Device-specific UAT bugs
-        if (s2Entry) {
-          const devBugs = (bugsByScreenshot[s2Entry.key] || []);
-          if (devBugs.length > 0) {
-            const errorList = devBugs.map(b => {
-              const sevColor = b.severity === 'Critical' ? '#ef4444' : b.severity === 'High' ? '#f59e0b' : b.severity === 'Medium' ? '#3b82f6' : '#22c55e';
-              return `<div style="padding:6px 8px;margin-bottom:4px;background:var(--bg5);border-radius:4px;border-left:3px solid ${sevColor};font-size:11px;">
-                <span style="color:${sevColor};font-weight:700;">${b.severity}</span> ${b.title}
+        if (SINGLE_MODE) {
+          // Single URL — single column
+          h += `<div style="border-top:1px solid var(--border);">`;
+          h += `<div style="padding:6px 12px;background:var(--bg4);text-align:center;font-size:11px;font-weight:700;color:#22c55e;border-bottom:1px solid var(--border);">${deviceName}</div>`;
+          h += s1Entry ? imgTag(s1Entry.key) : `<div style="padding:60px 20px;text-align:center;color:#6b7280;background:#111827;font-size:12px;">Not captured</div>`;
+          // Device bugs
+          if (s1Entry) {
+            const devBugs = (bugsByScreenshot[s1Entry.key] || []);
+            if (devBugs.length > 0) {
+              const errorList = devBugs.map(b => {
+                const sevColor = b.severity === 'Critical' ? '#ef4444' : b.severity === 'High' ? '#f59e0b' : b.severity === 'Medium' ? '#3b82f6' : '#22c55e';
+                return `<div style="padding:6px 8px;margin-bottom:4px;background:var(--bg5);border-radius:4px;border-left:3px solid ${sevColor};font-size:11px;">
+                  <span style="color:${sevColor};font-weight:700;">${b.severity}</span> ${b.title}
+                </div>`;
+              }).join('');
+              h += `<div style="padding:10px;background:var(--bg4);border-top:1px solid var(--border);">
+                <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">Issues (${devBugs.length}):</div>
+                ${errorList}
               </div>`;
-            }).join('');
-            h += `<div style="padding:10px;background:var(--bg4);border-top:1px solid var(--border);">
-              <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">UAT Issues (${devBugs.length}):</div>
-              ${errorList}
-            </div>`;
+            }
           }
+          h += `</div>`;
+        } else {
+          // Two URL — side-by-side
+          h += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--border);">`;
+          // Production
+          h += `<div style="border-right:1px solid var(--border);">`;
+          h += `<div style="padding:6px 12px;background:var(--bg4);text-align:center;font-size:11px;font-weight:700;color:#22c55e;border-bottom:1px solid var(--border);">PRODUCTION</div>`;
+          h += s1Entry ? imgTag(s1Entry.key) : `<div style="padding:60px 20px;text-align:center;color:#6b7280;background:#111827;font-size:12px;">Not captured</div>`;
+          h += `</div>`;
+          // UAT
+          h += `<div>`;
+          h += `<div style="padding:6px 12px;background:var(--bg4);text-align:center;font-size:11px;font-weight:700;color:#3b82f6;border-bottom:1px solid var(--border);">UAT</div>`;
+          h += s2Entry ? imgTag(s2Entry.key) : `<div style="padding:60px 20px;text-align:center;color:#6b7280;background:#111827;font-size:12px;">Not captured</div>`;
+          // Device-specific UAT bugs
+          if (s2Entry) {
+            const devBugs = (bugsByScreenshot[s2Entry.key] || []);
+            if (devBugs.length > 0) {
+              const errorList = devBugs.map(b => {
+                const sevColor = b.severity === 'Critical' ? '#ef4444' : b.severity === 'High' ? '#f59e0b' : b.severity === 'Medium' ? '#3b82f6' : '#22c55e';
+                return `<div style="padding:6px 8px;margin-bottom:4px;background:var(--bg5);border-radius:4px;border-left:3px solid ${sevColor};font-size:11px;">
+                  <span style="color:${sevColor};font-weight:700;">${b.severity}</span> ${b.title}
+                </div>`;
+              }).join('');
+              h += `<div style="padding:10px;background:var(--bg4);border-top:1px solid var(--border);">
+                <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">UAT Issues (${devBugs.length}):</div>
+                ${errorList}
+              </div>`;
+            }
+          }
+          h += `</div></div>`;
         }
-        h += `</div></div>`;
 
         // Visual diff comparison text for this device
         if (s1Entry && s2Entry) {
@@ -2568,8 +2604,8 @@ document.querySelectorAll('[id]').forEach(s=>{if(s.classList.contains('sec')||s.
   } catch {}
 
   // Auto-deploy to GitHub Pages (with report history)
-  const GH_REPO = 'https://github.com/gauravjadhav-glitch/HTML-file-.git';
-  const GH_PAGES_URL = 'https://gauravjadhav-glitch.github.io/HTML-file-/';
+  const GH_REPO = 'https://github.com/gauravjadhav-glitch/AutomatedWebTesting.git';
+  const GH_PAGES_URL = 'https://gauravjadhav-glitch.github.io/AutomatedWebTesting/';
   console.log('  Deploying to GitHub Pages...');
   try {
     const deployDir = path.join(REPORT_DIR, 'deploy');
