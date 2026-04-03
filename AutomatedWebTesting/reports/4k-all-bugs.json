@@ -1,0 +1,1047 @@
+[
+  {
+    "id": "BUG-001",
+    "title": "Nav Bar Covers Only 14% of Viewport — / on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "Navigation bar (nav.xDvOo) only covers 14% (554px) of the 4K viewport (3840px). Massive empty gap on the right side.",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Observe the top nav bar\n3. Nav content occupies only left 14%\n4. Right 86% is empty",
+    "expected": "Navigation bar should span 100% of viewport width at 4K",
+    "actual": "Nav is 554px (14% of 3840px) — 3286px empty space on right",
+    "fix": "Set nav width: 100% and remove restrictive max-width. Use flexbox to distribute items.",
+    "screenshot": "4k_home_viewport.png"
+  },
+  {
+    "id": "BUG-002",
+    "title": "7 Blurry Image(s) — / on 4K",
+    "severity": "High",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "4K Responsive"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "7 image(s) are severely blurry at 4K. Source images are too small for render size (2.1x upscale).\n\nAffected images:\n1. \"MEN PRE Collection\" — natural: 578px, rendered: 1221px (2.1x upscale)\n2. \"WOMEN PRE Collection\" — natural: 588px, rendered: 1221px (2.1x upscale)\n3. \"THIRD GENDER PRE Collection\" — natural: 588px, rendered: 1221px (2.1x upscale)\n4. \"theme-default-image-fd59550e-51ba-4d82-8b42-4a0c8f\" — natural: 578px, rendered: 1236px (2.1x upscale)\n5. \"theme-default-image-89db08ea-f095-4c50-8542-b1d4d4\" — natural: 588px, rendered: 1236px (2.1x upscale)\n6. \"theme-default-image-aa242ba4-23e5-4dcf-8e32-1e60e1\" — natural: 588px, rendered: 1236px (2.1x upscale)",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Scroll through the page\n3. Images appear pixelated and blurry\n4. Inspect shows natural size << rendered size\nAffected images:\n1. \"MEN PRE Collection\" — natural: 578px, rendered: 1221px (2.1x upscale)\n2. \"WOMEN PRE Collection\" — natural: 588px, rendered: 1221px (2.1x upscale)\n3. \"THIRD GENDER PRE Collection\" — natural: 588px, rendered: 1221px (2.1x upscale)\n4. \"theme-default-image-fd59550e-51ba-4d82-8b42-4a0c8f\" — natural: 578px, rendered: 1236px (2.1x upscale)\n5. \"theme-default-image-89db08ea-f095-4c50-8542-b1d4d4\" — natural: 588px, rendered: 1236px (2.1x upscale)\n6. \"theme-default-image-aa242ba4-23e5-4dcf-8e32-1e60e1\" — natural: 588px, rendered: 1236px (2.1x upscale)",
+    "expected": "All images should be crisp at 4K. Source >= rendered size (1:1 ratio)",
+    "actual": "7 images upscaled 2.1x — source 578px rendered at 1221px",
+    "fix": "Use srcset/sizes or CDN params (?w=1200&dpr=2) to serve high-res images. Min source width: 900px for 4K.",
+    "screenshot": "4k_home_full.png"
+  },
+  {
+    "id": "BUG-003",
+    "title": "10 Undersized Clickable Elements — / on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "10 interactive element(s) are below the WCAG 44x44px minimum touch target size at 4K.\n\nAffected elements:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"LEGAL AREA\" — only 164x27px — too small to click\n10. <a.gB6Lq>\"Contact us\" — only 123x32px — too small to click",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Try clicking elements below\n3. They are too small to target accurately\nElements that are too small:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"LEGAL AREA\" — only 164x27px — too small to click\n10. <a.gB6Lq>\"Contact us\" — only 123x32px — too small to click",
+    "expected": "All interactive elements should meet WCAG 44x44px minimum target size",
+    "actual": "10 element(s) below 44x44px at 4K",
+    "fix": "Use responsive sizing (clamp(), vw units) for padding/font. Min click target: 44x44px.",
+    "screenshot": "4k_home_viewport.png"
+  },
+  {
+    "id": "BUG-004",
+    "title": "4 Lazy Images Not Loaded in Viewport — / on 4K",
+    "severity": "High",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "4K Responsive"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "4/26 lazy-loaded images within the 4K viewport (2160px tall) failed to load.\n\nBroken images:\n1. \"MEN PRE Collection\" at y=0px — not loaded\n2. \"theme-default-image-47169abd-4c9e-4c45-8b0d-9e793f\" at y=0px — not loaded\n3. \"theme-default-image-612d4210-c21a-4fd4-8848-4950a5\" at y=0px — not loaded\n4. \"theme-image-1773058777926.png\" at y=0px — not loaded",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Wait for full page load\n3. Blank image placeholders visible in viewport\nBroken images:\n1. \"MEN PRE Collection\" at y=0px — not loaded\n2. \"theme-default-image-47169abd-4c9e-4c45-8b0d-9e793f\" at y=0px — not loaded\n3. \"theme-default-image-612d4210-c21a-4fd4-8848-4950a5\" at y=0px — not loaded\n4. \"theme-image-1773058777926.png\" at y=0px — not loaded",
+    "expected": "All in-viewport images should load immediately",
+    "actual": "4/26 lazy images in viewport did not load",
+    "fix": "Remove loading=\"lazy\" from above-the-fold images or use larger Intersection Observer rootMargin.",
+    "screenshot": "4k_home_viewport.png"
+  },
+  {
+    "id": "BUG-005",
+    "title": "5 Overlapping Elements — / on 4K",
+    "severity": "Critical",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "5 element(s) overlap at 4K, potentially blocking interaction.\n\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Observe overlapping UI elements\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "expected": "No interactive elements should overlap at 4K",
+    "actual": "5 element pair(s) overlap significantly",
+    "fix": "Fix z-index stacking and positioning for 4K. Use proper responsive layout.",
+    "screenshot": "4k_home_viewport.png"
+  },
+  {
+    "id": "BUG-006",
+    "title": "1 Broken Image(s) — / on 4K",
+    "severity": "Critical",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "Broken"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "1 image(s) failed to load completely — showing broken image icons.\n\nBroken images:\n1. \"no alt\" — src: ...2,424,430,430,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=779921",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Look for broken image placeholders\nBroken images:\n1. \"no alt\" — src: ...2,424,430,430,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=779921",
+    "expected": "All images should load successfully",
+    "actual": "1 images have naturalWidth=0 after loading",
+    "fix": "Verify image URLs exist and are accessible. Check for 404 errors in network tab.",
+    "screenshot": "4k_home_viewport.png"
+  },
+  {
+    "id": "BUG-007",
+    "title": "6 Images Missing Alt Text — /",
+    "severity": "Medium",
+    "category": "Accessibility",
+    "categoryTags": [
+      "Accessibility",
+      "SEO"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "6 visible image(s) are missing alt attributes — WCAG 1.1.1 violation and SEO issue.\n\nExamples:\n1. <img> src=\"...theme-default-image-f34fbb73-1fb7-4f54-b\" (3840px wide) — no alt attribute\n2. <img> src=\"...theme-default-image-fd59550e-51ba-4d82-8\" (1236px wide) — no alt attribute\n3. <img> src=\"...theme-default-image-89db08ea-f095-4c50-8\" (1236px wide) — no alt attribute\n4. <img> src=\"...theme-default-image-aa242ba4-23e5-4dcf-8\" (1236px wide) — no alt attribute\n5. <img> src=\"...theme-default-image-302d4257-1991-4a7d-9\" (1236px wide) — no alt attribute",
+    "steps": "1. Open https://lamartina.fynd.io/\n2. Inspect images in DevTools\n3. Multiple images lack alt attributes\nExamples:\n1. <img> src=\"...theme-default-image-f34fbb73-1fb7-4f54-b\" (3840px wide) — no alt attribute\n2. <img> src=\"...theme-default-image-fd59550e-51ba-4d82-8\" (1236px wide) — no alt attribute\n3. <img> src=\"...theme-default-image-89db08ea-f095-4c50-8\" (1236px wide) — no alt attribute\n4. <img> src=\"...theme-default-image-aa242ba4-23e5-4dcf-8\" (1236px wide) — no alt attribute\n5. <img> src=\"...theme-default-image-302d4257-1991-4a7d-9\" (1236px wide) — no alt attribute",
+    "expected": "All meaningful images should have descriptive alt text",
+    "actual": "6 images missing alt text",
+    "fix": "Add descriptive alt text to all product and content images. Use alt=\"\" only for decorative images.",
+    "screenshot": "4k_home_viewport.png"
+  },
+  {
+    "id": "BUG-008",
+    "title": "Fixed/Sticky Element Covers 100% of Viewport — / on 4K",
+    "severity": "Medium",
+    "category": "Layout",
+    "categoryTags": [
+      "Layout",
+      "4K Responsive"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "1 fixed/sticky element(s) cover more than 10% of the 4K viewport height, reducing visible content area.\n\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Scroll down\n3. Sticky element(s) consume significant screen space\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "expected": "Fixed/sticky elements should not consume more than 10% of viewport",
+    "actual": "Sticky element covers 100% of 4K viewport (2160px of 2160px)",
+    "fix": "Reduce height of sticky elements at 4K or make them auto-hide on scroll.",
+    "screenshot": "4k_home_viewport.png"
+  },
+  {
+    "id": "BUG-009",
+    "title": "Nav Bar Covers Only 14% of Viewport — /products on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/products on 4K (3840x2160)",
+    "description": "Navigation bar (nav.xDvOo) only covers 14% (554px) of the 4K viewport (3840px). Massive empty gap on the right side.",
+    "steps": "1. Open https://lamartina.fynd.io/products on 4K\n2. Observe the top nav bar\n3. Nav content occupies only left 14%\n4. Right 86% is empty",
+    "expected": "Navigation bar should span 100% of viewport width at 4K",
+    "actual": "Nav is 554px (14% of 3840px) — 3286px empty space on right",
+    "fix": "Set nav width: 100% and remove restrictive max-width. Use flexbox to distribute items.",
+    "screenshot": "4k_products_viewport.png"
+  },
+  {
+    "id": "BUG-010",
+    "title": "17 Blurry Image(s) — /products on 4K",
+    "severity": "High",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "4K Responsive"
+    ],
+    "location": "/products on 4K (3840x2160)",
+    "description": "17 image(s) are severely blurry at 4K. Source images are too small for render size (3.1x upscale).\n\nAffected images:\n1. \"Dark Blue Straight Fit- Larkee Jeans\" — natural: 300px, rendered: 927px (3.1x upscale)\n2. \"Black and Dark Grey Straight Fit- Larkee Jeans\" — natural: 300px, rendered: 927px (3.1x upscale)\n3. \"Red Boxer briefs with blurry Super Logo\" — natural: 300px, rendered: 927px (3.1x upscale)\n4. \"Violet Overdyed hoodie with frayed logo\" — natural: 300px, rendered: 927px (3.1x upscale)\n5. \"TECH RELAXED TEE\" — natural: 300px, rendered: 927px (3.1x upscale)\n6. \"LACE BUTTON THROUGH CAMI TOP\" — natural: 300px, rendered: 927px (3.1x upscale)",
+    "steps": "1. Open https://lamartina.fynd.io/products on 4K\n2. Scroll through the page\n3. Images appear pixelated and blurry\n4. Inspect shows natural size << rendered size\nAffected images:\n1. \"Dark Blue Straight Fit- Larkee Jeans\" — natural: 300px, rendered: 927px (3.1x upscale)\n2. \"Black and Dark Grey Straight Fit- Larkee Jeans\" — natural: 300px, rendered: 927px (3.1x upscale)\n3. \"Red Boxer briefs with blurry Super Logo\" — natural: 300px, rendered: 927px (3.1x upscale)\n4. \"Violet Overdyed hoodie with frayed logo\" — natural: 300px, rendered: 927px (3.1x upscale)\n5. \"TECH RELAXED TEE\" — natural: 300px, rendered: 927px (3.1x upscale)\n6. \"LACE BUTTON THROUGH CAMI TOP\" — natural: 300px, rendered: 927px (3.1x upscale)",
+    "expected": "All images should be crisp at 4K. Source >= rendered size (1:1 ratio)",
+    "actual": "17 images upscaled 3.1x — source 300px rendered at 927px",
+    "fix": "Use srcset/sizes or CDN params (?w=1200&dpr=2) to serve high-res images. Min source width: 900px for 4K.",
+    "screenshot": "4k_products_full.png"
+  },
+  {
+    "id": "BUG-011",
+    "title": "10 Undersized Clickable Elements — /products on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/products on 4K (3840x2160)",
+    "description": "10 interactive element(s) are below the WCAG 44x44px minimum touch target size at 4K.\n\nAffected elements:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <button.Qi2mC>\"Sort by\" — only 112x32px — too small to click\n10. <a>\"LEGAL AREA\" — only 164x27px — too small to click",
+    "steps": "1. Open https://lamartina.fynd.io/products on 4K\n2. Try clicking elements below\n3. They are too small to target accurately\nElements that are too small:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <button.Qi2mC>\"Sort by\" — only 112x32px — too small to click\n10. <a>\"LEGAL AREA\" — only 164x27px — too small to click",
+    "expected": "All interactive elements should meet WCAG 44x44px minimum target size",
+    "actual": "10 element(s) below 44x44px at 4K",
+    "fix": "Use responsive sizing (clamp(), vw units) for padding/font. Min click target: 44x44px.",
+    "screenshot": "4k_products_viewport.png"
+  },
+  {
+    "id": "BUG-012",
+    "title": "3 Lazy Images Not Loaded in Viewport — /products on 4K",
+    "severity": "High",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "4K Responsive"
+    ],
+    "location": "/products on 4K (3840x2160)",
+    "description": "3/32 lazy-loaded images within the 4K viewport (2160px tall) failed to load.\n\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded",
+    "steps": "1. Open https://lamartina.fynd.io/products on 4K\n2. Wait for full page load\n3. Blank image placeholders visible in viewport\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded",
+    "expected": "All in-viewport images should load immediately",
+    "actual": "3/32 lazy images in viewport did not load",
+    "fix": "Remove loading=\"lazy\" from above-the-fold images or use larger Intersection Observer rootMargin.",
+    "screenshot": "4k_products_viewport.png"
+  },
+  {
+    "id": "BUG-013",
+    "title": "5 Overlapping Elements — /products on 4K",
+    "severity": "Critical",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/products on 4K (3840x2160)",
+    "description": "5 element(s) overlap at 4K, potentially blocking interaction.\n\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "steps": "1. Open https://lamartina.fynd.io/products on 4K\n2. Observe overlapping UI elements\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "expected": "No interactive elements should overlap at 4K",
+    "actual": "5 element pair(s) overlap significantly",
+    "fix": "Fix z-index stacking and positioning for 4K. Use proper responsive layout.",
+    "screenshot": "4k_products_viewport.png"
+  },
+  {
+    "id": "BUG-014",
+    "title": "2 Broken Image(s) — /products on 4K",
+    "severity": "Critical",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "Broken"
+    ],
+    "location": "/products on 4K (3840x2160)",
+    "description": "2 image(s) failed to load completely — showing broken image icons.\n\nBroken images:\n1. \"no alt\" — src: ...403,1431,1431,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=269895\n2. \"no alt\" — src: ...ts&sw=3840&sh=2160&sc=24&nwd=1&evt=custom&cdb=AQAQ&rn=100920",
+    "steps": "1. Open https://lamartina.fynd.io/products on 4K\n2. Look for broken image placeholders\nBroken images:\n1. \"no alt\" — src: ...403,1431,1431,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=269895\n2. \"no alt\" — src: ...ts&sw=3840&sh=2160&sc=24&nwd=1&evt=custom&cdb=AQAQ&rn=100920",
+    "expected": "All images should load successfully",
+    "actual": "2 images have naturalWidth=0 after loading",
+    "fix": "Verify image URLs exist and are accessible. Check for 404 errors in network tab.",
+    "screenshot": "4k_products_viewport.png"
+  },
+  {
+    "id": "BUG-015",
+    "title": "Fixed/Sticky Element Covers 100% of Viewport — /products on 4K",
+    "severity": "Medium",
+    "category": "Layout",
+    "categoryTags": [
+      "Layout",
+      "4K Responsive"
+    ],
+    "location": "/products on 4K (3840x2160)",
+    "description": "1 fixed/sticky element(s) cover more than 10% of the 4K viewport height, reducing visible content area.\n\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "steps": "1. Open https://lamartina.fynd.io/products on 4K\n2. Scroll down\n3. Sticky element(s) consume significant screen space\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "expected": "Fixed/sticky elements should not consume more than 10% of viewport",
+    "actual": "Sticky element covers 100% of 4K viewport (2160px of 2160px)",
+    "fix": "Reduce height of sticky elements at 4K or make them auto-hide on scroll.",
+    "screenshot": "4k_products_viewport.png"
+  },
+  {
+    "id": "BUG-016",
+    "title": "Nav Bar Covers Only 14% of Viewport — /collections on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/collections on 4K (3840x2160)",
+    "description": "Navigation bar (nav.xDvOo) only covers 14% (554px) of the 4K viewport (3840px). Massive empty gap on the right side.",
+    "steps": "1. Open https://lamartina.fynd.io/collections on 4K\n2. Observe the top nav bar\n3. Nav content occupies only left 14%\n4. Right 86% is empty",
+    "expected": "Navigation bar should span 100% of viewport width at 4K",
+    "actual": "Nav is 554px (14% of 3840px) — 3286px empty space on right",
+    "fix": "Set nav width: 100% and remove restrictive max-width. Use flexbox to distribute items.",
+    "screenshot": "4k_collections_viewport.png"
+  },
+  {
+    "id": "BUG-017",
+    "title": "1 Blurry Image(s) — /collections on 4K",
+    "severity": "High",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "4K Responsive"
+    ],
+    "location": "/collections on 4K (3840x2160)",
+    "description": "1 image(s) are severely blurry at 4K. Source images are too small for render size (3.0x upscale).\n\nAffected images:\n1. \"xzuftshmmw4yuwzb12pm.png?dpr=1\" — natural: 312px, rendered: 922px (3.0x upscale)",
+    "steps": "1. Open https://lamartina.fynd.io/collections on 4K\n2. Scroll through the page\n3. Images appear pixelated and blurry\n4. Inspect shows natural size << rendered size\nAffected images:\n1. \"xzuftshmmw4yuwzb12pm.png?dpr=1\" — natural: 312px, rendered: 922px (3.0x upscale)",
+    "expected": "All images should be crisp at 4K. Source >= rendered size (1:1 ratio)",
+    "actual": "1 images upscaled 3.0x — source 312px rendered at 922px",
+    "fix": "Use srcset/sizes or CDN params (?w=1200&dpr=2) to serve high-res images. Min source width: 900px for 4K.",
+    "screenshot": "4k_collections_full.png"
+  },
+  {
+    "id": "BUG-018",
+    "title": "10 Undersized Clickable Elements — /collections on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/collections on 4K (3840x2160)",
+    "description": "10 interactive element(s) are below the WCAG 44x44px minimum touch target size at 4K.\n\nAffected elements:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"Home\" — only 33x15px — too small to click\n10. <a>\"LEGAL AREA\" — only 164x27px — too small to click",
+    "steps": "1. Open https://lamartina.fynd.io/collections on 4K\n2. Try clicking elements below\n3. They are too small to target accurately\nElements that are too small:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"Home\" — only 33x15px — too small to click\n10. <a>\"LEGAL AREA\" — only 164x27px — too small to click",
+    "expected": "All interactive elements should meet WCAG 44x44px minimum target size",
+    "actual": "10 element(s) below 44x44px at 4K",
+    "fix": "Use responsive sizing (clamp(), vw units) for padding/font. Min click target: 44x44px.",
+    "screenshot": "4k_collections_viewport.png"
+  },
+  {
+    "id": "BUG-019",
+    "title": "3 Lazy Images Not Loaded in Viewport — /collections on 4K",
+    "severity": "High",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "4K Responsive"
+    ],
+    "location": "/collections on 4K (3840x2160)",
+    "description": "3/15 lazy-loaded images within the 4K viewport (2160px tall) failed to load.\n\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded",
+    "steps": "1. Open https://lamartina.fynd.io/collections on 4K\n2. Wait for full page load\n3. Blank image placeholders visible in viewport\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded",
+    "expected": "All in-viewport images should load immediately",
+    "actual": "3/15 lazy images in viewport did not load",
+    "fix": "Remove loading=\"lazy\" from above-the-fold images or use larger Intersection Observer rootMargin.",
+    "screenshot": "4k_collections_viewport.png"
+  },
+  {
+    "id": "BUG-020",
+    "title": "5 Overlapping Elements — /collections on 4K",
+    "severity": "Critical",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/collections on 4K (3840x2160)",
+    "description": "5 element(s) overlap at 4K, potentially blocking interaction.\n\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "steps": "1. Open https://lamartina.fynd.io/collections on 4K\n2. Observe overlapping UI elements\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "expected": "No interactive elements should overlap at 4K",
+    "actual": "5 element pair(s) overlap significantly",
+    "fix": "Fix z-index stacking and positioning for 4K. Use proper responsive layout.",
+    "screenshot": "4k_collections_viewport.png"
+  },
+  {
+    "id": "BUG-021",
+    "title": "1 Broken Image(s) — /collections on 4K",
+    "severity": "Critical",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "Broken"
+    ],
+    "location": "/collections on 4K (3840x2160)",
+    "description": "1 image(s) failed to load completely — showing broken image icons.\n\nBroken images:\n1. \"no alt\" — src: ...026,1057,1057,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=237386",
+    "steps": "1. Open https://lamartina.fynd.io/collections on 4K\n2. Look for broken image placeholders\nBroken images:\n1. \"no alt\" — src: ...026,1057,1057,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=237386",
+    "expected": "All images should load successfully",
+    "actual": "1 images have naturalWidth=0 after loading",
+    "fix": "Verify image URLs exist and are accessible. Check for 404 errors in network tab.",
+    "screenshot": "4k_collections_viewport.png"
+  },
+  {
+    "id": "BUG-022",
+    "title": "5 Images Missing Alt Text — /collections",
+    "severity": "Medium",
+    "category": "Accessibility",
+    "categoryTags": [
+      "Accessibility",
+      "SEO"
+    ],
+    "location": "/collections on 4K (3840x2160)",
+    "description": "5 visible image(s) are missing alt attributes — WCAG 1.1.1 violation and SEO issue.\n\nExamples:\n1. <img> src=\"...xzuftshmmw4yuwzb12pm.png?dpr=1\" (922px wide) — no alt attribute\n2. <img> src=\"...xzuftshmmw4yuwzb12pm.png?dpr=1\" (922px wide) — no alt attribute\n3. <img> src=\"...xzuftshmmw4yuwzb12pm.png?dpr=1\" (922px wide) — no alt attribute\n4. <img> src=\"...xzuftshmmw4yuwzb12pm.png?dpr=1\" (922px wide) — no alt attribute\n5. <img> src=\"...xzuftshmmw4yuwzb12pm.png?dpr=1\" (922px wide) — no alt attribute",
+    "steps": "1. Open https://lamartina.fynd.io/collections\n2. Inspect images in DevTools\n3. Multiple images lack alt attributes\nExamples:\n1. <img> src=\"...xzuftshmmw4yuwzb12pm.png?dpr=1\" (922px wide) — no alt attribute\n2. <img> src=\"...xzuftshmmw4yuwzb12pm.png?dpr=1\" (922px wide) — no alt attribute\n3. <img> src=\"...xzuftshmmw4yuwzb12pm.png?dpr=1\" (922px wide) — no alt attribute\n4. <img> src=\"...xzuftshmmw4yuwzb12pm.png?dpr=1\" (922px wide) — no alt attribute\n5. <img> src=\"...xzuftshmmw4yuwzb12pm.png?dpr=1\" (922px wide) — no alt attribute",
+    "expected": "All meaningful images should have descriptive alt text",
+    "actual": "5 images missing alt text",
+    "fix": "Add descriptive alt text to all product and content images. Use alt=\"\" only for decorative images.",
+    "screenshot": "4k_collections_viewport.png"
+  },
+  {
+    "id": "BUG-023",
+    "title": "Fixed/Sticky Element Covers 100% of Viewport — /collections on 4K",
+    "severity": "Medium",
+    "category": "Layout",
+    "categoryTags": [
+      "Layout",
+      "4K Responsive"
+    ],
+    "location": "/collections on 4K (3840x2160)",
+    "description": "1 fixed/sticky element(s) cover more than 10% of the 4K viewport height, reducing visible content area.\n\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "steps": "1. Open https://lamartina.fynd.io/collections on 4K\n2. Scroll down\n3. Sticky element(s) consume significant screen space\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "expected": "Fixed/sticky elements should not consume more than 10% of viewport",
+    "actual": "Sticky element covers 100% of 4K viewport (2160px of 2160px)",
+    "fix": "Reduce height of sticky elements at 4K or make them auto-hide on scroll.",
+    "screenshot": "4k_collections_viewport.png"
+  },
+  {
+    "id": "BUG-024",
+    "title": "Nav Bar Covers Only 14% of Viewport — /categories on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/categories on 4K (3840x2160)",
+    "description": "Navigation bar (nav.xDvOo) only covers 14% (554px) of the 4K viewport (3840px). Massive empty gap on the right side.",
+    "steps": "1. Open https://lamartina.fynd.io/categories on 4K\n2. Observe the top nav bar\n3. Nav content occupies only left 14%\n4. Right 86% is empty",
+    "expected": "Navigation bar should span 100% of viewport width at 4K",
+    "actual": "Nav is 554px (14% of 3840px) — 3286px empty space on right",
+    "fix": "Set nav width: 100% and remove restrictive max-width. Use flexbox to distribute items.",
+    "screenshot": "4k_categories_viewport.png"
+  },
+  {
+    "id": "BUG-025",
+    "title": "10 Undersized Clickable Elements — /categories on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/categories on 4K (3840x2160)",
+    "description": "10 interactive element(s) are below the WCAG 44x44px minimum touch target size at 4K.\n\nAffected elements:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"Home\" — only 33x15px — too small to click\n10. <a>\"LEGAL AREA\" — only 164x27px — too small to click",
+    "steps": "1. Open https://lamartina.fynd.io/categories on 4K\n2. Try clicking elements below\n3. They are too small to target accurately\nElements that are too small:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"Home\" — only 33x15px — too small to click\n10. <a>\"LEGAL AREA\" — only 164x27px — too small to click",
+    "expected": "All interactive elements should meet WCAG 44x44px minimum target size",
+    "actual": "10 element(s) below 44x44px at 4K",
+    "fix": "Use responsive sizing (clamp(), vw units) for padding/font. Min click target: 44x44px.",
+    "screenshot": "4k_categories_viewport.png"
+  },
+  {
+    "id": "BUG-026",
+    "title": "3 Lazy Images Not Loaded in Viewport — /categories on 4K",
+    "severity": "High",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "4K Responsive"
+    ],
+    "location": "/categories on 4K (3840x2160)",
+    "description": "3/10 lazy-loaded images within the 4K viewport (2160px tall) failed to load.\n\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded",
+    "steps": "1. Open https://lamartina.fynd.io/categories on 4K\n2. Wait for full page load\n3. Blank image placeholders visible in viewport\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded",
+    "expected": "All in-viewport images should load immediately",
+    "actual": "3/10 lazy images in viewport did not load",
+    "fix": "Remove loading=\"lazy\" from above-the-fold images or use larger Intersection Observer rootMargin.",
+    "screenshot": "4k_categories_viewport.png"
+  },
+  {
+    "id": "BUG-027",
+    "title": "5 Overlapping Elements — /categories on 4K",
+    "severity": "Critical",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/categories on 4K (3840x2160)",
+    "description": "5 element(s) overlap at 4K, potentially blocking interaction.\n\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "steps": "1. Open https://lamartina.fynd.io/categories on 4K\n2. Observe overlapping UI elements\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "expected": "No interactive elements should overlap at 4K",
+    "actual": "5 element pair(s) overlap significantly",
+    "fix": "Fix z-index stacking and positioning for 4K. Use proper responsive layout.",
+    "screenshot": "4k_categories_viewport.png"
+  },
+  {
+    "id": "BUG-028",
+    "title": "1 Broken Image(s) — /categories on 4K",
+    "severity": "Critical",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "Broken"
+    ],
+    "location": "/categories on 4K (3840x2160)",
+    "description": "1 image(s) failed to load completely — showing broken image icons.\n\nBroken images:\n1. \"no alt\" — src: ...053,1080,1080,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=443401",
+    "steps": "1. Open https://lamartina.fynd.io/categories on 4K\n2. Look for broken image placeholders\nBroken images:\n1. \"no alt\" — src: ...053,1080,1080,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=443401",
+    "expected": "All images should load successfully",
+    "actual": "1 images have naturalWidth=0 after loading",
+    "fix": "Verify image URLs exist and are accessible. Check for 404 errors in network tab.",
+    "screenshot": "4k_categories_viewport.png"
+  },
+  {
+    "id": "BUG-029",
+    "title": "Fixed/Sticky Element Covers 100% of Viewport — /categories on 4K",
+    "severity": "Medium",
+    "category": "Layout",
+    "categoryTags": [
+      "Layout",
+      "4K Responsive"
+    ],
+    "location": "/categories on 4K (3840x2160)",
+    "description": "1 fixed/sticky element(s) cover more than 10% of the 4K viewport height, reducing visible content area.\n\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "steps": "1. Open https://lamartina.fynd.io/categories on 4K\n2. Scroll down\n3. Sticky element(s) consume significant screen space\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "expected": "Fixed/sticky elements should not consume more than 10% of viewport",
+    "actual": "Sticky element covers 100% of 4K viewport (2160px of 2160px)",
+    "fix": "Reduce height of sticky elements at 4K or make them auto-hide on scroll.",
+    "screenshot": "4k_categories_viewport.png"
+  },
+  {
+    "id": "BUG-030",
+    "title": "Nav Bar Covers Only 14% of Viewport — /cart on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/cart on 4K (3840x2160)",
+    "description": "Navigation bar (nav.xDvOo) only covers 14% (554px) of the 4K viewport (3840px). Massive empty gap on the right side.",
+    "steps": "1. Open https://lamartina.fynd.io/cart on 4K\n2. Observe the top nav bar\n3. Nav content occupies only left 14%\n4. Right 86% is empty",
+    "expected": "Navigation bar should span 100% of viewport width at 4K",
+    "actual": "Nav is 554px (14% of 3840px) — 3286px empty space on right",
+    "fix": "Set nav width: 100% and remove restrictive max-width. Use flexbox to distribute items.",
+    "screenshot": "4k_cart_viewport.png"
+  },
+  {
+    "id": "BUG-031",
+    "title": "10 Undersized Clickable Elements — /cart on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/cart on 4K (3840x2160)",
+    "description": "10 interactive element(s) are below the WCAG 44x44px minimum touch target size at 4K.\n\nAffected elements:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"LEGAL AREA\" — only 164x27px — too small to click\n10. <a.gB6Lq>\"Contact us\" — only 123x32px — too small to click",
+    "steps": "1. Open https://lamartina.fynd.io/cart on 4K\n2. Try clicking elements below\n3. They are too small to target accurately\nElements that are too small:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"LEGAL AREA\" — only 164x27px — too small to click\n10. <a.gB6Lq>\"Contact us\" — only 123x32px — too small to click",
+    "expected": "All interactive elements should meet WCAG 44x44px minimum target size",
+    "actual": "10 element(s) below 44x44px at 4K",
+    "fix": "Use responsive sizing (clamp(), vw units) for padding/font. Min click target: 44x44px.",
+    "screenshot": "4k_cart_viewport.png"
+  },
+  {
+    "id": "BUG-032",
+    "title": "3 Lazy Images Not Loaded in Viewport — /cart on 4K",
+    "severity": "High",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "4K Responsive"
+    ],
+    "location": "/cart on 4K (3840x2160)",
+    "description": "3/10 lazy-loaded images within the 4K viewport (2160px tall) failed to load.\n\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded",
+    "steps": "1. Open https://lamartina.fynd.io/cart on 4K\n2. Wait for full page load\n3. Blank image placeholders visible in viewport\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded",
+    "expected": "All in-viewport images should load immediately",
+    "actual": "3/10 lazy images in viewport did not load",
+    "fix": "Remove loading=\"lazy\" from above-the-fold images or use larger Intersection Observer rootMargin.",
+    "screenshot": "4k_cart_viewport.png"
+  },
+  {
+    "id": "BUG-033",
+    "title": "5 Overlapping Elements — /cart on 4K",
+    "severity": "Critical",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/cart on 4K (3840x2160)",
+    "description": "5 element(s) overlap at 4K, potentially blocking interaction.\n\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "steps": "1. Open https://lamartina.fynd.io/cart on 4K\n2. Observe overlapping UI elements\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "expected": "No interactive elements should overlap at 4K",
+    "actual": "5 element pair(s) overlap significantly",
+    "fix": "Fix z-index stacking and positioning for 4K. Use proper responsive layout.",
+    "screenshot": "4k_cart_viewport.png"
+  },
+  {
+    "id": "BUG-034",
+    "title": "1 Broken Image(s) — /cart on 4K",
+    "severity": "Critical",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "Broken"
+    ],
+    "location": "/cart on 4K (3840x2160)",
+    "description": "1 image(s) failed to load completely — showing broken image icons.\n\nBroken images:\n1. \"no alt\" — src: ...175,1202,1202,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=420143",
+    "steps": "1. Open https://lamartina.fynd.io/cart on 4K\n2. Look for broken image placeholders\nBroken images:\n1. \"no alt\" — src: ...175,1202,1202,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=420143",
+    "expected": "All images should load successfully",
+    "actual": "1 images have naturalWidth=0 after loading",
+    "fix": "Verify image URLs exist and are accessible. Check for 404 errors in network tab.",
+    "screenshot": "4k_cart_viewport.png"
+  },
+  {
+    "id": "BUG-035",
+    "title": "Fixed/Sticky Element Covers 100% of Viewport — /cart on 4K",
+    "severity": "Medium",
+    "category": "Layout",
+    "categoryTags": [
+      "Layout",
+      "4K Responsive"
+    ],
+    "location": "/cart on 4K (3840x2160)",
+    "description": "1 fixed/sticky element(s) cover more than 10% of the 4K viewport height, reducing visible content area.\n\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "steps": "1. Open https://lamartina.fynd.io/cart on 4K\n2. Scroll down\n3. Sticky element(s) consume significant screen space\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "expected": "Fixed/sticky elements should not consume more than 10% of viewport",
+    "actual": "Sticky element covers 100% of 4K viewport (2160px of 2160px)",
+    "fix": "Reduce height of sticky elements at 4K or make them auto-hide on scroll.",
+    "screenshot": "4k_cart_viewport.png"
+  },
+  {
+    "id": "BUG-036",
+    "title": "Nav Bar Covers Only 14% of Viewport — /auth/login on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/auth/login on 4K (3840x2160)",
+    "description": "Navigation bar (nav.xDvOo) only covers 14% (554px) of the 4K viewport (3840px). Massive empty gap on the right side.",
+    "steps": "1. Open https://lamartina.fynd.io/auth/login on 4K\n2. Observe the top nav bar\n3. Nav content occupies only left 14%\n4. Right 86% is empty",
+    "expected": "Navigation bar should span 100% of viewport width at 4K",
+    "actual": "Nav is 554px (14% of 3840px) — 3286px empty space on right",
+    "fix": "Set nav width: 100% and remove restrictive max-width. Use flexbox to distribute items.",
+    "screenshot": "4k_auth_login_viewport.png"
+  },
+  {
+    "id": "BUG-037",
+    "title": "10 Undersized Clickable Elements — /auth/login on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/auth/login on 4K (3840x2160)",
+    "description": "10 interactive element(s) are below the WCAG 44x44px minimum touch target size at 4K.\n\nAffected elements:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"Terms of Service\" — only 172x28px — too small to click\n10. <a>\"LEGAL AREA\" — only 164x27px — too small to click",
+    "steps": "1. Open https://lamartina.fynd.io/auth/login on 4K\n2. Try clicking elements below\n3. They are too small to target accurately\nElements that are too small:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"Terms of Service\" — only 172x28px — too small to click\n10. <a>\"LEGAL AREA\" — only 164x27px — too small to click",
+    "expected": "All interactive elements should meet WCAG 44x44px minimum target size",
+    "actual": "10 element(s) below 44x44px at 4K",
+    "fix": "Use responsive sizing (clamp(), vw units) for padding/font. Min click target: 44x44px.",
+    "screenshot": "4k_auth_login_viewport.png"
+  },
+  {
+    "id": "BUG-038",
+    "title": "220 Lazy Images Not Loaded in Viewport — /auth/login on 4K",
+    "severity": "High",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "4K Responsive"
+    ],
+    "location": "/auth/login on 4K (3840x2160)",
+    "description": "220/229 lazy-loaded images within the 4K viewport (2160px tall) failed to load.\n\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded\n4. \"1f1e6-1f1eb.svg\" at y=0px — not loaded\n5. \"1f1e6-1f1f1.svg\" at y=0px — not loaded\n6. \"1f1e9-1f1ff.svg\" at y=0px — not loaded\n7. \"1f1e6-1f1e9.svg\" at y=0px — not loaded\n8. \"1f1e6-1f1f4.svg\" at y=0px — not loaded\n9. \"1f1e6-1f1ec.svg\" at y=0px — not loaded\n10. \"1f1e6-1f1f7.svg\" at y=0px — not loaded\n11. \"1f1e6-1f1f2.svg\" at y=0px — not loaded\n12. \"1f1e6-1f1fc.svg\" at y=0px — not loaded\n13. \"1f1e6-1f1fa.svg\" at y=0px — not loaded\n14. \"1f1e6-1f1f9.svg\" at y=0px — not loaded\n15. \"1f1e6-1f1ff.svg\" at y=0px — not loaded\n16. \"1f1e7-1f1f8.svg\" at y=0px — not loaded\n17. \"1f1e7-1f1ed.svg\" at y=0px — not loaded\n18. \"1f1e7-1f1e9.svg\" at y=0px — not loaded\n19. \"1f1e7-1f1e7.svg\" at y=0px — not loaded\n20. \"1f1e7-1f1fe.svg\" at y=0px — not loaded\n21. \"1f1e7-1f1ea.svg\" at y=0px — not loaded\n22. \"1f1e7-1f1ff.svg\" at y=0px — not loaded\n23. \"1f1e7-1f1ef.svg\" at y=0px — not loaded\n24. \"1f1e7-1f1f9.svg\" at y=0px — not loaded\n25. \"1f1e7-1f1f4.svg\" at y=0px — not loaded\n26. \"1f1e7-1f1e6.svg\" at y=0px — not loaded\n27. \"1f1e7-1f1fc.svg\" at y=0px — not loaded\n28. \"1f1e7-1f1f7.svg\" at y=0px — not loaded\n29. \"1f1ee-1f1f4.svg\" at y=0px — not loaded\n30. \"1f1e7-1f1f3.svg\" at y=0px — not loaded\n31. \"1f1e7-1f1ec.svg\" at y=0px — not loaded\n32. \"1f1e7-1f1eb.svg\" at y=0px — not loaded\n33. \"1f1e7-1f1ee.svg\" at y=0px — not loaded\n34. \"1f1f0-1f1ed.svg\" at y=0px — not loaded\n35. \"1f1e8-1f1f2.svg\" at y=0px — not loaded\n36. \"1f1e8-1f1e6.svg\" at y=0px — not loaded\n37. \"1f1e8-1f1fb.svg\" at y=0px — not loaded\n38. \"1f1e7-1f1f6.svg\" at y=0px — not loaded\n39. \"1f1f0-1f1fe.svg\" at y=0px — not loaded\n40. \"1f1e8-1f1eb.svg\" at y=0px — not loaded\n41. \"1f1f9-1f1e9.svg\" at y=0px — not loaded\n42. \"1f1e8-1f1f1.svg\" at y=0px — not loaded\n43. \"1f1e8-1f1f3.svg\" at y=0px — not loaded\n44. \"1f1e8-1f1f4.svg\" at y=0px — not loaded\n45. \"1f1f0-1f1f2.svg\" at y=0px — not loaded\n46. \"1f1e8-1f1e9.svg\" at y=0px — not loaded\n47. \"1f1e8-1f1ec.svg\" at y=0px — not loaded\n48. \"1f1e8-1f1f7.svg\" at y=0px — not loaded\n49. \"1f1e8-1f1ee.svg\" at y=0px — not loaded\n50. \"1f1ed-1f1f7.svg\" at y=0px — not loaded\n51. \"1f1e8-1f1fa.svg\" at y=0px — not loaded\n52. \"1f1e8-1f1fc.svg\" at y=0px — not loaded\n53. \"1f1e8-1f1fe.svg\" at y=0px — not loaded\n54. \"1f1e8-1f1ff.svg\" at y=0px — not loaded\n55. \"1f1e9-1f1f0.svg\" at y=0px — not loaded\n56. \"1f1e9-1f1ef.svg\" at y=0px — not loaded\n57. \"1f1e9-1f1f2.svg\" at y=0px — not loaded\n58. \"1f1e9-1f1f4.svg\" at y=0px — not loaded\n59. \"1f1ea-1f1e8.svg\" at y=0px — not loaded\n60. \"1f1ea-1f1ec.svg\" at y=0px — not loaded\n61. \"1f1f8-1f1fb.svg\" at y=0px — not loaded\n62. \"1f1ec-1f1f6.svg\" at y=0px — not loaded\n63. \"1f1ea-1f1f7.svg\" at y=0px — not loaded\n64. \"1f1ea-1f1ea.svg\" at y=0px — not loaded\n65. \"1f1ea-1f1f9.svg\" at y=0px — not loaded\n66. \"1f1eb-1f1f4.svg\" at y=0px — not loaded\n67. \"1f1eb-1f1ef.svg\" at y=0px — not loaded\n68. \"1f1eb-1f1ee.svg\" at y=0px — not loaded\n69. \"1f1eb-1f1f7.svg\" at y=0px — not loaded\n70. \"1f1ec-1f1eb.svg\" at y=0px — not loaded\n71. \"1f1f5-1f1eb.svg\" at y=0px — not loaded\n72. \"1f1ec-1f1e6.svg\" at y=0px — not loaded\n73. \"1f1ec-1f1f2.svg\" at y=0px — not loaded\n74. \"1f1ec-1f1ea.svg\" at y=0px — not loaded\n75. \"1f1e9-1f1ea.svg\" at y=0px — not loaded\n76. \"1f1ec-1f1ed.svg\" at y=0px — not loaded\n77. \"1f1ec-1f1ee.svg\" at y=0px — not loaded\n78. \"1f1ec-1f1f7.svg\" at y=0px — not loaded\n79. \"1f1ec-1f1f1.svg\" at y=0px — not loaded\n80. \"1f1ec-1f1e9.svg\" at y=0px — not loaded\n81. \"1f1ec-1f1f5.svg\" at y=0px — not loaded\n82. \"1f1ec-1f1fa.svg\" at y=0px — not loaded\n83. \"1f1ec-1f1f9.svg\" at y=0px — not loaded\n84. \"1f1ec-1f1f3.svg\" at y=0px — not loaded\n85. \"1f1ec-1f1fc.svg\" at y=0px — not loaded\n86. \"1f1ec-1f1fe.svg\" at y=0px — not loaded\n87. \"1f1ed-1f1f9.svg\" at y=0px — not loaded\n88. \"1f1ed-1f1f3.svg\" at y=0px — not loaded\n89. \"1f1ed-1f1f0.svg\" at y=0px — not loaded\n90. \"1f1ed-1f1fa.svg\" at y=0px — not loaded\n91. \"1f1ee-1f1f8.svg\" at y=0px — not loaded\n92. \"1f1ee-1f1e9.svg\" at y=0px — not loaded\n93. \"1f1ee-1f1f7.svg\" at y=0px — not loaded\n94. \"1f1ee-1f1f6.svg\" at y=0px — not loaded\n95. \"1f1ee-1f1ea.svg\" at y=0px — not loaded\n96. \"1f1ee-1f1f1.svg\" at y=0px — not loaded\n97. \"1f1ee-1f1f9.svg\" at y=0px — not loaded\n98. \"1f1ef-1f1f2.svg\" at y=0px — not loaded\n99. \"1f1ef-1f1f5.svg\" at y=0px — not loaded\n100. \"1f1ef-1f1f4.svg\" at y=0px — not loaded\n101. \"1f1f0-1f1ff.svg\" at y=0px — not loaded\n102. \"1f1f0-1f1ea.svg\" at y=0px — not loaded\n103. \"1f1f0-1f1ee.svg\" at y=0px — not loaded\n104. \"1f1fd-1f1f0.svg\" at y=0px — not loaded\n105. \"1f1f0-1f1fc.svg\" at y=0px — not loaded\n106. \"1f1f0-1f1ec.svg\" at y=0px — not loaded\n107. \"1f1f1-1f1e6.svg\" at y=0px — not loaded\n108. \"1f1f1-1f1fb.svg\" at y=0px — not loaded\n109. \"1f1f1-1f1e7.svg\" at y=0px — not loaded\n110. \"1f1f1-1f1f8.svg\" at y=0px — not loaded\n111. \"1f1f1-1f1f7.svg\" at y=0px — not loaded\n112. \"1f1f1-1f1fe.svg\" at y=0px — not loaded\n113. \"1f1f1-1f1ee.svg\" at y=0px — not loaded\n114. \"1f1f1-1f1f9.svg\" at y=0px — not loaded\n115. \"1f1f1-1f1fa.svg\" at y=0px — not loaded\n116. \"1f1f2-1f1f4.svg\" at y=0px — not loaded\n117. \"1f1f2-1f1f0.svg\" at y=0px — not loaded\n118. \"1f1f2-1f1ec.svg\" at y=0px — not loaded\n119. \"1f1f2-1f1fc.svg\" at y=0px — not loaded\n120. \"1f1f2-1f1fe.svg\" at y=0px — not loaded\n121. \"1f1f2-1f1fb.svg\" at y=0px — not loaded\n122. \"1f1f2-1f1f1.svg\" at y=0px — not loaded\n123. \"1f1f2-1f1f9.svg\" at y=0px — not loaded\n124. \"1f1f2-1f1ed.svg\" at y=0px — not loaded\n125. \"1f1f2-1f1f6.svg\" at y=0px — not loaded\n126. \"1f1f2-1f1f7.svg\" at y=0px — not loaded\n127. \"1f1f2-1f1fa.svg\" at y=0px — not loaded\n128. \"1f1fe-1f1f9.svg\" at y=0px — not loaded\n129. \"1f1f2-1f1fd.svg\" at y=0px — not loaded\n130. \"1f1eb-1f1f2.svg\" at y=0px — not loaded\n131. \"1f1f2-1f1e9.svg\" at y=0px — not loaded\n132. \"1f1f2-1f1e8.svg\" at y=0px — not loaded\n133. \"1f1f2-1f1f3.svg\" at y=0px — not loaded\n134. \"1f1f2-1f1ea.svg\" at y=0px — not loaded\n135. \"1f1f2-1f1e6.svg\" at y=0px — not loaded\n136. \"1f1f2-1f1ff.svg\" at y=0px — not loaded\n137. \"1f1f2-1f1f2.svg\" at y=0px — not loaded\n138. \"1f1f3-1f1e6.svg\" at y=0px — not loaded\n139. \"1f1f3-1f1f7.svg\" at y=0px — not loaded\n140. \"1f1f3-1f1f5.svg\" at y=0px — not loaded\n141. \"1f1f3-1f1f1.svg\" at y=0px — not loaded\n142. \"1f1f3-1f1e8.svg\" at y=0px — not loaded\n143. \"1f1f3-1f1ff.svg\" at y=0px — not loaded\n144. \"1f1f3-1f1ee.svg\" at y=0px — not loaded\n145. \"1f1f3-1f1ea.svg\" at y=0px — not loaded\n146. \"1f1f3-1f1ec.svg\" at y=0px — not loaded\n147. \"1f1f0-1f1f5.svg\" at y=0px — not loaded\n148. \"1f1f3-1f1f4.svg\" at y=0px — not loaded\n149. \"1f1f4-1f1f2.svg\" at y=0px — not loaded\n150. \"1f1f5-1f1f0.svg\" at y=0px — not loaded\n151. \"1f1f5-1f1fc.svg\" at y=0px — not loaded\n152. \"1f1f5-1f1f8.svg\" at y=0px — not loaded\n153. \"1f1f5-1f1e6.svg\" at y=0px — not loaded\n154. \"1f1f5-1f1ec.svg\" at y=0px — not loaded\n155. \"1f1f5-1f1fe.svg\" at y=0px — not loaded\n156. \"1f1f5-1f1ea.svg\" at y=0px — not loaded\n157. \"1f1f5-1f1ed.svg\" at y=0px — not loaded\n158. \"1f1f5-1f1f1.svg\" at y=0px — not loaded\n159. \"1f1f5-1f1f9.svg\" at y=0px — not loaded\n160. \"1f1f5-1f1f7.svg\" at y=0px — not loaded\n161. \"1f1f6-1f1e6.svg\" at y=0px — not loaded\n162. \"1f1f7-1f1ea.svg\" at y=0px — not loaded\n163. \"1f1f7-1f1f4.svg\" at y=0px — not loaded\n164. \"1f1f7-1f1fa.svg\" at y=0px — not loaded\n165. \"1f1f7-1f1fc.svg\" at y=0px — not loaded\n166. \"1f1f0-1f1f3.svg\" at y=0px — not loaded\n167. \"1f1f1-1f1e8.svg\" at y=0px — not loaded\n168. \"1f1f5-1f1f2.svg\" at y=0px — not loaded\n169. \"1f1fb-1f1e8.svg\" at y=0px — not loaded\n170. \"1f1fc-1f1f8.svg\" at y=0px — not loaded\n171. \"1f1f8-1f1f2.svg\" at y=0px — not loaded\n172. \"1f1f8-1f1f9.svg\" at y=0px — not loaded\n173. \"1f1f8-1f1e6.svg\" at y=0px — not loaded\n174. \"1f1f8-1f1f3.svg\" at y=0px — not loaded\n175. \"1f1f7-1f1f8.svg\" at y=0px — not loaded\n176. \"1f1f8-1f1e8.svg\" at y=0px — not loaded\n177. \"1f1f8-1f1f1.svg\" at y=0px — not loaded\n178. \"1f1f8-1f1ec.svg\" at y=0px — not loaded\n179. \"1f1f8-1f1f0.svg\" at y=0px — not loaded\n180. \"1f1f8-1f1ee.svg\" at y=0px — not loaded\n181. \"1f1f8-1f1e7.svg\" at y=0px — not loaded\n182. \"1f1f8-1f1f4.svg\" at y=0px — not loaded\n183. \"1f1ff-1f1e6.svg\" at y=0px — not loaded\n184. \"1f1f0-1f1f7.svg\" at y=0px — not loaded\n185. \"1f1f8-1f1f8.svg\" at y=0px — not loaded\n186. \"1f1ea-1f1f8.svg\" at y=0px — not loaded\n187. \"1f1f1-1f1f0.svg\" at y=0px — not loaded\n188. \"1f1f8-1f1e9.svg\" at y=0px — not loaded\n189. \"1f1f8-1f1f7.svg\" at y=0px — not loaded\n190. \"1f1f8-1f1ff.svg\" at y=0px — not loaded\n191. \"1f1f8-1f1ea.svg\" at y=0px — not loaded\n192. \"1f1e8-1f1ed.svg\" at y=0px — not loaded\n193. \"1f1f8-1f1fe.svg\" at y=0px — not loaded\n194. \"1f1f9-1f1fc.svg\" at y=0px — not loaded\n195. \"1f1f9-1f1ef.svg\" at y=0px — not loaded\n196. \"1f1f9-1f1ff.svg\" at y=0px — not loaded\n197. \"1f1f9-1f1ed.svg\" at y=0px — not loaded\n198. \"1f1f9-1f1f1.svg\" at y=0px — not loaded\n199. \"1f1f9-1f1ec.svg\" at y=0px — not loaded\n200. \"1f1f9-1f1f4.svg\" at y=0px — not loaded\n201. \"1f1f9-1f1f9.svg\" at y=0px — not loaded\n202. \"1f1f9-1f1f3.svg\" at y=0px — not loaded\n203. \"1f1f9-1f1f7.svg\" at y=0px — not loaded\n204. \"1f1f9-1f1f2.svg\" at y=0px — not loaded\n205. \"1f1f9-1f1fb.svg\" at y=0px — not loaded\n206. \"1f1fa-1f1ec.svg\" at y=0px — not loaded\n207. \"1f1fa-1f1e6.svg\" at y=0px — not loaded\n208. \"1f1e6-1f1ea.svg\" at y=0px — not loaded\n209. \"1f1ec-1f1e7.svg\" at y=0px — not loaded\n210. \"1f1fa-1f1f8.svg\" at y=0px — not loaded\n211. \"1f1fa-1f1fe.svg\" at y=0px — not loaded\n212. \"1f1fa-1f1ff.svg\" at y=0px — not loaded\n213. \"1f1fb-1f1fa.svg\" at y=0px — not loaded\n214. \"1f1fb-1f1e6.svg\" at y=0px — not loaded\n215. \"1f1fb-1f1ea.svg\" at y=0px — not loaded\n216. \"1f1fb-1f1f3.svg\" at y=0px — not loaded\n217. \"1f1fc-1f1eb.svg\" at y=0px — not loaded\n218. \"1f1fe-1f1ea.svg\" at y=0px — not loaded\n219. \"1f1ff-1f1f2.svg\" at y=0px — not loaded\n220. \"1f1ff-1f1fc.svg\" at y=0px — not loaded",
+    "steps": "1. Open https://lamartina.fynd.io/auth/login on 4K\n2. Wait for full page load\n3. Blank image placeholders visible in viewport\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded\n4. \"1f1e6-1f1eb.svg\" at y=0px — not loaded\n5. \"1f1e6-1f1f1.svg\" at y=0px — not loaded\n6. \"1f1e9-1f1ff.svg\" at y=0px — not loaded\n7. \"1f1e6-1f1e9.svg\" at y=0px — not loaded\n8. \"1f1e6-1f1f4.svg\" at y=0px — not loaded\n9. \"1f1e6-1f1ec.svg\" at y=0px — not loaded\n10. \"1f1e6-1f1f7.svg\" at y=0px — not loaded\n11. \"1f1e6-1f1f2.svg\" at y=0px — not loaded\n12. \"1f1e6-1f1fc.svg\" at y=0px — not loaded\n13. \"1f1e6-1f1fa.svg\" at y=0px — not loaded\n14. \"1f1e6-1f1f9.svg\" at y=0px — not loaded\n15. \"1f1e6-1f1ff.svg\" at y=0px — not loaded\n16. \"1f1e7-1f1f8.svg\" at y=0px — not loaded\n17. \"1f1e7-1f1ed.svg\" at y=0px — not loaded\n18. \"1f1e7-1f1e9.svg\" at y=0px — not loaded\n19. \"1f1e7-1f1e7.svg\" at y=0px — not loaded\n20. \"1f1e7-1f1fe.svg\" at y=0px — not loaded\n21. \"1f1e7-1f1ea.svg\" at y=0px — not loaded\n22. \"1f1e7-1f1ff.svg\" at y=0px — not loaded\n23. \"1f1e7-1f1ef.svg\" at y=0px — not loaded\n24. \"1f1e7-1f1f9.svg\" at y=0px — not loaded\n25. \"1f1e7-1f1f4.svg\" at y=0px — not loaded\n26. \"1f1e7-1f1e6.svg\" at y=0px — not loaded\n27. \"1f1e7-1f1fc.svg\" at y=0px — not loaded\n28. \"1f1e7-1f1f7.svg\" at y=0px — not loaded\n29. \"1f1ee-1f1f4.svg\" at y=0px — not loaded\n30. \"1f1e7-1f1f3.svg\" at y=0px — not loaded\n31. \"1f1e7-1f1ec.svg\" at y=0px — not loaded\n32. \"1f1e7-1f1eb.svg\" at y=0px — not loaded\n33. \"1f1e7-1f1ee.svg\" at y=0px — not loaded\n34. \"1f1f0-1f1ed.svg\" at y=0px — not loaded\n35. \"1f1e8-1f1f2.svg\" at y=0px — not loaded\n36. \"1f1e8-1f1e6.svg\" at y=0px — not loaded\n37. \"1f1e8-1f1fb.svg\" at y=0px — not loaded\n38. \"1f1e7-1f1f6.svg\" at y=0px — not loaded\n39. \"1f1f0-1f1fe.svg\" at y=0px — not loaded\n40. \"1f1e8-1f1eb.svg\" at y=0px — not loaded\n41. \"1f1f9-1f1e9.svg\" at y=0px — not loaded\n42. \"1f1e8-1f1f1.svg\" at y=0px — not loaded\n43. \"1f1e8-1f1f3.svg\" at y=0px — not loaded\n44. \"1f1e8-1f1f4.svg\" at y=0px — not loaded\n45. \"1f1f0-1f1f2.svg\" at y=0px — not loaded\n46. \"1f1e8-1f1e9.svg\" at y=0px — not loaded\n47. \"1f1e8-1f1ec.svg\" at y=0px — not loaded\n48. \"1f1e8-1f1f7.svg\" at y=0px — not loaded\n49. \"1f1e8-1f1ee.svg\" at y=0px — not loaded\n50. \"1f1ed-1f1f7.svg\" at y=0px — not loaded\n51. \"1f1e8-1f1fa.svg\" at y=0px — not loaded\n52. \"1f1e8-1f1fc.svg\" at y=0px — not loaded\n53. \"1f1e8-1f1fe.svg\" at y=0px — not loaded\n54. \"1f1e8-1f1ff.svg\" at y=0px — not loaded\n55. \"1f1e9-1f1f0.svg\" at y=0px — not loaded\n56. \"1f1e9-1f1ef.svg\" at y=0px — not loaded\n57. \"1f1e9-1f1f2.svg\" at y=0px — not loaded\n58. \"1f1e9-1f1f4.svg\" at y=0px — not loaded\n59. \"1f1ea-1f1e8.svg\" at y=0px — not loaded\n60. \"1f1ea-1f1ec.svg\" at y=0px — not loaded\n61. \"1f1f8-1f1fb.svg\" at y=0px — not loaded\n62. \"1f1ec-1f1f6.svg\" at y=0px — not loaded\n63. \"1f1ea-1f1f7.svg\" at y=0px — not loaded\n64. \"1f1ea-1f1ea.svg\" at y=0px — not loaded\n65. \"1f1ea-1f1f9.svg\" at y=0px — not loaded\n66. \"1f1eb-1f1f4.svg\" at y=0px — not loaded\n67. \"1f1eb-1f1ef.svg\" at y=0px — not loaded\n68. \"1f1eb-1f1ee.svg\" at y=0px — not loaded\n69. \"1f1eb-1f1f7.svg\" at y=0px — not loaded\n70. \"1f1ec-1f1eb.svg\" at y=0px — not loaded\n71. \"1f1f5-1f1eb.svg\" at y=0px — not loaded\n72. \"1f1ec-1f1e6.svg\" at y=0px — not loaded\n73. \"1f1ec-1f1f2.svg\" at y=0px — not loaded\n74. \"1f1ec-1f1ea.svg\" at y=0px — not loaded\n75. \"1f1e9-1f1ea.svg\" at y=0px — not loaded\n76. \"1f1ec-1f1ed.svg\" at y=0px — not loaded\n77. \"1f1ec-1f1ee.svg\" at y=0px — not loaded\n78. \"1f1ec-1f1f7.svg\" at y=0px — not loaded\n79. \"1f1ec-1f1f1.svg\" at y=0px — not loaded\n80. \"1f1ec-1f1e9.svg\" at y=0px — not loaded\n81. \"1f1ec-1f1f5.svg\" at y=0px — not loaded\n82. \"1f1ec-1f1fa.svg\" at y=0px — not loaded\n83. \"1f1ec-1f1f9.svg\" at y=0px — not loaded\n84. \"1f1ec-1f1f3.svg\" at y=0px — not loaded\n85. \"1f1ec-1f1fc.svg\" at y=0px — not loaded\n86. \"1f1ec-1f1fe.svg\" at y=0px — not loaded\n87. \"1f1ed-1f1f9.svg\" at y=0px — not loaded\n88. \"1f1ed-1f1f3.svg\" at y=0px — not loaded\n89. \"1f1ed-1f1f0.svg\" at y=0px — not loaded\n90. \"1f1ed-1f1fa.svg\" at y=0px — not loaded\n91. \"1f1ee-1f1f8.svg\" at y=0px — not loaded\n92. \"1f1ee-1f1e9.svg\" at y=0px — not loaded\n93. \"1f1ee-1f1f7.svg\" at y=0px — not loaded\n94. \"1f1ee-1f1f6.svg\" at y=0px — not loaded\n95. \"1f1ee-1f1ea.svg\" at y=0px — not loaded\n96. \"1f1ee-1f1f1.svg\" at y=0px — not loaded\n97. \"1f1ee-1f1f9.svg\" at y=0px — not loaded\n98. \"1f1ef-1f1f2.svg\" at y=0px — not loaded\n99. \"1f1ef-1f1f5.svg\" at y=0px — not loaded\n100. \"1f1ef-1f1f4.svg\" at y=0px — not loaded\n101. \"1f1f0-1f1ff.svg\" at y=0px — not loaded\n102. \"1f1f0-1f1ea.svg\" at y=0px — not loaded\n103. \"1f1f0-1f1ee.svg\" at y=0px — not loaded\n104. \"1f1fd-1f1f0.svg\" at y=0px — not loaded\n105. \"1f1f0-1f1fc.svg\" at y=0px — not loaded\n106. \"1f1f0-1f1ec.svg\" at y=0px — not loaded\n107. \"1f1f1-1f1e6.svg\" at y=0px — not loaded\n108. \"1f1f1-1f1fb.svg\" at y=0px — not loaded\n109. \"1f1f1-1f1e7.svg\" at y=0px — not loaded\n110. \"1f1f1-1f1f8.svg\" at y=0px — not loaded\n111. \"1f1f1-1f1f7.svg\" at y=0px — not loaded\n112. \"1f1f1-1f1fe.svg\" at y=0px — not loaded\n113. \"1f1f1-1f1ee.svg\" at y=0px — not loaded\n114. \"1f1f1-1f1f9.svg\" at y=0px — not loaded\n115. \"1f1f1-1f1fa.svg\" at y=0px — not loaded\n116. \"1f1f2-1f1f4.svg\" at y=0px — not loaded\n117. \"1f1f2-1f1f0.svg\" at y=0px — not loaded\n118. \"1f1f2-1f1ec.svg\" at y=0px — not loaded\n119. \"1f1f2-1f1fc.svg\" at y=0px — not loaded\n120. \"1f1f2-1f1fe.svg\" at y=0px — not loaded\n121. \"1f1f2-1f1fb.svg\" at y=0px — not loaded\n122. \"1f1f2-1f1f1.svg\" at y=0px — not loaded\n123. \"1f1f2-1f1f9.svg\" at y=0px — not loaded\n124. \"1f1f2-1f1ed.svg\" at y=0px — not loaded\n125. \"1f1f2-1f1f6.svg\" at y=0px — not loaded\n126. \"1f1f2-1f1f7.svg\" at y=0px — not loaded\n127. \"1f1f2-1f1fa.svg\" at y=0px — not loaded\n128. \"1f1fe-1f1f9.svg\" at y=0px — not loaded\n129. \"1f1f2-1f1fd.svg\" at y=0px — not loaded\n130. \"1f1eb-1f1f2.svg\" at y=0px — not loaded\n131. \"1f1f2-1f1e9.svg\" at y=0px — not loaded\n132. \"1f1f2-1f1e8.svg\" at y=0px — not loaded\n133. \"1f1f2-1f1f3.svg\" at y=0px — not loaded\n134. \"1f1f2-1f1ea.svg\" at y=0px — not loaded\n135. \"1f1f2-1f1e6.svg\" at y=0px — not loaded\n136. \"1f1f2-1f1ff.svg\" at y=0px — not loaded\n137. \"1f1f2-1f1f2.svg\" at y=0px — not loaded\n138. \"1f1f3-1f1e6.svg\" at y=0px — not loaded\n139. \"1f1f3-1f1f7.svg\" at y=0px — not loaded\n140. \"1f1f3-1f1f5.svg\" at y=0px — not loaded\n141. \"1f1f3-1f1f1.svg\" at y=0px — not loaded\n142. \"1f1f3-1f1e8.svg\" at y=0px — not loaded\n143. \"1f1f3-1f1ff.svg\" at y=0px — not loaded\n144. \"1f1f3-1f1ee.svg\" at y=0px — not loaded\n145. \"1f1f3-1f1ea.svg\" at y=0px — not loaded\n146. \"1f1f3-1f1ec.svg\" at y=0px — not loaded\n147. \"1f1f0-1f1f5.svg\" at y=0px — not loaded\n148. \"1f1f3-1f1f4.svg\" at y=0px — not loaded\n149. \"1f1f4-1f1f2.svg\" at y=0px — not loaded\n150. \"1f1f5-1f1f0.svg\" at y=0px — not loaded\n151. \"1f1f5-1f1fc.svg\" at y=0px — not loaded\n152. \"1f1f5-1f1f8.svg\" at y=0px — not loaded\n153. \"1f1f5-1f1e6.svg\" at y=0px — not loaded\n154. \"1f1f5-1f1ec.svg\" at y=0px — not loaded\n155. \"1f1f5-1f1fe.svg\" at y=0px — not loaded\n156. \"1f1f5-1f1ea.svg\" at y=0px — not loaded\n157. \"1f1f5-1f1ed.svg\" at y=0px — not loaded\n158. \"1f1f5-1f1f1.svg\" at y=0px — not loaded\n159. \"1f1f5-1f1f9.svg\" at y=0px — not loaded\n160. \"1f1f5-1f1f7.svg\" at y=0px — not loaded\n161. \"1f1f6-1f1e6.svg\" at y=0px — not loaded\n162. \"1f1f7-1f1ea.svg\" at y=0px — not loaded\n163. \"1f1f7-1f1f4.svg\" at y=0px — not loaded\n164. \"1f1f7-1f1fa.svg\" at y=0px — not loaded\n165. \"1f1f7-1f1fc.svg\" at y=0px — not loaded\n166. \"1f1f0-1f1f3.svg\" at y=0px — not loaded\n167. \"1f1f1-1f1e8.svg\" at y=0px — not loaded\n168. \"1f1f5-1f1f2.svg\" at y=0px — not loaded\n169. \"1f1fb-1f1e8.svg\" at y=0px — not loaded\n170. \"1f1fc-1f1f8.svg\" at y=0px — not loaded\n171. \"1f1f8-1f1f2.svg\" at y=0px — not loaded\n172. \"1f1f8-1f1f9.svg\" at y=0px — not loaded\n173. \"1f1f8-1f1e6.svg\" at y=0px — not loaded\n174. \"1f1f8-1f1f3.svg\" at y=0px — not loaded\n175. \"1f1f7-1f1f8.svg\" at y=0px — not loaded\n176. \"1f1f8-1f1e8.svg\" at y=0px — not loaded\n177. \"1f1f8-1f1f1.svg\" at y=0px — not loaded\n178. \"1f1f8-1f1ec.svg\" at y=0px — not loaded\n179. \"1f1f8-1f1f0.svg\" at y=0px — not loaded\n180. \"1f1f8-1f1ee.svg\" at y=0px — not loaded\n181. \"1f1f8-1f1e7.svg\" at y=0px — not loaded\n182. \"1f1f8-1f1f4.svg\" at y=0px — not loaded\n183. \"1f1ff-1f1e6.svg\" at y=0px — not loaded\n184. \"1f1f0-1f1f7.svg\" at y=0px — not loaded\n185. \"1f1f8-1f1f8.svg\" at y=0px — not loaded\n186. \"1f1ea-1f1f8.svg\" at y=0px — not loaded\n187. \"1f1f1-1f1f0.svg\" at y=0px — not loaded\n188. \"1f1f8-1f1e9.svg\" at y=0px — not loaded\n189. \"1f1f8-1f1f7.svg\" at y=0px — not loaded\n190. \"1f1f8-1f1ff.svg\" at y=0px — not loaded\n191. \"1f1f8-1f1ea.svg\" at y=0px — not loaded\n192. \"1f1e8-1f1ed.svg\" at y=0px — not loaded\n193. \"1f1f8-1f1fe.svg\" at y=0px — not loaded\n194. \"1f1f9-1f1fc.svg\" at y=0px — not loaded\n195. \"1f1f9-1f1ef.svg\" at y=0px — not loaded\n196. \"1f1f9-1f1ff.svg\" at y=0px — not loaded\n197. \"1f1f9-1f1ed.svg\" at y=0px — not loaded\n198. \"1f1f9-1f1f1.svg\" at y=0px — not loaded\n199. \"1f1f9-1f1ec.svg\" at y=0px — not loaded\n200. \"1f1f9-1f1f4.svg\" at y=0px — not loaded\n201. \"1f1f9-1f1f9.svg\" at y=0px — not loaded\n202. \"1f1f9-1f1f3.svg\" at y=0px — not loaded\n203. \"1f1f9-1f1f7.svg\" at y=0px — not loaded\n204. \"1f1f9-1f1f2.svg\" at y=0px — not loaded\n205. \"1f1f9-1f1fb.svg\" at y=0px — not loaded\n206. \"1f1fa-1f1ec.svg\" at y=0px — not loaded\n207. \"1f1fa-1f1e6.svg\" at y=0px — not loaded\n208. \"1f1e6-1f1ea.svg\" at y=0px — not loaded\n209. \"1f1ec-1f1e7.svg\" at y=0px — not loaded\n210. \"1f1fa-1f1f8.svg\" at y=0px — not loaded\n211. \"1f1fa-1f1fe.svg\" at y=0px — not loaded\n212. \"1f1fa-1f1ff.svg\" at y=0px — not loaded\n213. \"1f1fb-1f1fa.svg\" at y=0px — not loaded\n214. \"1f1fb-1f1e6.svg\" at y=0px — not loaded\n215. \"1f1fb-1f1ea.svg\" at y=0px — not loaded\n216. \"1f1fb-1f1f3.svg\" at y=0px — not loaded\n217. \"1f1fc-1f1eb.svg\" at y=0px — not loaded\n218. \"1f1fe-1f1ea.svg\" at y=0px — not loaded\n219. \"1f1ff-1f1f2.svg\" at y=0px — not loaded\n220. \"1f1ff-1f1fc.svg\" at y=0px — not loaded",
+    "expected": "All in-viewport images should load immediately",
+    "actual": "220/229 lazy images in viewport did not load",
+    "fix": "Remove loading=\"lazy\" from above-the-fold images or use larger Intersection Observer rootMargin.",
+    "screenshot": "4k_auth_login_viewport.png"
+  },
+  {
+    "id": "BUG-039",
+    "title": "5 Overlapping Elements — /auth/login on 4K",
+    "severity": "Critical",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/auth/login on 4K (3840x2160)",
+    "description": "5 element(s) overlap at 4K, potentially blocking interaction.\n\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "steps": "1. Open https://lamartina.fynd.io/auth/login on 4K\n2. Observe overlapping UI elements\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "expected": "No interactive elements should overlap at 4K",
+    "actual": "5 element pair(s) overlap significantly",
+    "fix": "Fix z-index stacking and positioning for 4K. Use proper responsive layout.",
+    "screenshot": "4k_auth_login_viewport.png"
+  },
+  {
+    "id": "BUG-040",
+    "title": "Excessive Whitespace (99% unused) — /auth/login on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/auth/login on 4K (3840x2160)",
+    "description": "Main content area only uses 1% (48px) of the 4K viewport. 99% of the screen is empty whitespace.",
+    "steps": "1. Open https://lamartina.fynd.io/auth/login on 4K\n2. Observe content is confined to narrow center column\n3. 99% of viewport is wasted",
+    "expected": "Content should utilize 60-80%+ of viewport at 4K",
+    "actual": "Content uses only 1% of viewport (48px of 3840px)",
+    "fix": "Increase container max-width for large viewports. Use responsive layout that scales up.",
+    "screenshot": "4k_auth_login_viewport.png"
+  },
+  {
+    "id": "BUG-041",
+    "title": "1 Broken Image(s) — /auth/login on 4K",
+    "severity": "Critical",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "Broken"
+    ],
+    "location": "/auth/login on 4K (3840x2160)",
+    "description": "1 image(s) failed to load completely — showing broken image icons.\n\nBroken images:\n1. \"no alt\" — src: ...275,2302,2302,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=870223",
+    "steps": "1. Open https://lamartina.fynd.io/auth/login on 4K\n2. Look for broken image placeholders\nBroken images:\n1. \"no alt\" — src: ...275,2302,2302,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=870223",
+    "expected": "All images should load successfully",
+    "actual": "1 images have naturalWidth=0 after loading",
+    "fix": "Verify image URLs exist and are accessible. Check for 404 errors in network tab.",
+    "screenshot": "4k_auth_login_viewport.png"
+  },
+  {
+    "id": "BUG-042",
+    "title": "Fixed/Sticky Element Covers 100% of Viewport — /auth/login on 4K",
+    "severity": "Medium",
+    "category": "Layout",
+    "categoryTags": [
+      "Layout",
+      "4K Responsive"
+    ],
+    "location": "/auth/login on 4K (3840x2160)",
+    "description": "1 fixed/sticky element(s) cover more than 10% of the 4K viewport height, reducing visible content area.\n\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "steps": "1. Open https://lamartina.fynd.io/auth/login on 4K\n2. Scroll down\n3. Sticky element(s) consume significant screen space\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "expected": "Fixed/sticky elements should not consume more than 10% of viewport",
+    "actual": "Sticky element covers 100% of 4K viewport (2160px of 2160px)",
+    "fix": "Reduce height of sticky elements at 4K or make them auto-hide on scroll.",
+    "screenshot": "4k_auth_login_viewport.png"
+  },
+  {
+    "id": "BUG-043",
+    "title": "Nav Bar Covers Only 14% of Viewport — /contact-us on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/contact-us on 4K (3840x2160)",
+    "description": "Navigation bar (nav.xDvOo) only covers 14% (554px) of the 4K viewport (3840px). Massive empty gap on the right side.",
+    "steps": "1. Open https://lamartina.fynd.io/contact-us on 4K\n2. Observe the top nav bar\n3. Nav content occupies only left 14%\n4. Right 86% is empty",
+    "expected": "Navigation bar should span 100% of viewport width at 4K",
+    "actual": "Nav is 554px (14% of 3840px) — 3286px empty space on right",
+    "fix": "Set nav width: 100% and remove restrictive max-width. Use flexbox to distribute items.",
+    "screenshot": "4k_contact-us_viewport.png"
+  },
+  {
+    "id": "BUG-044",
+    "title": "10 Undersized Clickable Elements — /contact-us on 4K",
+    "severity": "High",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/contact-us on 4K (3840x2160)",
+    "description": "10 interactive element(s) are below the WCAG 44x44px minimum touch target size at 4K.\n\nAffected elements:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"9088993397\" — only 144x30px — too small to click\n10. <a>\"LEGAL AREA\" — only 164x27px — too small to click",
+    "steps": "1. Open https://lamartina.fynd.io/contact-us on 4K\n2. Try clicking elements below\n3. They are too small to target accurately\nElements that are too small:\n1. <a.M0si4>\"customer service\" — only 133x24px — too small to click\n2. <a.M0si4>\"stores\" — only 60x16px — too small to click\n3. <a>\"New In\" — only 82x30px — too small to click\n4. <a>\"Men\" — only 51x30px — too small to click\n5. <a>\"Women\" — only 89x30px — too small to click\n6. <a>\"Collections\" — only 124x30px — too small to click\n7. <a>\"La Martina\" — only 124x30px — too small to click\n8. <button.K6WjU>\"Account\" — only 91x34px — too small to click\n9. <a>\"9088993397\" — only 144x30px — too small to click\n10. <a>\"LEGAL AREA\" — only 164x27px — too small to click",
+    "expected": "All interactive elements should meet WCAG 44x44px minimum target size",
+    "actual": "10 element(s) below 44x44px at 4K",
+    "fix": "Use responsive sizing (clamp(), vw units) for padding/font. Min click target: 44x44px.",
+    "screenshot": "4k_contact-us_viewport.png"
+  },
+  {
+    "id": "BUG-045",
+    "title": "3 Lazy Images Not Loaded in Viewport — /contact-us on 4K",
+    "severity": "High",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "4K Responsive"
+    ],
+    "location": "/contact-us on 4K (3840x2160)",
+    "description": "3/10 lazy-loaded images within the 4K viewport (2160px tall) failed to load.\n\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded",
+    "steps": "1. Open https://lamartina.fynd.io/contact-us on 4K\n2. Wait for full page load\n3. Blank image placeholders visible in viewport\nBroken images:\n1. \"QRh_kwy0f-Home.png?dpr=1\" at y=0px — not loaded\n2. \"_7Cid-lB7-Collections.png?dpr=1\" at y=0px — not loaded\n3. \"Emn-_d_tI-La-Martina.jpeg?dpr=1\" at y=0px — not loaded",
+    "expected": "All in-viewport images should load immediately",
+    "actual": "3/10 lazy images in viewport did not load",
+    "fix": "Remove loading=\"lazy\" from above-the-fold images or use larger Intersection Observer rootMargin.",
+    "screenshot": "4k_contact-us_viewport.png"
+  },
+  {
+    "id": "BUG-046",
+    "title": "5 Overlapping Elements — /contact-us on 4K",
+    "severity": "Critical",
+    "category": "UI Alignment",
+    "categoryTags": [
+      "UI Alignment",
+      "4K Responsive"
+    ],
+    "location": "/contact-us on 4K (3840x2160)",
+    "description": "5 element(s) overlap at 4K, potentially blocking interaction.\n\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "steps": "1. Open https://lamartina.fynd.io/contact-us on 4K\n2. Observe overlapping UI elements\nOverlapping elements:\n1. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"New In\" by 100%\n2. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Men\" by 100%\n3. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Women\" by 100%\n4. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"Collections\" by 100%\n5. <nav>\"New InMenWomenCollectionsLa Ma\" overlaps <a>\"La Martina\" by 100%",
+    "expected": "No interactive elements should overlap at 4K",
+    "actual": "5 element pair(s) overlap significantly",
+    "fix": "Fix z-index stacking and positioning for 4K. Use proper responsive layout.",
+    "screenshot": "4k_contact-us_viewport.png"
+  },
+  {
+    "id": "BUG-047",
+    "title": "1 Broken Image(s) — /contact-us on 4K",
+    "severity": "Critical",
+    "category": "Image Quality",
+    "categoryTags": [
+      "Image Quality",
+      "Broken"
+    ],
+    "location": "/contact-us on 4K (3840x2160)",
+    "description": "1 image(s) failed to load completely — showing broken image icons.\n\nBroken images:\n1. \"no alt\" — src: ...992,1019,1019,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=946513",
+    "steps": "1. Open https://lamartina.fynd.io/contact-us on 4K\n2. Look for broken image placeholders\nBroken images:\n1. \"no alt\" — src: ...992,1019,1019,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=946513",
+    "expected": "All images should load successfully",
+    "actual": "1 images have naturalWidth=0 after loading",
+    "fix": "Verify image URLs exist and are accessible. Check for 404 errors in network tab.",
+    "screenshot": "4k_contact-us_viewport.png"
+  },
+  {
+    "id": "BUG-048",
+    "title": "Fixed/Sticky Element Covers 100% of Viewport — /contact-us on 4K",
+    "severity": "Medium",
+    "category": "Layout",
+    "categoryTags": [
+      "Layout",
+      "4K Responsive"
+    ],
+    "location": "/contact-us on 4K (3840x2160)",
+    "description": "1 fixed/sticky element(s) cover more than 10% of the 4K viewport height, reducing visible content area.\n\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "steps": "1. Open https://lamartina.fynd.io/contact-us on 4K\n2. Scroll down\n3. Sticky element(s) consume significant screen space\nElements:\n1. <div.lYPD1> — 2160px tall (100% of viewport), z-index: 100",
+    "expected": "Fixed/sticky elements should not consume more than 10% of viewport",
+    "actual": "Sticky element covers 100% of 4K viewport (2160px of 2160px)",
+    "fix": "Reduce height of sticky elements at 4K or make them auto-hide on scroll.",
+    "screenshot": "4k_contact-us_viewport.png"
+  },
+  {
+    "id": "BUG-049",
+    "title": "No Focus Indicators — 49/49 Elements",
+    "severity": "High",
+    "category": "Accessibility",
+    "categoryTags": [
+      "Accessibility",
+      "WCAG"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "49/49 (100%) focusable elements lack visible focus indicators. Keyboard navigation is impossible. WCAG 2.4.7 violation.\n\nExamples:\n1. <a>\"customer service\" — no focus outline\n2. <a>\"stores\" — no focus outline\n3. <a>\"New In\" — no focus outline\n4. <a>\"Men\" — no focus outline\n5. <a>\"Women\" — no focus outline",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Press Tab to navigate\n3. No visible focus ring appears\n4. User cannot track focused element\nExamples:\n1. <a>\"customer service\" — no focus outline\n2. <a>\"stores\" — no focus outline\n3. <a>\"New In\" — no focus outline\n4. <a>\"Men\" — no focus outline\n5. <a>\"Women\" — no focus outline",
+    "expected": "All focusable elements should have visible :focus/:focus-visible styles",
+    "actual": "49/49 elements have outline: none — no focus visible",
+    "fix": "Add :focus-visible { outline: 2px solid currentColor; outline-offset: 2px; } to all interactive elements.",
+    "screenshot": "4k_home_viewport.png"
+  },
+  {
+    "id": "BUG-050",
+    "title": "Poor Color Contrast — 56/62 Elements Fail WCAG",
+    "severity": "High",
+    "category": "Accessibility",
+    "categoryTags": [
+      "Accessibility",
+      "WCAG"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "56/62 (90%) text elements have contrast ratio below WCAG AA minimum 4.5:1.\n\nExamples:\n1. <h5>\"New In\" — contrast ratio: 1.09:1\n2. <a>\"New In\" — contrast ratio: 1.09:1\n3. <h5>\"Men\" — contrast ratio: 1.09:1\n4. <a>\"Men\" — contrast ratio: 1.09:1\n5. <h5>\"Women\" — contrast ratio: 1.09:1",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Observe text elements across the page\n3. Many have insufficient contrast\nExamples:\n1. <h5>\"New In\" — contrast ratio: 1.09:1\n2. <a>\"New In\" — contrast ratio: 1.09:1\n3. <h5>\"Men\" — contrast ratio: 1.09:1\n4. <a>\"Men\" — contrast ratio: 1.09:1\n5. <h5>\"Women\" — contrast ratio: 1.09:1",
+    "expected": "All text should meet WCAG AA 4.5:1 contrast ratio",
+    "actual": "56/62 elements fail contrast check",
+    "fix": "Darken text or lighten backgrounds. Use a contrast checker tool to verify. Min ratio: 4.5:1 (normal), 3:1 (large text).",
+    "screenshot": "4k_home_viewport.png"
+  },
+  {
+    "id": "BUG-051",
+    "title": "Header Icons Missing/Too Small — 4 Issue(s)",
+    "severity": "High",
+    "category": "Navigation",
+    "categoryTags": [
+      "Navigation",
+      "4K Responsive"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "4 header icon issue(s) at 4K resolution. Essential e-commerce navigation icons are missing or too small.\n\nIssues:\n1. Cart icon — not found\n2. Account/Login icon — not found\n3. Wishlist icon — not found\n4. Search icon — not found",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Look at the header for cart, account, search, wishlist icons\n3. Some icons are missing or undersized\nIssues:\n1. Cart icon — not found\n2. Account/Login icon — not found\n3. Wishlist icon — not found\n4. Search icon — not found",
+    "expected": "All header icons (cart, account, search, wishlist) should be visible and at least 24x24px",
+    "actual": "4 header icon issue(s) — 4 missing, 0 too small",
+    "fix": "Ensure all header icons render at 4K. Use SVG icons that scale. Min size: 24x24px (recommended: 44x44px).",
+    "screenshot": "4k_home_viewport.png"
+  },
+  {
+    "id": "BUG-052",
+    "title": "Scroll/Footer UX Issues — 1 Problem(s)",
+    "severity": "Low",
+    "category": "UX",
+    "categoryTags": [
+      "UX",
+      "4K Responsive"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "1 scroll/footer UX issue(s) at 4K.\n\nIssues:\n1. No back-to-top button found",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Scroll to the bottom of the page\n3. Check for back-to-top button and footer link sizes\nIssues:\n1. No back-to-top button found",
+    "expected": "Page should have back-to-top button and footer links should be adequately sized at 4K",
+    "actual": "1 UX issue(s) found",
+    "fix": "Add a back-to-top button for long pages. Ensure footer links have adequate padding (min 44px touch target).",
+    "screenshot": "4k_home_scrolled.png"
+  },
+  {
+    "id": "BUG-053",
+    "title": "PDP Size/Variant Selector — not found on 4K",
+    "severity": "Critical",
+    "category": "UI Functionality",
+    "categoryTags": [
+      "UI Functionality",
+      "PDP",
+      "4K Responsive"
+    ],
+    "location": "/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)",
+    "description": "Product Detail Page issue at 4K: Size/Variant Selector — not found.\n\nThis completely blocks the purchase funnel at 4K resolution.",
+    "steps": "1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K\n2. Look for Size/Variant Selector\n3. Element is not found",
+    "expected": "Size/Variant Selector should be visible and functional at 4K resolution",
+    "actual": "Size/Variant Selector — not found",
+    "fix": "Verify Size/Variant Selector component renders at 4K viewport. Check if it's hidden by media queries or if JS fails to initialize at large viewports.",
+    "screenshot": "4k_pdp_viewport.png"
+  },
+  {
+    "id": "BUG-054",
+    "title": "PDP Add to Cart / Buy Button — not found on 4K",
+    "severity": "Critical",
+    "category": "UI Functionality",
+    "categoryTags": [
+      "UI Functionality",
+      "PDP",
+      "4K Responsive"
+    ],
+    "location": "/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)",
+    "description": "Product Detail Page issue at 4K: Add to Cart / Buy Button — not found.\n\nThis completely blocks the purchase funnel at 4K resolution.",
+    "steps": "1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K\n2. Look for Add to Cart / Buy Button\n3. Element is not found",
+    "expected": "Add to Cart / Buy Button should be visible and functional at 4K resolution",
+    "actual": "Add to Cart / Buy Button — not found",
+    "fix": "Verify Add to Cart / Buy Button component renders at 4K viewport. Check if it's hidden by media queries or if JS fails to initialize at large viewports.",
+    "screenshot": "4k_pdp_viewport.png"
+  },
+  {
+    "id": "BUG-055",
+    "title": "PDP Image Gallery Navigation — no arrows or thumbnails found on 4K",
+    "severity": "High",
+    "category": "UI Functionality",
+    "categoryTags": [
+      "UI Functionality",
+      "PDP",
+      "4K Responsive"
+    ],
+    "location": "/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)",
+    "description": "Product Detail Page issue at 4K: Image Gallery Navigation — no arrows or thumbnails found.\n\nThis degrades the shopping experience at 4K resolution.",
+    "steps": "1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K\n2. Look for Image Gallery Navigation\n3. Element is no arrows or thumbnails found",
+    "expected": "Image Gallery Navigation should be visible and functional at 4K resolution",
+    "actual": "Image Gallery Navigation — no arrows or thumbnails found",
+    "fix": "Verify Image Gallery Navigation component renders at 4K viewport. Check if it's hidden by media queries or if JS fails to initialize at large viewports.",
+    "screenshot": "4k_pdp_viewport.png"
+  },
+  {
+    "id": "BUG-056",
+    "title": "PDP Product Price — not found or hidden on 4K",
+    "severity": "High",
+    "category": "UI Functionality",
+    "categoryTags": [
+      "UI Functionality",
+      "PDP",
+      "4K Responsive"
+    ],
+    "location": "/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)",
+    "description": "Product Detail Page issue at 4K: Product Price — not found or hidden.\n\nThis degrades the shopping experience at 4K resolution.",
+    "steps": "1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K\n2. Look for Product Price\n3. Element is not found or hidden",
+    "expected": "Product Price should be visible and functional at 4K resolution",
+    "actual": "Product Price — not found or hidden",
+    "fix": "Verify Product Price component renders at 4K viewport. Check if it's hidden by media queries or if JS fails to initialize at large viewports.",
+    "screenshot": "4k_pdp_viewport.png"
+  },
+  {
+    "id": "BUG-057",
+    "title": "PDP Breadcrumb Navigation — not found on PDP on 4K",
+    "severity": "Low",
+    "category": "UI Functionality",
+    "categoryTags": [
+      "UI Functionality",
+      "PDP",
+      "4K Responsive"
+    ],
+    "location": "/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)",
+    "description": "Product Detail Page issue at 4K: Breadcrumb Navigation — not found on PDP.\n\nThis degrades the shopping experience at 4K resolution.",
+    "steps": "1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K\n2. Look for Breadcrumb Navigation\n3. Element is not found on PDP",
+    "expected": "Breadcrumb Navigation should be visible and functional at 4K resolution",
+    "actual": "Breadcrumb Navigation — not found on PDP",
+    "fix": "Verify Breadcrumb Navigation component renders at 4K viewport. Check if it's hidden by media queries or if JS fails to initialize at large viewports.",
+    "screenshot": "4k_pdp_viewport.png"
+  },
+  {
+    "id": "BUG-058",
+    "title": "PDP Product Description — missing or empty on 4K",
+    "severity": "Medium",
+    "category": "UI Functionality",
+    "categoryTags": [
+      "UI Functionality",
+      "PDP",
+      "4K Responsive"
+    ],
+    "location": "/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)",
+    "description": "Product Detail Page issue at 4K: Product Description — missing or empty.\n\nThis degrades the shopping experience at 4K resolution.",
+    "steps": "1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K\n2. Look for Product Description\n3. Element is missing or empty",
+    "expected": "Product Description should be visible and functional at 4K resolution",
+    "actual": "Product Description — missing or empty",
+    "fix": "Verify Product Description component renders at 4K viewport. Check if it's hidden by media queries or if JS fails to initialize at large viewports.",
+    "screenshot": "4k_pdp_viewport.png"
+  },
+  {
+    "id": "BUG-059",
+    "title": "PDP Delivery/Shipping Info — not found on 4K",
+    "severity": "Low",
+    "category": "UI Functionality",
+    "categoryTags": [
+      "UI Functionality",
+      "PDP",
+      "4K Responsive"
+    ],
+    "location": "/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)",
+    "description": "Product Detail Page issue at 4K: Delivery/Shipping Info — not found.\n\nThis degrades the shopping experience at 4K resolution.",
+    "steps": "1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K\n2. Look for Delivery/Shipping Info\n3. Element is not found",
+    "expected": "Delivery/Shipping Info should be visible and functional at 4K resolution",
+    "actual": "Delivery/Shipping Info — not found",
+    "fix": "Verify Delivery/Shipping Info component renders at 4K viewport. Check if it's hidden by media queries or if JS fails to initialize at large viewports.",
+    "screenshot": "4k_pdp_viewport.png"
+  },
+  {
+    "id": "BUG-060",
+    "title": "PDP Wishlist/Favorite Button — not found on 4K",
+    "severity": "Low",
+    "category": "UI Functionality",
+    "categoryTags": [
+      "UI Functionality",
+      "PDP",
+      "4K Responsive"
+    ],
+    "location": "/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)",
+    "description": "Product Detail Page issue at 4K: Wishlist/Favorite Button — not found.\n\nThis degrades the shopping experience at 4K resolution.",
+    "steps": "1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K\n2. Look for Wishlist/Favorite Button\n3. Element is not found",
+    "expected": "Wishlist/Favorite Button should be visible and functional at 4K resolution",
+    "actual": "Wishlist/Favorite Button — not found",
+    "fix": "Verify Wishlist/Favorite Button component renders at 4K viewport. Check if it's hidden by media queries or if JS fails to initialize at large viewports.",
+    "screenshot": "4k_pdp_viewport.png"
+  },
+  {
+    "id": "BUG-061",
+    "title": "Search Returns No Results for \"shirt\"",
+    "severity": "Medium",
+    "category": "UI Functionality",
+    "categoryTags": [
+      "UI Functionality",
+      "Search"
+    ],
+    "location": "/ on 4K (3840x2160)",
+    "description": "Searching for \"shirt\" returns no visible product results. The search functionality may be broken or the results page layout is not rendering products.",
+    "steps": "1. Open https://lamartina.fynd.io/ on 4K\n2. Click search icon\n3. Type \"shirt\" and press Enter\n4. No product results displayed",
+    "expected": "Search for common term \"shirt\" should return product results",
+    "actual": "No product results visible after search",
+    "fix": "Debug search API/component. Verify search results render at all viewport sizes.",
+    "screenshot": "4k_search_results.png"
+  }
+]
