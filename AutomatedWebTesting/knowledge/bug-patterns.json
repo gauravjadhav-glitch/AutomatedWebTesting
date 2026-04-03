@@ -1,0 +1,3724 @@
+{
+  "Small Touch Targets — / on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — / on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — / on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — / on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /products on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /products on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Text — /products on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Text — /products on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /products on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /products on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Text — /products on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Text — /products on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /cart on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /cart on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /cart on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /cart on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /cart/bag on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /cart/bag on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /cart/bag on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /cart/bag on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /auth/login on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /auth/login on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /auth/login on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /auth/login on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /login on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /login on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /login on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /login on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /contact-us on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /contact-us on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /contact-us on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /contact-us on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /collections on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /collections on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /collections on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /collections on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /categories on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /categories on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /categories on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /categories on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /auth/register on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /auth/register on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Small Touch Targets — /auth/register on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Small Touch Targets — /auth/register on Pixel 7 (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T09:56:00.881Z",
+    "lastSeen": "2026-03-30T11:21:25.918Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-03-30T12:05:15.174Z"
+  },
+  "Untappable Elements — / on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — / on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — / on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — / on Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /products on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /products on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /products on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /products on Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /cart on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /cart on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /cart on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /cart on Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /cart/bag on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /cart/bag on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /cart/bag on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /cart/bag on Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /auth/login on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/login on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /auth/login on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/login on Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /login on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /login on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /login on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /login on Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /contact-us on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /contact-us on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /contact-us on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /contact-us on Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /collections on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /collections on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.173Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /collections on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /collections on Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.173Z",
+    "lastSeen": "2026-03-30T12:05:15.174Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /categories on iPhone <N> Pro (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /categories on iPhone 14 Pro (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.174Z",
+    "lastSeen": "2026-03-30T12:05:15.174Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — /categories on Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /categories on Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T12:05:15.174Z",
+    "lastSeen": "2026-03-30T12:05:15.174Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-03-30T13:11:05.415Z"
+  },
+  "Untappable Elements — / on iPhone <N> Pro, Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — / on iPhone 14 Pro, Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T15:13:09.908Z",
+    "lastSeen": "2026-03-30T17:22:03.825Z",
+    "occurrences": 4,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-03-31T05:52:37.629Z"
+  },
+  "Untappable Elements — /products on iPhone <N> Pro, Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /products on iPhone 14 Pro, Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T15:13:09.908Z",
+    "lastSeen": "2026-03-30T17:22:03.825Z",
+    "occurrences": 4,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-03-31T05:52:37.629Z"
+  },
+  "Untappable Elements — /cart on iPhone <N> Pro, Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /cart on iPhone 14 Pro, Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T15:13:09.908Z",
+    "lastSeen": "2026-03-30T17:22:03.825Z",
+    "occurrences": 4,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart"
+    ],
+    "fixedDate": "2026-03-31T05:52:37.629Z"
+  },
+  "Untappable Elements — /cart/bag on iPhone <N> Pro, Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /cart/bag on iPhone 14 Pro, Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T15:13:09.908Z",
+    "lastSeen": "2026-03-30T17:22:03.825Z",
+    "occurrences": 4,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-03-31T05:52:37.629Z"
+  },
+  "Untappable Elements — /auth/login on iPhone <N> Pro, Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/login on iPhone 14 Pro, Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T15:13:09.908Z",
+    "lastSeen": "2026-03-30T17:22:03.825Z",
+    "occurrences": 4,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-03-31T05:52:37.629Z"
+  },
+  "Untappable Elements — /login on iPhone <N> Pro, Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /login on iPhone 14 Pro, Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T15:13:09.908Z",
+    "lastSeen": "2026-03-30T17:22:03.825Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-03-31T05:52:37.629Z"
+  },
+  "Untappable Elements — /contact-us on iPhone <N> Pro, Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /contact-us on iPhone 14 Pro, Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T15:13:09.908Z",
+    "lastSeen": "2026-03-30T15:44:22.925Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-03-30T16:22:04.762Z"
+  },
+  "Untappable Elements — /collections on iPhone <N> Pro, Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /collections on iPhone 14 Pro, Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T15:13:09.908Z",
+    "lastSeen": "2026-03-30T15:44:22.925Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-03-30T16:22:04.762Z"
+  },
+  "Untappable Elements — /categories on iPhone <N> Pro, Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /categories on iPhone 14 Pro, Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T15:13:09.908Z",
+    "lastSeen": "2026-03-30T15:44:22.925Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-03-30T16:22:04.762Z"
+  },
+  "Untappable Elements — /auth/register on iPhone <N> Pro, Pixel <N> (akok-react.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/register on iPhone 14 Pro, Pixel 7 (akok-react.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-30T15:13:09.908Z",
+    "lastSeen": "2026-03-30T15:44:22.925Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-03-30T16:22:04.762Z"
+  },
+  "High CLS 0.<N> on / (akok-react.fynd.io)": {
+    "sampleTitle": "High CLS 0.345 on / (akok-react.fynd.io)",
+    "severity": "Medium",
+    "category": "Performance",
+    "testType": "Performance",
+    "testTypes": [
+      "Performance"
+    ],
+    "firstSeen": "2026-03-30T16:22:04.762Z",
+    "lastSeen": "2026-03-30T16:22:04.762Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-03-30T17:22:03.825Z"
+  },
+  "Header/Navigation missing on /auth/login (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Header/Navigation missing on /auth/login (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.737Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/Navigation"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Header/Navigation missing on /auth/register (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Header/Navigation missing on /auth/register (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.737Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/Navigation"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Header/Navigation missing on /profile (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Header/Navigation missing on /profile (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 5,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/Navigation"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Header/Navigation missing on /profile/orders (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Header/Navigation missing on /profile/orders (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 5,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/Navigation"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Untappable Elements — /auth/login on iPhone <N> Pro, Pixel <N> (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/login on iPhone 14 Pro, Pixel 7 (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Untappable Elements — /auth/register on iPhone <N> Pro, Pixel <N> (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/register on iPhone 14 Pro, Pixel 7 (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "<N> broken header links (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "1 broken header links (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "Navigation",
+    "testType": "Navigation",
+    "testTypes": [
+      "Navigation"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Footer missing on /auth/login (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Footer missing on /auth/login (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Very low content on /auth/login (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Very low content on /auth/login (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Footer missing on /auth/register (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Footer missing on /auth/register (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Very low content on /auth/register (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Very low content on /auth/register (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Footer missing on /profile (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Footer missing on /profile (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 5,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/profile"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Very low content on /profile (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Very low content on /profile (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 5,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/profile"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Footer missing on /profile/orders (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Footer missing on /profile/orders (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 5,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/profile/orders"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Very low content on /profile/orders (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Very low content on /profile/orders (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 5,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/profile/orders"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Text Clipped — / on Desktop, iPhone <N> Pro, Pixel <N> (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Text Clipped — / on Desktop, iPhone 14 Pro, Pixel 7 (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Text Clipped — /products on Desktop (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Text Clipped — /products on Desktop (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Text Clipped — /cart on Desktop (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Text Clipped — /cart on Desktop (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Text Clipped — /cart/bag on Desktop (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Text Clipped — /cart/bag on Desktop (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Text Clipped — /login on Desktop (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Text Clipped — /login on Desktop (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Text Clipped — /contact-us on Desktop (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Text Clipped — /contact-us on Desktop (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Text Clipped — /collections on Desktop (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Text Clipped — /collections on Desktop (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Text Clipped — /categories on Desktop (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Text Clipped — /categories on Desktop (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-03-31T05:52:37.629Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Page structure differs on / — <N> differences found": {
+    "sampleTitle": "Page structure differs on / — 6 differences found",
+    "severity": "High",
+    "category": "Regression",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 8,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Page structure differs on /products — <N> differences found": {
+    "sampleTitle": "Page structure differs on /products — 6 differences found",
+    "severity": "High",
+    "category": "Regression",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 7,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Page structure differs on /collections — <N> differences found": {
+    "sampleTitle": "Page structure differs on /collections — 4 differences found",
+    "severity": "High",
+    "category": "Regression",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 8,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Meta tags differ on /products — <N> differences": {
+    "sampleTitle": "Meta tags differ on /products — 6 differences",
+    "severity": "High",
+    "category": "SEO/Meta",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 6,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Meta tags differ on /contact-us — <N> differences": {
+    "sampleTitle": "Meta tags differ on /contact-us — 6 differences",
+    "severity": "High",
+    "category": "SEO/Meta",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 8,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Header/Footer differences — <N> issues found": {
+    "sampleTitle": "Header/Footer differences — 11 issues found",
+    "severity": "High",
+    "category": "Regression",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-02T10:31:42.100Z",
+    "occurrences": 7,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/Footer"
+    ],
+    "fixedDate": "2026-04-02T12:24:22.556Z"
+  },
+  "Meta tags differ on / — <N> differences": {
+    "sampleTitle": "Meta tags differ on / — 6 differences",
+    "severity": "Medium",
+    "category": "SEO/Meta",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 8,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "CSS styling differs on / — <N> property changes": {
+    "sampleTitle": "CSS styling differs on / — 2 property changes",
+    "severity": "Medium",
+    "category": "CSS/Theme",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 8,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "CSS styling differs on /products — <N> property changes": {
+    "sampleTitle": "CSS styling differs on /products — 1 property changes",
+    "severity": "Medium",
+    "category": "CSS/Theme",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 8,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Section-level visual differences on / — <N> areas differ": {
+    "sampleTitle": "Section-level visual differences on / — 1 areas differ",
+    "severity": "Medium",
+    "category": "Visual Diff",
+    "testType": "Visual",
+    "testTypes": [
+      "Visual"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 7,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Section-level visual differences on /products — <N> areas differ": {
+    "sampleTitle": "Section-level visual differences on /products — 1 areas differ",
+    "severity": "Medium",
+    "category": "Visual Diff",
+    "testType": "Visual",
+    "testTypes": [
+      "Visual"
+    ],
+    "firstSeen": "2026-03-31T06:58:06.537Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 8,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Blank page detected on /profile/orders (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Blank page detected on /profile/orders (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Critical",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-03-31T09:00:12.882Z",
+    "lastSeen": "2026-03-31T09:00:12.882Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/profile/orders"
+    ],
+    "fixedDate": "2026-03-31T10:10:02.345Z"
+  },
+  "Browse-to-Cart journey failed at: Click product from PLP (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Browse-to-Cart journey failed at: Click product from PLP (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "User Journey",
+    "testType": "User Journey",
+    "testTypes": [
+      "User Journey"
+    ],
+    "firstSeen": "2026-03-31T09:00:12.882Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Responsive behavior differs — <N> breakpoint issues": {
+    "sampleTitle": "Responsive behavior differs — 3 breakpoint issues",
+    "severity": "Medium",
+    "category": "Responsive",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-03-31T09:00:12.883Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 4,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "API differences between Prod and UAT — <N> issues": {
+    "sampleTitle": "API differences between Prod and UAT — 1 issues",
+    "severity": "Medium",
+    "category": "API",
+    "testType": "API",
+    "testTypes": [
+      "API"
+    ],
+    "firstSeen": "2026-03-31T09:00:12.883Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 5,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "SEO: <N> robots.txt/sitemap issue(s) (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "SEO: 3 robots.txt/sitemap issue(s) (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-03-31T11:33:35.738Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/sitemap"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "SEO: <N> issue(s) on /products (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "SEO: 5 issue(s) on /products (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-03-31T11:33:35.738Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "SEO: <N> issue(s) on /contact-us (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "SEO: 5 issue(s) on /contact-us (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-03-31T11:33:35.738Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Mobile Menu: <N> issue(s) (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Mobile Menu: 1 issue(s) (kaya-magento-staging-prod.fynd.io)",
+    "severity": "High",
+    "category": "Navigation",
+    "testType": "Navigation",
+    "testTypes": [
+      "Navigation"
+    ],
+    "firstSeen": "2026-03-31T11:33:35.738Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "SEO: <N> issue(s) on / (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "SEO: 2 issue(s) on / (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-03-31T11:33:35.738Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Security Headers: <N> missing header(s) (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Security Headers: 1 missing header(s) (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "Security",
+    "testType": "Security",
+    "testTypes": [
+      "Security"
+    ],
+    "firstSeen": "2026-03-31T11:33:35.738Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Image Optimization: <N> issue(s) (kaya-magento-staging-prod.fynd.io)": {
+    "sampleTitle": "Image Optimization: 3 issue(s) (kaya-magento-staging-prod.fynd.io)",
+    "severity": "Medium",
+    "category": "Performance",
+    "testType": "Performance",
+    "testTypes": [
+      "Performance"
+    ],
+    "firstSeen": "2026-03-31T11:33:35.738Z",
+    "lastSeen": "2026-03-31T11:33:35.738Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-01T09:21:29.137Z"
+  },
+  "Horizontal Overflow — /products on Desktop (gas-jeans.fynd.io)": {
+    "sampleTitle": "Horizontal Overflow — /products on Desktop (gas-jeans.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.136Z",
+    "lastSeen": "2026-04-01T09:21:29.136Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Untappable Elements — /products on iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /products on iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.136Z",
+    "lastSeen": "2026-04-01T09:21:29.136Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Untappable Elements — /auth/login on iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/login on iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.136Z",
+    "lastSeen": "2026-04-01T09:21:29.136Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Untappable Elements — /contact-us on iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /contact-us on iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.136Z",
+    "lastSeen": "2026-04-01T09:21:29.136Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Untappable Elements — /collections on iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /collections on iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.136Z",
+    "lastSeen": "2026-04-01T09:21:29.136Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Untappable Elements — /categories on iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /categories on iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.136Z",
+    "lastSeen": "2026-04-01T09:21:29.136Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Untappable Elements — /auth/register on iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/register on iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.136Z",
+    "lastSeen": "2026-04-01T09:21:29.136Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Browse-to-Cart journey failed at: Add to cart (gas-jeans.fynd.io)": {
+    "sampleTitle": "Browse-to-Cart journey failed at: Add to cart (gas-jeans.fynd.io)",
+    "severity": "High",
+    "category": "User Journey",
+    "testType": "User Journey",
+    "testTypes": [
+      "User Journey"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "SEO: <N> robots.txt/sitemap issue(s) (gas-jeans.fynd.io)": {
+    "sampleTitle": "SEO: 3 robots.txt/sitemap issue(s) (gas-jeans.fynd.io)",
+    "severity": "High",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/sitemap"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Mobile Menu: <N> issue(s) (gas-jeans.fynd.io)": {
+    "sampleTitle": "Mobile Menu: 1 issue(s) (gas-jeans.fynd.io)",
+    "severity": "High",
+    "category": "Navigation",
+    "testType": "Navigation",
+    "testTypes": [
+      "Navigation"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "High CLS 0.<N> on / (gas-jeans.fynd.io)": {
+    "sampleTitle": "High CLS 0.299 on / (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "Performance",
+    "testType": "Performance",
+    "testTypes": [
+      "Performance"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Text Clipped — / on Desktop, iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Text Clipped — / on Desktop, iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Broken Images — / on Desktop, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Broken Images — / on Desktop, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Broken Images — /products on Desktop, iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Broken Images — /products on Desktop, iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Broken Images — /cart on Desktop, iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Broken Images — /cart on Desktop, iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Broken Images — /cart/bag on Desktop, iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Broken Images — /cart/bag on Desktop, iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Broken Images — /auth/login on Desktop, iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Broken Images — /auth/login on Desktop, iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Broken Images — /login on Desktop, iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Broken Images — /login on Desktop, iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Broken Images — /contact-us on Desktop, iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Broken Images — /contact-us on Desktop, iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Broken Images — /collections on Desktop, iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Broken Images — /collections on Desktop, iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Broken Images — /categories on Desktop, iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Broken Images — /categories on Desktop, iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Broken Images — /auth/register on Desktop, iPhone <N> Pro, Pixel <N> (gas-jeans.fynd.io)": {
+    "sampleTitle": "Broken Images — /auth/register on Desktop, iPhone 14 Pro, Pixel 7 (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "SEO: <N> issue(s) on / (gas-jeans.fynd.io)": {
+    "sampleTitle": "SEO: 1 issue(s) on / (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "SEO: <N> issue(s) on /products (gas-jeans.fynd.io)": {
+    "sampleTitle": "SEO: 2 issue(s) on /products (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "SEO: <N> issue(s) on /contact-us (gas-jeans.fynd.io)": {
+    "sampleTitle": "SEO: 2 issue(s) on /contact-us (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Security Headers: <N> missing header(s) (gas-jeans.fynd.io)": {
+    "sampleTitle": "Security Headers: 1 missing header(s) (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "Security",
+    "testType": "Security",
+    "testTypes": [
+      "Security"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Image Optimization: <N> issue(s) (gas-jeans.fynd.io)": {
+    "sampleTitle": "Image Optimization: 2 issue(s) (gas-jeans.fynd.io)",
+    "severity": "Medium",
+    "category": "Performance",
+    "testType": "Performance",
+    "testTypes": [
+      "Performance"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "--section-bottom-padding is set to \"undefined\" in theme config (gas-jeans.fynd.io)": {
+    "sampleTitle": "--section-bottom-padding is set to \"undefined\" in theme config (gas-jeans.fynd.io)",
+    "severity": "Low",
+    "category": "CSS",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-04-01T09:21:29.137Z",
+    "lastSeen": "2026-04-01T09:21:29.137Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T09:36:37.199Z"
+  },
+  "Content Cut Off — / on Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — / on Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.198Z",
+    "lastSeen": "2026-04-02T09:36:37.198Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T10:31:42.100Z"
+  },
+  "Untappable Elements — / on Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — / on Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T09:36:37.199Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T10:31:42.100Z"
+  },
+  "Content Cut Off — /products on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /products on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — /products on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /products on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Content Cut Off — /cart on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /cart on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — /cart on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /cart on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Content Cut Off — /auth/login on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /auth/login on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — /auth/login on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/login on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Content Cut Off — /login on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /login on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — /login on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /login on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Content Cut Off — /contact-us on iPhone <N> Pro (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /contact-us on iPhone 14 Pro (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T09:36:37.199Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-02T10:31:42.100Z"
+  },
+  "Untappable Elements — /contact-us on iPhone <N> Pro (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /contact-us on iPhone 14 Pro (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T09:36:37.199Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-02T10:31:42.100Z"
+  },
+  "Content Cut Off — /collections on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /collections on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — /collections on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /collections on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Content Cut Off — /categories on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /categories on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — /categories on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /categories on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Content Cut Off — /auth/register on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /auth/register on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T10:31:42.100Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-04-02T12:24:22.556Z"
+  },
+  "Untappable Elements — /auth/register on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/register on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T10:31:42.100Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-04-02T12:24:22.556Z"
+  },
+  "Content Cut Off — /register on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /register on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T09:36:37.199Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/register"
+    ],
+    "fixedDate": "2026-04-02T10:31:42.100Z"
+  },
+  "Untappable Elements — /register on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /register on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T09:36:37.199Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/register"
+    ],
+    "fixedDate": "2026-04-02T10:31:42.100Z"
+  },
+  "<N> JavaScript errors found while browsing coachnew.fynd.io": {
+    "sampleTitle": "48 JavaScript errors found while browsing coachnew.fynd.io",
+    "severity": "High",
+    "category": "JavaScript",
+    "testType": "Exploratory",
+    "testTypes": [
+      "Exploratory"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Browse-to-Cart journey failed at: View cart (coachnew.fynd.io)": {
+    "sampleTitle": "Browse-to-Cart journey failed at: View cart (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "User Journey",
+    "testType": "User Journey",
+    "testTypes": [
+      "User Journey"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "SEO: <N> robots.txt/sitemap issue(s) (coachnew.fynd.io)": {
+    "sampleTitle": "SEO: 3 robots.txt/sitemap issue(s) (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/sitemap"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "SEO: <N> issue(s) on / (coachnew.fynd.io)": {
+    "sampleTitle": "SEO: 5 issue(s) on / (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "SEO: <N> issue(s) on /products (coachnew.fynd.io)": {
+    "sampleTitle": "SEO: 5 issue(s) on /products (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "SEO: <N> issue(s) on /contact-us (coachnew.fynd.io)": {
+    "sampleTitle": "SEO: 4 issue(s) on /contact-us (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Mobile Menu: <N> issue(s) (coachnew.fynd.io)": {
+    "sampleTitle": "Mobile Menu: 1 issue(s) (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "Navigation",
+    "testType": "Navigation",
+    "testTypes": [
+      "Navigation"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Very low content on /cart/bag (coachnew.fynd.io)": {
+    "sampleTitle": "Very low content on /cart/bag (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Footer missing on /auth/login (coachnew.fynd.io)": {
+    "sampleTitle": "Footer missing on /auth/login (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Very low content on /auth/login (coachnew.fynd.io)": {
+    "sampleTitle": "Very low content on /auth/login (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Footer missing on /auth/register (coachnew.fynd.io)": {
+    "sampleTitle": "Footer missing on /auth/register (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Very low content on /auth/register (coachnew.fynd.io)": {
+    "sampleTitle": "Very low content on /auth/register (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Footer missing on /profile (coachnew.fynd.io)": {
+    "sampleTitle": "Footer missing on /profile (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/profile"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Very low content on /profile (coachnew.fynd.io)": {
+    "sampleTitle": "Very low content on /profile (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/profile"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Footer missing on /profile/orders (coachnew.fynd.io)": {
+    "sampleTitle": "Footer missing on /profile/orders (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Layout",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/profile/orders"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Very low content on /profile/orders (coachnew.fynd.io)": {
+    "sampleTitle": "Very low content on /profile/orders (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/profile/orders"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Text Clipped — / on Desktop, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Text Clipped — / on Desktop, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T09:36:37.199Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T10:31:42.100Z"
+  },
+  "Broken Images — / on Desktop, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — / on Desktop, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T09:36:37.199Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-02T10:31:42.100Z"
+  },
+  "Broken Images — /products on Desktop (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /products on Desktop (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/products"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Broken Images — /cart on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /cart on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Broken Images — /auth/login on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /auth/login on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Broken Images — /login on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /login on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Broken Images — /contact-us on Desktop, iPhone <N> Pro (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /contact-us on Desktop, iPhone 14 Pro (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T09:36:37.199Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-02T10:31:42.100Z"
+  },
+  "Broken Images — /collections on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /collections on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/collections"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Broken Images — /categories on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /categories on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 3,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/categories"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Broken Images — /auth/register on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /auth/register on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T10:31:42.100Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/register"
+    ],
+    "fixedDate": "2026-04-02T12:24:22.556Z"
+  },
+  "Broken Images — /register on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /register on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T09:36:37.199Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/register"
+    ],
+    "fixedDate": "2026-04-02T10:31:42.100Z"
+  },
+  "Cookie Consent: <N> issue(s) (coachnew.fynd.io)": {
+    "sampleTitle": "Cookie Consent: 1 issue(s) (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Compliance",
+    "testType": "Compliance",
+    "testTypes": [
+      "Compliance"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Security Headers: <N> missing header(s) (coachnew.fynd.io)": {
+    "sampleTitle": "Security Headers: 1 missing header(s) (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Security",
+    "testType": "Security",
+    "testTypes": [
+      "Security"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Image Optimization: <N> issue(s) (coachnew.fynd.io)": {
+    "sampleTitle": "Image Optimization: 3 issue(s) (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Performance",
+    "testType": "Performance",
+    "testTypes": [
+      "Performance"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Missing Policy Pages: <N> page(s) not found (coachnew.fynd.io)": {
+    "sampleTitle": "Missing Policy Pages: 1 page(s) not found (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Content",
+    "testTypes": [
+      "Content"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "--section-bottom-padding is set to \"undefined\" in theme config (coachnew.fynd.io)": {
+    "sampleTitle": "--section-bottom-padding is set to \"undefined\" in theme config (coachnew.fynd.io)",
+    "severity": "Low",
+    "category": "CSS",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-04-02T09:36:37.199Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Content Cut Off — / on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — / on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — / on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — / on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Content Cut Off — /cart/bag on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /cart/bag on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — /cart/bag on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /cart/bag on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Content Cut Off — /contact-us on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /contact-us on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — /contact-us on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /contact-us on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Text Clipped — / on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Text Clipped — / on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Broken Images — / on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — / on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Broken Images — /cart/bag on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /cart/bag on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Broken Images — /login on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /login on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T10:31:42.100Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/login"
+    ],
+    "fixedDate": "2026-04-02T12:24:22.556Z"
+  },
+  "Broken Images — /contact-us on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /contact-us on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/contact-us"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Section-level visual differences on /cart/bag — <N> areas differ": {
+    "sampleTitle": "Section-level visual differences on /cart/bag — 1 areas differ",
+    "severity": "Medium",
+    "category": "Visual Diff",
+    "testType": "Visual",
+    "testTypes": [
+      "Visual"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/cart/bag"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Section-level visual differences on /auth/login — <N> areas differ": {
+    "sampleTitle": "Section-level visual differences on /auth/login — 1 areas differ",
+    "severity": "Medium",
+    "category": "Visual Diff",
+    "testType": "Visual",
+    "testTypes": [
+      "Visual"
+    ],
+    "firstSeen": "2026-04-02T10:31:42.100Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 2,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/auth/login"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Content Cut Off — /about on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Content Cut Off — /about on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T12:24:22.555Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/about"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — /about on iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /about on iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T12:24:22.555Z",
+    "lastSeen": "2026-04-02T12:24:22.555Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/about"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Broken Images — /about on Desktop, iPhone <N> Pro, Pixel <N> (coachnew.fynd.io)": {
+    "sampleTitle": "Broken Images — /about on Desktop, iPhone 14 Pro, Pixel 7 (coachnew.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-02T12:24:22.556Z",
+    "lastSeen": "2026-04-02T12:24:22.556Z",
+    "occurrences": 1,
+    "wasFixed": true,
+    "relatedPaths": [
+      "/about"
+    ],
+    "fixedDate": "2026-04-03T04:38:33.950Z"
+  },
+  "Untappable Elements — / on Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Untappable Elements — / on Pixel 7 (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "Untappable Elements — /products on iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /products on iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/products"
+    ]
+  },
+  "Untappable Elements — /cart on iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /cart on iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/cart"
+    ]
+  },
+  "Untappable Elements — /cart/bag on iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /cart/bag on iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/cart/bag"
+    ]
+  },
+  "Untappable Elements — /auth/login on iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/login on iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/auth/login"
+    ]
+  },
+  "Untappable Elements — /login on iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /login on iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/login"
+    ]
+  },
+  "Untappable Elements — /contact-us on iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /contact-us on iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/contact-us"
+    ]
+  },
+  "Untappable Elements — /collections on iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /collections on iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/collections"
+    ]
+  },
+  "Untappable Elements — /categories on iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /categories on iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/categories"
+    ]
+  },
+  "Untappable Elements — /auth/register on iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Untappable Elements — /auth/register on iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/auth/register"
+    ]
+  },
+  "<N> JavaScript errors found while browsing lamartina.fynd.io": {
+    "sampleTitle": "12 JavaScript errors found while browsing lamartina.fynd.io",
+    "severity": "High",
+    "category": "JavaScript",
+    "testType": "Exploratory",
+    "testTypes": [
+      "Exploratory"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "Browse-to-Cart journey failed at: Add to cart (lamartina.fynd.io)": {
+    "sampleTitle": "Browse-to-Cart journey failed at: Add to cart (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "User Journey",
+    "testType": "User Journey",
+    "testTypes": [
+      "User Journey"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "SEO: <N> robots.txt/sitemap issue(s) (lamartina.fynd.io)": {
+    "sampleTitle": "SEO: 3 robots.txt/sitemap issue(s) (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/sitemap"
+    ]
+  },
+  "SEO: <N> issue(s) on /products (lamartina.fynd.io)": {
+    "sampleTitle": "SEO: 4 issue(s) on /products (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/products"
+    ]
+  },
+  "Mobile Menu: <N> issue(s) (lamartina.fynd.io)": {
+    "sampleTitle": "Mobile Menu: 1 issue(s) (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "Navigation",
+    "testType": "Navigation",
+    "testTypes": [
+      "Navigation"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "Missing Policy Pages: <N> page(s) not found (lamartina.fynd.io)": {
+    "sampleTitle": "Missing Policy Pages: 1 page(s) not found (lamartina.fynd.io)",
+    "severity": "High",
+    "category": "Content",
+    "testType": "Content",
+    "testTypes": [
+      "Content"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.949Z",
+    "lastSeen": "2026-04-03T04:38:33.949Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "Very low content on /cart/bag (lamartina.fynd.io)": {
+    "sampleTitle": "Very low content on /cart/bag (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "Content",
+    "testType": "Sanity",
+    "testTypes": [
+      "Sanity"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/cart/bag"
+    ]
+  },
+  "Text Clipped — / on Desktop, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Text Clipped — / on Desktop, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "Broken Images — / on Desktop, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Broken Images — / on Desktop, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "Broken Images — /products on Desktop, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Broken Images — /products on Desktop, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/products"
+    ]
+  },
+  "Broken Images — /cart on Desktop, iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Broken Images — /cart on Desktop, iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/cart"
+    ]
+  },
+  "Broken Images — /cart/bag on Desktop, iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Broken Images — /cart/bag on Desktop, iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/cart/bag"
+    ]
+  },
+  "Broken Images — /auth/login on Desktop, iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Broken Images — /auth/login on Desktop, iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/auth/login"
+    ]
+  },
+  "Broken Images — /login on Desktop, iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Broken Images — /login on Desktop, iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/login"
+    ]
+  },
+  "Broken Images — /contact-us on Desktop, iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Broken Images — /contact-us on Desktop, iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/contact-us"
+    ]
+  },
+  "Broken Images — /collections on Desktop, iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Broken Images — /collections on Desktop, iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/collections"
+    ]
+  },
+  "Broken Images — /categories on Desktop, iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Broken Images — /categories on Desktop, iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/categories"
+    ]
+  },
+  "Broken Images — /auth/register on Desktop, iPhone <N> Pro, Pixel <N> (lamartina.fynd.io)": {
+    "sampleTitle": "Broken Images — /auth/register on Desktop, iPhone 14 Pro, Pixel 7 (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "UI Alignment",
+    "testType": "Responsive",
+    "testTypes": [
+      "Responsive"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/auth/register"
+    ]
+  },
+  "<N> interaction test(s) failed (lamartina.fynd.io)": {
+    "sampleTitle": "1 interaction test(s) failed (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "Interaction",
+    "testType": "Interaction",
+    "testTypes": [
+      "Interaction"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "SEO: <N> issue(s) on / (lamartina.fynd.io)": {
+    "sampleTitle": "SEO: 1 issue(s) on / (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "SEO: <N> issue(s) on /contact-us (lamartina.fynd.io)": {
+    "sampleTitle": "SEO: 2 issue(s) on /contact-us (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "SEO",
+    "testType": "SEO",
+    "testTypes": [
+      "SEO"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": [
+      "/contact-us"
+    ]
+  },
+  "Security Headers: <N> missing header(s) (lamartina.fynd.io)": {
+    "sampleTitle": "Security Headers: 1 missing header(s) (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "Security",
+    "testType": "Security",
+    "testTypes": [
+      "Security"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "Image Optimization: <N> issue(s) (lamartina.fynd.io)": {
+    "sampleTitle": "Image Optimization: 3 issue(s) (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "Performance",
+    "testType": "Performance",
+    "testTypes": [
+      "Performance"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "Scroll Performance: <N> issue(s) (lamartina.fynd.io)": {
+    "sampleTitle": "Scroll Performance: 1 issue(s) (lamartina.fynd.io)",
+    "severity": "Medium",
+    "category": "Performance",
+    "testType": "Performance",
+    "testTypes": [
+      "Performance"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "--section-bottom-padding is set to \"undefined\" in theme config (lamartina.fynd.io)": {
+    "sampleTitle": "--section-bottom-padding is set to \"undefined\" in theme config (lamartina.fynd.io)",
+    "severity": "Low",
+    "category": "CSS",
+    "testType": "Regression",
+    "testTypes": [
+      "Regression"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  },
+  "youtube link doesn't open in new tab (lamartina.fynd.io)": {
+    "sampleTitle": "youtube link doesn't open in new tab (lamartina.fynd.io)",
+    "severity": "Low",
+    "category": "UI",
+    "testType": "Homepage",
+    "testTypes": [
+      "Homepage"
+    ],
+    "firstSeen": "2026-04-03T04:38:33.950Z",
+    "lastSeen": "2026-04-03T04:38:33.950Z",
+    "occurrences": 1,
+    "wasFixed": false,
+    "relatedPaths": []
+  }
+}
