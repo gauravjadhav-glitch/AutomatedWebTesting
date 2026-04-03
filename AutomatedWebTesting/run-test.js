@@ -174,11 +174,53 @@ function bothSiteList() { return SINGLE_MODE ? [[SITE1, 'site1']] : [[SITE1, 'si
   console.log(`  Mode: ${modeLabel} (${budgetMin} min budget, soft stop at ${Math.round(BUDGET.softStopMs / 60000)} min)`);
   console.log('');
 
-  // Read SKILL.md for testing approach
+  // Read SKILL.md for testing approach — parse credentials, assertions, probe paths
   const skillPath = path.join(__dirname, '.agent', 'skills', 'SKILL.md');
+  const skillData = { loaded: false, credentials: {}, assertions: {}, probePaths: [], scenarios: [] };
   if (fs.existsSync(skillPath)) {
-    log('  [INIT] Loaded SKILL.md testing reference.');
+    try {
+      const skillContent = fs.readFileSync(skillPath, 'utf8');
+      skillData.loaded = true;
+
+      // Extract credentials
+      const phoneMatch = skillContent.match(/Phone\s*\|\s*(\d+)/);
+      const otpMatch = skillContent.match(/OTP\s*\|\s*(\d+)/);
+      const pincodeMatch = skillContent.match(/Pincode\s*\|\s*(\d+)/);
+      skillData.credentials = {
+        phone: phoneMatch ? phoneMatch[1] : '8888888888',
+        otp: otpMatch ? otpMatch[1] : '5401',
+        pincode: pincodeMatch ? pincodeMatch[1] : '400001',
+      };
+
+      // Extract expected assertions
+      const assertionLines = skillContent.match(/\|[^|]+\|[^|]*"[^"]*"[^|]*\|/g) || [];
+      for (const line of assertionLines) {
+        const parts = line.split('|').map(s => s.trim()).filter(Boolean);
+        if (parts.length >= 2 && parts[1].includes('"')) {
+          const textMatch = parts[1].match(/"([^"]+)"/);
+          if (textMatch) skillData.assertions[parts[0]] = textMatch[1];
+        }
+      }
+
+      // Extract scenario count
+      const scenarioMatches = skillContent.match(/\|\s*\d+\s*\|/g);
+      skillData.scenarioCount = scenarioMatches ? new Set(scenarioMatches.map(s => s.trim())).size : 0;
+
+      // Extract probe paths from the spec
+      const pathMatches = skillContent.match(/\/[\w\-\/]+/g) || [];
+      skillData.probePaths = [...new Set(pathMatches.filter(p => p.length > 1 && p.length < 40 && !p.includes('//')))].slice(0, 60);
+
+      log(`  [SKILL] Loaded SKILL.md — ${skillData.scenarioCount} scenarios, ${Object.keys(skillData.assertions).length} assertions, ${skillData.probePaths.length} paths`);
+      log(`  [SKILL] Credentials: phone=${skillData.credentials.phone}, otp=${skillData.credentials.otp}, pincode=${skillData.credentials.pincode}`);
+    } catch (e) {
+      log(`  [SKILL] Warning: Could not parse SKILL.md — ${e.message?.substring(0, 60)}`);
+    }
+  } else {
+    log('  [SKILL] No SKILL.md found — using default test configuration.');
   }
+  pageData.skillData = skillData;
+  // Pass skill config to test modules so they use correct credentials
+  advanced.loadSkillConfig(skillData);
 
   // ===== LEARNING ENGINE: Load past knowledge =====
   const knowledge = learning.loadKnowledge();

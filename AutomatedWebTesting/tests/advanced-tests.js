@@ -17,6 +17,22 @@ try { ({ AxeBuilder } = require('@axe-core/playwright')); } catch { AxeBuilder =
 let learning;
 try { learning = require('../learning-engine'); } catch { learning = null; }
 
+// ─── TEST CONFIG — loaded from SKILL.md at runtime ───
+const TEST_CONFIG = {
+  credentials: { phone: '8888888888', otp: '5401', pincode: '400001' },
+  assertions: {},
+  loaded: false,
+};
+
+/** Update test config from parsed SKILL.md data (called by run-test.js) */
+function loadSkillConfig(skillData) {
+  if (skillData && skillData.loaded) {
+    if (skillData.credentials) Object.assign(TEST_CONFIG.credentials, skillData.credentials);
+    if (skillData.assertions) Object.assign(TEST_CONFIG.assertions, skillData.assertions);
+    TEST_CONFIG.loaded = true;
+  }
+}
+
 const DEVICES = {
   'Desktop': { viewport: { width: 1440, height: 900 }, isMobile: false },
   '4K UHD': { viewport: { width: 3840, height: 2160 }, isMobile: false },
@@ -302,7 +318,7 @@ async function runUserJourneyLoginToProfile(browser, siteUrl, label, bugs, pageD
       // Step 2: Enter phone number
       const phoneInput = page.locator('input[type="tel"], input[name*="phone"], input[name*="mobile"], input[placeholder*="phone" i], input[placeholder*="mobile" i]').first();
       if (await phoneInput.isVisible().catch(() => false)) {
-        await phoneInput.fill('8888888888');
+        await phoneInput.fill(TEST_CONFIG.credentials.phone);
         journeySteps.push({ step: 'Enter phone number', status: 'passed' });
       } else {
         journeySteps.push({ step: 'Enter phone number', status: 'failed', reason: 'Phone input field not found' });
@@ -2160,7 +2176,7 @@ async function runFormTest(browser, siteUrl, label, path, bugs, pageData, screen
     // Test 3: Valid data
     if (await nameInput.isVisible().catch(() => false)) { await nameInput.fill(''); await nameInput.fill('Test User Automation'); }
     if (await emailInput.isVisible().catch(() => false)) { await emailInput.fill(''); await emailInput.fill('testuser@example.com'); }
-    if (await phoneInput.isVisible().catch(() => false)) { await phoneInput.fill(''); await phoneInput.fill('8888888888'); }
+    if (await phoneInput.isVisible().catch(() => false)) { await phoneInput.fill(''); await phoneInput.fill(TEST_CONFIG.credentials.phone); }
     if (await msgInput.isVisible().catch(() => false)) { await msgInput.fill(''); await msgInput.fill('Automated test message for form validation.'); }
     screenshots[`${key}_valid`] = b64(await page.screenshot());
 
@@ -2205,7 +2221,7 @@ async function runLoginTest(browser, siteUrl, label, bugs, pageData, screenshots
     }
 
     if (phoneVisible) {
-      await phoneInput.fill('8888888888');
+      await phoneInput.fill(TEST_CONFIG.credentials.phone);
       await page.waitForTimeout(500);
       screenshots[`${label}_login_phone`] = b64(await page.screenshot());
 
@@ -2225,14 +2241,14 @@ async function runLoginTest(browser, siteUrl, label, bugs, pageData, screenshots
         const otpCount = await otpInputs.count();
         if (otpCount >= 4) {
           for (let i = 0; i < Math.min(otpCount, 4); i++) {
-            await otpInputs.nth(i).fill('5401'[i]);
+            await otpInputs.nth(i).fill(TEST_CONFIG.credentials.otp[i]);
             await page.waitForTimeout(200);
           }
           pageData[`${label}_login_otp_entered`] = true;
         } else {
           const singleOtp = page.locator('input[name*="otp"], input[placeholder*="otp" i], input[type="tel"]:not([maxlength="1"])').first();
           if (await singleOtp.isVisible().catch(() => false)) {
-            await singleOtp.fill('5401');
+            await singleOtp.fill(TEST_CONFIG.credentials.otp);
             pageData[`${label}_login_otp_entered`] = true;
           }
         }
@@ -3320,7 +3336,7 @@ async function runAuthNegativeTests(browser, siteUrl, label, bugs, pageData, scr
 
     // Now test with correct phone for OTP tests
     await phoneInput.fill('');
-    await phoneInput.fill('8888888888');
+    await phoneInput.fill(TEST_CONFIG.credentials.phone);
     await page.waitForTimeout(300);
     if (await sendBtn.isVisible().catch(() => false)) {
       await sendBtn.click();
@@ -6022,7 +6038,7 @@ async function runLoginAndScrollTest(browser, siteUrl, label, bugs, pageData, sc
       results.push({ step: 'Phone Input', status: 'failed', reason: 'Phone input not found' });
       throw new Error('No phone input');
     }
-    await phoneInput.fill('8888888888');
+    await phoneInput.fill(TEST_CONFIG.credentials.phone);
     await page.waitForTimeout(500);
     results.push({ step: 'Phone Input', status: 'passed', reason: 'Phone entered' });
 
@@ -6050,12 +6066,12 @@ async function runLoginAndScrollTest(browser, siteUrl, label, bugs, pageData, sc
     const otpCount = await otpInputs.count();
     if (otpCount >= 4) {
       for (let i = 0; i < Math.min(otpCount, 4); i++) {
-        await otpInputs.nth(i).fill('5401'[i]);
+        await otpInputs.nth(i).fill(TEST_CONFIG.credentials.otp[i]);
         await page.waitForTimeout(200);
       }
     } else {
       const singleOtp = page.locator('input[name*="otp"], input[placeholder*="otp" i], input[type="tel"]:not([maxlength="1"])').first();
-      if (await singleOtp.isVisible().catch(() => false)) await singleOtp.fill('5401');
+      if (await singleOtp.isVisible().catch(() => false)) await singleOtp.fill(TEST_CONFIG.credentials.otp);
     }
     results.push({ step: 'Enter OTP', status: 'passed', reason: 'OTP entered: 5401' });
 
@@ -6157,7 +6173,7 @@ async function runSessionTest(browser, siteUrl, label, bugs, pageData, screensho
 
     const phoneInput = page.locator('input[type="tel"], input[name="phone"], input[placeholder*="phone" i]').first();
     if (await phoneInput.isVisible().catch(() => false)) {
-      await phoneInput.fill('8888888888');
+      await phoneInput.fill(TEST_CONFIG.credentials.phone);
       const checkbox = page.locator('input[type="checkbox"]').first();
       if (await checkbox.isVisible().catch(() => false)) await checkbox.click();
       await page.waitForTimeout(300);
@@ -6170,10 +6186,10 @@ async function runSessionTest(browser, siteUrl, label, bugs, pageData, screensho
         const otpInputs = page.locator('input[type="tel"][maxlength="1"]');
         const otpCount = await otpInputs.count();
         if (otpCount >= 4) {
-          for (let i = 0; i < Math.min(otpCount, 4); i++) await otpInputs.nth(i).fill('5401'[i]);
+          for (let i = 0; i < Math.min(otpCount, 4); i++) await otpInputs.nth(i).fill(TEST_CONFIG.credentials.otp[i]);
         } else {
           const singleOtp = page.locator('input[name*="otp"], input[placeholder*="otp" i]').first();
-          if (await singleOtp.isVisible().catch(() => false)) await singleOtp.fill('5401');
+          if (await singleOtp.isVisible().catch(() => false)) await singleOtp.fill(TEST_CONFIG.credentials.otp);
         }
 
         const verifyBtn = page.locator('button:has-text("Verify"), button:has-text("Submit"), button:has-text("Login"), button[type="submit"]').first();
@@ -6340,7 +6356,7 @@ async function runOrderLifecycleTest(browser, siteUrl, label, bugs, pageData, sc
     if (page.url().includes('/auth/login') || page.url().includes('/login')) {
       const phoneInput = page.locator('input[type="tel"]').first();
       if (await phoneInput.isVisible().catch(() => false)) {
-        await phoneInput.fill('8888888888');
+        await phoneInput.fill(TEST_CONFIG.credentials.phone);
         const cb = page.locator('input[type="checkbox"]').first();
         if (await cb.isVisible().catch(() => false)) await cb.click();
         const sendBtn = page.locator('button:has-text("Send"), button:has-text("Continue"), button:has-text("Get OTP"), button[type="submit"]').first();
@@ -6349,7 +6365,7 @@ async function runOrderLifecycleTest(browser, siteUrl, label, bugs, pageData, sc
           await page.waitForTimeout(3000);
           const otpInputs = page.locator('input[type="tel"][maxlength="1"]');
           if (await otpInputs.count() >= 4) {
-            for (let i = 0; i < 4; i++) await otpInputs.nth(i).fill('5401'[i]);
+            for (let i = 0; i < 4; i++) await otpInputs.nth(i).fill(TEST_CONFIG.credentials.otp[i]);
           }
           const verifyBtn = page.locator('button:has-text("Verify"), button:has-text("Submit"), button[type="submit"]').first();
           if (await verifyBtn.isVisible().catch(() => false)) await verifyBtn.click();
@@ -6636,7 +6652,7 @@ async function loginAndGetContext(browser, siteUrl, log) {
       return { context: ctx, loggedIn: false };
     }
 
-    await phoneInput.fill('8888888888');
+    await phoneInput.fill(TEST_CONFIG.credentials.phone);
 
     // Checkbox
     const checkbox = page.locator('input[type="checkbox"]').first();
@@ -6658,12 +6674,12 @@ async function loginAndGetContext(browser, siteUrl, log) {
     const otpCount = await otpInputs.count();
     if (otpCount >= 4) {
       for (let i = 0; i < Math.min(otpCount, 4); i++) {
-        await otpInputs.nth(i).fill('5401'[i]);
+        await otpInputs.nth(i).fill(TEST_CONFIG.credentials.otp[i]);
         await page.waitForTimeout(200);
       }
     } else {
       const singleOtp = page.locator('input[name*="otp"], input[placeholder*="otp" i], input[type="tel"]:not([maxlength="1"])').first();
-      if (await singleOtp.isVisible().catch(() => false)) await singleOtp.fill('5401');
+      if (await singleOtp.isVisible().catch(() => false)) await singleOtp.fill(TEST_CONFIG.credentials.otp);
     }
 
     // Verify
@@ -6764,6 +6780,9 @@ module.exports = {
   runScrollPerformanceTest,
   // Content & policy tests
   runPolicyPagesTest,
+  // Config
+  loadSkillConfig,
+  TEST_CONFIG,
   // New: Login-first architecture + enhanced tests
   runLoginAndScrollTest,
   loginAndGetContext,
