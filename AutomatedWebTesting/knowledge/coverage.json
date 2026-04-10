@@ -2973,7 +2973,7 @@
   },
   "coachnew.fynd.io": {
     "/": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -2998,10 +2998,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/products": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3026,10 +3026,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/collections": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3054,10 +3054,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/categories": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3082,10 +3082,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/auth/login": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3110,10 +3110,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/auth/register": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3138,10 +3138,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/login": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3166,10 +3166,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/register": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3194,10 +3194,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/signup": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3222,10 +3222,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/profile": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3250,10 +3250,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/profile/orders": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3278,10 +3278,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/profile/addresses": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3306,10 +3306,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/profile/wishlist": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3334,10 +3334,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/cart": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3362,10 +3362,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/checkout": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3390,10 +3390,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/wishlist": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3418,10 +3418,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/favourites": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3446,10 +3446,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/search?q=test": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3474,10 +3474,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/contact-us": {
-      "count": 4,
+      "count": 8,
       "types": [
         "sanity",
         "visual",
@@ -3502,10 +3502,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/contact": {
-      "count": 1,
+      "count": 5,
       "types": [
         "sanity",
         "visual",
@@ -3530,10 +3530,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/pages/contact": {
-      "count": 1,
+      "count": 5,
       "types": [
         "sanity",
         "visual",
@@ -3558,10 +3558,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/about": {
-      "count": 1,
+      "count": 5,
       "types": [
         "sanity",
         "visual",
@@ -3586,10 +3586,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/about-us": {
-      "count": 1,
+      "count": 5,
       "types": [
         "sanity",
         "visual",
@@ -3614,10 +3614,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/pages/about": {
-      "count": 1,
+      "count": 5,
       "types": [
         "sanity",
         "visual",
@@ -3642,10 +3642,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/faq": {
-      "count": 1,
+      "count": 5,
       "types": [
         "sanity",
         "visual",
@@ -3670,10 +3670,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/faqs": {
-      "count": 1,
+      "count": 5,
       "types": [
         "sanity",
         "visual",
@@ -3698,7 +3698,7 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.569Z"
+      "lastTested": "2026-04-03T10:46:40.639Z"
     },
     "/pages/faq": {
       "count": 1,
@@ -4427,11 +4427,95 @@
         "content_policy"
       ],
       "lastTested": "2026-04-02T12:24:22.569Z"
+    },
+    "/profile/details": {
+      "count": 4,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-03T10:46:40.639Z"
+    },
+    "/profile/phone": {
+      "count": 4,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-03T10:46:40.639Z"
+    },
+    "/profile/email": {
+      "count": 4,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-03T10:46:40.639Z"
     }
   },
   "coach.co.za": {
     "/": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4456,10 +4540,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/products": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4484,10 +4568,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/collections": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4512,10 +4596,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/categories": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4540,10 +4624,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/auth/login": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4568,10 +4652,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/auth/register": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4596,10 +4680,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/login": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4624,10 +4708,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/register": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4652,10 +4736,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/signup": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4680,10 +4764,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/profile": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4708,10 +4792,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/profile/orders": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4736,10 +4820,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/profile/addresses": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4764,10 +4848,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/profile/wishlist": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4792,10 +4876,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/cart": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4820,10 +4904,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/cart/bag": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4848,10 +4932,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/checkout": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4876,10 +4960,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/wishlist": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4904,10 +4988,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/favourites": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4932,10 +5016,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/search?q=test": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4960,10 +5044,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/contact-us": {
-      "count": 2,
+      "count": 4,
       "types": [
         "sanity",
         "visual",
@@ -4988,10 +5072,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/contact": {
-      "count": 1,
+      "count": 3,
       "types": [
         "sanity",
         "visual",
@@ -5016,10 +5100,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/pages/contact": {
-      "count": 1,
+      "count": 3,
       "types": [
         "sanity",
         "visual",
@@ -5044,10 +5128,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/about": {
-      "count": 1,
+      "count": 3,
       "types": [
         "sanity",
         "visual",
@@ -5072,10 +5156,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/about-us": {
-      "count": 1,
+      "count": 3,
       "types": [
         "sanity",
         "visual",
@@ -5100,10 +5184,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/pages/about": {
-      "count": 1,
+      "count": 3,
       "types": [
         "sanity",
         "visual",
@@ -5128,10 +5212,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/faq": {
-      "count": 1,
+      "count": 3,
       "types": [
         "sanity",
         "visual",
@@ -5156,10 +5240,10 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/faqs": {
-      "count": 1,
+      "count": 3,
       "types": [
         "sanity",
         "visual",
@@ -5184,7 +5268,7 @@
         "performance_enhanced",
         "content_policy"
       ],
-      "lastTested": "2026-04-02T12:24:22.567Z"
+      "lastTested": "2026-04-03T10:46:40.637Z"
     },
     "/pages/faq": {
       "count": 1,
@@ -5913,6 +5997,90 @@
         "content_policy"
       ],
       "lastTested": "2026-04-02T12:24:22.567Z"
+    },
+    "/profile/details": {
+      "count": 2,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-03T10:46:40.637Z"
+    },
+    "/profile/phone": {
+      "count": 2,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-03T10:46:40.637Z"
+    },
+    "/profile/email": {
+      "count": 2,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-03T10:46:40.637Z"
     }
   },
   "lamartina.fynd.io": {
@@ -6475,6 +6643,848 @@
         "content_policy"
       ],
       "lastTested": "2026-04-03T04:38:33.969Z"
+    }
+  },
+  "turbo-ajsk.fynd.io": {
+    "/": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/products": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/collections": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/categories": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/auth/login": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/auth/register": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/login": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/register": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/signup": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/profile": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/profile/details": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/profile/orders": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/profile/addresses": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/profile/phone": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/profile/email": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/profile/wishlist": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/cart": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/cart/bag": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/checkout": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/wishlist": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/favourites": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/search?q=test": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/contact-us": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/contact": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/pages/contact": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/about": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/about-us": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/pages/about": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/faq": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
+    },
+    "/faqs": {
+      "count": 6,
+      "types": [
+        "sanity",
+        "visual",
+        "links",
+        "css",
+        "performance",
+        "accessibility",
+        "security",
+        "exploratory",
+        "scenario",
+        "errors",
+        "comparison",
+        "regression",
+        "lighthouse_compare",
+        "visual_diff_section",
+        "user_journey",
+        "interaction",
+        "api_compare",
+        "seo",
+        "navigation_ux",
+        "security_enhanced",
+        "performance_enhanced",
+        "content_policy"
+      ],
+      "lastTested": "2026-04-10T08:25:42.582Z"
     }
   }
 }

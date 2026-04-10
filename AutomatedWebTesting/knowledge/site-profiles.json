@@ -676,8 +676,8 @@
     ]
   },
   "coachnew.fynd.io": {
-    "lastTested": "2026-04-02T12:24:22.563Z",
-    "testCount": 4,
+    "lastTested": "2026-04-03T10:46:40.634Z",
+    "testCount": 8,
     "discoveredPaths": [
       "/",
       "/products",
@@ -730,7 +730,10 @@
       "/offers",
       "/deals",
       "/sale",
-      "/coupons"
+      "/coupons",
+      "/profile/details",
+      "/profile/phone",
+      "/profile/email"
     ],
     "livePaths": [
       "/",
@@ -743,8 +746,11 @@
       "/register",
       "/signup",
       "/profile",
+      "/profile/details",
       "/profile/orders",
       "/profile/addresses",
+      "/profile/phone",
+      "/profile/email",
       "/profile/wishlist",
       "/cart",
       "/checkout",
@@ -758,33 +764,7 @@
       "/about-us",
       "/pages/about",
       "/faq",
-      "/faqs",
-      "/pages/faq",
-      "/terms",
-      "/terms-and-conditions",
-      "/pages/terms",
-      "/privacy",
-      "/privacy-policy",
-      "/pages/privacy",
-      "/return-policy",
-      "/returns",
-      "/refund-policy",
-      "/shipping-policy",
-      "/delivery",
-      "/blog",
-      "/blogs",
-      "/articles",
-      "/menu",
-      "/store-locator",
-      "/stores",
-      "/find-store",
-      "/size-guide",
-      "/gift-cards",
-      "/gift-card",
-      "/offers",
-      "/deals",
-      "/sale",
-      "/coupons"
+      "/faqs"
     ],
     "deadPaths": [],
     "features": {
@@ -804,8 +784,8 @@
     "formPages": [],
     "navLinkCount": 0,
     "footerLinkCount": 0,
-    "consoleErrorCount": 144,
-    "networkErrorCount": 483,
+    "consoleErrorCount": 77,
+    "networkErrorCount": 307,
     "history": [
       {
         "date": "2026-04-02T09:36:37.204Z",
@@ -838,12 +818,44 @@
         "products": 0,
         "forms": 0,
         "consoleErrors": 144
+      },
+      {
+        "date": "2026-04-03T09:06:04.956Z",
+        "livePages": 29,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 75
+      },
+      {
+        "date": "2026-04-03T09:06:04.963Z",
+        "livePages": 29,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 75
+      },
+      {
+        "date": "2026-04-03T09:38:11.446Z",
+        "livePages": 29,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 77
+      },
+      {
+        "date": "2026-04-03T10:46:40.634Z",
+        "livePages": 29,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 77
       }
     ]
   },
   "coach.co.za": {
-    "lastTested": "2026-04-02T12:24:22.561Z",
-    "testCount": 2,
+    "lastTested": "2026-04-03T10:46:40.633Z",
+    "testCount": 4,
     "discoveredPaths": [
       "/",
       "/products",
@@ -897,7 +909,10 @@
       "/offers",
       "/deals",
       "/sale",
-      "/coupons"
+      "/coupons",
+      "/profile/details",
+      "/profile/phone",
+      "/profile/email"
     ],
     "livePaths": [
       "/",
@@ -910,8 +925,11 @@
       "/register",
       "/signup",
       "/profile",
+      "/profile/details",
       "/profile/orders",
       "/profile/addresses",
+      "/profile/phone",
+      "/profile/email",
       "/profile/wishlist",
       "/cart",
       "/cart/bag",
@@ -926,33 +944,7 @@
       "/about-us",
       "/pages/about",
       "/faq",
-      "/faqs",
-      "/pages/faq",
-      "/terms",
-      "/terms-and-conditions",
-      "/pages/terms",
-      "/privacy",
-      "/privacy-policy",
-      "/pages/privacy",
-      "/return-policy",
-      "/returns",
-      "/refund-policy",
-      "/shipping-policy",
-      "/delivery",
-      "/blog",
-      "/blogs",
-      "/articles",
-      "/menu",
-      "/store-locator",
-      "/stores",
-      "/find-store",
-      "/size-guide",
-      "/gift-cards",
-      "/gift-card",
-      "/offers",
-      "/deals",
-      "/sale",
-      "/coupons"
+      "/faqs"
     ],
     "deadPaths": [],
     "features": {
@@ -972,8 +964,8 @@
     "formPages": [],
     "navLinkCount": 0,
     "footerLinkCount": 0,
-    "consoleErrorCount": 140,
-    "networkErrorCount": 125,
+    "consoleErrorCount": 73,
+    "networkErrorCount": 81,
     "history": [
       {
         "date": "2026-04-02T10:31:42.107Z",
@@ -990,6 +982,22 @@
         "products": 0,
         "forms": 0,
         "consoleErrors": 140
+      },
+      {
+        "date": "2026-04-03T09:38:11.444Z",
+        "livePages": 30,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 73
+      },
+      {
+        "date": "2026-04-03T10:46:40.633Z",
+        "livePages": 30,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 73
       }
     ]
   },
@@ -1076,6 +1084,144 @@
         "products": 0,
         "forms": 0,
         "consoleErrors": 10
+      }
+    ]
+  },
+  "turbo-ajsk.fynd.io": {
+    "lastTested": "2026-04-10T08:25:42.575Z",
+    "testCount": 6,
+    "discoveredPaths": [
+      "/",
+      "/products",
+      "/collections",
+      "/categories",
+      "/auth/login",
+      "/auth/register",
+      "/login",
+      "/register",
+      "/signup",
+      "/profile",
+      "/profile/details",
+      "/profile/orders",
+      "/profile/addresses",
+      "/profile/phone",
+      "/profile/email",
+      "/profile/wishlist",
+      "/cart",
+      "/cart/bag",
+      "/checkout",
+      "/wishlist",
+      "/favourites",
+      "/search?q=test",
+      "/contact-us",
+      "/contact",
+      "/pages/contact",
+      "/about",
+      "/about-us",
+      "/pages/about",
+      "/faq",
+      "/faqs"
+    ],
+    "livePaths": [
+      "/",
+      "/products",
+      "/collections",
+      "/categories",
+      "/auth/login",
+      "/auth/register",
+      "/login",
+      "/register",
+      "/signup",
+      "/profile",
+      "/profile/details",
+      "/profile/orders",
+      "/profile/addresses",
+      "/profile/phone",
+      "/profile/email",
+      "/profile/wishlist",
+      "/cart",
+      "/cart/bag",
+      "/checkout",
+      "/wishlist",
+      "/favourites",
+      "/search?q=test",
+      "/contact-us",
+      "/contact",
+      "/pages/contact",
+      "/about",
+      "/about-us",
+      "/pages/about",
+      "/faq",
+      "/faqs"
+    ],
+    "deadPaths": [],
+    "features": {
+      "hasLogin": false,
+      "hasCart": false,
+      "hasWishlist": false,
+      "hasSearch": false,
+      "hasCheckout": false,
+      "hasProfile": false,
+      "hasProducts": false,
+      "hasCollections": false,
+      "hasContactForm": false,
+      "hasBlog": false
+    },
+    "productCount": 0,
+    "formCount": 0,
+    "formPages": [],
+    "navLinkCount": 0,
+    "footerLinkCount": 0,
+    "consoleErrorCount": 19,
+    "networkErrorCount": 74,
+    "history": [
+      {
+        "date": "2026-04-10T05:44:31.280Z",
+        "livePages": 30,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 17
+      },
+      {
+        "date": "2026-04-10T05:44:31.281Z",
+        "livePages": 30,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 17
+      },
+      {
+        "date": "2026-04-10T07:52:00.319Z",
+        "livePages": 30,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 19
+      },
+      {
+        "date": "2026-04-10T07:52:00.320Z",
+        "livePages": 30,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 19
+      },
+      {
+        "date": "2026-04-10T08:25:42.574Z",
+        "livePages": 30,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 19
+      },
+      {
+        "date": "2026-04-10T08:25:42.575Z",
+        "livePages": 30,
+        "deadPages": 0,
+        "products": 0,
+        "forms": 0,
+        "consoleErrors": 19
       }
     ]
   }
