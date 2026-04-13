@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>4K Recheck Report — lamartina.fynd.io — 3 Fixed / 18 Open / 1 Unknown</title>
+<style>
+:root{--bg:#0a0a0f;--bg2:#111827;--bg3:#0d1117;--bg4:#161b22;--bg5:#020617;--border:#1e293b;--text:#e2e8f0;--text2:#9ca3af;--text3:#6b7280;--accent:#3b82f6;--radius:12px}
+[data-theme="light"]{--bg:#f0f2f5;--bg2:#ffffff;--bg3:#f8fafc;--bg4:#e8ecf1;--bg5:#f1f5f9;--border:#d1d5db;--text:#1e293b;--text2:#475569;--text3:#64748b;--accent:#2563eb}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:-apple-system,'Segoe UI',system-ui,Roboto,sans-serif;background:var(--bg);color:var(--text);display:flex;line-height:1.5}
+.sidebar{position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--bg2);border-right:1px solid var(--border);overflow-y:auto;z-index:100;display:flex;flex-direction:column}
+.sidebar .logo{padding:20px 20px 16px;font-weight:800;font-size:15px;color:var(--accent);border-bottom:1px solid var(--border)}.sidebar .logo small{display:block;font-size:10px;color:var(--text3);font-weight:400;margin-top:4px;letter-spacing:.5px;text-transform:uppercase}
+.nav-link{display:flex;align-items:center;gap:8px;padding:10px 20px;font-size:12.5px;color:var(--text2);text-decoration:none;border-left:3px solid transparent;transition:all .2s}
+.nav-link:hover{background:var(--bg4);color:var(--text)}.nav-link.active{background:var(--bg3);color:var(--accent);border-left-color:var(--accent);font-weight:600}
+.nav-section{padding:12px 20px 6px;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.main{margin-left:240px;flex:1;min-width:0}
+.hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 40%,#7c2d12 100%);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.hdr h1{font-size:22px;color:#fff;font-weight:700}.hdr p{color:#fbbf24;font-size:13px;margin-top:6px}
+.hdr .site-url{font-size:11px;padding:4px 12px;border-radius:6px;background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.3);margin-top:8px;display:inline-block}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.toolbar input{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 14px;border-radius:8px;font-size:12px;width:200px}.toolbar input::placeholder{color:rgba(255,255,255,.5)}
+.toolbar button{background:var(--bg2);border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:500}.toolbar button:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.ctr{max-width:1400px;margin:0 auto;padding:24px}
+.exec-card{background:var(--bg2);border-radius:var(--radius);padding:24px;margin:20px 0;border:1px solid var(--border)}
+.progress-section{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center}
+.pie-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+.pie-legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;justify-content:center}.pie-legend span{display:flex;align-items:center;gap:5px}.pie-legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.stat-item{background:var(--bg3);border-radius:10px;padding:16px 12px;text-align:center;border:1px solid var(--border);transition:transform .2s}.stat-item:hover{transform:translateY(-2px)}.stat-item .val{font-size:26px;font-weight:800;line-height:1}.stat-item .lbl{font-size:10px;color:var(--text3);text-transform:uppercase;margin-top:6px;letter-spacing:.5px}
+.badge{padding:4px 10px;border-radius:6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.bg-fixed{background:#052e16;color:#86efac;border:1px solid #14532d}
+.bg-open{background:#450a0a;color:#fca5a5;border:1px solid #7f1d1d}
+.bg-unknown{background:#451a03;color:#fcd34d;border:1px solid #78350f}
+.bg-critical{background:#450a0a;color:#fca5a5;border:1px solid #7f1d1d}.bg-high{background:#451a03;color:#fcd34d;border:1px solid #78350f}.bg-medium{background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f}.bg-low{background:#052e16;color:#86efac;border:1px solid #14532d}.bg-info{background:#1e1b4b;color:#a5b4fc;border:1px solid #312e81}
+.comparison-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px}
+.comparison-table th{background:var(--bg4);padding:12px 14px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--text2);border-bottom:2px solid var(--border)}
+.comparison-table td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+.comparison-table tr:hover{background:var(--bg4)}
+.comparison-table tr.row-fixed{border-left:3px solid #22c55e}
+.comparison-table tr.row-open{border-left:3px solid #ef4444}
+.comparison-table tr.row-unknown{border-left:3px solid #f59e0b}
+.status-fixed{color:#22c55e;font-weight:700}.status-open{color:#ef4444;font-weight:700}.status-unknown{color:#f59e0b;font-weight:700}
+.trend-worse{color:#ef4444;font-size:11px}.trend-same{color:var(--text3);font-size:11px}.trend-better{color:#22c55e;font-size:11px}
+.filters{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap}
+.filter-btn{background:var(--bg2);border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:500}.filter-btn:hover,.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bug-card{background:var(--bg3);border-radius:var(--radius);margin:16px 0;border-left:4px solid;overflow:hidden}.bug-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.bug-fixed{border-color:#22c55e}.bug-open{border-color:#ef4444}.bug-unknown{border-color:#f59e0b}
+.bug-card-header{padding:16px 20px;background:var(--bg4);border-bottom:1px solid var(--border)}.bug-card-header h3{font-size:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0;font-weight:600}
+.bug-card-body{padding:20px}
+.bug-detail-table{width:100%;border-collapse:collapse;font-size:13px}.bug-detail-table tr{border-bottom:1px solid var(--border)}.bug-detail-table tr:last-child{border-bottom:none}.bug-detail-table td{padding:10px 14px;vertical-align:top;line-height:1.6}
+.bug-field{font-weight:700;color:var(--text2);white-space:nowrap;width:110px;text-transform:uppercase;font-size:11px;letter-spacing:.5px}
+.pass-text{color:#22c55e}.fail-text{color:#ef4444}.warn-text{color:#f59e0b}
+.bug-screenshot{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid var(--border)}.bug-screenshot img{width:100%;display:block;max-height:400px;object-fit:contain;background:#0a0a0a}.bug-ss-caption{padding:10px 14px;background:var(--bg5);font-size:11px;color:var(--text2);font-style:italic}
+.ftr{text-align:center;padding:32px;color:var(--text3);font-size:11px;border-top:1px solid var(--border);margin-top:24px}
+.hidden{display:none!important}
+.zoom-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;backdrop-filter:blur(4px)}.zoom-overlay img{max-width:95vw;max-height:95vh;object-fit:contain;border-radius:8px}
+.progress-bar{height:24px;background:var(--bg5);border-radius:12px;overflow:hidden;display:flex;margin:16px 0;border:1px solid var(--border)}
+.progress-bar .seg{height:100%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;transition:width .5s}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+@media print{.sidebar,.toolbar,.filters,.zoom-overlay{display:none!important}.main{margin-left:0!important}.bug-card{break-inside:avoid}}
+@media(max-width:900px){.sidebar{transform:translateX(-100%)}.main{margin-left:0}.progress-section{grid-template-columns:1fr}}
+</style></head><body>
+
+<nav class="sidebar">
+<div class="logo">4K Recheck Report<small>lamartina.fynd.io — 2026-04-13</small></div>
+<a href="#summary" class="nav-link active">Summary</a>
+<a href="#comparison" class="nav-link">Comparison Table</a>
+<div class="nav-section">By Status</div>
+<a href="#" class="nav-link" onclick="filterStatus('FIXED');return false">Fixed (3)</a>
+<a href="#" class="nav-link" onclick="filterStatus('STILL_OPEN');return false">Still Open (18)</a>
+<a href="#" class="nav-link" onclick="filterStatus('UNKNOWN');return false">Unknown (1)</a>
+<div class="nav-section">By Page</div>
+<a href="#" class="nav-link" onclick="filterPage('home');return false">Home (6)</a>
+<a href="#" class="nav-link" onclick="filterPage('products');return false">Products (2)</a>
+<a href="#" class="nav-link" onclick="filterPage('collections');return false">Collections (3)</a>
+<a href="#" class="nav-link" onclick="filterPage('categories');return false">Categories (1)</a>
+<a href="#" class="nav-link" onclick="filterPage('cart');return false">Cart (1)</a>
+<a href="#" class="nav-link" onclick="filterPage('auth');return false">Auth/Login (2)</a>
+<a href="#" class="nav-link" onclick="filterPage('contact');return false">Contact-Us (1)</a>
+<a href="#" class="nav-link" onclick="filterPage('pdp');return false">PDP (5)</a>
+<a href="#" class="nav-link" onclick="filterPage('search');return false">Search (1)</a>
+</nav>
+
+<div class="main">
+<div class="hdr"><div>
+<h1>4K Recheck Report <span style="font-size:11px;background:rgba(239,68,68,.3);color:#fca5a5;padding:3px 12px;border-radius:20px;vertical-align:middle;font-weight:500">18 STILL OPEN</span></h1>
+<p>2026-04-13 &middot; Rechecked 22 bugs &middot; 3840&times;2160 &middot; Original: 2026-04-03</p>
+<span class="site-url">lamartina.fynd.io</span></div>
+<div class="toolbar">
+<input type="text" id="searchInput" placeholder="Search bugs..." onkeyup="filterBugs()">
+<button onclick="toggleTheme()">Theme</button>
+<button onclick="window.print()">Print</button>
+</div></div>
+
+<div class="ctr">
+<!-- SUMMARY -->
+<div id="summary" class="exec-card">
+<div class="progress-section">
+<div class="pie-wrap">
+<svg viewBox="0 0 100 100" width="140" height="140" style="transform:rotate(-90deg)">
+<circle r="15.9155" cx="50" cy="50" fill="none" stroke="var(--border)" stroke-width="10"/>
+<circle r="15.9155" cx="50" cy="50" fill="none" stroke="#22c55e" stroke-width="10" stroke-dasharray="13.636 86.364" stroke-dashoffset="0"/>
+<circle r="15.9155" cx="50" cy="50" fill="none" stroke="#ef4444" stroke-width="10" stroke-dasharray="81.818 18.182" stroke-dashoffset="-13.636"/>
+<circle r="15.9155" cx="50" cy="50" fill="none" stroke="#f59e0b" stroke-width="10" stroke-dasharray="4.545 95.455" stroke-dashoffset="-95.454"/>
+</svg>
+<div class="pie-legend">
+<span><span class="dot" style="background:#22c55e"></span>3 Fixed</span>
+<span><span class="dot" style="background:#ef4444"></span>18 Open</span>
+<span><span class="dot" style="background:#f59e0b"></span>1 Unknown</span>
+</div></div>
+<div>
+<div class="stat-grid">
+<div class="stat-item"><div class="val" style="color:var(--text)">22</div><div class="lbl">Total Bugs</div></div>
+<div class="stat-item"><div class="val" style="color:#22c55e">3</div><div class="lbl">Fixed</div></div>
+<div class="stat-item"><div class="val" style="color:#ef4444">18</div><div class="lbl">Still Open</div></div>
+<div class="stat-item"><div class="val" style="color:#f59e0b">1</div><div class="lbl">Unknown</div></div>
+<div class="stat-item"><div class="val" style="color:#ef4444">2</div><div class="lbl">Critical Open</div></div>
+<div class="stat-item"><div class="val" style="color:var(--text2)">14%</div><div class="lbl">Fix Rate</div></div>
+</div>
+<div class="progress-bar" style="margin-top:16px">
+<div class="seg" style="width:13.6%;background:#22c55e">3</div>
+<div class="seg" style="width:81.8%;background:#ef4444">18</div>
+<div class="seg" style="width:4.6%;background:#f59e0b">1</div>
+</div>
+</div></div></div>
+
+<!-- COMPARISON TABLE -->
+<div id="comparison" style="margin-top:32px">
+<h2 style="font-size:18px;margin-bottom:8px">Before vs After Comparison</h2>
+<p style="color:var(--text3);font-size:12px;margin-bottom:16px">Original report: 2026-04-03 &rarr; Recheck: 2026-04-13 (10 days later)</p>
+<table class="comparison-table">
+<thead><tr><th>Bug ID</th><th>Issue</th><th>Severity</th><th>Original</th><th>Current</th><th>Status</th><th>Trend</th></tr></thead>
+<tbody>
+<tr class="row-fixed"><td>BUG-001</td><td>Nav Bar Covers Only 14% of Viewport</td><td><span class="badge bg-high">High</span></td><td>14% (554px)</td><td>100% (3840px)</td><td class="status-fixed">FIXED</td><td class="trend-better">Resolved</td></tr>
+<tr class="row-open"><td>BUG-002</td><td>Blurry Images on Home (/)</td><td><span class="badge bg-high">High</span></td><td>7 blurry (2.1x)</td><td>9 blurry (2x)</td><td class="status-open">OPEN</td><td class="trend-worse">Worse (+2)</td></tr>
+<tr class="row-open"><td>BUG-003</td><td>Untappable Elements on Home (/)</td><td><span class="badge bg-high">High</span></td><td>7 elements &lt;25px</td><td>13 elements &lt;25px</td><td class="status-open">OPEN</td><td class="trend-worse">Worse (+6)</td></tr>
+<tr class="row-open"><td>BUG-004</td><td>Images Missing Alt Text on Home (/)</td><td><span class="badge bg-medium">Medium</span></td><td>9 missing alt</td><td>6 missing alt</td><td class="status-open">OPEN</td><td class="trend-better">Improved (-3)</td></tr>
+<tr class="row-open"><td>BUG-005</td><td>Blurry Images on Products</td><td><span class="badge bg-high">High</span></td><td>17 blurry (3.1x)</td><td>38 blurry (3.1x)</td><td class="status-open">OPEN</td><td class="trend-worse">Worse (+21)</td></tr>
+<tr class="row-open"><td>BUG-006</td><td>Untappable Elements on Products</td><td><span class="badge bg-high">High</span></td><td>7 elements &lt;25px</td><td>25 elements &lt;25px</td><td class="status-open">OPEN</td><td class="trend-worse">Worse (+18)</td></tr>
+<tr class="row-open"><td>BUG-007</td><td>Blurry Image on Collections</td><td><span class="badge bg-high">High</span></td><td>1 blurry (3.0x)</td><td>5 blurry</td><td class="status-open">OPEN</td><td class="trend-worse">Worse (+4)</td></tr>
+<tr class="row-open"><td>BUG-008</td><td>Untappable Elements on Collections</td><td><span class="badge bg-high">High</span></td><td>8 elements &lt;25px</td><td>10 elements &lt;25px</td><td class="status-open">OPEN</td><td class="trend-worse">Worse (+2)</td></tr>
+<tr class="row-open"><td>BUG-009</td><td>Images Missing Alt Text on Collections</td><td><span class="badge bg-medium">Medium</span></td><td>5 missing alt</td><td>5 missing alt</td><td class="status-open">OPEN</td><td class="trend-same">Unchanged</td></tr>
+<tr class="row-open"><td>BUG-010</td><td>Untappable Elements on Categories</td><td><span class="badge bg-high">High</span></td><td>8 elements &lt;25px</td><td>10 elements &lt;25px</td><td class="status-open">OPEN</td><td class="trend-worse">Worse (+2)</td></tr>
+<tr class="row-open"><td>BUG-011</td><td>Untappable Elements on Cart</td><td><span class="badge bg-high">High</span></td><td>7 elements &lt;25px</td><td>9 elements &lt;25px</td><td class="status-open">OPEN</td><td class="trend-worse">Worse (+2)</td></tr>
+<tr class="row-open"><td>BUG-012</td><td>Untappable Elements on Auth/Login</td><td><span class="badge bg-high">High</span></td><td>7 elements &lt;25px</td><td>10 elements &lt;25px</td><td class="status-open">OPEN</td><td class="trend-worse">Worse (+3)</td></tr>
+<tr class="row-open"><td>BUG-013</td><td>Excessive Whitespace on Auth/Login</td><td><span class="badge bg-high">High</span></td><td>1% used (48px)</td><td>10% used (400px)</td><td class="status-open">OPEN</td><td class="trend-better">Improved (+9%)</td></tr>
+<tr class="row-open"><td>BUG-014</td><td>Untappable Elements on Contact-Us</td><td><span class="badge bg-high">High</span></td><td>7 elements &lt;25px</td><td>10 elements &lt;25px</td><td class="status-open">OPEN</td><td class="trend-worse">Worse (+3)</td></tr>
+<tr class="row-open"><td>BUG-015</td><td>No Focus Indicators (WCAG 2.4.7)</td><td><span class="badge bg-high">High</span></td><td>63/63 (100%)</td><td>7/10 sampled (70%)</td><td class="status-open">OPEN</td><td class="trend-better">Improved (-30%)</td></tr>
+<tr class="row-fixed"><td>BUG-016</td><td>4 Header Icons Missing</td><td><span class="badge bg-high">High</span></td><td>4 missing</td><td>All found</td><td class="status-fixed">FIXED</td><td class="trend-better">Resolved</td></tr>
+<tr class="row-open"><td>BUG-017</td><td>PDP Size/Variant Selector Missing</td><td><span class="badge bg-critical">Critical</span></td><td>Not found</td><td>Still not found</td><td class="status-open">OPEN</td><td class="trend-same">Unchanged</td></tr>
+<tr class="row-open"><td>BUG-018</td><td>PDP Add to Cart/Buy Button Missing</td><td><span class="badge bg-critical">Critical</span></td><td>Not found</td><td>Still not found</td><td class="status-open">OPEN</td><td class="trend-same">Unchanged</td></tr>
+<tr class="row-open"><td>BUG-019</td><td>PDP Image Gallery Nav Missing</td><td><span class="badge bg-high">High</span></td><td>Not found</td><td>Still not found</td><td class="status-open">OPEN</td><td class="trend-same">Unchanged</td></tr>
+<tr class="row-fixed"><td>BUG-020</td><td>PDP Product Price Not Found</td><td><span class="badge bg-high">High</span></td><td>Not found</td><td>Found: &#8377;1,000</td><td class="status-fixed">FIXED</td><td class="trend-better">Resolved</td></tr>
+<tr class="row-open"><td>BUG-021</td><td>PDP Product Description Missing</td><td><span class="badge bg-medium">Medium</span></td><td>Not found</td><td>Still not found</td><td class="status-open">OPEN</td><td class="trend-same">Unchanged</td></tr>
+<tr class="row-unknown"><td>BUG-022</td><td>Search Returns No Results for "shirt"</td><td><span class="badge bg-medium">Medium</span></td><td>No results</td><td>Search icon not clickable</td><td class="status-unknown">UNKNOWN</td><td class="trend-same">Could not verify</td></tr>
+</tbody></table></div>
+
+<!-- DETAILED BUG CARDS -->
+<div id="all-bugs" style="margin-top:32px">
+<h2 style="font-size:18px;margin-bottom:16px">Detailed Bug Cards (22)</h2>
+<div class="filters">
+<button class="filter-btn active" onclick="filterAll()">All (22)</button>
+<button class="filter-btn" onclick="filterStatus('FIXED')">Fixed (3)</button>
+<button class="filter-btn" onclick="filterStatus('STILL_OPEN')">Still Open (18)</button>
+<button class="filter-btn" onclick="filterStatus('UNKNOWN')">Unknown (1)</button>
+</div>
+
+<!-- BUG-001 FIXED -->
+<div class="bug-card bug-fixed" data-status="FIXED" data-page="home">
+<div class="bug-card-header"><h3><span class="badge bg-fixed">FIXED</span> BUG-001 — Nav Bar Covers Only 14% of Viewport (Site-Wide)</h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>All pages at 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">Nav only 554px (14% of 3840px) — site-wide issue</td></tr>
+<tr><td class="bug-field">After</td><td class="pass-text">Nav now covers 100% (3840px of 3840px)</td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/recheck_home.png" alt="Recheck: Home page at 4K"><div class="bug-ss-caption">Recheck screenshot: Home page at 4K — Nav now full-width</div></div></div></div>
+
+<!-- BUG-002 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="home">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-002 — Blurry Images on Home (/) <span class="trend-worse">WORSE</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Image Quality</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/ on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">7 blurry images (2.1x upscale)</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">9 blurry images — "theme-default-image" 1920&rarr;3840px, "MEN PRE Collection" 578&rarr;1221px, "WOMEN PRE Collection" 588&rarr;1221px</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Serve higher-res images via srcset/CDN params. Min source: 2400px for 4K hero images.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/recheck_home.png" alt="Recheck: Blurry images on home"><div class="bug-ss-caption">Recheck screenshot: Home page — blurry images still present</div></div></div></div>
+
+<!-- BUG-003 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="home">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-003 — Untappable Elements on Home (/) <span class="trend-worse">WORSE</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/ on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">7 elements under 25px tall</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">13 elements under 25px: "New In" 498x23px, "Men" 498x23px, etc.</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Increase padding/font-size for links and buttons. Min target: 44x44px (WCAG).</code></td></tr>
+</table></div></div>
+
+<!-- BUG-004 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="home">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-004 — Images Missing Alt Text on Home (/) <span class="trend-better">IMPROVED</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-medium">Medium</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Accessibility</span> <span class="badge bg-info">SEO</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/ on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">9 images missing alt text</td></tr>
+<tr><td class="bug-field">After</td><td class="warn-text">6 images still missing alt text (improved from 9)</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Add descriptive alt text to all product/content images.</code></td></tr>
+</table></div></div>
+
+<!-- BUG-005 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="products">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-005 — Blurry Images on Products <span class="trend-worse">WORSE</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Image Quality</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/products on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">17 blurry images (3.1x upscale)</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">38 blurry images — "Dark Blue Straight Fit- Larkee Jeans" 300&rarr;927px (3.1x upscale)</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Serve higher-res images via srcset/CDN params. Min source: 900px for 4K.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/recheck_products.png" alt="Recheck: Products page"><div class="bug-ss-caption">Recheck screenshot: Products page — blurry images persist</div></div></div></div>
+
+<!-- BUG-006 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="products">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-006 — Untappable Elements on Products <span class="trend-worse">WORSE</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">7 elements under 25px</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">25 elements under 25px</td></tr>
+</table></div></div>
+
+<!-- BUG-007 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="collections">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-007 — Blurry Image(s) on Collections <span class="trend-worse">WORSE</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">1 blurry image (3.0x upscale)</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">5 blurry images</td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/recheck_collections.png" alt="Recheck: Collections page"><div class="bug-ss-caption">Recheck screenshot: Collections page at 4K</div></div></div></div>
+
+<!-- BUG-008 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="collections">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-008 — Untappable Elements on Collections <span class="trend-worse">WORSE</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">8 elements under 25px</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">10 elements under 25px</td></tr>
+</table></div></div>
+
+<!-- BUG-009 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="collections">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-009 — Images Missing Alt Text on Collections <span class="trend-same">UNCHANGED</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-medium">Medium</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">5 images missing alt</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">5 images still missing alt</td></tr>
+</table></div></div>
+
+<!-- BUG-010 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="categories">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-010 — Untappable Elements on Categories <span class="trend-worse">WORSE</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">8 elements under 25px</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">10 elements under 25px</td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/recheck_categories.png" alt="Recheck: Categories page"><div class="bug-ss-caption">Recheck screenshot: Categories page at 4K</div></div></div></div>
+
+<!-- BUG-011 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="cart">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-011 — Untappable Elements on Cart <span class="trend-worse">WORSE</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">7 elements under 25px</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">9 elements under 25px</td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/recheck_cart.png" alt="Recheck: Cart page"><div class="bug-ss-caption">Recheck screenshot: Cart page at 4K</div></div></div></div>
+
+<!-- BUG-012 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="auth">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-012 — Untappable Elements on Auth/Login <span class="trend-worse">WORSE</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">7 elements under 25px</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">10 elements under 25px</td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/recheck_auth_login.png" alt="Recheck: Auth/Login page"><div class="bug-ss-caption">Recheck screenshot: Auth/Login page at 4K</div></div></div></div>
+
+<!-- BUG-013 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="auth">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-013 — Excessive Whitespace on Auth/Login <span class="trend-better">IMPROVED</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">Content uses only 1% (48px of 3840px)</td></tr>
+<tr><td class="bug-field">After</td><td class="warn-text">Content uses 10% (400px of 3840px) — improved but still far below 60-80% target</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Increase max-width for large viewports. Use responsive layout. Target: 60-80% viewport usage.</code></td></tr>
+</table></div></div>
+
+<!-- BUG-014 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="contact">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-014 — Untappable Elements on Contact-Us <span class="trend-worse">WORSE</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">7 elements under 25px</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">10 elements under 25px</td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/recheck_contact-us.png" alt="Recheck: Contact-Us page"><div class="bug-ss-caption">Recheck screenshot: Contact-Us page at 4K</div></div></div></div>
+
+<!-- BUG-015 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="home">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-015 — No Focus Indicators (WCAG 2.4.7) <span class="trend-better">IMPROVED</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Accessibility</span> <span class="badge bg-info">WCAG 2.4.7</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">63/63 elements (100%) lack focus indicators</td></tr>
+<tr><td class="bug-field">After</td><td class="warn-text">7/10 sampled elements (70%) still lack focus indicators — improved but still non-compliant</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Add :focus-visible { outline: 2px solid currentColor; } to all interactive elements.</code></td></tr>
+</table></div></div>
+
+<!-- BUG-016 FIXED -->
+<div class="bug-card bug-fixed" data-status="FIXED" data-page="home">
+<div class="bug-card-header"><h3><span class="badge bg-fixed">FIXED</span> BUG-016 — 4 Header Icons Missing</h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Navigation</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">Cart, Account, Wishlist, Search icons all missing</td></tr>
+<tr><td class="bug-field">After</td><td class="pass-text">All 4 icons now present: Cart, Account, Wishlist, Search</td></tr>
+</table></div></div>
+
+<!-- BUG-017 OPEN CRITICAL -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="pdp">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> <span class="badge bg-critical">Critical</span> BUG-017 — PDP Size/Variant Selector Missing <span class="trend-same">UNCHANGED</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-critical">Critical</span> — Blocks purchase flow</td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Functionality</span> <span class="badge bg-info">PDP</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">Size/Variant selector not found at 4K</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">Still not found — no size/variant selector visible at 4K</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Check if Size/Variant Selector component renders at 4K. Verify no media queries hide it.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/recheck_pdp.png" alt="Recheck: PDP page"><div class="bug-ss-caption">Recheck screenshot: PDP at 4K — Size selector still missing</div></div></div></div>
+
+<!-- BUG-018 OPEN CRITICAL -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="pdp">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> <span class="badge bg-critical">Critical</span> BUG-018 — PDP Add to Cart/Buy Button Missing <span class="trend-same">UNCHANGED</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-critical">Critical</span> — Blocks purchase flow</td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Functionality</span> <span class="badge bg-info">PDP</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">Add to Cart / Buy button not found at 4K</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">Still not found — purchase flow completely blocked at 4K</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Check if Add to Cart / Buy Button component renders at 4K. Verify no media queries hide it.</code></td></tr>
+</table></div></div>
+
+<!-- BUG-019 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="pdp">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-019 — PDP Image Gallery Nav Missing <span class="trend-same">UNCHANGED</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">Image Gallery Navigation not found at 4K</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">Still not found at 4K</td></tr>
+</table></div></div>
+
+<!-- BUG-020 FIXED -->
+<div class="bug-card bug-fixed" data-status="FIXED" data-page="pdp">
+<div class="bug-card-header"><h3><span class="badge bg-fixed">FIXED</span> BUG-020 — PDP Product Price Not Found</h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Functionality</span> <span class="badge bg-info">PDP</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">Product Price Display not found at 4K</td></tr>
+<tr><td class="bug-field">After</td><td class="pass-text">Price now visible: &#8377;1,000</td></tr>
+</table></div></div>
+
+<!-- BUG-021 OPEN -->
+<div class="bug-card bug-open" data-status="STILL_OPEN" data-page="pdp">
+<div class="bug-card-header"><h3><span class="badge bg-open">OPEN</span> BUG-021 — PDP Product Description Missing <span class="trend-same">UNCHANGED</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-medium">Medium</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">Product Description not found at 4K</td></tr>
+<tr><td class="bug-field">After</td><td class="fail-text">Still not found at 4K</td></tr>
+</table></div></div>
+
+<!-- BUG-022 UNKNOWN -->
+<div class="bug-card bug-unknown" data-status="UNKNOWN" data-page="search">
+<div class="bug-card-header"><h3><span class="badge bg-unknown">UNKNOWN</span> BUG-022 — Search Returns No Results for "shirt"</h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-medium">Medium</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Functionality</span> <span class="badge bg-info">Search</span></td></tr>
+<tr><td class="bug-field">Before</td><td class="fail-text">Search for "shirt" returned no product results</td></tr>
+<tr><td class="bug-field">After</td><td class="warn-text">Could not verify — search icon not clickable at 4K viewport (element not visible)</td></tr>
+<tr><td class="bug-field">Note</td><td>The search icon may be hidden or positioned off-screen at 4K, making it inaccessible. This itself could be a related bug.</td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/recheck_search.png" alt="Recheck: Search"><div class="bug-ss-caption">Recheck screenshot: Search attempt at 4K — icon not clickable</div></div></div></div>
+
+</div>
+
+<div class="ftr">
+4K Recheck Report &middot; lamartina.fynd.io &middot; 3 Fixed / 18 Open / 1 Unknown &middot; 2026-04-13<br>
+Original report: 2026-04-03 &middot; Recheck interval: 10 days
+</div>
+</div></div>
+
+<script>
+function toggleTheme(){document.documentElement.dataset.theme=document.documentElement.dataset.theme==='light'?'dark':'light'}
+function filterBugs(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.bug-card').forEach(c=>{c.classList.toggle('hidden',!c.textContent.toLowerCase().includes(q))})}
+function filterAll(){document.querySelectorAll('.bug-card').forEach(c=>c.classList.remove('hidden'));document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active')}
+function filterStatus(s){document.querySelectorAll('.bug-card').forEach(c=>{c.classList.toggle('hidden',c.dataset.status!==s)});document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active')}
+function filterPage(p){document.querySelectorAll('.bug-card').forEach(c=>{c.classList.toggle('hidden',c.dataset.page!==p)});document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));if(event&&event.target)event.target.classList.add('active')}
+document.addEventListener('click',e=>{if(e.target.tagName==='IMG'&&e.target.closest('.bug-screenshot')){const o=document.createElement('div');o.className='zoom-overlay';o.innerHTML='<img src="'+e.target.src+'">';o.onclick=()=>o.remove();document.body.appendChild(o)}});
+</script>
+</body></html>
