@@ -1,0 +1,65 @@
+name: Automated QA Tests
+
+on:
+  # Manual trigger with configurable inputs
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Target URL to test'
+        required: true
+        default: 'https://coachnew.fynd.io'
+      mode:
+        description: 'Test mode (fast/standard/deep)'
+        required: true
+        default: 'standard'
+        type: choice
+        options:
+          - fast
+          - standard
+          - deep
+
+  # Scheduled: run every weekday at 6 AM UTC
+  schedule:
+    - cron: '0 6 * * 1-5'
+
+jobs:
+  qa-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run QA tests
+        env:
+          UAT_URL: ${{ github.event.inputs.url || 'https://coachnew.fynd.io' }}
+          TEST_MODE: ${{ github.event.inputs.mode || 'standard' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TEST_PHONE: ${{ secrets.TEST_PHONE }}
+          TEST_OTP: ${{ secrets.TEST_OTP }}
+          TEST_PINCODE: ${{ secrets.TEST_PINCODE }}
+        run: node run-test.js "$UAT_URL" --mode=$TEST_MODE
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-reports-${{ github.run_number }}
+          path: |
+            reports/*.html
+            reports/*.json
+            reports/screenshots/
+          retention-days: 30
