@@ -1,10 +1,10 @@
 {
   "prioritizedPages": [
-    "/collection/women-view-all — Desktop",
-    "/collection/men-view-all — Desktop",
-    "/collection/handbags-for-women — Desktop",
-    "/contact-us — Desktop",
-    "/locate-us — Desktop"
+    "/products/mini-active-collagen-wonder-serum — Desktop",
+    "/pages/workouts — Desktop",
+    "/collections/all-products — Desktop",
+    "/pages/our-story — Desktop",
+    "/collections/new-to-facegym — 4K UHD"
   ],
   "focusCategories": [
     "Image Quality",
@@ -12,13 +12,13 @@
     "4K Responsive"
   ],
   "riskPatterns": [
-    "High number of bugs related to image quality affecting user experience.",
-    "Emerging issues with SEO that could impact site visibility.",
-    "Inconsistent responsiveness across different devices, particularly 4K."
+    "High number of image quality issues across multiple pages",
+    "Emerging accessibility concerns that may affect user experience",
+    "Inconsistent performance across different device resolutions"
   ],
   "recommendations": [
-    "Increase testing focus on image quality across all product pages to ensure high-resolution images are displayed correctly.",
-    "Conduct a thorough SEO audit to identify and rectify issues affecting site ranking and visibility.",
-    "Implement comprehensive testing for 4K responsiveness to ensure a seamless user experience across all devices."
+    "Increase testing coverage on pages with the highest bug counts, especially focusing on image quality and responsiveness.",
+    "Conduct a thorough accessibility audit to identify and resolve potential issues.",
+    "Implement automated testing for SEO and image quality to catch issues early in the development cycle."
   ]
 }

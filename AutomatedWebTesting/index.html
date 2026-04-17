@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QA Test Reports — All Runs</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; padding: 2rem; min-height: 100vh; }
+  .header { text-align: center; margin-bottom: 2rem; padding: 2rem; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 16px; border: 1px solid #334155; }
+  h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #38bdf8; }
+  p.sub { color: #94a3b8; font-size: 1rem; }
+  .stats { display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+  .stat { background: #1e293b; padding: 8px 20px; border-radius: 10px; border: 1px solid #334155; }
+  .stat strong { color: #38bdf8; font-size: 1.3rem; }
+  .stat span { color: #94a3b8; font-size: 0.85rem; display: block; }
+  table { width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
+  th { background: #334155; color: #38bdf8; text-align: left; padding: 14px 16px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  td { padding: 14px 16px; border-bottom: 1px solid #1e3a5f; font-size: 0.95rem; }
+  tr:hover { background: #263347; }
+  tr.latest-row { background: #172337; border-left: 3px solid #38bdf8; }
+  a { color: #38bdf8; text-decoration: none; font-weight: 600; padding: 6px 14px; border: 1px solid #38bdf8; border-radius: 8px; transition: all 0.2s; display: inline-block; }
+  a:hover { background: #38bdf8; color: #0f172a; }
+  .badge { display: inline-block; padding: 2px 7px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; margin: 0 1px; }
+  .badge.critical { background: rgba(239,68,68,0.2); color: #f87171; }
+  .badge.high { background: rgba(249,115,22,0.2); color: #fb923c; }
+  .badge.medium { background: rgba(234,179,8,0.2); color: #fbbf24; }
+  .badge.low { background: rgba(34,197,94,0.2); color: #4ade80; }
+  .latest-tag { background: #38bdf8; color: #0f172a; padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; margin-left: 6px; }
+  @media (max-width: 768px) { body { padding: 1rem; } td, th { padding: 10px 8px; font-size: 0.85rem; } .badge { font-size: 0.65rem; } }
+</style>
+</head><body>
+<div class="header">
+  <h1>QA Test Reports</h1>
+  <p class="sub">Automated UI testing — all runs with screenshots & bug details</p>
+  <div class="stats">
+    <div class="stat"><strong>17</strong><span>Total Runs</span></div>
+  </div>
+</div>
+<table>
+  <thead><tr><th>Run</th><th>Site</th><th>Date</th><th>Bugs</th><th>Report</th></tr></thead>
+  <tbody>
+<tr class="latest-row">
+        <td><strong>#35</strong> <span class="latest-tag">LATEST</span></td>
+        <td>facegym.fynd.io</td>
+        <td>2026-04-17</td>
+        <td><strong>40</strong> <span class="badge critical">C:1</span> <span class="badge high">H:34</span> <span class="badge medium">M:5</span> <span class="badge low">L:0</span></td>
+        <td><a href="reports/facegym-fynd-io/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#34</strong></td>
+        <td>coachnew.fynd.io</td>
+        <td>2026-04-16</td>
+        <td><strong>83</strong> <span class="badge critical">C:2</span> <span class="badge high">H:68</span> <span class="badge medium">M:13</span> <span class="badge low">L:0</span></td>
+        <td><a href="run-34_coachnew-fynd-io_2026-04-16/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#33</strong></td>
+        <td>coachnew.fynd.io</td>
+        <td>2026-04-15 15:31</td>
+        <td><strong>64</strong> <span class="badge critical">C:1</span> <span class="badge high">H:61</span> <span class="badge medium">M:2</span> <span class="badge low">L:0</span></td>
+        <td><a href="run-33_coachnew-fynd-io_2026-04-15_1531/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#32</strong></td>
+        <td>lamartina.fynd.io</td>
+        <td>2026-04-13</td>
+        <td><strong>21</strong> <span class="badge critical">C:0</span> <span class="badge high">H:18</span> <span class="badge medium">M:3</span> <span class="badge low">L:0</span></td>
+        <td><a href="run-20_lamartina-fynd-io_2026-04-03_0438/4k-recheck-report.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#31</strong></td>
+        <td>turbo.ajsk.fynd.io</td>
+        <td>2026-04-10 13:39</td>
+        <td><strong>40</strong> <span class="badge critical">C:2</span> <span class="badge high">H:24</span> <span class="badge medium">M:13</span> <span class="badge low">L:1</span></td>
+        <td><a href="run-31_turbo-ajsk-fynd-io_2026-04-10_1339/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#30</strong></td>
+        <td>sunglasshut.in</td>
+        <td>2026-04-10 13:02</td>
+        <td><strong>?</strong> <span class="badge critical">C:1</span> <span class="badge high">H:24</span> <span class="badge medium">M:27</span> <span class="badge low">L:0</span></td>
+        <td><a href="run-30_sunglasshut-in_2026-04-10_1302/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#29</strong></td>
+        <td>sunglasshut.in</td>
+        <td>2026-04-10 12:18</td>
+        <td><strong>?</strong> <span class="badge critical">C:1</span> <span class="badge high">H:23</span> <span class="badge medium">M:12</span> <span class="badge low">L:0</span></td>
+        <td><a href="run-29_sunglasshut-in_2026-04-10_1218/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#28</strong></td>
+        <td>dieselindia.com</td>
+        <td>2026-04-10 11:15</td>
+        <td><strong>?</strong> <span class="badge critical">C:0</span> <span class="badge high">H:7</span> <span class="badge medium">M:10</span> <span class="badge low">L:0</span></td>
+        <td><a href="run-28_dieselindia-com_2026-04-10_1115/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#27</strong></td>
+        <td>turbo.ajsk.fynd.io</td>
+        <td>2026-04-10 09:50</td>
+        <td><strong>?</strong> <span class="badge critical">C:2</span> <span class="badge high">H:37</span> <span class="badge medium">M:9</span> <span class="badge low">L:1</span></td>
+        <td><a href="run-27_turbo-ajsk-fynd-io_2026-04-10_0950/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#26</strong></td>
+        <td>turbo.ajsk.fynd.io</td>
+        <td>2026-04-10 08:56</td>
+        <td><strong>?</strong> <span class="badge critical">C:2</span> <span class="badge high">H:38</span> <span class="badge medium">M:10</span> <span class="badge low">L:1</span></td>
+        <td><a href="run-26_turbo-ajsk-fynd-io_2026-04-10_0856/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#23</strong></td>
+        <td>coach.co.za</td>
+        <td>2026-04-03 10:47</td>
+        <td><strong>?</strong> <span class="badge critical">C:0</span> <span class="badge high">H:18</span> <span class="badge medium">M:27</span> <span class="badge low">L:0</span></td>
+        <td><a href="run-23_coach-co-za_2026-04-03_1047/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#22</strong></td>
+        <td>coach.co.za</td>
+        <td>2026-04-03 09:38</td>
+        <td><strong>?</strong> <span class="badge critical">C:0</span> <span class="badge high">H:24</span> <span class="badge medium">M:30</span> <span class="badge low">L:0</span></td>
+        <td><a href="run-22_coach-co-za_2026-04-03_0938/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#21</strong></td>
+        <td>coachnew.fynd.io</td>
+        <td>2026-04-03 09:06</td>
+        <td><strong>?</strong> <span class="badge critical">C:1</span> <span class="badge high">H:51</span> <span class="badge medium">M:44</span> <span class="badge low">L:1</span></td>
+        <td><a href="run-21_coachnew-fynd-io_2026-04-03_0906/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#20</strong></td>
+        <td>lamartina.fynd.io</td>
+        <td>2026-04-03 04:38</td>
+        <td><strong>?</strong> <span class="badge critical">C:0</span> <span class="badge high">H:16</span> <span class="badge medium">M:18</span> <span class="badge low">L:2</span></td>
+        <td><a href="run-20_lamartina-fynd-io_2026-04-03_0438/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#19</strong></td>
+        <td>coach.co.za</td>
+        <td>2026-04-02 12:24</td>
+        <td><strong>?</strong> <span class="badge critical">C:0</span> <span class="badge high">H:34</span> <span class="badge medium">M:30</span> <span class="badge low">L:1</span></td>
+        <td><a href="run-19_coach-co-za_2026-04-02_1224/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#18</strong></td>
+        <td>coach.co.za</td>
+        <td>2026-04-02 10:31</td>
+        <td><strong>?</strong> <span class="badge critical">C:0</span> <span class="badge high">H:27</span> <span class="badge medium">M:26</span> <span class="badge low">L:0</span></td>
+        <td><a href="run-18_coach-co-za_2026-04-02_1031/index.html">View Report</a></td>
+      </tr>
+<tr>
+        <td><strong>#17</strong></td>
+        <td>coachnew.fynd.io</td>
+        <td>2026-04-02 10:05</td>
+        <td><strong>?</strong> <span class="badge critical">C:0</span> <span class="badge high">H:27</span> <span class="badge medium">M:24</span> <span class="badge low">L:1</span></td>
+        <td><a href="run-17_coachnew-fynd-io_2026-04-02_1005/index.html">View Report</a></td>
+      </tr>
+  </tbody>
+</table>
+</body></html>
