@@ -1,0 +1,93 @@
+name: QA Smoke Test (PR)
+
+on:
+  pull_request:
+    branches: [gh-pages]
+    paths:
+      - 'src/**'
+      - 'run-test.js'
+      - 'package.json'
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run smoke tests (fast mode)
+        env:
+          UAT_URL: 'https://coachnew.fynd.io'
+          TEST_MODE: 'fast'
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AI_PROVIDER: ${{ secrets.AI_PROVIDER || 'openai' }}
+          TEST_PHONE: ${{ secrets.TEST_PHONE }}
+          TEST_OTP: ${{ secrets.TEST_OTP }}
+          TEST_PINCODE: ${{ secrets.TEST_PINCODE }}
+        run: node run-test.js --mode=fast
+
+      - name: Upload smoke test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-report-${{ github.run_number }}
+          path: |
+            reports/*.html
+            reports/*.json
+          retention-days: 7
+
+      - name: Post PR comment with results
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const glob = require('glob');
+
+            // Find JSON report
+            const jsonFiles = glob.sync('reports/bug-report-*.json');
+            if (jsonFiles.length === 0) {
+              console.log('No report found');
+              return;
+            }
+
+            const report = JSON.parse(fs.readFileSync(jsonFiles[0], 'utf-8'));
+            const bugs = report.bugs || [];
+            const critical = bugs.filter(b => b.severity === 'Critical').length;
+            const high = bugs.filter(b => b.severity === 'High').length;
+
+            const status = critical > 0 ? ':rotating_light:' : high > 0 ? ':warning:' : ':white_check_mark:';
+
+            const body = `## ${status} QA Smoke Test Results
+
+            | Metric | Value |
+            |--------|-------|
+            | Total Bugs | ${bugs.length} |
+            | Critical | ${critical} |
+            | High | ${high} |
+            | Medium | ${bugs.filter(b => b.severity === 'Medium').length} |
+            | Low | ${bugs.filter(b => b.severity === 'Low').length} |
+
+            > Run #${process.env.GITHUB_RUN_NUMBER} | [View Artifacts](${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID})`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: body,
+            });

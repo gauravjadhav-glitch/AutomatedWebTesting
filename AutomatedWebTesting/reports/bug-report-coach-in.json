@@ -1,0 +1,1906 @@
+{
+  "meta": {
+    "url": "https://coach.in",
+    "mode": "standard",
+    "timestamp": "2026-04-20T12:24:56.440Z",
+    "duration": "773s",
+    "reportNum": 1,
+    "testResults": {
+      "passed": 144,
+      "failed": 75,
+      "skipped": 6,
+      "total": 225
+    },
+    "aiCost": "$0.0169"
+  },
+  "discovery": {
+    "livePages": 24,
+    "deadPages": 6,
+    "features": {
+      "hasSearch": true,
+      "hasCart": true,
+      "hasLogin": true,
+      "hasWishlist": true,
+      "hasProducts": true,
+      "hasForms": false,
+      "hasFooter": true,
+      "hasNav": true
+    }
+  },
+  "bugs": [
+    {
+      "id": "BUG-001",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /locate-us (Desktop)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=c9cc4c8e-6d25-49d8-bc04-f4dd51c69411&bo=1&sid=847d04803cb211f198fde74dd4309b52&vid=847d31403cb211f1878b43c4c42db80f&vids=1&msclkid=N&pi=0&lg=en-US&sw=1440&sh=900&sc=24&tl=COACH%C2%AE%20India%20%7C%20Handbags,%20Wallets,%20Clothing,%20Shoes%20%26%20More&p=https%3A%2F%2Fcoach.in%2Flocate-us&r=&lt=211&pt=1776687284384,118,118,,,0,0,0,0,0,,1,47,57,120,204,210,211,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=817907",
+      "location": "/locate-us — Desktop",
+      "steps": [
+        "1. Open https://coach.in/locate-us"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_desktop__locate-us.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:14:45.848Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-002",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on / (Desktop)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=f2cace19-3dc7-400e-9784-d0c6887c1a23&bo=1&sid=847d04803cb211f198fde74dd4309b52&vid=847d31403cb211f1878b43c4c42db80f&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=900&sc=24&tl=Home&p=https%3A%2F%2Fcoach.in%2F&r=&lt=206&pt=1776687285851,71,71,,,0,0,0,0,0,,1,54,70,75,204,206,206,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=366263",
+      "location": "/ — Desktop",
+      "steps": [
+        "1. Open https://coach.in/"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_desktop__.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:14:48.641Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-003",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/women-view-all (Desktop)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=f794c8cc-2005-46a0-b515-97c37a5c8c93&bo=1&sid=847d04803cb211f198fde74dd4309b52&vid=847d31403cb211f1878b43c4c42db80f&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=900&sc=24&tl=Women%27s%20Bags,%20Clothing,%20Accessories%20%26%20Shoes%20%7C%20Coach&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomen-view-all&r=&lt=194&pt=1776687288642,69,69,,,0,0,0,0,0,,1,57,70,72,192,194,194,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=493686",
+      "location": "/collection/women-view-all — Desktop",
+      "steps": [
+        "1. Open https://coach.in/collection/women-view-all"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_desktop__collection_women-view-all.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:14:51.029Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-004",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/men-view-all (Desktop)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=a3a32a31-a809-4516-b287-ce0c900542e6&bo=1&sid=847d04803cb211f198fde74dd4309b52&vid=847d31403cb211f1878b43c4c42db80f&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=900&sc=24&tl=Men%27s%20Bags,%20Clothing,%20Accessories%20%26%20More%20%7C%20Coach&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fmen-view-all&r=&lt=187&pt=1776687291029,67,67,,,1,1,1,1,1,,2,54,71,71,185,187,187,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=74059",
+      "location": "/collection/men-view-all — Desktop",
+      "steps": [
+        "1. Open https://coach.in/collection/men-view-all"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_desktop__collection_men-view-all.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:14:53.417Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-005",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/handbags-for-women (Desktop)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=5af6b38c-0c5a-41d6-bfcb-4c77587a259a&bo=1&sid=847d04803cb211f198fde74dd4309b52&vid=847d31403cb211f1878b43c4c42db80f&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=900&sc=24&tl=Women%E2%80%99s%20Handbags%20%7C%20Coach%20India&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fhandbags-for-women&r=&lt=178&pt=1776687293417,67,67,,,1,1,1,1,1,,1,56,67,71,175,178,178,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=769899",
+      "location": "/collection/handbags-for-women — Desktop",
+      "steps": [
+        "1. Open https://coach.in/collection/handbags-for-women"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_desktop__collection_handbags-for-women.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:14:55.801Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-006",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/womens-new-arrivals (Desktop)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=38f0d049-acf8-4ea6-a17c-c2d88d0acfe8&bo=1&sid=847d04803cb211f198fde74dd4309b52&vid=847d31403cb211f1878b43c4c42db80f&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=900&sc=24&tl=New%20Arrivals%20For%20Women&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomens-new-arrivals&r=&lt=165&pt=1776687295802,63,63,,,0,0,0,0,0,,1,52,64,67,162,165,165,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=884613",
+      "location": "/collection/womens-new-arrivals — Desktop",
+      "steps": [
+        "1. Open https://coach.in/collection/womens-new-arrivals"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_desktop__collection_womens-new-arrivals.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:14:58.166Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-007",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /profile/orders (Desktop)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=c0f939a1-351c-4334-8dbd-bc9fd40c32cd&bo=1&sid=847d04803cb211f198fde74dd4309b52&vid=847d31403cb211f1878b43c4c42db80f&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=900&sc=24&tl=COACH%C2%AE%20India%20%7C%20Handbags,%20Wallets,%20Clothing,%20Shoes%20%26%20More&p=https%3A%2F%2Fcoach.in%2Fprofile%2Forders&r=&lt=149&pt=1776687298167,54,54,,,0,0,0,0,0,,0,44,52,57,147,149,149,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=850528",
+      "location": "/profile/orders — Desktop",
+      "steps": [
+        "1. Open https://coach.in/profile/orders"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_desktop__profile_orders.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:00.500Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-008",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /contact-us (Desktop)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=99e9bc3f-9eee-4e77-b68f-66a532ed2fcc&bo=1&sid=847d04803cb211f198fde74dd4309b52&vid=847d31403cb211f1878b43c4c42db80f&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=900&sc=24&tl=Contact%20Us&p=https%3A%2F%2Fcoach.in%2Fcontact-us&r=&lt=189&pt=1776687300501,51,51,,,0,0,0,0,0,,1,47,80,52,186,189,189,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=286156",
+      "location": "/contact-us — Desktop",
+      "steps": [
+        "1. Open https://coach.in/contact-us"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_desktop__contact-us.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:02.923Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-009",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/tabby (Desktop)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=61de0266-4db1-4282-aeba-06d92d6ab4a5&bo=1&sid=847d04803cb211f198fde74dd4309b52&vid=847d31403cb211f1878b43c4c42db80f&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=900&sc=24&tl=COACH%C2%AE%20Tabby&p=https%3A%2F%2Fcoach.in%2Fcollection%2Ftabby&r=&lt=258&pt=1776687302924,89,89,,,0,0,0,0,0,,1,76,87,92,255,258,258,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=667663",
+      "location": "/collection/tabby — Desktop",
+      "steps": [
+        "1. Open https://coach.in/collection/tabby"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_desktop__collection_tabby.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:05.490Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-010",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/women-bag-charms-key-rings (Desktop)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=4247e949-ba33-4040-9cb2-d29d1ab28e44&bo=1&sid=847d04803cb211f198fde74dd4309b52&vid=847d31403cb211f1878b43c4c42db80f&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=900&sc=24&tl=COACH%C2%AE%20Bag%20Straps&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomen-bag-charms-key-rings&r=&lt=245&pt=1776687305491,60,60,,,0,0,0,0,0,,1,55,73,66,242,245,245,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=414071",
+      "location": "/collection/women-bag-charms-key-rings — Desktop",
+      "steps": [
+        "1. Open https://coach.in/collection/women-bag-charms-key-rings"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_desktop__collection_women-bag-charms-key-rings.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:07.962Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-011",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on / (4K UHD)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=7c9a2c2f-cec4-472e-80ab-874a01c804cf&bo=1&sid=943db9303cb211f1a588afd1d070700f&vid=943ddc703cb211f182923d55839fecdf&vids=0&msclkid=N&pi=0&lg=en-US&sw=3840&sh=2160&sc=24&tl=Home&p=https%3A%2F%2Fcoach.in%2F&r=&lt=680&pt=1776687311456,137,137,,,1,1,1,1,1,,2,104,122,141,676,680,680,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=745618",
+      "location": "/ — 4K UHD",
+      "steps": [
+        "1. Open https://coach.in/"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_4k__.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:18.674Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-012",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/women-view-all (4K UHD)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=55a14d02-a02e-4fd8-b2f8-248247c6dc55&bo=1&sid=943db9303cb211f1a588afd1d070700f&vid=943ddc703cb211f182923d55839fecdf&vids=0&msclkid=N&pi=0&lg=en-US&sw=3840&sh=2160&sc=24&tl=Women%27s%20Bags,%20Clothing,%20Accessories%20%26%20Shoes%20%7C%20Coach&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomen-view-all&r=&lt=234&pt=1776687318675,115,115,,,0,0,0,0,0,,1,105,119,118,232,234,234,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=668385",
+      "location": "/collection/women-view-all — 4K UHD",
+      "steps": [
+        "1. Open https://coach.in/collection/women-view-all"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_4k__collection_women-view-all.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:21.933Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-013",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/men-view-all (4K UHD)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=cc0b4de2-ec60-4657-bde7-583b1b2c664c&bo=1&sid=943db9303cb211f1a588afd1d070700f&vid=943ddc703cb211f182923d55839fecdf&vids=0&msclkid=N&pi=0&lg=en-US&sw=3840&sh=2160&sc=24&tl=Men%27s%20Bags,%20Clothing,%20Accessories%20%26%20More%20%7C%20Coach&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fmen-view-all&r=&lt=213&pt=1776687321934,111,111,,,0,0,0,0,0,,1,102,117,114,210,213,213,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=862429",
+      "location": "/collection/men-view-all — 4K UHD",
+      "steps": [
+        "1. Open https://coach.in/collection/men-view-all"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_4k__collection_men-view-all.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:26.339Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-014",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/handbags-for-women (4K UHD)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=3697f3db-8fb9-41ba-8072-da6c433d051a&bo=1&sid=943db9303cb211f1a588afd1d070700f&vid=943ddc703cb211f182923d55839fecdf&vids=0&msclkid=N&pi=0&lg=en-US&sw=3840&sh=2160&sc=24&tl=Women%E2%80%99s%20Handbags%20%7C%20Coach%20India&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fhandbags-for-women&r=&lt=330&pt=1776687326342,123,123,,,0,0,0,0,0,,2,97,113,130,323,330,330,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=35172",
+      "location": "/collection/handbags-for-women — 4K UHD",
+      "steps": [
+        "1. Open https://coach.in/collection/handbags-for-women"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_4k__collection_handbags-for-women.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:30.252Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-015",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/womens-new-arrivals (4K UHD)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=3136c25b-2ad7-4301-890d-60593b2562b5&bo=1&sid=943db9303cb211f1a588afd1d070700f&vid=943ddc703cb211f182923d55839fecdf&vids=0&msclkid=N&pi=0&lg=en-US&sw=3840&sh=2160&sc=24&tl=New%20Arrivals%20For%20Women&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomens-new-arrivals&r=&lt=293&pt=1776687330253,127,127,,,0,0,0,0,0,,1,114,134,134,291,293,293,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=248503",
+      "location": "/collection/womens-new-arrivals — 4K UHD",
+      "steps": [
+        "1. Open https://coach.in/collection/womens-new-arrivals"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_4k__collection_womens-new-arrivals.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:34.271Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-016",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /profile/orders (4K UHD)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=ce3217e3-8a39-45cb-b72b-553f6b490cbc&bo=1&sid=943db9303cb211f1a588afd1d070700f&vid=943ddc703cb211f182923d55839fecdf&vids=0&msclkid=N&pi=0&lg=en-US&sw=3840&sh=2160&sc=24&tl=COACH%C2%AE%20India%20%7C%20Handbags,%20Wallets,%20Clothing,%20Shoes%20%26%20More&p=https%3A%2F%2Fcoach.in%2Fprofile%2Forders&r=&lt=326&pt=1776687334273,148,148,,,0,0,0,0,0,,2,100,171,153,322,326,326,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=415416",
+      "location": "/profile/orders — 4K UHD",
+      "steps": [
+        "1. Open https://coach.in/profile/orders"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_4k__profile_orders.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:37.249Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-017",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /contact-us (4K UHD)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=3bb156df-0a8c-4be8-84c6-8507b9293b7e&bo=1&sid=943db9303cb211f1a588afd1d070700f&vid=943ddc703cb211f182923d55839fecdf&vids=0&msclkid=N&pi=0&lg=en-US&sw=3840&sh=2160&sc=24&tl=Contact%20Us&p=https%3A%2F%2Fcoach.in%2Fcontact-us&r=&lt=233&pt=1776687337250,120,120,,,0,0,0,0,0,,0,107,115,121,230,233,233,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=66410",
+      "location": "/contact-us — 4K UHD",
+      "steps": [
+        "1. Open https://coach.in/contact-us"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_4k__contact-us.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:40.086Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-018",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/tabby (4K UHD)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=d5a88fe5-d5ed-434c-bd87-d8c1cef19a4d&bo=1&sid=943db9303cb211f1a588afd1d070700f&vid=943ddc703cb211f182923d55839fecdf&vids=0&msclkid=N&pi=0&lg=en-US&sw=3840&sh=2160&sc=24&tl=COACH%C2%AE%20Tabby&p=https%3A%2F%2Fcoach.in%2Fcollection%2Ftabby&r=&lt=321&pt=1776687340087,133,133,,,0,0,0,0,0,,1,111,137,138,317,321,321,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=988506",
+      "location": "/collection/tabby — 4K UHD",
+      "steps": [
+        "1. Open https://coach.in/collection/tabby"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_4k__collection_tabby.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:43.510Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-019",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/women-bag-charms-key-rings (4K UHD)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=84c77b63-34e7-43d1-adc5-661edc0c970d&bo=1&sid=943db9303cb211f1a588afd1d070700f&vid=943ddc703cb211f182923d55839fecdf&vids=0&msclkid=N&pi=0&lg=en-US&sw=3840&sh=2160&sc=24&tl=COACH%C2%AE%20Bag%20Straps&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomen-bag-charms-key-rings&r=&lt=217&pt=1776687343511,111,111,,,0,0,0,0,0,,1,102,114,116,215,217,217,,,&pn=0,0&evt=pageLoad&sv=2&cdb=AQAQ&rn=313572",
+      "location": "/collection/women-bag-charms-key-rings — 4K UHD",
+      "steps": [
+        "1. Open https://coach.in/collection/women-bag-charms-key-rings"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_4k__collection_women-bag-charms-key-rings.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:46.684Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-020",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /locate-us (iphone)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=375cd448-4836-42a6-ac48-cf759d181424&bo=1&sid=aa3889503cb211f19588b5548e5198c6&vid=aa389ab03cb211f1824dadee6a32635e&vids=1&msclkid=N&pi=0&lg=en-US&sw=393&sh=660&sc=24&tl=COACH%C2%AE%20India%20%7C%20Handbags,%20Wallets,%20Clothing,%20Shoes%20%26%20More&p=https%3A%2F%2Fcoach.in%2Flocate-us&r=&lt=155&pt=1776687347862,71,71,,,1,1,1,1,1,,2,70,77,74,150,154,155,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=997733",
+      "location": "/locate-us — iphone",
+      "steps": [
+        "1. Open https://coach.in/locate-us"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_iphone__locate-us.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:49.270Z",
+      "aiAnalysis": {
+        "rootCause": "The image URL is broken or inaccessible.",
+        "recommendedFix": "Update the image URL to a valid and accessible location.",
+        "impact": "High"
+      }
+    },
+    {
+      "id": "BUG-021",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on / (iphone)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=f45b8658-36e1-42b5-bb54-99ef5794b084&bo=1&sid=aa3889503cb211f19588b5548e5198c6&vid=aa389ab03cb211f1824dadee6a32635e&vids=0&msclkid=N&pi=0&lg=en-US&sw=393&sh=660&sc=24&tl=Home&p=https%3A%2F%2Fcoach.in%2F&r=&lt=197&pt=1776687349271,66,66,,,1,1,1,1,1,,2,62,71,68,195,197,197,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=156253",
+      "location": "/ — iphone",
+      "steps": [
+        "1. Open https://coach.in/"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_iphone__.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:51.638Z"
+    },
+    {
+      "id": "BUG-022",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/women-view-all (iphone)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=eb7fe528-95d9-4bcf-8259-f053270b864e&bo=1&sid=aa3889503cb211f19588b5548e5198c6&vid=aa389ab03cb211f1824dadee6a32635e&vids=0&msclkid=N&pi=0&lg=en-US&sw=393&sh=660&sc=24&tl=Women%27s%20Bags,%20Clothing,%20Accessories%20%26%20Shoes%20%7C%20Coach&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomen-view-all&r=&lt=206&pt=1776687351639,85,85,,,0,0,0,0,0,,1,72,86,87,203,206,206,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=242882",
+      "location": "/collection/women-view-all — iphone",
+      "steps": [
+        "1. Open https://coach.in/collection/women-view-all"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_iphone__collection_women-view-all.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:53.908Z"
+    },
+    {
+      "id": "BUG-023",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/men-view-all (iphone)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=2953d31c-d305-4159-85ae-9289a3d85ff3&bo=1&sid=aa3889503cb211f19588b5548e5198c6&vid=aa389ab03cb211f1824dadee6a32635e&vids=0&msclkid=N&pi=0&lg=en-US&sw=393&sh=660&sc=24&tl=Men%27s%20Bags,%20Clothing,%20Accessories%20%26%20More%20%7C%20Coach&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fmen-view-all&r=&lt=215&pt=1776687353909,96,96,,,0,0,0,0,0,,1,83,97,100,212,215,215,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=996577",
+      "location": "/collection/men-view-all — iphone",
+      "steps": [
+        "1. Open https://coach.in/collection/men-view-all"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_iphone__collection_men-view-all.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:56.191Z"
+    },
+    {
+      "id": "BUG-024",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/handbags-for-women (iphone)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=ddc19709-8f52-4689-bf14-950591c54114&bo=1&sid=aa3889503cb211f19588b5548e5198c6&vid=aa389ab03cb211f1824dadee6a32635e&vids=0&msclkid=N&pi=0&lg=en-US&sw=393&sh=660&sc=24&tl=Women%E2%80%99s%20Handbags%20%7C%20Coach%20India&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fhandbags-for-women&r=&lt=198&pt=1776687356191,84,84,,,1,1,1,1,1,,1,73,84,88,195,197,198,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=306976",
+      "location": "/collection/handbags-for-women — iphone",
+      "steps": [
+        "1. Open https://coach.in/collection/handbags-for-women"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_iphone__collection_handbags-for-women.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:15:58.455Z"
+    },
+    {
+      "id": "BUG-025",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/womens-new-arrivals (iphone)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=442acacd-2492-4d4f-bb6b-efb4756347d8&bo=1&sid=aa3889503cb211f19588b5548e5198c6&vid=aa389ab03cb211f1824dadee6a32635e&vids=0&msclkid=N&pi=0&lg=en-US&sw=393&sh=660&sc=24&tl=New%20Arrivals%20For%20Women&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomens-new-arrivals&r=&lt=187&pt=1776687358456,82,82,,,1,1,1,1,1,,1,69,86,87,184,187,187,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=142646",
+      "location": "/collection/womens-new-arrivals — iphone",
+      "steps": [
+        "1. Open https://coach.in/collection/womens-new-arrivals"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_iphone__collection_womens-new-arrivals.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:00.709Z"
+    },
+    {
+      "id": "BUG-026",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /profile/orders (iphone)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=5878ed7b-8c0a-4244-9dc6-acc0b12c203b&bo=1&sid=aa3889503cb211f19588b5548e5198c6&vid=aa389ab03cb211f1824dadee6a32635e&vids=0&msclkid=N&pi=0&lg=en-US&sw=393&sh=660&sc=24&tl=COACH%C2%AE%20India%20%7C%20Handbags,%20Wallets,%20Clothing,%20Shoes%20%26%20More&p=https%3A%2F%2Fcoach.in%2Fprofile%2Forders&r=&lt=180&pt=1776687360710,75,75,,,0,0,0,0,0,,1,64,72,79,178,180,180,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=983739",
+      "location": "/profile/orders — iphone",
+      "steps": [
+        "1. Open https://coach.in/profile/orders"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_iphone__profile_orders.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:02.954Z"
+    },
+    {
+      "id": "BUG-027",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /contact-us (iphone)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=00467d6a-2d35-4639-b41e-6eb9c572535f&bo=1&sid=aa3889503cb211f19588b5548e5198c6&vid=aa389ab03cb211f1824dadee6a32635e&vids=0&msclkid=N&pi=0&lg=en-US&sw=393&sh=660&sc=24&tl=Contact%20Us&p=https%3A%2F%2Fcoach.in%2Fcontact-us&r=&lt=178&pt=1776687362955,64,64,,,0,0,0,0,0,,1,60,70,66,175,178,178,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=875596",
+      "location": "/contact-us — iphone",
+      "steps": [
+        "1. Open https://coach.in/contact-us"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_iphone__contact-us.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:05.207Z"
+    },
+    {
+      "id": "BUG-028",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/tabby (iphone)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=4b89eceb-23d7-45b6-a3a1-130e33d6b886&bo=1&sid=aa3889503cb211f19588b5548e5198c6&vid=aa389ab03cb211f1824dadee6a32635e&vids=0&msclkid=N&pi=0&lg=en-US&sw=393&sh=660&sc=24&tl=COACH%C2%AE%20Tabby&p=https%3A%2F%2Fcoach.in%2Fcollection%2Ftabby&r=&lt=218&pt=1776687365208,94,94,,,0,0,0,0,0,,1,80,93,97,216,218,218,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=461769",
+      "location": "/collection/tabby — iphone",
+      "steps": [
+        "1. Open https://coach.in/collection/tabby"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_iphone__collection_tabby.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:07.531Z"
+    },
+    {
+      "id": "BUG-029",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/women-bag-charms-key-rings (iphone)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=afb63d32-d568-4432-a86f-54ff40ffb4ef&bo=1&sid=aa3889503cb211f19588b5548e5198c6&vid=aa389ab03cb211f1824dadee6a32635e&vids=0&msclkid=N&pi=0&lg=en-US&sw=393&sh=660&sc=24&tl=COACH%C2%AE%20Bag%20Straps&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomen-bag-charms-key-rings&r=&lt=199&pt=1776687367532,82,82,,,0,0,0,0,0,,1,69,86,87,196,199,199,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=704577",
+      "location": "/collection/women-bag-charms-key-rings — iphone",
+      "steps": [
+        "1. Open https://coach.in/collection/women-bag-charms-key-rings"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_iphone__collection_women-bag-charms-key-rings.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:09.808Z"
+    },
+    {
+      "id": "BUG-030",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on / (pixel)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=61787694-2d68-4614-8e71-7447929a2ecc&bo=1&sid=b81f1d303cb211f1b0f98d78c1a141a8&vid=b81f37d03cb211f1907549b0765d8805&vids=0&msclkid=N&pi=0&lg=en-US&sw=412&sh=839&sc=24&tl=Home&p=https%3A%2F%2Fcoach.in%2F&r=&lt=279&pt=1776687372284,127,127,,,0,0,0,0,0,,1,112,122,128,276,279,279,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=413115",
+      "location": "/ — pixel",
+      "steps": [
+        "1. Open https://coach.in/"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_pixel__.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:14.798Z"
+    },
+    {
+      "id": "BUG-031",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/women-view-all (pixel)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=7f250cce-4f57-4602-833c-7ecb0828e806&bo=1&sid=b81f1d303cb211f1b0f98d78c1a141a8&vid=b81f37d03cb211f1907549b0765d8805&vids=0&msclkid=N&pi=0&lg=en-US&sw=412&sh=839&sc=24&tl=Women%27s%20Bags,%20Clothing,%20Accessories%20%26%20Shoes%20%7C%20Coach&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomen-view-all&r=&lt=191&pt=1776687374800,62,62,,,0,0,0,0,0,,1,48,58,66,188,191,191,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=705961",
+      "location": "/collection/women-view-all — pixel",
+      "steps": [
+        "1. Open https://coach.in/collection/women-view-all"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_pixel__collection_women-view-all.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:17.085Z"
+    },
+    {
+      "id": "BUG-032",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/men-view-all (pixel)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=a5a74a79-cfa6-4b2d-9106-9077e1acbbca&bo=1&sid=b81f1d303cb211f1b0f98d78c1a141a8&vid=b81f37d03cb211f1907549b0765d8805&vids=0&msclkid=N&pi=0&lg=en-US&sw=412&sh=839&sc=24&tl=Men%27s%20Bags,%20Clothing,%20Accessories%20%26%20More%20%7C%20Coach&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fmen-view-all&r=&lt=189&pt=1776687377087,64,64,,,0,0,0,0,0,,1,51,61,69,187,189,189,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=15830",
+      "location": "/collection/men-view-all — pixel",
+      "steps": [
+        "1. Open https://coach.in/collection/men-view-all"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_pixel__collection_men-view-all.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:19.386Z"
+    },
+    {
+      "id": "BUG-033",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/handbags-for-women (pixel)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=98fee5a5-a2fa-4d1c-afec-4f1bdf7a71e0&bo=1&sid=b81f1d303cb211f1b0f98d78c1a141a8&vid=b81f37d03cb211f1907549b0765d8805&vids=0&msclkid=N&pi=0&lg=en-US&sw=412&sh=839&sc=24&tl=Women%E2%80%99s%20Handbags%20%7C%20Coach%20India&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fhandbags-for-women&r=&lt=192&pt=1776687379387,76,76,,,1,1,1,1,1,,4,62,78,81,189,192,192,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=618690",
+      "location": "/collection/handbags-for-women — pixel",
+      "steps": [
+        "1. Open https://coach.in/collection/handbags-for-women"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_pixel__collection_handbags-for-women.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:21.685Z"
+    },
+    {
+      "id": "BUG-034",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/womens-new-arrivals (pixel)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=f4cc4982-cebe-4617-960c-07377a3fed34&bo=1&sid=b81f1d303cb211f1b0f98d78c1a141a8&vid=b81f37d03cb211f1907549b0765d8805&vids=0&msclkid=N&pi=0&lg=en-US&sw=412&sh=839&sc=24&tl=New%20Arrivals%20For%20Women&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomens-new-arrivals&r=&lt=180&pt=1776687381686,65,65,,,1,1,1,1,1,,1,56,68,70,178,180,180,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=197063",
+      "location": "/collection/womens-new-arrivals — pixel",
+      "steps": [
+        "1. Open https://coach.in/collection/womens-new-arrivals"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_pixel__collection_womens-new-arrivals.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:23.966Z"
+    },
+    {
+      "id": "BUG-035",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /profile/orders (pixel)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=e61cb4eb-f207-4239-a919-fdcf5e2bc699&bo=1&sid=b81f1d303cb211f1b0f98d78c1a141a8&vid=b81f37d03cb211f1907549b0765d8805&vids=0&msclkid=N&pi=0&lg=en-US&sw=412&sh=839&sc=24&tl=COACH%C2%AE%20India%20%7C%20Handbags,%20Wallets,%20Clothing,%20Shoes%20%26%20More&p=https%3A%2F%2Fcoach.in%2Fprofile%2Forders&r=&lt=181&pt=1776687383968,62,62,,,0,0,0,0,0,,1,49,60,66,178,181,181,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=277810",
+      "location": "/profile/orders — pixel",
+      "steps": [
+        "1. Open https://coach.in/profile/orders"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_pixel__profile_orders.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:26.223Z"
+    },
+    {
+      "id": "BUG-036",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /contact-us (pixel)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=868f8b22-d48c-4c34-bf57-199bfa5823ec&bo=1&sid=b81f1d303cb211f1b0f98d78c1a141a8&vid=b81f37d03cb211f1907549b0765d8805&vids=0&msclkid=N&pi=0&lg=en-US&sw=412&sh=839&sc=24&tl=Contact%20Us&p=https%3A%2F%2Fcoach.in%2Fcontact-us&r=&lt=179&pt=1776687386225,59,59,,,0,0,0,0,0,,1,54,62,61,176,179,179,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=186005",
+      "location": "/contact-us — pixel",
+      "steps": [
+        "1. Open https://coach.in/contact-us"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_pixel__contact-us.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:28.476Z"
+    },
+    {
+      "id": "BUG-037",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/tabby (pixel)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=502c6810-6fe8-4b11-9bf5-d4dab1f38c47&bo=1&sid=b81f1d303cb211f1b0f98d78c1a141a8&vid=b81f37d03cb211f1907549b0765d8805&vids=0&msclkid=N&pi=0&lg=en-US&sw=412&sh=839&sc=24&tl=COACH%C2%AE%20Tabby&p=https%3A%2F%2Fcoach.in%2Fcollection%2Ftabby&r=&lt=194&pt=1776687388478,65,65,,,0,0,0,0,0,,1,51,64,68,192,194,194,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=557843",
+      "location": "/collection/tabby — pixel",
+      "steps": [
+        "1. Open https://coach.in/collection/tabby"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_pixel__collection_tabby.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:30.774Z"
+    },
+    {
+      "id": "BUG-038",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 broken image(s) on /collection/women-bag-charms-key-rings (pixel)",
+      "description": "Images failed to load: https://bat.bing.com/action/0?ti=DISABLED&tm=gtm002&Ver=2&mid=f8df4e8d-7e87-474b-befc-3564d87ae8d9&bo=1&sid=b81f1d303cb211f1b0f98d78c1a141a8&vid=b81f37d03cb211f1907549b0765d8805&vids=0&msclkid=N&pi=0&lg=en-US&sw=412&sh=839&sc=24&tl=COACH%C2%AE%20Bag%20Straps&p=https%3A%2F%2Fcoach.in%2Fcollection%2Fwomen-bag-charms-key-rings&r=&lt=219&pt=1776687390776,71,71,,,0,0,0,0,0,,1,52,65,78,216,219,219,,,&pn=0,0&mtp=1&evt=pageLoad&sv=2&cdb=AQAQ&rn=967300",
+      "location": "/collection/women-bag-charms-key-rings — pixel",
+      "steps": [
+        "1. Open https://coach.in/collection/women-bag-charms-key-rings"
+      ],
+      "expected": "All images load",
+      "actual": "1 images broken",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/broken_img_pixel__collection_women-bag-charms-key-rings.png",
+      "fix": "Check image URLs and CDN availability",
+      "timestamp": "2026-04-20T12:16:33.096Z"
+    },
+    {
+      "id": "BUG-039",
+      "severity": "Critical",
+      "category": "E-Commerce",
+      "title": "PDP missing: Product Image",
+      "description": "Product page does not show Product Image",
+      "location": "PDP — Desktop",
+      "steps": [
+        "1. Navigate to https://coach.in/product/essential-card-holder-wallet-17635117"
+      ],
+      "expected": "Product Image is visible",
+      "actual": "Product Image not found on page",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/pdp_missing_product_image.png",
+      "fix": "Ensure Product Image is rendered on PDP",
+      "timestamp": "2026-04-20T12:16:42.741Z"
+    },
+    {
+      "id": "BUG-040",
+      "severity": "Critical",
+      "category": "E-Commerce",
+      "title": "Add to Cart button fails",
+      "description": "Error: page.$: Unsupported token \"{\" while parsing css selector \"[class*=\"size-option\"], [class*=\"sizeOption\"], [class*=\"size_option\"], [class*=\"size-selector\"], [class*=\"sizeSelector\"], [class*=\"size-container\"] button, [class*=\"size\"] button, select[name*=\"size\" i], [data-testid*=\"size\"], button:has-text(/^(XS|S|M|L|XL|XXL|XXXL|\\d{1,2})$/), #native_dropdown_selected_size_name, ._1q8vHb\". Did you mean to CSS.escape it?",
+      "location": "PDP — Desktop",
+      "steps": [
+        "1. Open PDP",
+        "2. Select size",
+        "3. Click Add to Cart"
+      ],
+      "expected": "Item added to cart",
+      "actual": "Error: page.$: Unsupported token \"{\" while parsing css selector \"[class*=\"size-option\"], [class*=\"sizeOption\"], [class*=\"size_option\"], [class*=\"size-selector\"], [class*=\"sizeSelector\"], [class*=\"size-container\"] button, [class*=\"size\"] button, select[name*=\"size\" i], [data-testid*=\"size\"], button:has-text(/^(XS|S|M|L|XL|XXL|XXXL|\\d{1,2})$/), #native_dropdown_selected_size_name, ._1q8vHb\". Did you mean to CSS.escape it?",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/pdp_atc_error.png",
+      "fix": "Debug the Add to Cart handler",
+      "timestamp": "2026-04-20T12:16:43.231Z"
+    },
+    {
+      "id": "BUG-041",
+      "severity": "Medium",
+      "category": "UI Functionality",
+      "title": "Console errors during scroll",
+      "description": "10 JS errors occurred while scrolling",
+      "location": "Homepage — Desktop",
+      "steps": [
+        "1. Open homepage",
+        "2. Scroll to bottom"
+      ],
+      "expected": "No JS errors",
+      "actual": "10 errors",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/journey2_bottom.png",
+      "fix": "Fix JS errors triggered by scroll events",
+      "timestamp": "2026-04-20T12:17:07.059Z"
+    },
+    {
+      "id": "BUG-042",
+      "severity": "High",
+      "category": "Accessibility",
+      "title": "2 a11y violations on /locate-us",
+      "description": "Critical/serious WCAG violations:\n- Form elements must have labels (critical, 1 instances)\n- Links must have discernible text (serious, 4 instances)",
+      "location": "/locate-us — Desktop",
+      "steps": [
+        "1. Run axe-core audit on /locate-us"
+      ],
+      "expected": "0 critical/serious violations",
+      "actual": "2 violations found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/a11y__locate-us.png",
+      "fix": "Fix WCAG violations: Form elements must have labels",
+      "timestamp": "2026-04-20T12:17:22.265Z"
+    },
+    {
+      "id": "BUG-043",
+      "severity": "High",
+      "category": "Accessibility",
+      "title": "2 a11y violations on /",
+      "description": "Critical/serious WCAG violations:\n- Form elements must have labels (critical, 1 instances)\n- Links must have discernible text (serious, 4 instances)",
+      "location": "/ — Desktop",
+      "steps": [
+        "1. Run axe-core audit on /"
+      ],
+      "expected": "0 critical/serious violations",
+      "actual": "2 violations found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/a11y__.png",
+      "fix": "Fix WCAG violations: Form elements must have labels",
+      "timestamp": "2026-04-20T12:17:25.780Z"
+    },
+    {
+      "id": "BUG-044",
+      "severity": "High",
+      "category": "Accessibility",
+      "title": "2 a11y violations on /collection/women-view-all",
+      "description": "Critical/serious WCAG violations:\n- Form elements must have labels (critical, 1 instances)\n- Links must have discernible text (serious, 4 instances)",
+      "location": "/collection/women-view-all — Desktop",
+      "steps": [
+        "1. Run axe-core audit on /collection/women-view-all"
+      ],
+      "expected": "0 critical/serious violations",
+      "actual": "2 violations found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/a11y__collection_women-view-all.png",
+      "fix": "Fix WCAG violations: Form elements must have labels",
+      "timestamp": "2026-04-20T12:17:31.029Z"
+    },
+    {
+      "id": "BUG-045",
+      "severity": "High",
+      "category": "Accessibility",
+      "title": "2 a11y violations on /collection/men-view-all",
+      "description": "Critical/serious WCAG violations:\n- Form elements must have labels (critical, 1 instances)\n- Links must have discernible text (serious, 4 instances)",
+      "location": "/collection/men-view-all — Desktop",
+      "steps": [
+        "1. Run axe-core audit on /collection/men-view-all"
+      ],
+      "expected": "0 critical/serious violations",
+      "actual": "2 violations found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/a11y__collection_men-view-all.png",
+      "fix": "Fix WCAG violations: Form elements must have labels",
+      "timestamp": "2026-04-20T12:17:35.686Z"
+    },
+    {
+      "id": "BUG-046",
+      "severity": "High",
+      "category": "Accessibility",
+      "title": "2 a11y violations on /collection/handbags-for-women",
+      "description": "Critical/serious WCAG violations:\n- Form elements must have labels (critical, 1 instances)\n- Links must have discernible text (serious, 4 instances)",
+      "location": "/collection/handbags-for-women — Desktop",
+      "steps": [
+        "1. Run axe-core audit on /collection/handbags-for-women"
+      ],
+      "expected": "0 critical/serious violations",
+      "actual": "2 violations found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/a11y__collection_handbags-for-women.png",
+      "fix": "Fix WCAG violations: Form elements must have labels",
+      "timestamp": "2026-04-20T12:17:39.345Z"
+    },
+    {
+      "id": "BUG-047",
+      "severity": "High",
+      "category": "SEO",
+      "title": "SEO issues on /locate-us (2)",
+      "description": "No <h1> tag on page; 12 images missing alt text",
+      "location": "/locate-us — Desktop",
+      "steps": [
+        "1. Audit https://coach.in/locate-us with SEO checker"
+      ],
+      "expected": "Valid meta tags and SEO structure",
+      "actual": "No <h1> tag on page; 12 images missing alt text",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/seo__locate-us.png",
+      "fix": "Add missing meta tags and fix SEO structure",
+      "timestamp": "2026-04-20T12:17:47.118Z"
+    },
+    {
+      "id": "BUG-048",
+      "severity": "High",
+      "category": "SEO",
+      "title": "SEO issues on / (1)",
+      "description": "Title missing or too short (<10 chars)",
+      "location": "/ — Desktop",
+      "steps": [
+        "1. Audit https://coach.in/ with SEO checker"
+      ],
+      "expected": "Valid meta tags and SEO structure",
+      "actual": "Title missing or too short (<10 chars)",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/seo__.png",
+      "fix": "Add missing meta tags and fix SEO structure",
+      "timestamp": "2026-04-20T12:17:49.628Z"
+    },
+    {
+      "id": "BUG-049",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "32 untappable elements (<25px) at 4K on /locate-us",
+      "description": "Interactive elements too small for touch at 4K resolution",
+      "location": "/locate-us — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "All interactive elements >= 25px",
+      "actual": "32 elements < 25px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__locate-us.png",
+      "fix": "Increase min-height for interactive elements",
+      "timestamp": "2026-04-20T12:18:18.508Z"
+    },
+    {
+      "id": "BUG-050",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "Excessive whitespace at 4K on /locate-us (12% content)",
+      "description": "Content covers less than 40% of 4K viewport",
+      "location": "/locate-us — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "Content covers >40% of viewport",
+      "actual": "Content covers 12%",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__locate-us.png",
+      "fix": "Use fluid layouts or max-width containers for 4K",
+      "timestamp": "2026-04-20T12:18:18.510Z"
+    },
+    {
+      "id": "BUG-051",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "34 untappable elements (<25px) at 4K on /",
+      "description": "Interactive elements too small for touch at 4K resolution",
+      "location": "/ — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "All interactive elements >= 25px",
+      "actual": "34 elements < 25px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__.png",
+      "fix": "Increase min-height for interactive elements",
+      "timestamp": "2026-04-20T12:18:22.864Z"
+    },
+    {
+      "id": "BUG-052",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "96 untappable elements (<25px) at 4K on /collection/women-view-all",
+      "description": "Interactive elements too small for touch at 4K resolution",
+      "location": "/collection/women-view-all — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "All interactive elements >= 25px",
+      "actual": "96 elements < 25px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__collection_women-view-all.png",
+      "fix": "Increase min-height for interactive elements",
+      "timestamp": "2026-04-20T12:18:25.718Z"
+    },
+    {
+      "id": "BUG-053",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "64 untappable elements (<25px) at 4K on /collection/men-view-all",
+      "description": "Interactive elements too small for touch at 4K resolution",
+      "location": "/collection/men-view-all — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "All interactive elements >= 25px",
+      "actual": "64 elements < 25px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__collection_men-view-all.png",
+      "fix": "Increase min-height for interactive elements",
+      "timestamp": "2026-04-20T12:18:28.629Z"
+    },
+    {
+      "id": "BUG-054",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "86 untappable elements (<25px) at 4K on /collection/handbags-for-women",
+      "description": "Interactive elements too small for touch at 4K resolution",
+      "location": "/collection/handbags-for-women — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "All interactive elements >= 25px",
+      "actual": "86 elements < 25px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__collection_handbags-for-women.png",
+      "fix": "Increase min-height for interactive elements",
+      "timestamp": "2026-04-20T12:18:31.408Z"
+    },
+    {
+      "id": "BUG-055",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "96 untappable elements (<25px) at 4K on /collection/womens-new-arrivals",
+      "description": "Interactive elements too small for touch at 4K resolution",
+      "location": "/collection/womens-new-arrivals — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "All interactive elements >= 25px",
+      "actual": "96 elements < 25px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__collection_womens-new-arrivals.png",
+      "fix": "Increase min-height for interactive elements",
+      "timestamp": "2026-04-20T12:18:34.239Z"
+    },
+    {
+      "id": "BUG-056",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "11 untappable elements (<25px) at 4K on /profile/orders",
+      "description": "Interactive elements too small for touch at 4K resolution",
+      "location": "/profile/orders — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "All interactive elements >= 25px",
+      "actual": "11 elements < 25px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__profile_orders.png",
+      "fix": "Increase min-height for interactive elements",
+      "timestamp": "2026-04-20T12:18:36.765Z"
+    },
+    {
+      "id": "BUG-057",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "Excessive whitespace at 4K on /profile/orders (1% content)",
+      "description": "Content covers less than 40% of 4K viewport",
+      "location": "/profile/orders — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "Content covers >40% of viewport",
+      "actual": "Content covers 1%",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__profile_orders.png",
+      "fix": "Use fluid layouts or max-width containers for 4K",
+      "timestamp": "2026-04-20T12:18:36.767Z"
+    },
+    {
+      "id": "BUG-058",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "41 untappable elements (<25px) at 4K on /contact-us",
+      "description": "Interactive elements too small for touch at 4K resolution",
+      "location": "/contact-us — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "All interactive elements >= 25px",
+      "actual": "41 elements < 25px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__contact-us.png",
+      "fix": "Increase min-height for interactive elements",
+      "timestamp": "2026-04-20T12:18:39.360Z"
+    },
+    {
+      "id": "BUG-059",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "Excessive whitespace at 4K on /contact-us (15% content)",
+      "description": "Content covers less than 40% of 4K viewport",
+      "location": "/contact-us — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "Content covers >40% of viewport",
+      "actual": "Content covers 15%",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__contact-us.png",
+      "fix": "Use fluid layouts or max-width containers for 4K",
+      "timestamp": "2026-04-20T12:18:39.362Z"
+    },
+    {
+      "id": "BUG-060",
+      "severity": "High",
+      "category": "Image Quality",
+      "title": "1 blurry image(s) at 4K on /collection/tabby",
+      "description": "Images are upscaled >2x at 4K resolution, appearing blurry",
+      "location": "/collection/tabby — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160",
+        "2. Check image clarity"
+      ],
+      "expected": "Sharp images at 4K",
+      "actual": "1 blurry images",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__collection_tabby.png",
+      "fix": "Provide higher resolution image assets for 4K displays",
+      "timestamp": "2026-04-20T12:18:42.430Z"
+    },
+    {
+      "id": "BUG-061",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "81 untappable elements (<25px) at 4K on /collection/tabby",
+      "description": "Interactive elements too small for touch at 4K resolution",
+      "location": "/collection/tabby — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "All interactive elements >= 25px",
+      "actual": "81 elements < 25px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__collection_tabby.png",
+      "fix": "Increase min-height for interactive elements",
+      "timestamp": "2026-04-20T12:18:42.433Z"
+    },
+    {
+      "id": "BUG-062",
+      "severity": "High",
+      "category": "4K Responsive",
+      "title": "58 untappable elements (<25px) at 4K on /collection/women-bag-charms-key-rings",
+      "description": "Interactive elements too small for touch at 4K resolution",
+      "location": "/collection/women-bag-charms-key-rings — 4K UHD",
+      "steps": [
+        "1. Open at 3840x2160"
+      ],
+      "expected": "All interactive elements >= 25px",
+      "actual": "58 elements < 25px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/4k__collection_women-bag-charms-key-rings.png",
+      "fix": "Increase min-height for interactive elements",
+      "timestamp": "2026-04-20T12:18:45.265Z"
+    },
+    {
+      "id": "BUG-063",
+      "severity": "Medium",
+      "category": "Form Validation",
+      "title": "No validation on empty form submit",
+      "description": "Submitting empty form shows no validation errors",
+      "location": "/contact-us — Desktop",
+      "steps": [
+        "1. Open contact page",
+        "2. Click submit without filling fields"
+      ],
+      "expected": "Validation errors shown",
+      "actual": "No validation errors",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/form_no_validation.png",
+      "fix": "Add required field validation",
+      "timestamp": "2026-04-20T12:19:18.534Z"
+    },
+    {
+      "id": "BUG-064",
+      "severity": "Medium",
+      "category": "Cookie Consent",
+      "title": "No Accept button on cookie banner",
+      "description": "Cookie consent banner has no Accept/OK button",
+      "location": "Homepage — Desktop",
+      "steps": [
+        "1. Check cookie banner"
+      ],
+      "expected": "Accept button visible",
+      "actual": "No accept button found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/cookie_no_accept_btn.png",
+      "fix": "Add Accept button to cookie consent component",
+      "timestamp": "2026-04-20T12:19:24.475Z"
+    },
+    {
+      "id": "BUG-065",
+      "severity": "High",
+      "category": "Mobile Navigation",
+      "title": "No hamburger menu on mobile",
+      "description": "Mobile viewport shows no hamburger/menu icon for navigation",
+      "location": "Homepage — iPhone (390x844)",
+      "steps": [
+        "1. Open on mobile viewport"
+      ],
+      "expected": "Hamburger menu visible",
+      "actual": "No menu icon found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/mobile_no_hamburger.png",
+      "fix": "Add hamburger menu for mobile viewports",
+      "timestamp": "2026-04-20T12:19:29.164Z"
+    },
+    {
+      "id": "BUG-066",
+      "severity": "Medium",
+      "category": "Mobile UX",
+      "title": "33 elements below 44px touch target",
+      "description": "Apple HIG recommends minimum 44x44px touch targets",
+      "location": "Homepage — iPhone",
+      "steps": [
+        "1. Open on mobile",
+        "2. Check interactive element sizes"
+      ],
+      "expected": "All touch targets >= 44px",
+      "actual": "33 elements below 44px",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/mobile_touch_targets.png",
+      "fix": "Increase padding/min-height on interactive elements",
+      "timestamp": "2026-04-20T12:19:29.265Z"
+    },
+    {
+      "id": "BUG-067",
+      "severity": "High",
+      "category": "Exploratory",
+      "title": "Input fuzzing crash on /locate-us",
+      "description": "Page crashed or threw errors when unexpected input was entered in text fields",
+      "location": "/locate-us — Desktop",
+      "steps": [
+        "1. Enter special characters in input fields",
+        "2. Enter very long strings",
+        "3. Enter XSS/SQL payloads"
+      ],
+      "expected": "Graceful handling of unexpected input",
+      "actual": "Page crashed or errored",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/exploratory_input__locate-us.png",
+      "fix": "Add input validation and sanitization",
+      "timestamp": "2026-04-20T12:20:16.784Z"
+    },
+    {
+      "id": "BUG-068",
+      "severity": "High",
+      "category": "Exploratory",
+      "title": "Input fuzzing crash on /",
+      "description": "Page crashed or threw errors when unexpected input was entered in text fields",
+      "location": "/ — Desktop",
+      "steps": [
+        "1. Enter special characters in input fields",
+        "2. Enter very long strings",
+        "3. Enter XSS/SQL payloads"
+      ],
+      "expected": "Graceful handling of unexpected input",
+      "actual": "Page crashed or errored",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/exploratory_input__.png",
+      "fix": "Add input validation and sanitization",
+      "timestamp": "2026-04-20T12:21:17.869Z"
+    },
+    {
+      "id": "BUG-069",
+      "severity": "High",
+      "category": "Exploratory",
+      "title": "Input fuzzing crash on /collection/women-view-all",
+      "description": "Page crashed or threw errors when unexpected input was entered in text fields",
+      "location": "/collection/women-view-all — Desktop",
+      "steps": [
+        "1. Enter special characters in input fields",
+        "2. Enter very long strings",
+        "3. Enter XSS/SQL payloads"
+      ],
+      "expected": "Graceful handling of unexpected input",
+      "actual": "Page crashed or errored",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/exploratory_input__collection_women-view-all.png",
+      "fix": "Add input validation and sanitization",
+      "timestamp": "2026-04-20T12:22:14.074Z"
+    },
+    {
+      "id": "BUG-070",
+      "severity": "Medium",
+      "category": "Exploratory",
+      "title": "2 JS error(s) during rapid scroll on /collection/women-view-all",
+      "description": "Rapid scrolling triggered 2 JavaScript errors: document.cookie is not a function; document.cookie is not a function; document.cookie is not a function",
+      "location": "/collection/women-view-all — Desktop",
+      "steps": [
+        "1. Open https://coach.in/collection/women-view-all",
+        "2. Scroll up and down rapidly"
+      ],
+      "expected": "No JS errors on scroll",
+      "actual": "2 JS errors during scroll",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/exploratory_scroll__collection_women-view-all.png",
+      "fix": "Fix scroll event handlers — add error boundaries and debouncing",
+      "timestamp": "2026-04-20T12:22:27.430Z"
+    },
+    {
+      "id": "BUG-071",
+      "severity": "High",
+      "category": "Exploratory",
+      "title": "Input fuzzing crash on /collection/men-view-all",
+      "description": "Page crashed or threw errors when unexpected input was entered in text fields",
+      "location": "/collection/men-view-all — Desktop",
+      "steps": [
+        "1. Enter special characters in input fields",
+        "2. Enter very long strings",
+        "3. Enter XSS/SQL payloads"
+      ],
+      "expected": "Graceful handling of unexpected input",
+      "actual": "Page crashed or errored",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/exploratory_input__collection_men-view-all.png",
+      "fix": "Add input validation and sanitization",
+      "timestamp": "2026-04-20T12:23:11.858Z"
+    },
+    {
+      "id": "BUG-072",
+      "severity": "Medium",
+      "category": "Exploratory",
+      "title": "2 JS error(s) during rapid scroll on /collection/men-view-all",
+      "description": "Rapid scrolling triggered 2 JavaScript errors: document.cookie is not a function; document.cookie is not a function; document.cookie is not a function",
+      "location": "/collection/men-view-all — Desktop",
+      "steps": [
+        "1. Open https://coach.in/collection/men-view-all",
+        "2. Scroll up and down rapidly"
+      ],
+      "expected": "No JS errors on scroll",
+      "actual": "2 JS errors during scroll",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/exploratory_scroll__collection_men-view-all.png",
+      "fix": "Fix scroll event handlers — add error boundaries and debouncing",
+      "timestamp": "2026-04-20T12:23:25.657Z"
+    },
+    {
+      "id": "BUG-073",
+      "severity": "High",
+      "category": "Exploratory",
+      "title": "Input fuzzing crash on /collection/handbags-for-women",
+      "description": "Page crashed or threw errors when unexpected input was entered in text fields",
+      "location": "/collection/handbags-for-women — Desktop",
+      "steps": [
+        "1. Enter special characters in input fields",
+        "2. Enter very long strings",
+        "3. Enter XSS/SQL payloads"
+      ],
+      "expected": "Graceful handling of unexpected input",
+      "actual": "Page crashed or errored",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/exploratory_input__collection_handbags-for-women.png",
+      "fix": "Add input validation and sanitization",
+      "timestamp": "2026-04-20T12:24:15.156Z"
+    },
+    {
+      "id": "BUG-074",
+      "severity": "Medium",
+      "category": "Exploratory",
+      "title": "3 JS error(s) during rapid scroll on /collection/handbags-for-women",
+      "description": "Rapid scrolling triggered 3 JavaScript errors: document.cookie is not a function; document.cookie is not a function; document.cookie is not a function",
+      "location": "/collection/handbags-for-women — Desktop",
+      "steps": [
+        "1. Open https://coach.in/collection/handbags-for-women",
+        "2. Scroll up and down rapidly"
+      ],
+      "expected": "No JS errors on scroll",
+      "actual": "3 JS errors during scroll",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/exploratory_scroll__collection_handbags-for-women.png",
+      "fix": "Fix scroll event handlers — add error boundaries and debouncing",
+      "timestamp": "2026-04-20T12:24:29.477Z"
+    },
+    {
+      "id": "BUG-075",
+      "severity": "High",
+      "category": "Exploratory",
+      "title": "426 JS errors during exploratory testing",
+      "description": "8 unique JS errors caught during monkey testing:\n1. Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the f\n2. Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the f\n3. document.cookie is not a function\n4. Cannot read properties of undefined (reading 'length')\n5. Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the f",
+      "location": "Multiple pages",
+      "steps": [
+        "1. Interact chaotically with the site",
+        "2. Monitor console for errors"
+      ],
+      "expected": "No unhandled JS errors",
+      "actual": "426 errors across 5 pages",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/reports/screenshots/coach-in/exploratory_js_errors.png",
+      "fix": "Add global error handlers and fix unhandled exceptions",
+      "timestamp": "2026-04-20T12:24:34.601Z"
+    }
+  ],
+  "consoleErrors": [
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/auth/login",
+      "timestamp": 1776687110282
+    },
+    {
+      "text": "Failed to load resource: net::ERR_CONNECTION_RESET",
+      "url": "https://coach.in/auth/login",
+      "timestamp": 1776687110339
+    },
+    {
+      "text": "❌ [COPILOT] Failed to register copilot tools after all retries {error: Copilot is not available or not a function, totalAttempts: 3, finalError: Error: Copilot is not available or not a function\n    at ae (eval at <anonymous> (https://store-cdn…}",
+      "url": "https://coach.in/auth/login",
+      "timestamp": 1776687111748
+    },
+    {
+      "text": "💥 [COPILOT] Copilot initialization failed",
+      "url": "https://coach.in/auth/login",
+      "timestamp": 1776687111748
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "https://coach.in/auth/login",
+      "timestamp": 1776687112370
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "https://coach.in/auth/login",
+      "timestamp": 1776687112610
+    },
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/",
+      "timestamp": 1776687148525
+    },
+    {
+      "text": "Failed to load resource: net::ERR_CONNECTION_RESET",
+      "url": "https://coach.in/",
+      "timestamp": 1776687149046
+    },
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/",
+      "timestamp": 1776687149426
+    },
+    {
+      "text": "Failed to load resource: net::ERR_CONNECTION_RESET",
+      "url": "https://coach.in/",
+      "timestamp": 1776687149580
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "https://coach.in/",
+      "timestamp": 1776687150509
+    },
+    {
+      "text": "❌ [COPILOT] Failed to register copilot tools after all retries {error: Copilot is not available or not a function, totalAttempts: 3, finalError: Error: Copilot is not available or not a function\n    at ae (eval at <anonymous> (https://store-cdn…}",
+      "url": "https://coach.in/",
+      "timestamp": 1776687150742
+    },
+    {
+      "text": "💥 [COPILOT] Copilot initialization failed",
+      "url": "https://coach.in/",
+      "timestamp": 1776687150743
+    },
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/locate-us",
+      "timestamp": 1776687153981
+    },
+    {
+      "text": "Failed to load resource: net::ERR_CONNECTION_RESET",
+      "url": "https://coach.in/locate-us",
+      "timestamp": 1776687154010
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "https://coach.in/locate-us",
+      "timestamp": 1776687154701
+    },
+    {
+      "text": "❌ [COPILOT] Failed to register copilot tools after all retries {error: Copilot is not available or not a function, totalAttempts: 3, finalError: Error: Copilot is not available or not a function\n    at ae (eval at <anonymous> (https://store-cdn…}",
+      "url": "https://coach.in/locate-us",
+      "timestamp": 1776687155330
+    },
+    {
+      "text": "💥 [COPILOT] Copilot initialization failed",
+      "url": "https://coach.in/locate-us",
+      "timestamp": 1776687155330
+    },
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/",
+      "timestamp": 1776687155731
+    },
+    {
+      "text": "Failed to load resource: net::ERR_CONNECTION_RESET",
+      "url": "https://coach.in/",
+      "timestamp": 1776687155760
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "https://coach.in/",
+      "timestamp": 1776687156275
+    },
+    {
+      "text": "❌ [COPILOT] Failed to register copilot tools after all retries {error: Copilot is not available or not a function, totalAttempts: 3, finalError: Error: Copilot is not available or not a function\n    at ae (eval at <anonymous> (https://store-cdn…}",
+      "url": "https://coach.in/",
+      "timestamp": 1776687157052
+    },
+    {
+      "text": "💥 [COPILOT] Copilot initialization failed",
+      "url": "https://coach.in/",
+      "timestamp": 1776687157052
+    },
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/collection/women-view-all",
+      "timestamp": 1776687158683
+    },
+    {
+      "text": "Failed to load resource: net::ERR_CONNECTION_RESET",
+      "url": "https://coach.in/collection/women-view-all",
+      "timestamp": 1776687158701
+    },
+    {
+      "text": "Error: <svg> attribute height: Expected length, \"auto\".",
+      "url": "https://coach.in/collection/women-view-all",
+      "timestamp": 1776687159390
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "https://coach.in/collection/women-view-all",
+      "timestamp": 1776687159511
+    },
+    {
+      "text": "❌ [COPILOT] Failed to register copilot tools after all retries {error: Copilot is not available or not a function, totalAttempts: 3, finalError: Error: Copilot is not available or not a function\n    at ae (eval at <anonymous> (https://store-cdn…}",
+      "url": "https://coach.in/collection/women-view-all",
+      "timestamp": 1776687160110
+    },
+    {
+      "text": "💥 [COPILOT] Copilot initialization failed",
+      "url": "https://coach.in/collection/women-view-all",
+      "timestamp": 1776687160110
+    },
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/collection/men-view-all",
+      "timestamp": 1776687161767
+    },
+    {
+      "text": "Failed to load resource: net::ERR_CONNECTION_RESET",
+      "url": "https://coach.in/collection/men-view-all",
+      "timestamp": 1776687161794
+    },
+    {
+      "text": "Error: <svg> attribute height: Expected length, \"auto\".",
+      "url": "https://coach.in/collection/men-view-all",
+      "timestamp": 1776687162157
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "https://coach.in/collection/men-view-all",
+      "timestamp": 1776687162636
+    },
+    {
+      "text": "❌ [COPILOT] Failed to register copilot tools after all retries {error: Copilot is not available or not a function, totalAttempts: 3, finalError: Error: Copilot is not available or not a function\n    at ae (eval at <anonymous> (https://store-cdn…}",
+      "url": "https://coach.in/collection/men-view-all",
+      "timestamp": 1776687163093
+    },
+    {
+      "text": "💥 [COPILOT] Copilot initialization failed",
+      "url": "https://coach.in/collection/men-view-all",
+      "timestamp": 1776687163093
+    },
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/collection/handbags-for-women",
+      "timestamp": 1776687164645
+    },
+    {
+      "text": "Failed to load resource: net::ERR_CONNECTION_RESET",
+      "url": "https://coach.in/collection/handbags-for-women",
+      "timestamp": 1776687164662
+    },
+    {
+      "text": "Error: <svg> attribute height: Expected length, \"auto\".",
+      "url": "https://coach.in/collection/handbags-for-women",
+      "timestamp": 1776687165325
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "https://coach.in/collection/handbags-for-women",
+      "timestamp": 1776687165398
+    },
+    {
+      "text": "❌ [COPILOT] Failed to register copilot tools after all retries {error: Copilot is not available or not a function, totalAttempts: 3, finalError: Error: Copilot is not available or not a function\n    at ae (eval at <anonymous> (https://store-cdn…}",
+      "url": "https://coach.in/collection/handbags-for-women",
+      "timestamp": 1776687166028
+    },
+    {
+      "text": "💥 [COPILOT] Copilot initialization failed",
+      "url": "https://coach.in/collection/handbags-for-women",
+      "timestamp": 1776687166028
+    },
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/collection/womens-new-arrivals",
+      "timestamp": 1776687167501
+    },
+    {
+      "text": "Failed to load resource: net::ERR_CONNECTION_RESET",
+      "url": "https://coach.in/collection/womens-new-arrivals",
+      "timestamp": 1776687167520
+    },
+    {
+      "text": "Error: <svg> attribute height: Expected length, \"auto\".",
+      "url": "https://coach.in/collection/womens-new-arrivals",
+      "timestamp": 1776687168159
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "https://coach.in/collection/womens-new-arrivals",
+      "timestamp": 1776687168357
+    },
+    {
+      "text": "❌ [COPILOT] Failed to register copilot tools after all retries {error: Copilot is not available or not a function, totalAttempts: 3, finalError: Error: Copilot is not available or not a function\n    at ae (eval at <anonymous> (https://store-cdn…}",
+      "url": "https://coach.in/collection/womens-new-arrivals",
+      "timestamp": 1776687168879
+    },
+    {
+      "text": "💥 [COPILOT] Copilot initialization failed",
+      "url": "https://coach.in/collection/womens-new-arrivals",
+      "timestamp": 1776687168880
+    },
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/profile/orders",
+      "timestamp": 1776687170111
+    },
+    {
+      "text": "Failed to load resource: net::ERR_CONNECTION_RESET",
+      "url": "https://coach.in/profile/orders",
+      "timestamp": 1776687170159
+    },
+    {
+      "text": "MoEngage Web SDK initialised multiple times. Please integrate the Web SDK only once!",
+      "url": "https://coach.in/auth/login?redirectUrl=/profile/orders",
+      "timestamp": 1776687170341
+    }
+  ],
+  "networkErrors": [
+    {
+      "url": "https://cdn.mouseflow.com/projects/DISABLED.js",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687110338
+    },
+    {
+      "url": "https://wcdn.ril.com/cdn/menuconfig.js",
+      "failure": "net::ERR_CONNECTION_RESET",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687110339
+    },
+    {
+      "url": "https://static.hotjar.com/c/hotjar-DISABLED.js?sv=7",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687110339
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-P4STLVRRLE&gtm=45je64f1v9100782227z8868538500za20gzb868538500zd868538500&_p=1776687106632&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=8&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=1&tag_exp=0~115938466~115938469~117266400&sid=1776687110&sct=1&seg=0&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&en=page_view&_fv=1&_nsi=1&_ss=1&ep.WebsiteDomain=coach.in&ep.is_native_app=web&up.User%20Domain=coach.in&tfd=7171",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687110995
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KR1CXSE8FB&gtm=45je64f1v9249677824z8868538500za20gzb868538500zd868538500&_p=1776687106632&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=775872002&_eu=AAAAAGA&are=1&cid=866776347.1776687111&ec_mode=a&frm=0&pscdl=noapi&rcb=9&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&gaf=2&_s=1&tag_exp=0~115616986~115938466~115938469~117266400&sid=1776687110&sct=1&seg=0&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&en=page_view&_fv=1&_ss=1&ep.WebsiteDomain=coach.in&ep.is_native_app=web&up.User%20Domain=coach.in&tfd=7353",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687111178
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=4&frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&scrsrc=www.googletagmanager.com&rnd=998388154.1776687111&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&auid=468941309.1776687111&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He64f1v868538500za200zd868538500xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938469~117266401&apve=1&apvf=f&apvc=1&tft=1776687111362&tfd=7845",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687111476
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/undefined/?random=1776687111608&cv=11&fst=1776687111608&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be64f1z8868538500za20gzb868538500zd868538500xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938469~117266400&u_w=1440&u_h=900&url=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&rcb=12&frm=0&tiba=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=468941309.1776687111&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&_tu=CA&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687111739
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=12&frm=0&ae=g&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&scrsrc=www.googletagmanager.com&rnd=998388154.1776687111&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&auid=468941309.1776687111&navt=n&npa=0&_tu=CA&gtm=45be64f1z8868538500za20gzb868538500zd868538500xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938469~117266400&apve=1&apvf=f&apvc=0&tids=AW-undefined&tid=AW-undefined&tft=1776687111664&tfd=8147",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687111741
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KR1CXSE8FB&gtm=45je64f1v9249677824z8868538500za20gzb868538500zd868538500&_p=1776687106632&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=775872002&_eu=AAAAAGQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=9&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&gaf=2&_s=2&tag_exp=0~115616986~115938466~115938469~117266400~117971173&sid=1776687110&sct=1&seg=0&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&_tu=CA&en=page_load_time&ep.WebsiteDomain=coach.in&ep.is_native_app=web&_et=490&upn.loading_time_sec=7.8&tfd=8925",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687112557
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KR1CXSE8FB&gtm=45je64f1v9249677824za20gzb868538500zd868538500&_p=1776687106632&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=775872002&_eu=AEEAAGQ&ae=a&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=9&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&gaf=2&_s=3&tag_exp=0~115616986~115938466~115938469~117266400&sid=1776687110&sct=1&seg=0&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&en=form_start&ep.WebsiteDomain=coach.in&ep.is_native_app=web&ep.form_id=&ep.form_name=&ep.form_destination=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&epn.form_length=3&ep.first_field_id=%3Ar5%3A&ep.first_field_name=phone&ep.first_field_type=tel&epn.first_field_position=1&_et=1071&tfd=8935",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687112557
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-P4STLVRRLE&gtm=45je64f1v9100782227z8868538500za20gzb868538500zd868538500&_p=1776687106632&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=8&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=2&tag_exp=0~115938466~115938469~117266400~117971173&sid=1776687110&sct=1&seg=0&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&_tu=CA&en=page_load_time&ep.WebsiteDomain=coach.in&ep.is_native_app=web&_et=666&upn.loading_time_sec=7.8&tfd=8906",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687112558
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-P4STLVRRLE&gtm=45je64f1v9100782227za20gzb868538500zd868538500&_p=1776687106632&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEEAAAQ&ae=a&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=8&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=3&tag_exp=0~115938466~115938469~117266400&sid=1776687110&sct=1&seg=0&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&en=form_start&ep.WebsiteDomain=coach.in&ep.is_native_app=web&ep.form_id=&ep.form_name=&ep.form_destination=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&epn.form_length=3&ep.first_field_id=%3Ar5%3A&ep.first_field_name=phone&ep.first_field_type=tel&epn.first_field_position=1&_et=1064&tfd=8913",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687112558
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KR1CXSE8FB&gtm=45je64f1v9249677824z8868538500za20gzb868538500zd868538500&_p=1776687106632&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=775872002&_eu=AAAAAGQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=9&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&gaf=2&tag_exp=0~115616986~115938466~115938469~117266400~117971173&sid=1776687110&sct=1&seg=0&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&_s=4&tfd=13936",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687117527
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-P4STLVRRLE&gtm=45je64f1v9100782227z8868538500za20gzb868538500zd868538500&_p=1776687106632&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=8&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&tag_exp=0~115938466~115938469~117266400~117971173&sid=1776687110&sct=1&seg=0&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&_s=4&tfd=13916",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687117538
+    },
+    {
+      "url": "https://bat.bing.com/actionp/0?ti=DISABLED&tm=gtm002&Ver=2&mid=1daae3f5-6056-46af-951c-72dbe0ae0197&bo=2&sid=1ce42ae03cb211f19af7efa45597c06a&vid=1ce43ff03cb211f187f8a95b853383ba&vids=1&msclkid=N&evt=pageHide",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687148288
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-P4STLVRRLE&gtm=45je64f1v9100782227za20gzb868538500zd868538500&_p=1776687106632&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=8&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=5&tag_exp=0~115938466~115938469~117266400&sid=1776687110&sct=1&seg=1&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&en=user_engagement&ep.WebsiteDomain=coach.in&ep.is_native_app=web&_et=35168&tfd=44761",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687148288
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KR1CXSE8FB&gtm=45je64f1v9249677824za20gzb868538500zd868538500&_p=1776687106632&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=775872002&_eu=AAAAAGQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=9&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&gaf=2&_s=5&tag_exp=0~115616986~115938466~115938469~117266400&sid=1776687110&sct=1&seg=1&dl=https%3A%2F%2Fcoach.in%2Fauth%2Flogin&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&en=user_engagement&ep.WebsiteDomain=coach.in&ep.is_native_app=web&_et=35169&tfd=44766",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/auth/login",
+      "timestamp": 1776687148288
+    },
+    {
+      "url": "https://cdn.mouseflow.com/projects/DISABLED.js",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://coach.in/",
+      "timestamp": 1776687148771
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KR1CXSE8FB&gtm=45je64f1v9249677824z8868538500za20gzb868538500zd868538500&_p=1776687148435&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=775872002&_eu=AAAAAGQ&are=1&cid=866776347.1776687111&ec_mode=a&frm=0&pscdl=noapi&rcb=2&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=1&tag_exp=0~115616986~115938466~115938468~117266401&sid=1776687110&sct=1&seg=1&dl=https%3A%2F%2Fcoach.in%2F&dt=Home&en=page_view&ep.WebsiteDomain=coach.in&ep.is_native_app=web&up.User%20Domain=coach.in&tfd=1256",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687148818
+    },
+    {
+      "url": "https://seo-extension.extensions.fynd.com/bindings/home-config.umd.min.js",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://coach.in/",
+      "timestamp": 1776687148839
+    },
+    {
+      "url": "https://static.hotjar.com/c/hotjar-DISABLED.js?sv=7",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://coach.in/",
+      "timestamp": 1776687148846
+    },
+    {
+      "url": "https://wcdn.ril.com/cdn/menuconfig.js",
+      "failure": "net::ERR_CONNECTION_RESET",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149046
+    },
+    {
+      "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/company/46/applications/6992ff0d04bcc360b4baf0ac/theme/videos/free/original/theme-video-1776066619776.mp4",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149223
+    },
+    {
+      "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/company/46/applications/6992ff0d04bcc360b4baf0ac/theme/videos/free/original/theme-video-1776065343341.mp4",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149223
+    },
+    {
+      "url": "https://coach.in/api/service/application/graphql/",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149223
+    },
+    {
+      "url": "https://cdn.pixelbin.io/v2/spring-rain-f83afc/original/Surtee/20260313-rtl-hp3-charms-desktop.webp?f_auto=true&q=68&w=720",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149224
+    },
+    {
+      "url": "https://k.clarity.ms/collect",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149224
+    },
+    {
+      "url": "https://coach.in/api/service/application/graphql/",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149224
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-P4STLVRRLE&gtm=45je64f1v9100782227z8868538500za20gzb868538500zd868538500&_p=1776687148435&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=0&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=1&tag_exp=0~115938466~115938468~117266400&sid=1776687110&sct=1&seg=1&dl=https%3A%2F%2Fcoach.in%2F&dt=Home&en=page_view&ep.WebsiteDomain=coach.in&ep.is_native_app=web&up.User%20Domain=coach.in&tfd=1931",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149224
+    },
+    {
+      "url": "https://bat.bing.com/actionp/0?ti=DISABLED&tm=gtm002&Ver=2&mid=a9bb545d-985d-4df9-b728-45114a8eba85&bo=2&sid=1ce42ae03cb211f19af7efa45597c06a&vid=1ce43ff03cb211f187f8a95b853383ba&vids=0&msclkid=N&evt=pageHide",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149224
+    },
+    {
+      "url": "https://k.clarity.ms/collect",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149224
+    },
+    {
+      "url": "https://cdn.pixelbin.io/v2/spring-rain-f83afc/original/Surtee/20260313-rtl-hp1-women-desktop-v2?f_auto=true&q=70&w=720",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149224
+    },
+    {
+      "url": "https://cdn.pixelbin.io/v2/spring-rain-f83afc/original/Surtee/20260313-rtl-hp1-bags-desktop-v2?f_auto=true&q=70&w=720",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149224
+    },
+    {
+      "url": "https://seo-extension.extensions.fynd.com/bindings/home-config.umd.min.js",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149417
+    },
+    {
+      "url": "https://cdn.mouseflow.com/projects/DISABLED.js",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149479
+    },
+    {
+      "url": "https://static.hotjar.com/c/hotjar-DISABLED.js?sv=7",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149488
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KR1CXSE8FB&gtm=45je64f1v9249677824z8868538500za20gzb868538500zd868538500&_p=1776687149343&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=775872002&_eu=AAAAAGQ&are=1&cid=866776347.1776687111&ec_mode=a&frm=0&pscdl=noapi&rcb=8&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&gaf=2&_s=1&tag_exp=0~115616985~115938465~115938469~117266400&sid=1776687110&sct=1&seg=1&dl=https%3A%2F%2Fcoach.in%2F&dt=Home&en=page_view&ep.WebsiteDomain=coach.in&ep.is_native_app=web&up.User%20Domain=coach.in&tfd=459",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149580
+    },
+    {
+      "url": "https://wcdn.ril.com/cdn/menuconfig.js",
+      "failure": "net::ERR_CONNECTION_RESET",
+      "page": "https://coach.in/",
+      "timestamp": 1776687149580
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=1&frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fcoach.in%2F&scrsrc=www.googletagmanager.com&rnd=2018823688.1776687150&dt=Home&auid=468941309.1776687111&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He64f1v868538500za200zd868538500xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~117266400&apve=1&apvf=f&apvc=1&tft=1776687150298&tfd=1306",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687150368
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=9&frm=0&ae=g&dl=https%3A%2F%2Fcoach.in%2F&scrsrc=www.googletagmanager.com&rnd=2018823688.1776687150&dt=Home&auid=468941309.1776687111&navt=n&npa=0&_tu=CA&gtm=45be64f1z8868538500za20gzb868538500zd868538500xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938469~117266400&apve=1&apvf=f&apvc=0&tids=AW-undefined&tid=AW-undefined&tft=1776687150315&tfd=1323",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687150384
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/undefined/?random=1776687150310&cv=11&fst=1776687150310&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be64f1z8868538500za20gzb868538500zd868538500xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938469~117266400&u_w=1440&u_h=900&url=https%3A%2F%2Fcoach.in%2F&rcb=9&frm=0&tiba=Home&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=468941309.1776687111&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&_tu=CA&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687150385
+    },
+    {
+      "url": "https://bat.bing.com/actionp/0?ti=DISABLED&tm=gtm002&Ver=2&mid=6c178fa5-a1fd-49e2-9a7e-d3a815108228&bo=2&sid=1ce42ae03cb211f19af7efa45597c06a&vid=1ce43ff03cb211f187f8a95b853383ba&vids=0&msclkid=N&evt=pageHide",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687152802
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-P4STLVRRLE&gtm=45je64f1v9100782227za20gzb868538500zd868538500&_p=1776687149343&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=2&tag_exp=0~115938465~115938468~117266401~117384406&sid=1776687110&sct=1&seg=1&dl=https%3A%2F%2Fcoach.in%2F&dt=Home&en=user_engagement&ep.WebsiteDomain=coach.in&ep.is_native_app=web&_et=2499&tfd=3807",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687152802
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KR1CXSE8FB&gtm=45je64f1v9249677824z8868538500za20gzb868538500zd868538500&_p=1776687149343&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=775872002&_eu=AAAAAGQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=8&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&gaf=2&_s=2&tag_exp=0~115616985~115938465~115938469~117266400~117971173&sid=1776687110&sct=1&seg=1&dl=https%3A%2F%2Fcoach.in%2F&dt=Home&_tu=CA&en=page_load_time&ep.WebsiteDomain=coach.in&ep.is_native_app=web&_et=841&upn.loading_time_sec=1.3&tfd=3804",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687152802
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KR1CXSE8FB&gtm=45je64f1v9249677824za20gzb868538500zd868538500&_p=1776687149343&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=775872002&_eu=AAAAAGQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=8&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&gaf=2&_s=3&tag_exp=0~115616985~115938465~115938469~117266400&sid=1776687110&sct=1&seg=1&dl=https%3A%2F%2Fcoach.in%2F&dt=Home&en=user_engagement&ep.WebsiteDomain=coach.in&ep.is_native_app=web&_et=2497&tfd=3804",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687152802
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-P4STLVRRLE&gtm=45je64f1v9100782227z8868538500za20gzb868538500zd868538500&_p=1776687149343&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=866776347.1776687111&frm=0&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&tag_exp=0~115938465~115938468~117266401~117384406&sid=1776687110&sct=1&seg=1&dl=https%3A%2F%2Fcoach.in%2F&dt=Home&_s=1&tfd=3807",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/",
+      "timestamp": 1776687152802
+    },
+    {
+      "url": "https://cdn.mouseflow.com/projects/DISABLED.js",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://coach.in/locate-us",
+      "timestamp": 1776687153976
+    },
+    {
+      "url": "https://static.hotjar.com/c/hotjar-DISABLED.js?sv=7",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://coach.in/locate-us",
+      "timestamp": 1776687153981
+    },
+    {
+      "url": "https://wcdn.ril.com/cdn/menuconfig.js",
+      "failure": "net::ERR_CONNECTION_RESET",
+      "page": "https://coach.in/locate-us",
+      "timestamp": 1776687154010
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KR1CXSE8FB&gtm=45je64f1v9249677824z8868538500za20gzb868538500zd868538500&_p=1776687153911&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=775872002&_eu=AAAAAGQ&are=1&cid=866776347.1776687111&ec_mode=a&frm=0&pscdl=noapi&rcb=2&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=1&tag_exp=0~115938466~115938469~117266401~118128923&sid=1776687110&sct=1&seg=1&dl=https%3A%2F%2Fcoach.in%2Flocate-us&dt=COACH%C2%AE%20India%20%7C%20Handbags%2C%20Wallets%2C%20Clothing%2C%20Shoes%20%26%20More&en=page_view&ep.WebsiteDomain=coach.in&ep.is_native_app=web&up.User%20Domain=coach.in&tfd=1170",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://coach.in/locate-us",
+      "timestamp": 1776687154081
+    }
+  ]
+}

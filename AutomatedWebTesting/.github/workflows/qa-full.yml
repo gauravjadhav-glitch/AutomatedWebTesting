@@ -1,0 +1,71 @@
+name: QA Full Suite
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Target URL to test'
+        required: true
+        default: 'https://coachnew.fynd.io'
+      mode:
+        description: 'Test mode'
+        required: true
+        default: 'standard'
+        type: choice
+        options:
+          - fast
+          - standard
+          - deep
+
+jobs:
+  qa-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run QA tests
+        env:
+          UAT_URL: ${{ inputs.url }}
+          TEST_MODE: ${{ inputs.mode }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AI_PROVIDER: ${{ secrets.AI_PROVIDER || 'openai' }}
+          TEST_PHONE: ${{ secrets.TEST_PHONE }}
+          TEST_OTP: ${{ secrets.TEST_OTP }}
+          TEST_PINCODE: ${{ secrets.TEST_PINCODE }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: node run-test.js "$UAT_URL" --mode=$TEST_MODE
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-reports-${{ github.run_number }}
+          path: |
+            reports/*.html
+            reports/*.json
+            reports/screenshots/
+          retention-days: 30
+
+      - name: Upload database
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-database-${{ github.run_number }}
+          path: data/qa-agent.db
+          retention-days: 90

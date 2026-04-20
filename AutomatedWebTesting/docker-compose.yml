@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # CLI runner — run tests via docker compose
+  qa-agent:
+    build: .
+    environment:
+      - UAT_URL=${UAT_URL:-https://coachnew.fynd.io}
+      - TEST_MODE=${TEST_MODE:-standard}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - AI_PROVIDER=${AI_PROVIDER:-openai}
+      - TEST_PHONE=${TEST_PHONE}
+      - TEST_OTP=${TEST_OTP}
+      - TEST_PINCODE=${TEST_PINCODE}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    command: node run-test.js
+
+  # Web dashboard — port 3000
+  web-ui:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - AI_PROVIDER=${AI_PROVIDER:-openai}
+      - TEST_PHONE=${TEST_PHONE}
+      - TEST_OTP=${TEST_OTP}
+      - TEST_PINCODE=${TEST_PINCODE}
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    command: node src/web/server.js
+    restart: unless-stopped
