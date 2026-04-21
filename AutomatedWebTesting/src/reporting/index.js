@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const generateHTMLReport = require('./html-generator');
 const { generateJSONReport } = require('./json-reporter');
-const { deployToGitHubPages } = require('./deployer');
+const { deployToGitPages } = require('./deployer');
 
 function generateReports(discovery, metadata, testPlan, config, ctx) {
   const htmlReport = generateHTMLReport({
@@ -30,10 +30,7 @@ function generateReports(discovery, metadata, testPlan, config, ctx) {
   const jsonPath = path.join(config.reportDir, `bug-report-${config.siteName}.json`);
   fs.writeFileSync(jsonPath, JSON.stringify(jsonReport, null, 2));
 
-  // Deploy to GitHub Pages
-  deployToGitHubPages(htmlReport, jsonReport, config);
-
   return { reportPath, jsonPath };
 }
 
-module.exports = { generateReports };
+module.exports = { generateReports, deployToGitPages };

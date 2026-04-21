@@ -11,12 +11,12 @@ const { getRunner } = require('./tests');
 const loginAgent = require('./agents/login');
 const discoveryAgent = require('./agents/discovery');
 const planningAgent = require('./agents/planning');
-const { generateReports } = require('./reporting');
+const { generateReports, deployToGitPages } = require('./reporting');
 const dbRuns = require('./db/runs');
 const dbBugs = require('./db/bugs');
 const dbPerf = require('./db/perf');
 const { close: closeDb } = require('./db');
-const { sendSlackNotification } = require('./notifications/slack');
+const { sendSlackNotification, sendSlackPDF } = require('./notifications/slack');
 const { sendEmailNotification } = require('./notifications/email');
 const { fileJiraBugs } = require('./integrations/jira');
 const { fileLinearBugs } = require('./integrations/linear');
@@ -176,8 +176,18 @@ async function orchestrate(config) {
     log(ctx, '\u2705', `Run #${reportNum} saved to database (ID: ${runId})`);
 
     // ---- Notifications & Integrations ----
+    // Build GitHub Pages report URL
+    const reportFileName = `full-report-${config.siteName}.html`;
+    let pagesReportUrl = '';
+    try {
+      const remoteUrl = require('child_process').execSync('git remote get-url origin', { encoding: 'utf-8', stdio: 'pipe' }).trim();
+      const m = remoteUrl.match(/github\.com[:/]([^/]+)\/([^/.]+)/);
+      if (m) pagesReportUrl = `https://${m[1]}.github.io/${m[2]}/AutomatedWebTesting/reports/${reportFileName}`;
+    } catch {}
+
     const notificationData = {
       siteName: config.siteName,
+      targetUrl: config.targetUrl,
       mode: config.mode,
       healthScore,
       totalBugs: ctx.bugs.length,
@@ -187,11 +197,13 @@ async function orchestrate(config) {
       low: ctx.bugs.filter(b => b.severity === 'Low').length,
       passed: ctx.testResults.passed,
       failed: ctx.testResults.failed,
+      skipped: ctx.testResults.skipped,
+      flaky: ctx.testResults.flaky || 0,
       total: ctx.testResults.total,
       pagesLive: discovery.livePages.length,
       pagesDead: discovery.deadPages.length,
       duration: `${durationSec}s`,
-      reportUrl: '',
+      reportUrl: pagesReportUrl,
     };
 
     // Send notifications (non-blocking)
@@ -207,6 +219,9 @@ async function orchestrate(config) {
     }
 
     await Promise.all(notifyPromises);
+
+    // Send report PDF to Slack
+    await sendSlackPDF(reportPath, notificationData).catch(() => {});
 
     // Summary
     console.log('\n' + '='.repeat(60));
@@ -225,6 +240,21 @@ async function orchestrate(config) {
     console.log(` Report:     ${reportPath}`);
     console.log(` DB Run ID:  ${runId}`);
     console.log('='.repeat(60) + '\n');
+
+    // Auto-deploy report to GitHub Pages
+    await deployToGitPages({
+      reportPath,
+      siteName: config.siteName,
+      bugCount: ctx.bugs.length,
+      bugCounts: {
+        critical: ctx.bugs.filter(b => b.severity === 'Critical').length,
+        high: ctx.bugs.filter(b => b.severity === 'High').length,
+        medium: ctx.bugs.filter(b => b.severity === 'Medium').length,
+        low: ctx.bugs.filter(b => b.severity === 'Low').length,
+      },
+      runNumber: reportNum,
+      type: 'single',
+    });
 
   } finally {
     await context.close().catch(() => {});
