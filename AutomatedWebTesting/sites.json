@@ -1,7 +1,0 @@
-{
-  "sites": [
-    { "url": "https://coachnew.fynd.io", "mode": "standard" },
-    { "url": "https://facegym.fynd.io", "mode": "standard" }
-  ],
-  "parallelism": 2
-}
