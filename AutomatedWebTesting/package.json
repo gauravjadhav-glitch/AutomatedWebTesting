@@ -1,0 +1,38 @@
+{
+  "name": "automated-web-testing",
+  "version": "1.0.0",
+  "description": "Autonomous E-Commerce QA Agent — 5-layer architecture for comprehensive website testing",
+  "main": "run-test.js",
+  "scripts": {
+    "test": "node run-test.js",
+    "test:fast": "node run-test.js --mode=fast",
+    "test:standard": "node run-test.js --mode=standard",
+    "test:deep": "node run-test.js --mode=deep",
+    "recheck": "node recheck-4k-bugs.js",
+    "postinstall": "npx playwright install chromium"
+  },
+  "keywords": [
+    "qa",
+    "testing",
+    "playwright",
+    "e-commerce",
+    "automation"
+  ],
+  "author": "gauravjadhav",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
+    "@axe-core/playwright": "^4.10.0",
+    "better-sqlite3": "^12.9.0",
+    "dotenv": "^16.4.0",
+    "express": "^5.2.1",
+    "image-ssim": "^0.2.0",
+    "lighthouse": "^12.0.0",
+    "nodemailer": "^8.0.5",
+    "openai": "^4.70.0",
+    "pixelmatch": "^5.3.0",
+    "playwright": "^1.49.0",
+    "pngjs": "^7.0.0",
+    "yargs": "^17.7.0"
+  }
+}

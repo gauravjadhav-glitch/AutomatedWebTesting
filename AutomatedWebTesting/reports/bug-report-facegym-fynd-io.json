@@ -1,0 +1,591 @@
+{
+  "meta": {
+    "url": "https://facegym.fynd.io",
+    "mode": "fast",
+    "timestamp": "2026-04-21T06:51:49.568Z",
+    "duration": "232s",
+    "reportNum": 1,
+    "testResults": {
+      "passed": 53,
+      "failed": 5,
+      "skipped": 1,
+      "total": 59
+    },
+    "aiCost": "N/A"
+  },
+  "discovery": {
+    "livePages": 9,
+    "deadPages": 6,
+    "features": {
+      "hasSearch": false,
+      "hasCart": false,
+      "hasLogin": false,
+      "hasWishlist": false,
+      "hasProducts": true,
+      "hasForms": false,
+      "hasFooter": true,
+      "hasNav": true
+    }
+  },
+  "bugs": [
+    {
+      "id": "BUG-001",
+      "severity": "Critical",
+      "category": "E-Commerce",
+      "title": "No product cards found on listing page",
+      "description": "No products detected on / using adaptive selectors",
+      "location": "/ — Desktop",
+      "steps": [
+        "1. Navigate to https://facegym.fynd.io/"
+      ],
+      "expected": "Product cards visible",
+      "actual": "No product cards found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/AutomatedWebTesting/reports/screenshots/facegym-fynd-io/plp_no_products.png",
+      "fix": "Check product data API and rendering logic",
+      "timestamp": "2026-04-21T06:51:11.315Z"
+    },
+    {
+      "id": "BUG-002",
+      "severity": "High",
+      "category": "Accessibility",
+      "title": "2 a11y violations on /",
+      "description": "Critical/serious WCAG violations:\n- Elements must only use supported ARIA attributes (critical, 9 instances)\n- Elements must meet minimum color contrast ratio thresholds (serious, 4 instances)",
+      "location": "/ — Desktop",
+      "steps": [
+        "1. Run axe-core audit on /"
+      ],
+      "expected": "0 critical/serious violations",
+      "actual": "2 violations found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/AutomatedWebTesting/reports/screenshots/facegym-fynd-io/a11y__.png",
+      "fix": "Fix WCAG violations: Elements must only use supported ARIA attributes",
+      "timestamp": "2026-04-21T06:51:28.737Z"
+    },
+    {
+      "id": "BUG-003",
+      "severity": "High",
+      "category": "Accessibility",
+      "title": "1 a11y violations on /sections/our-story",
+      "description": "Critical/serious WCAG violations:\n- Elements must meet minimum color contrast ratio thresholds (serious, 7 instances)",
+      "location": "/sections/our-story — Desktop",
+      "steps": [
+        "1. Run axe-core audit on /sections/our-story"
+      ],
+      "expected": "0 critical/serious violations",
+      "actual": "1 violations found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/AutomatedWebTesting/reports/screenshots/facegym-fynd-io/a11y__sections_our-story.png",
+      "fix": "Fix WCAG violations: Elements must meet minimum color contrast ratio thresholds",
+      "timestamp": "2026-04-21T06:51:31.968Z"
+    },
+    {
+      "id": "BUG-004",
+      "severity": "High",
+      "category": "Accessibility",
+      "title": "2 a11y violations on /sections/blogs",
+      "description": "Critical/serious WCAG violations:\n- Elements must only use supported ARIA attributes (critical, 22 instances)\n- Elements must meet minimum color contrast ratio thresholds (serious, 15 instances)",
+      "location": "/sections/blogs — Desktop",
+      "steps": [
+        "1. Run axe-core audit on /sections/blogs"
+      ],
+      "expected": "0 critical/serious violations",
+      "actual": "2 violations found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/AutomatedWebTesting/reports/screenshots/facegym-fynd-io/a11y__sections_blogs.png",
+      "fix": "Fix WCAG violations: Elements must only use supported ARIA attributes",
+      "timestamp": "2026-04-21T06:51:36.012Z"
+    },
+    {
+      "id": "BUG-005",
+      "severity": "High",
+      "category": "Accessibility",
+      "title": "2 a11y violations on info.india@facegym.com",
+      "description": "Critical/serious WCAG violations:\n- ARIA attributes must conform to valid names (critical, 30 instances)\n- <ul> and <ol> must only directly contain <li>, <script> or <template> elements (serious, 3 instances)",
+      "location": "info.india@facegym.com — Desktop",
+      "steps": [
+        "1. Run axe-core audit on info.india@facegym.com"
+      ],
+      "expected": "0 critical/serious violations",
+      "actual": "2 violations found",
+      "screenshot": "/Users/kalyanibadgujar/AutomatedWebTesting/AutomatedWebTesting/reports/screenshots/facegym-fynd-io/a11y_info.india@facegym.com.png",
+      "fix": "Fix WCAG violations: ARIA attributes must conform to valid names",
+      "timestamp": "2026-04-21T06:51:42.764Z"
+    }
+  ],
+  "consoleErrors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.io/sitemap.xml",
+      "timestamp": 1776754092368
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754103432
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 500 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754103534
+    },
+    {
+      "text": "Swym Error: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754103762
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754103836
+    },
+    {
+      "text": "Swym Error: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754104000
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754104651
+    },
+    {
+      "text": "Swym Error: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754104959
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.io/login",
+      "timestamp": 1776754117935
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.io/signin",
+      "timestamp": 1776754120236
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.io/sign-in",
+      "timestamp": 1776754123116
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.io/account",
+      "timestamp": 1776754127552
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.io/contact",
+      "timestamp": 1776754129912
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.io/about",
+      "timestamp": 1776754132603
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 500 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754147340
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754147503
+    },
+    {
+      "text": "Swym Error: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754147885
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754148029
+    },
+    {
+      "text": "Swym Error: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754148267
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754148644
+    },
+    {
+      "text": "Swym Error: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754148949
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754298352
+    },
+    {
+      "text": "Swym Error: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754298521
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754298773
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 500 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754298945
+    },
+    {
+      "text": "Swym Error: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754299133
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754299742
+    },
+    {
+      "text": "Swym Error: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754299746
+    },
+    {
+      "text": "Access to XMLHttpRequest at 'https://d19ayerf5ehaab.cloudfront.net/css/product-widget/style.css' from origin 'https://facegym.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754301239
+    },
+    {
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754301239
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 500 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754301747
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754308753
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 500 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754308822
+    },
+    {
+      "text": "Swym Error: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754309076
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754309117
+    }
+  ],
+  "networkErrors": [
+    {
+      "url": "https://facegym.fynd.io/api/service/application/graphql/",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.io/auth/login",
+      "timestamp": 1776754085383
+    },
+    {
+      "url": "https://facegym.fynd.io/api/service/application/graphql/",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.io/auth/login",
+      "timestamp": 1776754085383
+    },
+    {
+      "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/organization/64fac21172eb5f9338a0fa7b/theme/assets/getLogin.themeBundle.23881418472dc1f1fa34.umd.js",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.io/auth/login",
+      "timestamp": 1776754085383
+    },
+    {
+      "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/company/4835/applications/69cb647c2bfded9b194e89fe/application/pictures/free-logo/original/UQoqKp808-FACEGYM.jpeg",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.io/auth/login",
+      "timestamp": 1776754085383
+    },
+    {
+      "url": "https://facegym.fynd.io/api/service/application/graphql/",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.io/auth/login",
+      "timestamp": 1776754085384
+    },
+    {
+      "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/company/4835/applications/69cb647c2bfded9b194e89fe/application/pictures/free-logo/resize-h:165/s27GsYJoh-FACEGYM.jpeg",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.io/auth/login",
+      "timestamp": 1776754085384
+    },
+    {
+      "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/company/4835/applications/69cb647c2bfded9b194e89fe/application/pictures/free-logo/resize-h:165/UQoqKp808-FACEGYM.jpeg",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.io/auth/login",
+      "timestamp": 1776754085384
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=0&frm=0&en=page_view&dl=https%3A%2F%2Ffacegym.com%2F&scrsrc=www.googletagmanager.com&rnd=1529196009.1776754101&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=79937310.1776754101&navt=n&npa=0&ep.ecomm_pagetype=home&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_tu=AAI&gtm=45be64h1v9117899027za200zd9117899027xec&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938469~117266401&apve=1&apvf=f&apvc=0&tids=AW-709108437&tid=AW-709108437&tft=1776754101414&tfd=1358",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101525
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754101403&cv=11&fst=1776754101403&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938469~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&rcb=0&frm=0&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=79937310.1776754101&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&_tu=AAI&data=event%3Dpage_view%3Becomm_prodid%3D%3Becomm_pagetype%3Dhome%3Becomm_totalvalue%3D&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101526
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=0&frm=0&en=page_view&dl=https%3A%2F%2Ffacegym.com%2F&scrsrc=www.googletagmanager.com&rnd=1529196009.1776754101&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=79937310.1776754101&navt=n&npa=0&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_tu=AAI&gtm=45be64h1v9117899027za200zd9117899027xec&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938469~117266401&apve=1&apvf=f&apvc=1&tids=AW-709108437&tid=AW-709108437&tft=1776754101413&tfd=1357",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101526
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754101372&cv=11&fst=1776754101372&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938469~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&rcb=0&frm=0&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=79937310.1776754101&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&_tu=AAI&data=event%3Dgtag.config&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101526
+    },
+    {
+      "url": "https://www.google.com/ccm/form-data/709108437?gtm=45be64h1v9117899027za200zd9117899027xec&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938469~117266401&rcb=0&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&npa=0&frm=0&pscdl=noapi&auid=79937310.1776754101&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&ec_mode=a&_tu=AAI&em=tv.1",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101597
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=0&frm=0&en=page_view&dl=https%3A%2F%2Ffacegym.com%2F&scrsrc=www.googletagmanager.com&rnd=1529196009.1776754101&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=79937310.1776754101&navt=n&npa=0&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_tu=AAI&gtm=45be64h1v9117899027z8812799029za200zd9117899027xec&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938469~117266401&apve=1&apvf=f&apvc=0&tids=AW-709108437&tid=AW-709108437&tft=1776754101519&tfd=1463",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101599
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754101511&cv=11&fst=1776754101511&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be64h1v9117899027z8812799029za200zd9117899027xec&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938469~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&rcb=0&frm=0&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=79937310.1776754101&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&_tu=AAI&data=event%3Dgtag.config&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101599
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-2PL0DSRBLH&gtm=45je64h1v9106029175za200zb9117899027zd9117899027&_p=1776754100763&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&ecid=1332517420&_eu=AAAAAGQ&are=1&cid=926141618.1776754102&ec_mode=a&frm=0&pscdl=noapi&rcb=16&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=2&tag_exp=0~115938466~115938469~117266401&sid=1776754101&sct=1&seg=1&dl=https%3A%2F%2Ffacegym.com%2F&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&_tu=AAI&en=page_view&_ee=1&ep.ecomm_prodid=&ep.ecomm_pagetype=home&ep.ecomm_totalvalue=&_et=8&tfd=1536",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101734
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-2PL0DSRBLH&gtm=45je64h1v9106029175za200zb9117899027zd9117899027&_p=1776754100763&_gaz=1&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&ecid=1332517420&_eu=AAAAAGA&are=1&cid=926141618.1776754102&ec_mode=c&frm=0&pscdl=noapi&rcb=16&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=1&tag_exp=0~115938466~115938469~117266401&dp=%2F&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&dl=https%3A%2F%2Ffacegym.com%2F&sid=1776754101&sct=1&seg=0&_tu=AAI&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&edid=dNzYwYj&tfd=1525",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101737
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754101809&cv=11&fst=1776754101809&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266400~118463261&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&top=https%3A%2F%2Ffacegym.com%2Fweb-pixels%405153dfa3wa14e0a32p72aa89e7m94579b79%2Fapp%2Fweb-pixel-2457928067%40a90a2386b8d48cfc1abdd2eff8b04392%2Fsandbox%2Fmodern%2F&rcb=13&frm=2&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1697441182.1776754102&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&data=event%3Dgtag.config&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101935
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754101843&cv=11&fst=1776754101843&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266400~118463261&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&top=https%3A%2F%2Ffacegym.com%2Fweb-pixels%405153dfa3wa14e0a32p72aa89e7m94579b79%2Fapp%2Fweb-pixel-2457928067%40a90a2386b8d48cfc1abdd2eff8b04392%2Fsandbox%2Fmodern%2F&rcb=13&frm=2&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1697441182.1776754102&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&data=event%3Dpage_view%3Becomm_pagetype%3Dhome&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101936
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=13&frm=1&en=page_view&dl=https%3A%2F%2Ffacegym.com%2Fweb-pixels%405153dfa3wa14e0a32p72aa89e7m94579b79%2Fapp%2Fweb-pixel-2457928067%40a90a2386b8d48cfc1abdd2eff8b04392%2Fsandbox%2Fmodern%2F&scrsrc=www.googletagmanager.com&rnd=118744262.1776754102&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=1697441182.1776754102&navt=n&npa=0&gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266400~118463261&apve=1&apvf=f&apvc=1&tids=AW-709108437&tid=AW-709108437&tft=1776754101854&tfd=688",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101936
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=13&frm=1&en=page_view&dl=https%3A%2F%2Ffacegym.com%2Fweb-pixels%405153dfa3wa14e0a32p72aa89e7m94579b79%2Fapp%2Fweb-pixel-2457928067%40a90a2386b8d48cfc1abdd2eff8b04392%2Fsandbox%2Fmodern%2F&scrsrc=www.googletagmanager.com&rnd=118744262.1776754102&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=1697441182.1776754102&navt=n&npa=0&ep.ecomm_pagetype=home&gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266400~118463261&apve=1&apvf=f&apvc=0&tids=AW-709108437&tid=AW-709108437&tft=1776754101855&tfd=689",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101936
+    },
+    {
+      "url": "https://www.google.com/ccm/form-data/709108437?gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266400~118463261&rcb=13&npa=0&frm=1&pscdl=noapi&auid=1697441182.1776754102&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&ec_mode=a&em=tv.1",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754101979
+    },
+    {
+      "url": "https://api.geoproapp.com/api/record",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754102082
+    },
+    {
+      "url": "https://tipser.co/litetoto/",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754102944
+    },
+    {
+      "url": "https://fonts.cdnfonts.com/css/proxima-nova-condensed",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754103534
+    },
+    {
+      "url": "https://facegym.fynd.io/api/service/application/graphql/",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.io/auth/login",
+      "timestamp": 1776754125021
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754145866&cv=11&fst=1776754145866&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be64h1v9117899027za20gzb812799029zd812799029xec&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938465~115938468~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&rcb=0&frm=0&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&did=dYmNjMT&gdid=dYmNjMT&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=219801523.1776754146&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&_tu=AAI&data=event%3Dgtag.config&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146001
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=0&frm=0&en=page_view&dl=https%3A%2F%2Ffacegym.com%2F&scrsrc=www.googletagmanager.com&rnd=2027182539.1776754146&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=219801523.1776754146&navt=n&npa=0&ep.ecomm_pagetype=home&did=dYmNjMT&gdid=dYmNjMT&_tu=AAI&gtm=45be64h1v9117899027za20gzb812799029zd812799029xec&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938465~115938468~117266401&apve=1&apvf=f&apvc=0&tids=AW-709108437&tid=AW-709108437&tft=1776754145918&tfd=1184",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146050
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=0&frm=0&en=page_view&dl=https%3A%2F%2Ffacegym.com%2F&scrsrc=www.googletagmanager.com&rnd=2027182539.1776754146&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=219801523.1776754146&navt=n&npa=0&did=dYmNjMT&gdid=dYmNjMT&_tu=AAI&gtm=45be64h1v9117899027za20gzb812799029zd812799029xec&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938465~115938468~117266401&apve=1&apvf=f&apvc=0&tids=AW-709108437&tid=AW-709108437&tft=1776754145917&tfd=1184",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146051
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754145908&cv=11&fst=1776754145908&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be64h1v9117899027za20gzb812799029zd812799029xec&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938465~115938468~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&rcb=0&frm=0&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&did=dYmNjMT&gdid=dYmNjMT&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=219801523.1776754146&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&_tu=AAI&data=event%3Dpage_view%3Becomm_prodid%3D%3Becomm_pagetype%3Dhome%3Becomm_totalvalue%3D&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146096
+    },
+    {
+      "url": "https://www.google.com/ccm/form-data/709108437?gtm=45be64h1v9117899027za20gzb812799029zd812799029xec&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938465~115938468~117266401&rcb=0&did=dYmNjMT&gdid=dYmNjMT&npa=0&frm=0&pscdl=noapi&auid=219801523.1776754146&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&ec_mode=a&_tu=AAI&em=tv.1",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146149
+    },
+    {
+      "url": "https://pagead2.googlesyndication.com/ccm/collect?rcb=0&frm=0&en=page_view&dl=https%3A%2F%2Ffacegym.com%2F&scrsrc=www.googletagmanager.com&rnd=2027182539.1776754146&navt=n&npa=1&gtm=45be64h1v9117899027z8812799029za20gzb812799029zd812799029xec&gcs=G100&gcd=13p3p3p3p5l1&dma_cps=-&dma=0&tag_exp=0~115938465~115938468~117266401&apve=1&apvf=f&apvc=1&tids=AW-709108437&tid=AW-709108437&tft=1776754145917&tfd=1183",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146154
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-2PL0DSRBLH&gtm=45je64h1v9106029175za200zb812799029zd812799029&_p=1776754145276&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&ecid=232536897&_eu=AAAAAGQ&are=1&cid=938746155.1776754104&ec_mode=c&frm=0&pscdl=noapi&rcb=10&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=1&tag_exp=0~115616986~115938465~115938469~117266401&dp=%2F&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&dl=https%3A%2F%2Ffacegym.com%2F&sid=1776754104&sct=1&seg=1&_tu=AAI&en=page_view&_ee=1&edid=dNzYwYj&_et=6&tfd=1235",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146154
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-2PL0DSRBLH&gtm=45je64h1v9106029175za200zb812799029zd812799029&_p=1776754145276&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&ecid=232536897&_eu=AAAAAGQ&are=1&cid=938746155.1776754104&ec_mode=a&frm=0&pscdl=noapi&rcb=10&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=2&tag_exp=0~115616986~115938465~115938469~117266401&sid=1776754104&sct=1&seg=1&dl=https%3A%2F%2Ffacegym.com%2F&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&_tu=AAI&en=page_view&_ee=1&ep.ecomm_prodid=&ep.ecomm_pagetype=home&ep.ecomm_totalvalue=&_et=6&tfd=1244",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146154
+    },
+    {
+      "url": "https://api.geoproapp.com/api/record",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146154
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754146105&cv=11&fst=1776754146105&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938469~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&top=https%3A%2F%2Ffacegym.com%2Fweb-pixels%405153dfa3wa14e0a32p72aa89e7m94579b79%2Fapp%2Fweb-pixel-2457928067%40a90a2386b8d48cfc1abdd2eff8b04392%2Fsandbox%2Fmodern%2F&rcb=16&frm=2&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1967691110.1776754146&data=event%3Dgtag.config&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146282
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=16&frm=1&en=page_view&dl=https%3A%2F%2Ffacegym.com%2Fweb-pixels%405153dfa3wa14e0a32p72aa89e7m94579b79%2Fapp%2Fweb-pixel-2457928067%40a90a2386b8d48cfc1abdd2eff8b04392%2Fsandbox%2Fmodern%2F&scrsrc=www.googletagmanager.com&rnd=1545305757.1776754146&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=1967691110.1776754146&navt=n&npa=0&ep.ecomm_pagetype=home&gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938469~117266401&apve=1&apvf=f&apvc=0&tids=AW-709108437&tid=AW-709108437&tft=1776754146144&tfd=550",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146282
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=16&frm=1&en=page_view&dl=https%3A%2F%2Ffacegym.com%2Fweb-pixels%405153dfa3wa14e0a32p72aa89e7m94579b79%2Fapp%2Fweb-pixel-2457928067%40a90a2386b8d48cfc1abdd2eff8b04392%2Fsandbox%2Fmodern%2F&scrsrc=www.googletagmanager.com&rnd=1545305757.1776754146&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=1967691110.1776754146&navt=n&npa=0&gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938469~117266401&apve=1&apvf=f&apvc=1&tids=AW-709108437&tid=AW-709108437&tft=1776754146143&tfd=549",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146282
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754146133&cv=11&fst=1776754146133&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938469~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&top=https%3A%2F%2Ffacegym.com%2Fweb-pixels%405153dfa3wa14e0a32p72aa89e7m94579b79%2Fapp%2Fweb-pixel-2457928067%40a90a2386b8d48cfc1abdd2eff8b04392%2Fsandbox%2Fmodern%2F&rcb=16&frm=2&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1967691110.1776754146&data=event%3Dpage_view%3Becomm_pagetype%3Dhome&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146282
+    },
+    {
+      "url": "https://www.google.com/ccm/form-data/709108437?gtm=45be64h1v9117899027za200zd9117899027xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938469~117266401&rcb=16&npa=0&frm=1&pscdl=noapi&auid=1967691110.1776754146&ec_mode=a&em=tv.1",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146284
+    },
+    {
+      "url": "https://tipser.co/litetoto/",
+      "failure": "net::ERR_BLOCKED_BY_ORB",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754146914
+    },
+    {
+      "url": "https://fonts.cdnfonts.com/css/proxima-nova-condensed",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754147340
+    },
+    {
+      "url": "https://facegym.fynd.io/api/service/application/graphql/",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.io/auth/login?redirectUrl=/auth/login",
+      "timestamp": 1776754158909
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754297193&cv=11&fst=1776754297193&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be64h1v9117899027za20gzb812799029zd812799029xec&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938468~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&rcb=0&frm=0&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1106255295.1776754297&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&_tu=AAI&data=event%3Dpage_view%3Becomm_prodid%3D%3Becomm_pagetype%3Dhome%3Becomm_totalvalue%3D&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754297293
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/709108437/?random=1776754297174&cv=11&fst=1776754297174&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be64h1v9117899027za20gzb812799029zd812799029xec&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938468~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Ffacegym.com%2F&rcb=0&frm=0&tiba=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1106255295.1776754297&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&_tu=AAI&data=event%3Dgtag.config&gcp=5",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754297293
+    },
+    {
+      "url": "https://pagead2.googlesyndication.com/ccm/collect?rcb=0&frm=0&en=page_view&dl=https%3A%2F%2Ffacegym.com%2F&scrsrc=www.googletagmanager.com&rnd=1673839249.1776754297&navt=n&npa=1&did=dN2ZkMj%2CdNTU0Yz&gdid=dN2ZkMj.dNTU0Yz&gtm=45be64h1v9117899027z8812799029za20gzb812799029zd812799029xec&gcs=G100&gcd=13p3p3p3p5l1&dma_cps=-&dma=0&tag_exp=0~115938466~115938468~117266401&apve=1&apvf=f&apvc=1&tids=AW-709108437&tid=AW-709108437&tft=1776754297203&tfd=1189",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754297372
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=0&frm=0&en=page_view&dl=https%3A%2F%2Ffacegym.com%2F&scrsrc=www.googletagmanager.com&rnd=1673839249.1776754297&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=1106255295.1776754297&navt=n&npa=0&ep.ecomm_pagetype=home&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_tu=AAI&gtm=45be64h1v9117899027za20gzb812799029zd812799029xec&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938468~117266401&apve=1&apvf=f&apvc=0&tids=AW-709108437&tid=AW-709108437&tft=1776754297204&tfd=1190",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754297415
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=0&frm=0&en=page_view&dl=https%3A%2F%2Ffacegym.com%2F&scrsrc=www.googletagmanager.com&rnd=1673839249.1776754297&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&auid=1106255295.1776754297&navt=n&npa=0&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_tu=AAI&gtm=45be64h1v9117899027za20gzb812799029zd812799029xec&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938468~117266401&apve=1&apvf=f&apvc=0&tids=AW-709108437&tid=AW-709108437&tft=1776754297203&tfd=1190",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754297415
+    },
+    {
+      "url": "https://www.google.com/ccm/form-data/709108437?gtm=45be64h1v9117899027za20gzb812799029zd812799029xec&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=0~115938466~115938468~117266401&rcb=0&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&npa=0&frm=0&pscdl=noapi&auid=1106255295.1776754297&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=macOS&uapv=10_15_7&uaw=0&ec_mode=a&_tu=AAI&em=tv.1",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754297415
+    },
+    {
+      "url": "https://api.geoproapp.com/api/record",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754297416
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-2PL0DSRBLH&gtm=45je64h1v9106029175za200zb812799029zd812799029&_p=1776754296611&_gaz=1&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&ecid=1906218373&_eu=AAAAAGQ&are=1&cid=655744445.1776754148&ec_mode=a&frm=0&pscdl=noapi&rcb=11&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=macOS&uapv=10_15_7&uaw=0&ul=en-in&_s=1&tag_exp=0~115938466~115938468~117266401&sid=1776754148&sct=1&seg=1&dl=https%3A%2F%2Ffacegym.com%2F&dt=FACEGYM%20%7C%20Results%20Driven%20Skincare%2C%20Workouts%20%26%20Tools&_tu=AAI&en=page_view&_ee=1&ep.ecomm_prodid=&ep.ecomm_pagetype=home&ep.ecomm_totalvalue=&_et=7&tfd=1255",
+      "failure": "net::ERR_ABORTED",
+      "page": "https://facegym.fynd.ioinfo.india@facegym.com/",
+      "timestamp": 1776754297416
+    }
+  ]
+}

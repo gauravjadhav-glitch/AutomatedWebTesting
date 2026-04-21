@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>4K Bug Report — lamartina.fynd.io — 22 bugs</title>
+<style>
+:root{--bg:#0a0a0f;--bg2:#111827;--bg3:#0d1117;--bg4:#161b22;--bg5:#020617;--border:#1e293b;--text:#e2e8f0;--text2:#9ca3af;--text3:#6b7280;--accent:#3b82f6;--radius:12px}
+[data-theme="light"]{--bg:#f0f2f5;--bg2:#ffffff;--bg3:#f8fafc;--bg4:#e8ecf1;--bg5:#f1f5f9;--border:#d1d5db;--text:#1e293b;--text2:#475569;--text3:#64748b;--accent:#2563eb}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:-apple-system,'Segoe UI',system-ui,Roboto,sans-serif;background:var(--bg);color:var(--text);display:flex;line-height:1.5}
+.sidebar{position:fixed;top:0;left:0;width:230px;height:100vh;background:var(--bg2);border-right:1px solid var(--border);overflow-y:auto;z-index:100;display:flex;flex-direction:column}
+.sidebar .logo{padding:20px 20px 16px;font-weight:800;font-size:16px;color:var(--accent);border-bottom:1px solid var(--border)}.sidebar .logo small{display:block;font-size:10px;color:var(--text3);font-weight:400;margin-top:4px;letter-spacing:.5px;text-transform:uppercase}
+.nav-link{display:flex;align-items:center;gap:8px;padding:10px 20px;font-size:13px;color:var(--text2);text-decoration:none;border-left:3px solid transparent;transition:all .2s}
+.nav-link:hover{background:var(--bg4);color:var(--text)}.nav-link.active{background:var(--bg3);color:var(--accent);border-left-color:var(--accent);font-weight:600}
+.main{margin-left:230px;flex:1;min-width:0}
+.hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 40%,#7c2d12 100%);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.hdr h1{font-size:22px;color:#fff;font-weight:700}.hdr p{color:#fbbf24;font-size:13px;margin-top:6px}
+.hdr .site-url{font-size:11px;padding:4px 12px;border-radius:6px;background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.3);margin-top:8px;display:inline-block}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.toolbar input{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 14px;border-radius:8px;font-size:12px;width:200px}.toolbar input::placeholder{color:rgba(255,255,255,.5)}
+.toolbar button{background:var(--bg2);border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:500}.toolbar button:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.ctr{max-width:1400px;margin:0 auto;padding:24px}
+.exec-card{background:var(--bg2);border-radius:var(--radius);padding:24px;margin:20px 0;border:1px solid var(--border);display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center}
+.pie-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+.pie-legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;justify-content:center}.pie-legend span{display:flex;align-items:center;gap:5px}.pie-legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.stat-item{background:var(--bg3);border-radius:10px;padding:16px 12px;text-align:center;border:1px solid var(--border)}.stat-item:hover{transform:translateY(-2px)}.stat-item .val{font-size:26px;font-weight:800;line-height:1}.stat-item .lbl{font-size:10px;color:var(--text3);text-transform:uppercase;margin-top:6px;letter-spacing:.5px}
+.badge{padding:4px 10px;border-radius:6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.bg-critical{background:#450a0a;color:#fca5a5;border:1px solid #7f1d1d}.bg-high{background:#451a03;color:#fcd34d;border:1px solid #78350f}.bg-medium{background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f}.bg-low{background:#052e16;color:#86efac;border:1px solid #14532d}.bg-info{background:#1e1b4b;color:#a5b4fc;border:1px solid #312e81}
+.filters{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap}
+.filter-btn{background:var(--bg2);border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:500}.filter-btn:hover,.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bug-card{background:var(--bg3);border-radius:var(--radius);margin:16px 0;border-left:4px solid;overflow:hidden}.bug-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.bug-critical{border-color:#ef4444}.bug-high{border-color:#f59e0b}.bug-medium{border-color:#3b82f6}.bug-low{border-color:#22c55e}
+.bug-card-header{padding:16px 20px;background:var(--bg4);border-bottom:1px solid var(--border)}.bug-card-header h3{font-size:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0;font-weight:600}
+.bug-card-body{padding:20px}
+.bug-detail-table{width:100%;border-collapse:collapse;font-size:13px}.bug-detail-table tr{border-bottom:1px solid var(--border)}.bug-detail-table tr:last-child{border-bottom:none}.bug-detail-table td{padding:10px 14px;vertical-align:top;line-height:1.6}
+.bug-field{font-weight:700;color:var(--text2);white-space:nowrap;width:100px;text-transform:uppercase;font-size:11px;letter-spacing:.5px}
+.pass-text{color:#22c55e}.fail-text{color:#ef4444}
+.bug-detail-table code{display:inline-block;background:var(--bg5);padding:8px 12px;border-radius:6px;font-size:12px;color:#67e8f9;white-space:pre-wrap;font-family:'Fira Code',Consolas,monospace}
+.bug-screenshot{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid var(--border)}.bug-screenshot img{width:100%;display:block;max-height:400px;object-fit:contain;background:#0a0a0a}.bug-ss-caption{padding:10px 14px;background:var(--bg5);font-size:11px;color:var(--text2);font-style:italic}
+.ftr{text-align:center;padding:32px;color:var(--text3);font-size:11px;border-top:1px solid var(--border);margin-top:24px}
+.hidden{display:none!important}
+.zoom-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;backdrop-filter:blur(4px)}.zoom-overlay img{max-width:95vw;max-height:95vh;object-fit:contain;border-radius:8px}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+@media print{.sidebar,.toolbar,.filters,.zoom-overlay{display:none!important}.main{margin-left:0!important}.bug-card{break-inside:avoid}}
+@media(max-width:900px){.sidebar{transform:translateX(-100%)}.main{margin-left:0}.exec-card{grid-template-columns:1fr}}
+</style></head><body>
+<nav class="sidebar"><div class="logo">4K Bug Report<small>lamartina.fynd.io — Rechecked</small></div>
+<a href="#summary" class="nav-link active">Summary</a><a href="#all-bugs" class="nav-link">All Bugs (22)</a>
+<a href="#" class="nav-link" onclick="filterCat('UI Alignment');return false">UI Alignment (9)</a>
+<a href="#" class="nav-link" onclick="filterCat('Image Quality');return false">Image Quality (3)</a>
+<a href="#" class="nav-link" onclick="filterCat('Accessibility');return false">Accessibility (3)</a>
+<a href="#" class="nav-link" onclick="filterCat('Navigation');return false">Navigation (1)</a>
+<a href="#" class="nav-link" onclick="filterCat('UI Functionality');return false">UI Functionality (6)</a></nav>
+<div class="main"><div class="hdr"><div>
+<h1>4K Bug Report <span style="font-size:11px;background:rgba(255,255,255,.2);color:#fff;padding:3px 12px;border-radius:20px;vertical-align:middle;font-weight:500">RECHECKED</span></h1>
+<p>2026-04-03 &middot; 22 bugs &middot; 7 pages + PDP + Search &middot; 3840&times;2160</p>
+<span class="site-url">lamartina.fynd.io</span></div>
+<div class="toolbar"><input type="text" id="searchInput" placeholder="Search bugs..." onkeyup="filterBugs()">
+<button onclick="toggleTheme()">Theme</button><button onclick="window.print()">Print</button></div></div>
+<div class="ctr">
+<div id="summary" class="exec-card"><div class="pie-wrap">
+<svg viewBox="0 0 100 100" width="120" height="120" style="transform:rotate(-90deg)">
+<circle r="15.9155" cx="50" cy="50" fill="none" stroke="var(--border)" stroke-width="10"/>
+<circle r="15.9155" cx="50" cy="50" fill="none" stroke="#ef4444" stroke-width="10" stroke-dasharray="9.090909090909092 90.9090909090909" stroke-dashoffset="0"/>
+<circle r="15.9155" cx="50" cy="50" fill="none" stroke="#f59e0b" stroke-width="10" stroke-dasharray="72.72727272727273 27.272727272727266" stroke-dashoffset="-9.090909090909092"/>
+<circle r="15.9155" cx="50" cy="50" fill="none" stroke="#3b82f6" stroke-width="10" stroke-dasharray="18.181818181818183 81.81818181818181" stroke-dashoffset="-81.81818181818183"/>
+<circle r="15.9155" cx="50" cy="50" fill="none" stroke="#22c55e" stroke-width="10" stroke-dasharray="0 100" stroke-dashoffset="-100"/>
+</svg>
+<div class="pie-legend"><span><span class="dot" style="background:#ef4444"></span>2 Critical</span><span><span class="dot" style="background:#f59e0b"></span>16 High</span><span><span class="dot" style="background:#3b82f6"></span>4 Medium</span><span><span class="dot" style="background:#22c55e"></span>0 Low</span></div></div>
+<div><div class="stat-grid">
+<div class="stat-item"><div class="val" style="color:var(--text)">22</div><div class="lbl">Total Bugs</div></div>
+<div class="stat-item"><div class="val" style="color:#ef4444">2</div><div class="lbl">Critical</div></div>
+<div class="stat-item"><div class="val" style="color:#f59e0b">16</div><div class="lbl">High</div></div>
+<div class="stat-item"><div class="val" style="color:#3b82f6">4</div><div class="lbl">Medium</div></div>
+<div class="stat-item"><div class="val" style="color:#22c55e">0</div><div class="lbl">Low</div></div>
+<div class="stat-item"><div class="val" style="color:#67e8f9">7</div><div class="lbl">Pages</div></div>
+</div></div></div>
+<div id="all-bugs" style="margin-top:32px"><h2 style="font-size:18px;margin-bottom:16px">All Bugs (22)</h2>
+<div class="filters"><button class="filter-btn active" onclick="filterAll()">All (22)</button>
+<button class="filter-btn" onclick="filterSev('Critical')">Critical (2)</button>
+<button class="filter-btn" onclick="filterSev('High')">High (16)</button>
+<button class="filter-btn" onclick="filterSev('Medium')">Medium (4)</button>
+<button class="filter-btn" onclick="filterSev('Low')">Low (0)</button>
+<span style="color:var(--text3);padding:6px">|</span>
+<button class="filter-btn" onclick="filterCat('UI Alignment')">UI Alignment (9)</button>
+<button class="filter-btn" onclick="filterCat('Image Quality')">Image Quality (3)</button>
+<button class="filter-btn" onclick="filterCat('Accessibility')">Accessibility (3)</button>
+<button class="filter-btn" onclick="filterCat('Navigation')">Navigation (1)</button>
+<button class="filter-btn" onclick="filterCat('UI Functionality')">UI Functionality (6)</button></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Alignment">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-001 — Nav Bar Covers Only 14% of Viewport (Site-Wide) (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>All pages on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>Navigation bar (nav.xDvOo) only covers 14% (554px) of the 4K viewport (3840px) on all pages. Content is left-aligned with a massive empty gap on the right.
+
+Affected pages: /, /products, /collections, /categories, /cart, /auth/login, /contact-us</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open any page on https://lamartina.fynd.io at 4K (3840x2160)<br>2. Nav bar occupies only left 14% of screen<br>3. Right 86% is completely empty</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Navigation should span 100% of viewport</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">Nav is 554px (14% of 3840px) — site-wide issue</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Set nav width: 100% and remove max-width constraints.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_home_vp.png" alt="Screenshot: Nav Bar Covers Only 14% of Viewport (Site-Wide)"><div class="bug-ss-caption">Screenshot: All pages on 4K (3840x2160) — Nav Bar Covers Only 14% of Viewport (Site-Wide)</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="Image Quality">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-002 — 7 Blurry Image(s) — / on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Image Quality</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/ on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>7 image(s) are visibly blurry — source too small for 4K render size (2.1x upscale).
+
+Blurry images:
+1. &quot;MEN PRE Collection&quot; — source: 578px, displayed: 1221px (2.1x upscale)
+2. &quot;WOMEN PRE Collection&quot; — source: 588px, displayed: 1221px (2.1x upscale)
+3. &quot;THIRD GENDER PRE Collection&quot; — source: 588px, displayed: 1221px (2.1x upscale)
+4. &quot;theme-default-image-fd59550e-51ba-4d82-8b42-4a0c8f&quot; — source: 578px, displayed: 1236px (2.1x upscale)
+5. &quot;theme-default-image-89db08ea-f095-4c50-8542-b1d4d4&quot; — source: 588px, displayed: 1236px (2.1x upscale)
+6. &quot;theme-default-image-aa242ba4-23e5-4dcf-8e32-1e60e1&quot; — source: 588px, displayed: 1236px (2.1x upscale)</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/ on 4K<br>2. Images appear pixelated<br>3. Inspect confirms natural size &lt;&lt; rendered size<br>Blurry images:<br>1. &quot;MEN PRE Collection&quot; — source: 578px, displayed: 1221px (2.1x upscale)<br>2. &quot;WOMEN PRE Collection&quot; — source: 588px, displayed: 1221px (2.1x upscale)<br>3. &quot;THIRD GENDER PRE Collection&quot; — source: 588px, displayed: 1221px (2.1x upscale)<br>4. &quot;theme-default-image-fd59550e-51ba-4d82-8b42-4a0c8f&quot; — source: 578px, displayed: 1236px (2.1x upscale)<br>5. &quot;theme-default-image-89db08ea-f095-4c50-8542-b1d4d4&quot; — source: 588px, displayed: 1236px (2.1x upscale)<br>6. &quot;theme-default-image-aa242ba4-23e5-4dcf-8e32-1e60e1&quot; — source: 588px, displayed: 1236px (2.1x upscale)</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Source image should be &gt;= rendered size (1:1 ratio)</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">7 images upscaled 2.1x</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Serve higher-res images via srcset/CDN params. Min source: 900px for 4K.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_home_full.png" alt="Screenshot: 7 Blurry Image(s) — / on 4K"><div class="bug-ss-caption">Screenshot: / on 4K (3840x2160) — 7 Blurry Image(s) — / on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Alignment">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-003 — 7 Untappable Elements — / on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/ on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>7 element(s) are under 25px tall — too small to accurately click at 4K.
+
+Affected elements:
+1. &lt;a&gt;&quot;customer service&quot; — only 133x24px
+2. &lt;a&gt;&quot;stores&quot; — only 60x16px
+3. &lt;a&gt;&quot;New In&quot; — only 498x23px
+4. &lt;a&gt;&quot;Men&quot; — only 498x23px
+5. &lt;a&gt;&quot;Women&quot; — only 522x23px
+6. &lt;a&gt;&quot;Collections&quot; — only 522x23px
+7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/ on 4K<br>2. Try clicking these elements<br>Too small:<br>1. &lt;a&gt;&quot;customer service&quot; — only 133x24px<br>2. &lt;a&gt;&quot;stores&quot; — only 60x16px<br>3. &lt;a&gt;&quot;New In&quot; — only 498x23px<br>4. &lt;a&gt;&quot;Men&quot; — only 498x23px<br>5. &lt;a&gt;&quot;Women&quot; — only 522x23px<br>6. &lt;a&gt;&quot;Collections&quot; — only 522x23px<br>7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Interactive elements should be &gt;= 44x44px (WCAG)</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">7 elements under 25px tall</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Increase padding/font-size for links and buttons. Min target: 44x44px.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_home_vp.png" alt="Screenshot: 7 Untappable Elements — / on 4K"><div class="bug-ss-caption">Screenshot: / on 4K (3840x2160) — 7 Untappable Elements — / on 4K</div></div></div></div>
+<div class="bug-card bug-medium" data-severity="Medium" data-category="Accessibility">
+<div class="bug-card-header"><h3><span class="badge bg-medium">Medium</span> BUG-004 — 9 Images Missing Alt Text — / (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-medium">Medium</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Accessibility</span> <span class="badge bg-info">SEO</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/ on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>9 large visible image(s) missing alt attributes (WCAG 1.1.1).
+
+Examples:
+1. &quot;...theme-default-image-f34fbb73-1fb7-4f54-b&quot; (3840px) — missing alt
+2. &quot;...theme-default-image-fd59550e-51ba-4d82-8&quot; (1236px) — missing alt
+3. &quot;...theme-default-image-89db08ea-f095-4c50-8&quot; (1236px) — missing alt
+4. &quot;...theme-default-image-aa242ba4-23e5-4dcf-8&quot; (1236px) — missing alt</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/<br>2. Inspect images<br>3. Multiple images lack alt text<br>Examples:<br>1. &quot;...theme-default-image-f34fbb73-1fb7-4f54-b&quot; (3840px) — missing alt<br>2. &quot;...theme-default-image-fd59550e-51ba-4d82-8&quot; (1236px) — missing alt<br>3. &quot;...theme-default-image-89db08ea-f095-4c50-8&quot; (1236px) — missing alt<br>4. &quot;...theme-default-image-aa242ba4-23e5-4dcf-8&quot; (1236px) — missing alt</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">All meaningful images should have alt text</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">9 images missing alt</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Add descriptive alt text to all product/content images.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_home_vp.png" alt="Screenshot: 9 Images Missing Alt Text — /"><div class="bug-ss-caption">Screenshot: / on 4K (3840x2160) — 9 Images Missing Alt Text — /</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="Image Quality">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-005 — 17 Blurry Image(s) — /products on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Image Quality</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/products on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>17 image(s) are visibly blurry — source too small for 4K render size (3.1x upscale).
+
+Blurry images:
+1. &quot;Dark Blue Straight Fit- Larkee Jeans&quot; — source: 300px, displayed: 927px (3.1x upscale)
+2. &quot;Black and Dark Grey Straight Fit- Larkee Jeans&quot; — source: 300px, displayed: 927px (3.1x upscale)
+3. &quot;Red Boxer briefs with blurry Super Logo&quot; — source: 300px, displayed: 927px (3.1x upscale)
+4. &quot;Violet Overdyed hoodie with frayed logo&quot; — source: 300px, displayed: 927px (3.1x upscale)
+5. &quot;TECH RELAXED TEE&quot; — source: 300px, displayed: 927px (3.1x upscale)
+6. &quot;LACE BUTTON THROUGH CAMI TOP&quot; — source: 300px, displayed: 927px (3.1x upscale)</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/products on 4K<br>2. Images appear pixelated<br>3. Inspect confirms natural size &lt;&lt; rendered size<br>Blurry images:<br>1. &quot;Dark Blue Straight Fit- Larkee Jeans&quot; — source: 300px, displayed: 927px (3.1x upscale)<br>2. &quot;Black and Dark Grey Straight Fit- Larkee Jeans&quot; — source: 300px, displayed: 927px (3.1x upscale)<br>3. &quot;Red Boxer briefs with blurry Super Logo&quot; — source: 300px, displayed: 927px (3.1x upscale)<br>4. &quot;Violet Overdyed hoodie with frayed logo&quot; — source: 300px, displayed: 927px (3.1x upscale)<br>5. &quot;TECH RELAXED TEE&quot; — source: 300px, displayed: 927px (3.1x upscale)<br>6. &quot;LACE BUTTON THROUGH CAMI TOP&quot; — source: 300px, displayed: 927px (3.1x upscale)</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Source image should be &gt;= rendered size (1:1 ratio)</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">17 images upscaled 3.1x</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Serve higher-res images via srcset/CDN params. Min source: 900px for 4K.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_products_full.png" alt="Screenshot: 17 Blurry Image(s) — /products on 4K"><div class="bug-ss-caption">Screenshot: /products on 4K (3840x2160) — 17 Blurry Image(s) — /products on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Alignment">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-006 — 7 Untappable Elements — /products on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/products on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>7 element(s) are under 25px tall — too small to accurately click at 4K.
+
+Affected elements:
+1. &lt;a&gt;&quot;customer service&quot; — only 133x24px
+2. &lt;a&gt;&quot;stores&quot; — only 60x16px
+3. &lt;a&gt;&quot;New In&quot; — only 498x23px
+4. &lt;a&gt;&quot;Men&quot; — only 498x23px
+5. &lt;a&gt;&quot;Women&quot; — only 522x23px
+6. &lt;a&gt;&quot;Collections&quot; — only 522x23px
+7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/products on 4K<br>2. Try clicking these elements<br>Too small:<br>1. &lt;a&gt;&quot;customer service&quot; — only 133x24px<br>2. &lt;a&gt;&quot;stores&quot; — only 60x16px<br>3. &lt;a&gt;&quot;New In&quot; — only 498x23px<br>4. &lt;a&gt;&quot;Men&quot; — only 498x23px<br>5. &lt;a&gt;&quot;Women&quot; — only 522x23px<br>6. &lt;a&gt;&quot;Collections&quot; — only 522x23px<br>7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Interactive elements should be &gt;= 44x44px (WCAG)</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">7 elements under 25px tall</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Increase padding/font-size for links and buttons. Min target: 44x44px.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_products_vp.png" alt="Screenshot: 7 Untappable Elements — /products on 4K"><div class="bug-ss-caption">Screenshot: /products on 4K (3840x2160) — 7 Untappable Elements — /products on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="Image Quality">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-007 — 1 Blurry Image(s) — /collections on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Image Quality</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/collections on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>1 image(s) are visibly blurry — source too small for 4K render size (3.0x upscale).
+
+Blurry images:
+1. &quot;xzuftshmmw4yuwzb12pm.png?dpr=1&quot; — source: 312px, displayed: 922px (3.0x upscale)</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/collections on 4K<br>2. Images appear pixelated<br>3. Inspect confirms natural size &lt;&lt; rendered size<br>Blurry images:<br>1. &quot;xzuftshmmw4yuwzb12pm.png?dpr=1&quot; — source: 312px, displayed: 922px (3.0x upscale)</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Source image should be &gt;= rendered size (1:1 ratio)</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">1 images upscaled 3.0x</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Serve higher-res images via srcset/CDN params. Min source: 900px for 4K.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_collections_full.png" alt="Screenshot: 1 Blurry Image(s) — /collections on 4K"><div class="bug-ss-caption">Screenshot: /collections on 4K (3840x2160) — 1 Blurry Image(s) — /collections on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Alignment">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-008 — 8 Untappable Elements — /collections on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/collections on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>8 element(s) are under 25px tall — too small to accurately click at 4K.
+
+Affected elements:
+1. &lt;a&gt;&quot;customer service&quot; — only 133x24px
+2. &lt;a&gt;&quot;stores&quot; — only 60x16px
+3. &lt;a&gt;&quot;New In&quot; — only 498x23px
+4. &lt;a&gt;&quot;Men&quot; — only 498x23px
+5. &lt;a&gt;&quot;Women&quot; — only 522x23px
+6. &lt;a&gt;&quot;Collections&quot; — only 522x23px
+7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px
+8. &lt;a&gt;&quot;Home&quot; — only 33x15px</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/collections on 4K<br>2. Try clicking these elements<br>Too small:<br>1. &lt;a&gt;&quot;customer service&quot; — only 133x24px<br>2. &lt;a&gt;&quot;stores&quot; — only 60x16px<br>3. &lt;a&gt;&quot;New In&quot; — only 498x23px<br>4. &lt;a&gt;&quot;Men&quot; — only 498x23px<br>5. &lt;a&gt;&quot;Women&quot; — only 522x23px<br>6. &lt;a&gt;&quot;Collections&quot; — only 522x23px<br>7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px<br>8. &lt;a&gt;&quot;Home&quot; — only 33x15px</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Interactive elements should be &gt;= 44x44px (WCAG)</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">8 elements under 25px tall</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Increase padding/font-size for links and buttons. Min target: 44x44px.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_collections_vp.png" alt="Screenshot: 8 Untappable Elements — /collections on 4K"><div class="bug-ss-caption">Screenshot: /collections on 4K (3840x2160) — 8 Untappable Elements — /collections on 4K</div></div></div></div>
+<div class="bug-card bug-medium" data-severity="Medium" data-category="Accessibility">
+<div class="bug-card-header"><h3><span class="badge bg-medium">Medium</span> BUG-009 — 5 Images Missing Alt Text — /collections (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-medium">Medium</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Accessibility</span> <span class="badge bg-info">SEO</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/collections on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>5 large visible image(s) missing alt attributes (WCAG 1.1.1).
+
+Examples:
+1. &quot;...xzuftshmmw4yuwzb12pm.png?dpr=1&quot; (922px) — missing alt
+2. &quot;...xzuftshmmw4yuwzb12pm.png?dpr=1&quot; (922px) — missing alt
+3. &quot;...xzuftshmmw4yuwzb12pm.png?dpr=1&quot; (922px) — missing alt
+4. &quot;...xzuftshmmw4yuwzb12pm.png?dpr=1&quot; (922px) — missing alt</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/collections<br>2. Inspect images<br>3. Multiple images lack alt text<br>Examples:<br>1. &quot;...xzuftshmmw4yuwzb12pm.png?dpr=1&quot; (922px) — missing alt<br>2. &quot;...xzuftshmmw4yuwzb12pm.png?dpr=1&quot; (922px) — missing alt<br>3. &quot;...xzuftshmmw4yuwzb12pm.png?dpr=1&quot; (922px) — missing alt<br>4. &quot;...xzuftshmmw4yuwzb12pm.png?dpr=1&quot; (922px) — missing alt</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">All meaningful images should have alt text</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">5 images missing alt</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Add descriptive alt text to all product/content images.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_collections_vp.png" alt="Screenshot: 5 Images Missing Alt Text — /collections"><div class="bug-ss-caption">Screenshot: /collections on 4K (3840x2160) — 5 Images Missing Alt Text — /collections</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Alignment">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-010 — 8 Untappable Elements — /categories on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/categories on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>8 element(s) are under 25px tall — too small to accurately click at 4K.
+
+Affected elements:
+1. &lt;a&gt;&quot;customer service&quot; — only 133x24px
+2. &lt;a&gt;&quot;stores&quot; — only 60x16px
+3. &lt;a&gt;&quot;New In&quot; — only 498x23px
+4. &lt;a&gt;&quot;Men&quot; — only 498x23px
+5. &lt;a&gt;&quot;Women&quot; — only 522x23px
+6. &lt;a&gt;&quot;Collections&quot; — only 522x23px
+7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px
+8. &lt;a&gt;&quot;Home&quot; — only 33x15px</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/categories on 4K<br>2. Try clicking these elements<br>Too small:<br>1. &lt;a&gt;&quot;customer service&quot; — only 133x24px<br>2. &lt;a&gt;&quot;stores&quot; — only 60x16px<br>3. &lt;a&gt;&quot;New In&quot; — only 498x23px<br>4. &lt;a&gt;&quot;Men&quot; — only 498x23px<br>5. &lt;a&gt;&quot;Women&quot; — only 522x23px<br>6. &lt;a&gt;&quot;Collections&quot; — only 522x23px<br>7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px<br>8. &lt;a&gt;&quot;Home&quot; — only 33x15px</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Interactive elements should be &gt;= 44x44px (WCAG)</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">8 elements under 25px tall</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Increase padding/font-size for links and buttons. Min target: 44x44px.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_categories_vp.png" alt="Screenshot: 8 Untappable Elements — /categories on 4K"><div class="bug-ss-caption">Screenshot: /categories on 4K (3840x2160) — 8 Untappable Elements — /categories on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Alignment">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-011 — 7 Untappable Elements — /cart on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/cart on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>7 element(s) are under 25px tall — too small to accurately click at 4K.
+
+Affected elements:
+1. &lt;a&gt;&quot;customer service&quot; — only 133x24px
+2. &lt;a&gt;&quot;stores&quot; — only 60x16px
+3. &lt;a&gt;&quot;New In&quot; — only 498x23px
+4. &lt;a&gt;&quot;Men&quot; — only 498x23px
+5. &lt;a&gt;&quot;Women&quot; — only 522x23px
+6. &lt;a&gt;&quot;Collections&quot; — only 522x23px
+7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/cart on 4K<br>2. Try clicking these elements<br>Too small:<br>1. &lt;a&gt;&quot;customer service&quot; — only 133x24px<br>2. &lt;a&gt;&quot;stores&quot; — only 60x16px<br>3. &lt;a&gt;&quot;New In&quot; — only 498x23px<br>4. &lt;a&gt;&quot;Men&quot; — only 498x23px<br>5. &lt;a&gt;&quot;Women&quot; — only 522x23px<br>6. &lt;a&gt;&quot;Collections&quot; — only 522x23px<br>7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Interactive elements should be &gt;= 44x44px (WCAG)</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">7 elements under 25px tall</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Increase padding/font-size for links and buttons. Min target: 44x44px.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_cart_vp.png" alt="Screenshot: 7 Untappable Elements — /cart on 4K"><div class="bug-ss-caption">Screenshot: /cart on 4K (3840x2160) — 7 Untappable Elements — /cart on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Alignment">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-012 — 7 Untappable Elements — /auth/login on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/auth/login on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>7 element(s) are under 25px tall — too small to accurately click at 4K.
+
+Affected elements:
+1. &lt;a&gt;&quot;customer service&quot; — only 133x24px
+2. &lt;a&gt;&quot;stores&quot; — only 60x16px
+3. &lt;a&gt;&quot;New In&quot; — only 498x23px
+4. &lt;a&gt;&quot;Men&quot; — only 498x23px
+5. &lt;a&gt;&quot;Women&quot; — only 522x23px
+6. &lt;a&gt;&quot;Collections&quot; — only 522x23px
+7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/auth/login on 4K<br>2. Try clicking these elements<br>Too small:<br>1. &lt;a&gt;&quot;customer service&quot; — only 133x24px<br>2. &lt;a&gt;&quot;stores&quot; — only 60x16px<br>3. &lt;a&gt;&quot;New In&quot; — only 498x23px<br>4. &lt;a&gt;&quot;Men&quot; — only 498x23px<br>5. &lt;a&gt;&quot;Women&quot; — only 522x23px<br>6. &lt;a&gt;&quot;Collections&quot; — only 522x23px<br>7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Interactive elements should be &gt;= 44x44px (WCAG)</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">7 elements under 25px tall</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Increase padding/font-size for links and buttons. Min target: 44x44px.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_auth_login_vp.png" alt="Screenshot: 7 Untappable Elements — /auth/login on 4K"><div class="bug-ss-caption">Screenshot: /auth/login on 4K (3840x2160) — 7 Untappable Elements — /auth/login on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Alignment">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-013 — Excessive Whitespace (99% unused) — /auth/login on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/auth/login on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>Content uses only 1% (48px) of the 4K viewport — 99% is wasted whitespace.</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/auth/login on 4K<br>2. Content confined to narrow column<br>3. 99% of screen is empty</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Content should use 60-80%+ of viewport at 4K</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">Only 1% utilized (48px of 3840px)</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Increase max-width for large viewports. Use responsive layout.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_auth_login_vp.png" alt="Screenshot: Excessive Whitespace (99% unused) — /auth/login on 4K"><div class="bug-ss-caption">Screenshot: /auth/login on 4K (3840x2160) — Excessive Whitespace (99% unused) — /auth/login on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Alignment">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-014 — 7 Untappable Elements — /contact-us on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Alignment</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/contact-us on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>7 element(s) are under 25px tall — too small to accurately click at 4K.
+
+Affected elements:
+1. &lt;a&gt;&quot;customer service&quot; — only 133x24px
+2. &lt;a&gt;&quot;stores&quot; — only 60x16px
+3. &lt;a&gt;&quot;New In&quot; — only 498x23px
+4. &lt;a&gt;&quot;Men&quot; — only 498x23px
+5. &lt;a&gt;&quot;Women&quot; — only 522x23px
+6. &lt;a&gt;&quot;Collections&quot; — only 522x23px
+7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/contact-us on 4K<br>2. Try clicking these elements<br>Too small:<br>1. &lt;a&gt;&quot;customer service&quot; — only 133x24px<br>2. &lt;a&gt;&quot;stores&quot; — only 60x16px<br>3. &lt;a&gt;&quot;New In&quot; — only 498x23px<br>4. &lt;a&gt;&quot;Men&quot; — only 498x23px<br>5. &lt;a&gt;&quot;Women&quot; — only 522x23px<br>6. &lt;a&gt;&quot;Collections&quot; — only 522x23px<br>7. &lt;a&gt;&quot;La Martina&quot; — only 498x23px</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Interactive elements should be &gt;= 44x44px (WCAG)</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">7 elements under 25px tall</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Increase padding/font-size for links and buttons. Min target: 44x44px.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_contact-us_vp.png" alt="Screenshot: 7 Untappable Elements — /contact-us on 4K"><div class="bug-ss-caption">Screenshot: /contact-us on 4K (3840x2160) — 7 Untappable Elements — /contact-us on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="Accessibility">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-015 — No Focus Indicators — 63/63 Elements (100%) (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Accessibility</span> <span class="badge bg-info">WCAG 2.4.7</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/ on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>100% of focusable elements lack visible focus indicators. Keyboard users cannot navigate. WCAG 2.4.7 violation.
+
+Examples:
+1. &lt;a&gt;&quot;customer service&quot; — no focus style
+2. &lt;a&gt;&quot;stores&quot; — no focus style
+3. &lt;a&gt;&quot;New In&quot; — no focus style
+4. &lt;a&gt;&quot;Men&quot; — no focus style</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/ on 4K<br>2. Press Tab to navigate<br>3. No visible focus ring on any element<br>Examples:<br>1. &lt;a&gt;&quot;customer service&quot; — no focus style<br>2. &lt;a&gt;&quot;stores&quot; — no focus style<br>3. &lt;a&gt;&quot;New In&quot; — no focus style<br>4. &lt;a&gt;&quot;Men&quot; — no focus style</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">All interactive elements should show :focus-visible style</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">63/63 elements have no focus indicator</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Add :focus-visible { outline: 2px solid currentColor; } to all interactive elements.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_home_vp.png" alt="Screenshot: No Focus Indicators — 63/63 Elements (100%)"><div class="bug-ss-caption">Screenshot: / on 4K (3840x2160) — No Focus Indicators — 63/63 Elements (100%)</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="Navigation">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-016 — 4 Header Icon(s) Missing (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">Navigation</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/ on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>4 essential header icon(s) not found at 4K.
+
+Missing:
+1. Cart — not found in header
+2. Account — not found in header
+3. Wishlist — not found in header
+4. Search — not found in header</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/ on 4K<br>2. Check header for icons<br>Missing:<br>1. Cart — not found in header<br>2. Account — not found in header<br>3. Wishlist — not found in header<br>4. Search — not found in header</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Cart, account, search icons should be visible in header</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">4 icons not found</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Ensure header icons render at 4K. Check if hidden by media queries.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_home_vp.png" alt="Screenshot: 4 Header Icon(s) Missing"><div class="bug-ss-caption">Screenshot: / on 4K (3840x2160) — 4 Header Icon(s) Missing</div></div></div></div>
+<div class="bug-card bug-critical" data-severity="Critical" data-category="UI Functionality">
+<div class="bug-card-header"><h3><span class="badge bg-critical">Critical</span> BUG-017 — PDP Size/Variant Selector — Not Found on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-critical">Critical</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Functionality</span> <span class="badge bg-info">PDP</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>Product Detail Page: &quot;Size/Variant Selector&quot; is not found or not visible at 4K. This blocks the purchase flow.</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K<br>2. Look for Size/Variant Selector<br>3. Not found or not visible</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Size/Variant Selector should be visible and functional</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">Size/Variant Selector not found at 4K</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Check if Size/Variant Selector component renders at 4K. Verify no media queries hide it.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_pdp_vp.png" alt="Screenshot: PDP Size/Variant Selector — Not Found on 4K"><div class="bug-ss-caption">Screenshot: /product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160) — PDP Size/Variant Selector — Not Found on 4K</div></div></div></div>
+<div class="bug-card bug-critical" data-severity="Critical" data-category="UI Functionality">
+<div class="bug-card-header"><h3><span class="badge bg-critical">Critical</span> BUG-018 — PDP Add to Cart / Buy Button — Not Found on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-critical">Critical</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Functionality</span> <span class="badge bg-info">PDP</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>Product Detail Page: &quot;Add to Cart / Buy Button&quot; is not found or not visible at 4K. This blocks the purchase flow.</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K<br>2. Look for Add to Cart / Buy Button<br>3. Not found or not visible</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Add to Cart / Buy Button should be visible and functional</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">Add to Cart / Buy Button not found at 4K</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Check if Add to Cart / Buy Button component renders at 4K. Verify no media queries hide it.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_pdp_vp.png" alt="Screenshot: PDP Add to Cart / Buy Button — Not Found on 4K"><div class="bug-ss-caption">Screenshot: /product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160) — PDP Add to Cart / Buy Button — Not Found on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Functionality">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-019 — PDP Image Gallery Navigation — Not Found on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Functionality</span> <span class="badge bg-info">PDP</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>Product Detail Page: &quot;Image Gallery Navigation&quot; is not found or not visible at 4K.</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K<br>2. Look for Image Gallery Navigation<br>3. Not found or not visible</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Image Gallery Navigation should be visible and functional</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">Image Gallery Navigation not found at 4K</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Check if Image Gallery Navigation component renders at 4K. Verify no media queries hide it.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_pdp_vp.png" alt="Screenshot: PDP Image Gallery Navigation — Not Found on 4K"><div class="bug-ss-caption">Screenshot: /product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160) — PDP Image Gallery Navigation — Not Found on 4K</div></div></div></div>
+<div class="bug-card bug-high" data-severity="High" data-category="UI Functionality">
+<div class="bug-card-header"><h3><span class="badge bg-high">High</span> BUG-020 — PDP Product Price Display — Not Found on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-high">High</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Functionality</span> <span class="badge bg-info">PDP</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>Product Detail Page: &quot;Product Price Display&quot; is not found or not visible at 4K.</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K<br>2. Look for Product Price Display<br>3. Not found or not visible</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Product Price Display should be visible and functional</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">Product Price Display not found at 4K</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Check if Product Price Display component renders at 4K. Verify no media queries hide it.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_pdp_vp.png" alt="Screenshot: PDP Product Price Display — Not Found on 4K"><div class="bug-ss-caption">Screenshot: /product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160) — PDP Product Price Display — Not Found on 4K</div></div></div></div>
+<div class="bug-card bug-medium" data-severity="Medium" data-category="UI Functionality">
+<div class="bug-card-header"><h3><span class="badge bg-medium">Medium</span> BUG-021 — PDP Product Description — Not Found on 4K (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-medium">Medium</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Functionality</span> <span class="badge bg-info">PDP</span> <span class="badge bg-info">4K Responsive</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>Product Detail Page: &quot;Product Description&quot; is not found or not visible at 4K.</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K<br>2. Look for Product Description<br>3. Not found or not visible</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Product Description should be visible and functional</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">Product Description not found at 4K</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Check if Product Description component renders at 4K. Verify no media queries hide it.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_pdp_vp.png" alt="Screenshot: PDP Product Description — Not Found on 4K"><div class="bug-ss-caption">Screenshot: /product/dark-blue-straight-fit-larkee-jeans-17576710 on 4K (3840x2160) — PDP Product Description — Not Found on 4K</div></div></div></div>
+<div class="bug-card bug-medium" data-severity="Medium" data-category="UI Functionality">
+<div class="bug-card-header"><h3><span class="badge bg-medium">Medium</span> BUG-022 — Search Returns No Results for &quot;shirt&quot; (lamartina.fynd.io) <span class="badge" style="background:#0c2d57;color:#93c5fd;border:1px solid #1e3a5f;">NEW</span></h3></div>
+<div class="bug-card-body"><table class="bug-detail-table">
+<tr><td class="bug-field">Severity</td><td><span class="badge bg-medium">Medium</span></td></tr>
+<tr><td class="bug-field">Category</td><td><span class="badge bg-info">UI Functionality</span> <span class="badge bg-info">Search</span></td></tr>
+<tr><td class="bug-field">Location</td><td>/ on 4K (3840x2160)</td></tr>
+<tr><td class="bug-field">Description</td><td>Searching for &quot;shirt&quot; returns no product results on the search results page.</td></tr>
+<tr><td class="bug-field">Steps</td><td>1. Open https://lamartina.fynd.io/ on 4K<br>2. Click search<br>3. Type &quot;shirt&quot; and Enter<br>4. No results shown</td></tr>
+<tr><td class="bug-field">Expected</td><td class="pass-text">Common search term should return results</td></tr>
+<tr><td class="bug-field">Actual</td><td class="fail-text">No product results displayed</td></tr>
+<tr><td class="bug-field">Fix</td><td><code>Debug search API/rendering. Verify results component loads at 4K.</code></td></tr>
+</table>
+<div class="bug-screenshot"><img src="screenshots/4k_recheck_search_results.png" alt="Screenshot: Search Returns No Results for &quot;shirt&quot;"><div class="bug-ss-caption">Screenshot: / on 4K (3840x2160) — Search Returns No Results for &quot;shirt&quot;</div></div></div></div>
+</div>
+<div class="ftr">4K Bug Report (Rechecked) &middot; lamartina.fynd.io &middot; 22 bugs &middot; 2026-04-03</div>
+</div></div>
+<script>
+function toggleTheme(){document.documentElement.dataset.theme=document.documentElement.dataset.theme==='light'?'dark':'light'}
+function filterBugs(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.bug-card').forEach(c=>{c.classList.toggle('hidden',!c.textContent.toLowerCase().includes(q))})}
+function filterAll(){document.querySelectorAll('.bug-card').forEach(c=>c.classList.remove('hidden'));document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active')}
+function filterSev(s){document.querySelectorAll('.bug-card').forEach(c=>{c.classList.toggle('hidden',c.dataset.severity!==s)});document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active')}
+function filterCat(c){document.querySelectorAll('.bug-card').forEach(el=>{el.classList.toggle('hidden',el.dataset.category!==c)});document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event&&event.target&&event.target.classList.add('active')}
+document.addEventListener('click',e=>{if(e.target.tagName==='IMG'&&e.target.closest('.bug-screenshot')){const o=document.createElement('div');o.className='zoom-overlay';o.innerHTML='<img src="'+e.target.src+'">';o.onclick=()=>o.remove();document.body.appendChild(o)}});
+</script></body></html>
